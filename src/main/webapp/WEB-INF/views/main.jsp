@@ -10,5 +10,6 @@
 <body>
 <%@ include file="include/menu.jsp" %>
 <h2>${message}</h2>
+<h2>Push Test</h2>
 </body>
 </html>
