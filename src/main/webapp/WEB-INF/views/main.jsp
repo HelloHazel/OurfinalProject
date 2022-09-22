@@ -123,8 +123,7 @@
 		<section
 			class="py-11 bg-light-gradient border-bottom border-white border-5">
 			<div class="bg-holder overlay overlay-light"
-				style=" background-color:#FFE08C; background-size: cover;">
-			</div>
+				style="background-color: #FFE08C; background-size: cover;"></div>
 			<!--/.bg-holder-->
 
 			<div class="container">
@@ -149,19 +148,25 @@
 				<div class="row g-0">
 					<div class="col-md-6">
 						<div class="card card-span h-100 text-white">
-							<img class="img-fluid" src="${pageContext.request.contextPath}/resources/assets/img/gallery/dog3.png"
+							<img class="img-fluid"
+								src="${pageContext.request.contextPath}/resources/assets/img/gallery/dog3.png"
 								width="790" alt="..." />
 							<div class="card-img-overlay d-flex flex-center">
-								<a class="btn btn-lg btn-light" href="#!">product</a>
+								<a class="btn btn-lg btn-light"
+								style="color : white; background-color: rgba(0, 0, 128, 0.1); backdrop-filter: blur(10px); box-shadow: 2px 7px 15px 8px rgba(0, 0, 0, 0.3);"
+								 href="#!">product</a>
 							</div>
 						</div>
 					</div>
 					<div class="col-md-6">
 						<div class="card card-span h-100 text-white">
-							<img class="img-fluid" src="${pageContext.request.contextPath}/resources/assets/img/gallery/dog2.png"
+							<img class="img-fluid"
+								src="${pageContext.request.contextPath}/resources/assets/img/gallery/dog2.png"
 								width="790" alt="..." />
-							<div class="card-img-overlay d-flex flex-center">
-								<a class="btn btn-lg btn-light" href="#!">Community </a>
+							<div class="card-img-overlay d-flex flex-center ">
+								<a class="btn btn-lg btn-light"
+									style="color : white; background-color: rgba(0, 0, 128, 0.1); backdrop-filter: blur(10px); box-shadow: 2px 7px 15px 8px rgba(0, 0, 0, 0.3);"
+									href="#!">Community </a>
 							</div>
 						</div>
 					</div>
@@ -194,7 +199,8 @@
 										<div class="col-sm-6 col-md-3 mb-3 mb-md-0 h-100">
 											<div class="card card-span h-100 text-white">
 												<img class="img-fluid h-100"
-													src="${pageContext.request.contextPath}/resources/assets/img/gallery/flat-hill.png" alt="..." />
+													src="${pageContext.request.contextPath}/resources/assets/img/gallery/flat-hill.png"
+													alt="..." />
 												<div class="card-img-overlay ps-0"></div>
 												<div class="card-body ps-0 bg-200">
 													<h5 class="fw-bold text-1000 text-truncate">Flat Hill
@@ -210,7 +216,8 @@
 										<div class="col-sm-6 col-md-3 mb-3 mb-md-0 h-100">
 											<div class="card card-span h-100 text-white">
 												<img class="img-fluid h-100"
-													src="${pageContext.request.contextPath}/resources/assets/img/gallery/blue-ring.png" alt="..." />
+													src="${pageContext.request.contextPath}/resources/assets/img/gallery/blue-ring.png"
+													alt="..." />
 												<div class="card-img-overlay ps-0"></div>
 												<div class="card-body ps-0 bg-200">
 													<h5 class="fw-bold text-1000 text-truncate">Ocean Blue
@@ -226,7 +233,8 @@
 										<div class="col-sm-6 col-md-3 mb-3 mb-md-0 h-100">
 											<div class="card card-span h-100 text-white">
 												<img class="img-fluid h-100"
-													src="${pageContext.request.contextPath}/resources/assets/img/gallery/wallet.png" alt="..." />
+													src="${pageContext.request.contextPath}/resources/assets/img/gallery/wallet.png"
+													alt="..." />
 												<div class="card-img-overlay ps-0"></div>
 												<div class="card-body ps-0 bg-200">
 													<h5 class="fw-bold text-1000 text-truncate">Brown
@@ -242,7 +250,8 @@
 										<div class="col-sm-6 col-md-3 mb-3 mb-md-0 h-100">
 											<div class="card card-span h-100 text-white">
 												<img class="img-fluid h-100"
-													src="${pageContext.request.contextPath}/resources/assets/img/gallery/wrist-watch.png" alt="..." />
+													src="${pageContext.request.contextPath}/resources/assets/img/gallery/wrist-watch.png"
+													alt="..." />
 												<div class="card-img-overlay ps-0"></div>
 												<div class="card-body ps-0 bg-200">
 													<h5 class="fw-bold text-1000 text-truncate">Silverside
@@ -262,7 +271,8 @@
 										<div class="col-sm-6 col-md-3 mb-3 mb-md-0 h-100">
 											<div class="card card-span h-100 text-white">
 												<img class="img-fluid h-100"
-													src="${pageContext.request.contextPath}/resources/assets/img/gallery/flat-hill.png" alt="..." />
+													src="${pageContext.request.contextPath}/resources/assets/img/gallery/flat-hill.png"
+													alt="..." />
 												<div class="card-img-overlay ps-0"></div>
 												<div class="card-body ps-0 bg-200">
 													<h5 class="fw-bold text-1000 text-truncate">Flat Hill
@@ -278,7 +288,8 @@
 										<div class="col-sm-6 col-md-3 mb-3 mb-md-0 h-100">
 											<div class="card card-span h-100 text-white">
 												<img class="img-fluid h-100"
-													src="${pageContext.request.contextPath}/resources/assets/img/gallery/blue-ring.png" alt="..." />
+													src="${pageContext.request.contextPath}/resources/assets/img/gallery/blue-ring.png"
+													alt="..." />
 												<div class="card-img-overlay ps-0"></div>
 												<div class="card-body ps-0 bg-200">
 													<h5 class="fw-bold text-1000 text-truncate">Ocean Blue
@@ -294,7 +305,8 @@
 										<div class="col-sm-6 col-md-3 mb-3 mb-md-0 h-100">
 											<div class="card card-span h-100 text-white">
 												<img class="img-fluid h-100"
-													src="${pageContext.request.contextPath}/resources/assets/img/gallery/wallet.png" alt="..." />
+													src="${pageContext.request.contextPath}/resources/assets/img/gallery/wallet.png"
+													alt="..." />
 												<div class="card-img-overlay ps-0"></div>
 												<div class="card-body ps-0 bg-200">
 													<h5 class="fw-bold text-1000 text-truncate">Brown
@@ -310,7 +322,8 @@
 										<div class="col-sm-6 col-md-3 mb-3 mb-md-0 h-100">
 											<div class="card card-span h-100 text-white">
 												<img class="img-fluid h-100"
-													src="${pageContext.request.contextPath}/resources/assets/img/gallery/wrist-watch.png" alt="..." />
+													src="${pageContext.request.contextPath}/resources/assets/img/gallery/wrist-watch.png"
+													alt="..." />
 												<div class="card-img-overlay ps-0"></div>
 												<div class="card-body ps-0 bg-200">
 													<h5 class="fw-bold text-1000 text-truncate">Silverside
@@ -330,7 +343,8 @@
 										<div class="col-sm-6 col-md-3 mb-3 mb-md-0 h-100">
 											<div class="card card-span h-100 text-white">
 												<img class="img-fluid h-100"
-													src="${pageContext.request.contextPath}/resources/assets/img/gallery/flat-hill.png" alt="..." />
+													src="${pageContext.request.contextPath}/resources/assets/img/gallery/flat-hill.png"
+													alt="..." />
 												<div class="card-img-overlay ps-0"></div>
 												<div class="card-body ps-0 bg-200">
 													<h5 class="fw-bold text-1000 text-truncate">Flat Hill
@@ -346,7 +360,8 @@
 										<div class="col-sm-6 col-md-3 mb-3 mb-md-0 h-100">
 											<div class="card card-span h-100 text-white">
 												<img class="img-fluid h-100"
-													src="${pageContext.request.contextPath}/resources/assets/img/gallery/blue-ring.png" alt="..." />
+													src="${pageContext.request.contextPath}/resources/assets/img/gallery/blue-ring.png"
+													alt="..." />
 												<div class="card-img-overlay ps-0"></div>
 												<div class="card-body ps-0 bg-200">
 													<h5 class="fw-bold text-1000 text-truncate">Ocean Blue
@@ -362,7 +377,8 @@
 										<div class="col-sm-6 col-md-3 mb-3 mb-md-0 h-100">
 											<div class="card card-span h-100 text-white">
 												<img class="img-fluid h-100"
-													src="${pageContext.request.contextPath}/resources/assets/img/gallery/wallet.png" alt="..." />
+													src="${pageContext.request.contextPath}/resources/assets/img/gallery/wallet.png"
+													alt="..." />
 												<div class="card-img-overlay ps-0"></div>
 												<div class="card-body ps-0 bg-200">
 													<h5 class="fw-bold text-1000 text-truncate">Brown
@@ -378,7 +394,8 @@
 										<div class="col-sm-6 col-md-3 mb-3 mb-md-0 h-100">
 											<div class="card card-span h-100 text-white">
 												<img class="img-fluid h-100"
-													src="${pageContext.request.contextPath}/resources/assets/img/gallery/wrist-watch.png" alt="..." />
+													src="${pageContext.request.contextPath}/resources/assets/img/gallery/wrist-watch.png"
+													alt="..." />
 												<div class="card-img-overlay ps-0"></div>
 												<div class="card-body ps-0 bg-200">
 													<h5 class="fw-bold text-1000 text-truncate">Silverside
@@ -398,7 +415,8 @@
 										<div class="col-sm-6 col-md-3 mb-3 mb-md-0 h-100">
 											<div class="card card-span h-100 text-white">
 												<img class="img-fluid h-100"
-													src="${pageContext.request.contextPath}/resources/assets/img/gallery/flat-hill.png" alt="..." />
+													src="${pageContext.request.contextPath}/resources/assets/img/gallery/flat-hill.png"
+													alt="..." />
 												<div class="card-img-overlay ps-0"></div>
 												<div class="card-body ps-0 bg-200">
 													<h5 class="fw-bold text-1000 text-truncate">Flat Hill
@@ -414,7 +432,8 @@
 										<div class="col-sm-6 col-md-3 mb-3 mb-md-0 h-100">
 											<div class="card card-span h-100 text-white">
 												<img class="img-fluid h-100"
-													src="${pageContext.request.contextPath}/resources/assets/img/gallery/blue-ring.png" alt="..." />
+													src="${pageContext.request.contextPath}/resources/assets/img/gallery/blue-ring.png"
+													alt="..." />
 												<div class="card-img-overlay ps-0"></div>
 												<div class="card-body ps-0 bg-200">
 													<h5 class="fw-bold text-1000 text-truncate">Ocean Blue
@@ -430,7 +449,8 @@
 										<div class="col-sm-6 col-md-3 mb-3 mb-md-0 h-100">
 											<div class="card card-span h-100 text-white">
 												<img class="img-fluid h-100"
-													src="${pageContext.request.contextPath}/resources/assets/img/gallery/wallet.png" alt="..." />
+													src="${pageContext.request.contextPath}/resources/assets/img/gallery/wallet.png"
+													alt="..." />
 												<div class="card-img-overlay ps-0"></div>
 												<div class="card-body ps-0 bg-200">
 													<h5 class="fw-bold text-1000 text-truncate">Brown
@@ -446,7 +466,8 @@
 										<div class="col-sm-6 col-md-3 mb-3 mb-md-0 h-100">
 											<div class="card card-span h-100 text-white">
 												<img class="img-fluid h-100"
-													src="${pageContext.request.contextPath}/resources/assets/img/gallery/wrist-watch.png" alt="..." />
+													src="${pageContext.request.contextPath}/resources/assets/img/gallery/wrist-watch.png"
+													alt="..." />
 												<div class="card-img-overlay ps-0"></div>
 												<div class="card-body ps-0 bg-200">
 													<h5 class="fw-bold text-1000 text-truncate">Silverside
@@ -513,7 +534,8 @@
 					</div>
 					<div class="col-md-6">
 						<div class="card card-span h-100 text-white">
-							<img class="card-img h-100" src="${pageContext.request.contextPath}/resources/assets/img/gallery/outfit.png"
+							<img class="card-img h-100"
+								src="${pageContext.request.contextPath}/resources/assets/img/gallery/outfit.png"
 								alt="..." />
 							<div class="card-img-overlay bg-dark-gradient">
 								<div class="d-flex align-items-end justify-content-center h-100">
