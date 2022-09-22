@@ -7,4 +7,5 @@ import com.example.finalproject.HomeController;
 
 public class MemberController {
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
+	
 }
