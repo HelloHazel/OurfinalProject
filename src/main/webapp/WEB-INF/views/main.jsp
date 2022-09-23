@@ -134,7 +134,7 @@
 							src="${pageContext.request.contextPath}/resources/assets/img/gallery/logo3.png"
 							alt="logo" />
 							<h1 class="fw-normal">사랑스러운 내 반려견을 위한 모든 것</h1>
-							<h1 class="fs-4 fs-lg-8 fs-md-6 fw-bold">오독오독</h1>
+							<h1 class="fs-4 fs-lg-8 fs-md-6 fw-bold">오독오독!</h1>
 						</div>
 					</div>
 				</div>
