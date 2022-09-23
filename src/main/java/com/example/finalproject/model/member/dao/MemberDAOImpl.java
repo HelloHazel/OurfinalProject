@@ -2,20 +2,29 @@ package com.example.finalproject.model.member.dao;
 
 import java.util.List;
 
+import javax.inject.Inject;
+
+import org.apache.ibatis.session.SqlSession;
+import org.springframework.stereotype.Repository;
+
 import com.example.finalproject.model.member.dto.MemberDTO;
 
+@Repository
 public class MemberDAOImpl implements MemberDAO {
 
+	@Inject
+	SqlSession sqlSession;
+	
 	@Override
 	public boolean loginCheck(MemberDTO dto) {
-		// TODO Auto-generated method stub
-		return false;
+		String name = sqlSession.selectOne("member.login_check",dto);
+		//조건식 ? true일때 값 : false일때 값
+		return (name==null) ? false : true;
 	}
 
 	@Override
 	public MemberDTO viewMember(String userid) {
-		// TODO Auto-generated method stub
-		return null;
+		return sqlSession.selectOne("member.viewMember",userid);
 	}
 
 	@Override
@@ -27,7 +36,7 @@ public class MemberDAOImpl implements MemberDAO {
 	@Override
 	public void insertMember(MemberDTO dto) {
 		// TODO Auto-generated method stub
-
+		
 	}
 
 	@Override
@@ -39,13 +48,15 @@ public class MemberDAOImpl implements MemberDAO {
 	@Override
 	public void updateMember(MemberDTO dto) {
 		// TODO Auto-generated method stub
-
+		
 	}
 
 	@Override
 	public void deleteMember(String userid) {
 		// TODO Auto-generated method stub
-
+		
 	}
+	
+	
 
 }

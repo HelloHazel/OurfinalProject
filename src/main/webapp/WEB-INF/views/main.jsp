@@ -1,9 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="EUC-KR"%>
-
 <!DOCTYPE html>
 <html lang="KR" dir="ltr">
-
+<%@ include file="include/header.jsp" %>
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -135,10 +134,19 @@
                   <circle cx="12" cy="7" r="4"></circle>
                 </svg></a>
                 
-                <!-- 로그인/회원가입 (추후 디자인 수정 예정) -->
-                
-					<button class="btn btn-lg btn-success btn-block" type="submit">로그인</button>
+               <!-- 로그인/회원가입 (추후 디자인 수정 예정) -->
+              <c:choose>
+			<c:when test="${sessionScope.userid == null}">
+			<!-- 로그인하지 않은 상태 -->
+			<a class="btn btn-lg btn-success btn-block" href="${path}/member/login.do">로그인</a>
 			<button class="btn btn-lg btn-secondary btn-block" type="button" onclick="#">회원가입</button>
+			</c:when>
+			<c:otherwise>
+			<!-- 로그인한 상태 -->
+			 	${sessionScope.name}님이 로그인 중입니다.
+			 	<a href="${path}/member/logout.do">로그아웃</a>
+			</c:otherwise>
+			</c:choose>
 					</form>
 				</div>
 			</div>

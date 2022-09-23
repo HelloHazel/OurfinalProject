@@ -2,6 +2,8 @@ package com.example.finalproject.model.member.dao;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import com.example.finalproject.model.member.dto.MemberDTO;
 
 public interface MemberDAO {
