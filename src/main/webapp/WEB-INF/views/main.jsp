@@ -138,7 +138,7 @@
               <c:choose>
 			<c:when test="${sessionScope.userid == null}">
 			<!-- 로그인하지 않은 상태 -->
-			<a class="btn btn-lg btn-success btn-block" href="${path}/member/login.do">로그인</a>
+			<a class="btn btn-lg btn-success btn-block" href="${pageContext.request.contextPath}/member/login.do">로그인</a>
 			<button class="btn btn-lg btn-secondary btn-block" type="button" onclick="#">회원가입</button>
 			</c:when>
 			<c:otherwise>
