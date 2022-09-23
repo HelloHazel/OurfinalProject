@@ -1,5 +1,7 @@
 package com.example.finalproject.model.shop.dto;
 
+import org.springframework.web.multipart.MultipartFile;
+
 public class ProductDTO {
 	
 	private int product_id;
@@ -8,6 +10,7 @@ public class ProductDTO {
 	private String product_desc;
 	private String product_kind;
 	private String product_url;
+	private MultipartFile file1; //첨부파일(db에는 없다)
 	//getter,setter,toString()
 	public int getProduct_id() {
 		return product_id;
@@ -45,11 +48,17 @@ public class ProductDTO {
 	public void setProduct_url(String product_url) {
 		this.product_url = product_url;
 	}
+	public MultipartFile getFile1() {
+		return file1;
+	}
+	public void setFile1(MultipartFile file1) {
+		this.file1 = file1;
+	}
 	@Override
 	public String toString() {
 		return "ProductDTO [product_id=" + product_id + ", product_name=" + product_name + ", price=" + price
 				+ ", product_desc=" + product_desc + ", product_kind=" + product_kind + ", product_url=" + product_url
-				+ "]";
+				+ ", file1=" + file1 + "]";
 	}
-
+	
 }
