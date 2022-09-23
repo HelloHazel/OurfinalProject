@@ -128,10 +128,13 @@
 
 			<div class="container">
 				<div class="row flex-center">
-					<div class="col-12 mb-10">
+					<div class="col-12 mb-10">						
 						<div class="d-flex align-items-center flex-column">
+						<img class="d-inline-block" style="display: block; margin: 0px auto; "
+							src="${pageContext.request.contextPath}/resources/assets/img/gallery/logo3.png"
+							alt="logo" />
 							<h1 class="fw-normal">사랑스러운 내 반려견을 위한 모든 것</h1>
-							<h1 class="fs-4 fs-lg-8 fs-md-6 fw-bold">오독오독</h1>
+							<h1 class="fs-4 fs-lg-8 fs-md-6 fw-bold">오독오독!</h1>
 						</div>
 					</div>
 				</div>
@@ -153,8 +156,8 @@
 								width="790" alt="..." />
 							<div class="card-img-overlay d-flex flex-center">
 								<a class="btn btn-lg btn-light"
-								style="color : white; background-color: rgba(0, 0, 128, 0.1); backdrop-filter: blur(10px); box-shadow: 2px 7px 15px 8px rgba(0, 0, 0, 0.3);"
-								 href="#!">product</a>
+									style="color: white; background-color: rgba(0, 0, 128, 0.1); backdrop-filter: blur(10px); box-shadow: 2px 7px 15px 8px rgba(0, 0, 0, 0.3);"
+									href="#!">product</a>
 							</div>
 						</div>
 					</div>
@@ -165,7 +168,7 @@
 								width="790" alt="..." />
 							<div class="card-img-overlay d-flex flex-center ">
 								<a class="btn btn-lg btn-light"
-									style="color : white; background-color: rgba(0, 0, 128, 0.1); backdrop-filter: blur(10px); box-shadow: 2px 7px 15px 8px rgba(0, 0, 0, 0.3);"
+									style="color: white; background-color: rgba(0, 0, 128, 0.1); backdrop-filter: blur(10px); box-shadow: 2px 7px 15px 8px rgba(0, 0, 0, 0.3);"
 									href="#!">Community </a>
 							</div>
 						</div>
