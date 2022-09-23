@@ -81,7 +81,9 @@
 					</ul>
 					<form class="d-flex">
 
-
+	
+	
+						<!-- 우측 아이콘 메뉴 -->
 						<!-- contact/Q&A 아이콘 -->
 						<a class="text-1000" href="#!"> <svg
 								class="feather feather-phone me-3"
@@ -132,6 +134,9 @@
                   <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
                   <circle cx="12" cy="7" r="4"></circle>
                 </svg></a>
+                
+                <!-- 로그인/회원가입 (추후 디자인 수정 예정) -->
+                
 					<button class="btn btn-lg btn-success btn-block" type="submit">로그인</button>
 			<button class="btn btn-lg btn-secondary btn-block" type="button" onclick="#">회원가입</button>
 					</form>
