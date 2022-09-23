@@ -64,6 +64,8 @@
 					aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>
+				
+				<!-- 메뉴 부분 -->
 				<div
 					class="collapse navbar-collapse border-top border-lg-0 mt-4 mt-lg-0"
 					id="navbarSupportedContent">
@@ -130,7 +132,8 @@
                   <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
                   <circle cx="12" cy="7" r="4"></circle>
                 </svg></a>
-
+					<button class="btn btn-lg btn-success btn-block" type="submit">로그인</button>
+			<button class="btn btn-lg btn-secondary btn-block" type="button" onclick="#">회원가입</button>
 					</form>
 				</div>
 			</div>
