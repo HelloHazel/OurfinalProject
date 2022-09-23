@@ -125,7 +125,7 @@
                 </svg></a>
 
 						<!-- 마이페이지 아이콘 -->
-						<a class="text-1000" href="#!"> <svg
+						<a class="text-1000" href="${pageContext.request.contextPath}/mypage/mypagemain.do"> <svg
 								class="feather feather-user me-3"
 								xmlns="http://www.w3.org/2000/svg" width="16" height="16"
 								viewBox="0 0 24 24" fill="none" stroke="currentColor"

@@ -9,6 +9,6 @@
 </head>
 <body>
 <%@ include file="../include/menu.jsp" %>
-
+<h2>마이페이지 메인입니다.</h2>
 </body>
 </html>
