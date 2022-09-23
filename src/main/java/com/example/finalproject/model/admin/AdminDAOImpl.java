@@ -1,4 +1,4 @@
-package com.example.finalproject.model.admin.dao;
+package com.example.finalproject.model.admin;
 
 import javax.inject.Inject;
 
