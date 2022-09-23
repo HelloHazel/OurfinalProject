@@ -47,8 +47,7 @@ public class MemberController {
 	public ModelAndView logout(HttpSession session, ModelAndView mav) {
 		memberService.logout(session);
 		//login.jsp로 이동
-		mav.setViewName("member/login");
-		mav.addObject("message", "logout");
+		mav.setViewName("main");
 		return mav;
 	}
 }
