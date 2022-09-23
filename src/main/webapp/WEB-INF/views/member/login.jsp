@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>로그인</title>
 <%@ include file="../include/header.jsp" %>
 <script>
 $(function(){
@@ -51,12 +51,6 @@ $(function(){
 					아이디 또는 비밀번호가 일치하지 않습니다.
 				</div>
 			</c:if>
-			<c:if test="${message == 'logout' }">
-				<div style="color:blue;">
-					로그아웃 처리되었습니다.
-				</div>
-			</c:if>
-			
 		</td>
 	</tr>
 </table>
