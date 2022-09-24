@@ -72,7 +72,7 @@
 						<li class="nav-item px-2"><a
 							class="nav-link fw-medium active" aria-current="page" href="#">Notice</a></li>
 						<li class="nav-item px-2"><a class="nav-link fw-medium"
-							href="#">Product</a></li>
+							href="${path}/shop/product/list.do">Product</a></li>
 						<li class="nav-item px-2"><a class="nav-link fw-medium"
 							href="#">Community</a></li>
 						<li class="nav-item px-2"><a class="nav-link fw-medium"

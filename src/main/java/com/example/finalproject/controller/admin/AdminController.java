@@ -9,6 +9,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.example.finalproject.model.member.dto.MemberDTO;
 import com.example.finalproject.service.admin.AdminService;
+import com.example.finalproject.service.shop.ProductService;
 
 @Controller
 @RequestMapping("admin/*")
