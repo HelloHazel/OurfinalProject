@@ -4,7 +4,7 @@ import javax.inject.Inject;
 
 import org.springframework.stereotype.Service;
 
-import com.example.finalproject.model.admin.dao.AdminDAO;
+import com.example.finalproject.model.admin.AdminDAO;
 import com.example.finalproject.model.member.dto.MemberDTO;
 
 @Service
