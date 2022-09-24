@@ -25,11 +25,11 @@ function product_write(){
 		$("#price").focus();//입력포커스 이동
 		return;//리턴값없이 함수 종료
 	}
-/* 	if(description==""){
+ 	if(description==""){
 		alert("상품설명을 입력하세요");
 		$("#description").focus();//입력포커스 이동
 		return;//리턴값없이 함수 종료
-	} */
+	} 
 	document.form1.action="${path}/shop/product/insert.do";
 	document.form1.submit();
 }

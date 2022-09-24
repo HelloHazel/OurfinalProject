@@ -70,7 +70,7 @@
 					id="navbarSupportedContent">
 					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 						<li class="nav-item px-2"><a
-							class="nav-link fw-medium active" aria-current="page" href="#">Notice</a></li>
+							class="nav-link fw-medium active" aria-current="page" href="${path}/notice/list.do">Notice</a></li>
 						<li class="nav-item px-2"><a class="nav-link fw-medium"
 							href="#">Product</a></li>
 						<li class="nav-item px-2"><a class="nav-link fw-medium"
@@ -136,7 +136,7 @@
                 
                <!-- 로그인/회원가입 (추후 디자인 수정 예정) -->
               <c:choose>
-			<c:when test="${sessionScope.userid == null}">
+			<c:when test="${sessionScope.userid == null || sessionScope.admin_userid == null }">
 			<!-- 로그인하지 않은 상태 -->
 			<a class="btn btn-lg btn-success btn-block" href="${pageContext.request.contextPath}/member/login.do">로그인</a>
 			<button class="btn btn-lg btn-secondary btn-block" type="button" onclick="#">회원가입</button>

@@ -7,7 +7,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="admin">
 	<select id="login_check" resultType="String">
 		select admin_name from admin
-		where admin_id=#{admin_id} and admin_passwd=#{admin_passwd}
+		where admin_userid=#{admin_userid} and admin_passwd=#{admin_passwd}
 	</select>
 </mapper>
 
