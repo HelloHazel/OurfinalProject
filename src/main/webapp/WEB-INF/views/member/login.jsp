@@ -54,7 +54,7 @@ $(function(){
 							<div class="col-lg-6">
 								<div class="p-5">
 									<div class="text-center">
-										<a href="${path}/"><h1 class="h4 text-gray-900 mb-4">오독오독</h1></a>
+										<a href="${path}/"><img alt="오독오독 로고" src="${path}/resources/assets/img/gallery/logo5.png" width="30%" height="auto"></a>
 									</div>
 									<form  name="user" method="post" action="${path}/member/login_check.do">
 										<div class="form-group">
