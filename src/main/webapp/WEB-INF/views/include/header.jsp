@@ -5,16 +5,20 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <c:set var="path" value="${pageContext.request.contextPath}" />
 <script src="${path}/include/jquery-3.6.0.min.js"></script>
-
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/resources/assets/css/theme.css">
+</head>
+<body>
 
 	<!-- ===============================================-->
 	<!--    Main Content-->
 	<!-- ===============================================-->
-	<main class="main" id="top">
+
+
+	<main class="main" id="top" >
 		<nav
-			class="navbar navbar-expand-lg navbar-light fixed-top py-3 d-block"
+			class="navbar navbar-expand-lg navbar-light fixed-top py-3 d-block" style="background-color: #FFE08C; background-size: cover; position : fixed;
+			top: 0; left: 0; right: 0;"
 			data-navbar-on-scroll="data-navbar-on-scroll">
 			<div class="container">
 				<a class="navbar-brand d-inline-flex" href="${path}/"><img
@@ -121,3 +125,4 @@
 			</div>
 		</nav>
 </main>
+</body>
