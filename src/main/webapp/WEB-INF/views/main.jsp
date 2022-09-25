@@ -1,156 +1,20 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="EUC-KR"%>
-<!DOCTYPE html>
-<html lang="KR" dir="ltr">
+ pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page session="false" %>
+<html>
 <%@ include file="include/header.jsp" %>
 <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
-
-<!-- ===============================================-->
-<!--    Document Title-->
-<!-- ===============================================-->
-<title>ø¿µ∂ø¿µ∂ | π›∑¡µøπ∞ ºÓ«Œ∏Ù</title>
-
-
-<!-- ===============================================-->
-<!--    Favicons-->
-<!-- ===============================================-->
-<link rel="apple-touch-icon" sizes="180x180"
-	href="${pageContext.request.contextPath}/resources/assets/img/favicons/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32"
-	href="${pageContext.request.contextPath}/resources/assets/img/favicons/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16"
-	href="${pageContext.request.contextPath}/resources/assets/img/favicons/favicon-16x16.png">
-<link rel="shortcut icon" type="image/x-icon"
-	href="${pageContext.request.contextPath}/resources/assets/img/favicons/favicon.ico">
-<link rel="manifest"
-	href="${pageContext.request.contextPath}/resources/assets/img/favicons/manifest.json">
-<meta name="msapplication-TileImage"
-	content="${pageContext.request.contextPath}/resources/assets/img/favicons/mstile-150x150.png">
-<meta name="theme-color" content="#ffffff">
-
-
-<!-- ===============================================-->
-<!--    Stylesheets-->
-<!-- ===============================================-->
-<link rel="stylesheet" type="text/css"
-	href="${pageContext.request.contextPath}/resources/assets/css/theme.css">
-
-
+<c:set var="path" value="${pageContext.request.contextPath}" />
 </head>
-
 
 <body>
 
-	<!-- ===============================================-->
-	<!--    Main Content-->
-	<!-- ===============================================-->
-	<main class="main" id="top">
-		<nav
-			class="navbar navbar-expand-lg navbar-light fixed-top py-3 d-block"
-			data-navbar-on-scroll="data-navbar-on-scroll">
-			<div class="container">
-				<a class="navbar-brand d-inline-flex" href="${Path}/"><img
-					class="d-inline-block"
-					src="${pageContext.request.contextPath}/resources/assets/img/gallery/logo.png"
-					alt="logo" /><span class="text-1000 fs-0 fw-bold ms-2">ø¿µ∂ø¿µ∂</span></a>
-				<button class="navbar-toggler collapsed" type="button"
-					data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-					aria-controls="navbarSupportedContent" aria-expanded="false"
-					aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
-				
-				<!-- ∏ﬁ¥∫ ∫Œ∫– -->
-				<div
-					class="collapse navbar-collapse border-top border-lg-0 mt-4 mt-lg-0"
-					id="navbarSupportedContent">
-					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-						<li class="nav-item px-2"><a
-							class="nav-link fw-medium active" aria-current="page" href="${path}/notice/list.do">Notice</a></li>
-						<li class="nav-item px-2"><a class="nav-link fw-medium"
-							href="${path}/shop/product/list.do">Product</a></li>
-						<li class="nav-item px-2"><a class="nav-link fw-medium"
-							href="#">Community</a></li>
-						<li class="nav-item px-2"><a class="nav-link fw-medium"
-							href="#">Q&A</a></li>
-					</ul>
-					<form class="d-flex">
-
-	
-	
-						<!-- øÏ√¯ æ∆¿Ãƒ‹ ∏ﬁ¥∫ -->
-						<!-- contact/Q&A æ∆¿Ãƒ‹ -->
-						<a class="text-1000" href="#!"> <svg
-								class="feather feather-phone me-3"
-								xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-								viewBox="0 0 24 24" fill="none" stroke="currentColor"
-								stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path
-									d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                </svg></a>
-
-						<!-- ¿ÂπŸ±∏¥œ æ∆¿Ãƒ‹ -->
-						<a class="text-1000" href="#!"> <svg
-								class="feather feather-shopping-cart me-3"
-								xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-								viewBox="0 0 24 24" fill="none" stroke="currentColor"
-								stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <circle cx="9" cy="21" r="1"></circle>
-                  <circle cx="20" cy="21" r="1"></circle>
-                  <path
-									d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
-                </svg></a>
-
-						<!-- ªÛ«∞ ∞Àªˆ æ∆¿Ãƒ‹ (« ø‰ æ¯¿ª Ω√ ¡¶∞≈ ∞°¥… -->
-						<a class="text-1000" href="#!"> <svg
-								class="feather feather-search me-3"
-								xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-								viewBox="0 0 24 24" fill="none" stroke="currentColor"
-								stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <circle cx="11" cy="11" r="8"></circle>
-                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                </svg></a>
-						<!-- ƒøπ¬¥œ∆º æ∆¿Ãƒ‹ -->
-						<a class="text-1000" href="#!"> <svg
-								class="feather feather-heart me-3"
-								xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-								viewBox="0 0 24 24" fill="none" stroke="currentColor"
-								stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path
-									d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
-                </svg></a>
-
-						<!-- ∏∂¿Ã∆‰¿Ã¡ˆ æ∆¿Ãƒ‹ -->
-						<a class="text-1000" href="${pageContext.request.contextPath}/mypage/mypagemain.do"> <svg
-								class="feather feather-user me-3"
-								xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-								viewBox="0 0 24 24" fill="none" stroke="currentColor"
-								stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                  <circle cx="12" cy="7" r="4"></circle>
-                </svg></a>
-                
-               <!-- ∑Œ±◊¿Œ/»∏ø¯∞°¿‘ (√ﬂ»ƒ µ¿⁄¿Œ ºˆ¡§ øπ¡§) -->
-              <c:choose>
-			<c:when test="${sessionScope.userid == null || sessionScope.admin_userid == null }">
-			<!-- ∑Œ±◊¿Œ«œ¡ˆ æ ¿∫ ªÛ≈¬ -->
-			<a class="btn btn-lg btn-success btn-block" href="${pageContext.request.contextPath}/member/login.do">∑Œ±◊¿Œ</a>
-			<button class="btn btn-lg btn-secondary btn-block" type="button" onclick="#">»∏ø¯∞°¿‘</button>
-			</c:when>
-			<c:otherwise>
-			<!-- ∑Œ±◊¿Œ«— ªÛ≈¬ -->
-			 	${sessionScope.name}¥‘¿Ã ∑Œ±◊¿Œ ¡ﬂ¿‘¥œ¥Ÿ.
-			 	<a href="${path}/member/logout.do">∑Œ±◊æ∆øÙ</a>
-			</c:otherwise>
-			</c:choose>
-					</form>
-				</div>
-			</div>
-		</nav>
 		<section
 			class="py-11 bg-light-gradient border-bottom border-white border-5">
 			<div class="bg-holder overlay overlay-light"
@@ -165,8 +29,8 @@
 								style="display: block; margin: 0px auto;"
 								src="${pageContext.request.contextPath}/resources/assets/img/gallery/logo3.png"
 								alt="logo" />
-							<h1 class="fw-normal">ªÁ∂˚Ω∫∑ØøÓ ≥ª π›∑¡∞ﬂ¿ª ¿ß«— ∏µÁ ∞Õ</h1>
-							<h1 class="fs-4 fs-lg-8 fs-md-6 fw-bold">ø¿µ∂ø¿µ∂</h1>
+							<h1 class="fw-normal">ÏÇ¨ÎûëÏä§Îü¨Ïö¥ ÎÇ¥ Î∞òÎ†§Í≤¨ÏùÑ ÏúÑÌïú Î™®Îì† Í≤É</h1>
+							<h1 class="fs-4 fs-lg-8 fs-md-6 fw-bold">Ïò§ÎèÖÏò§ÎèÖ</h1>
 						</div>
 					</div>
 				</div>

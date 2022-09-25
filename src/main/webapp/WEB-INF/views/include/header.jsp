@@ -2,11 +2,12 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <c:set var="path" value="${pageContext.request.contextPath}" />
 <script src="${path}/include/jquery-3.6.0.min.js"></script>
+
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/resources/assets/css/theme.css">
-
 
 	<!-- ===============================================-->
 	<!--    Main Content-->
@@ -16,7 +17,7 @@
 			class="navbar navbar-expand-lg navbar-light fixed-top py-3 d-block"
 			data-navbar-on-scroll="data-navbar-on-scroll">
 			<div class="container">
-				<a class="navbar-brand d-inline-flex" href="#"><img
+				<a class="navbar-brand d-inline-flex" href="${path}/"><img
 					class="d-inline-block"
 					src="${pageContext.request.contextPath}/resources/assets/img/gallery/logo.png"
 					alt="logo" /><span class="text-1000 fs-0 fw-bold ms-2">오독오독</span></a>
@@ -26,7 +27,6 @@
 					aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>
-
 				<!-- 메뉴 부분 -->
 				<div
 					class="collapse navbar-collapse border-top border-lg-0 mt-4 mt-lg-0"
