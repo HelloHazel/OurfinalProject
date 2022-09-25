@@ -12,7 +12,7 @@
 <!-- ===============================================-->
 <!--    Document Title-->
 <!-- ===============================================-->
-<title>majestic | Landing, Ecommerce &amp; Business Templatee</title>
+<title>오독오독 | 반려동물 쇼핑몰</title>
 
 
 <!-- ===============================================-->
@@ -53,7 +53,7 @@
 			class="navbar navbar-expand-lg navbar-light fixed-top py-3 d-block"
 			data-navbar-on-scroll="data-navbar-on-scroll">
 			<div class="container">
-				<a class="navbar-brand d-inline-flex" href="#"><img
+				<a class="navbar-brand d-inline-flex" href="${Path}/"><img
 					class="d-inline-block"
 					src="${pageContext.request.contextPath}/resources/assets/img/gallery/logo.png"
 					alt="logo" /><span class="text-1000 fs-0 fw-bold ms-2">오독오독</span></a>
@@ -136,7 +136,7 @@
                 
                <!-- 로그인/회원가입 (추후 디자인 수정 예정) -->
               <c:choose>
-			<c:when test="${sessionScope.userid == null || sessionScope.admin_userid == null }">
+			<c:when test="${sessionScope.userid == null}">
 			<!-- 로그인하지 않은 상태 -->
 			<a class="btn btn-lg btn-success btn-block" href="${pageContext.request.contextPath}/member/login.do">로그인</a>
 			<button class="btn btn-lg btn-secondary btn-block" type="button" onclick="#">회원가입</button>
