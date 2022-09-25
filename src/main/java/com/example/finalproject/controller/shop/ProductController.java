@@ -11,7 +11,7 @@ import com.example.finalproject.service.shop.ProductService;
 
 @Controller
 @RequestMapping("shop/product/*")//공통 URL 처리 
-public class ProdouctController {
+public class ProductController {
 
 	@Inject
 	ProductService productService; //controller는 service와 연결
