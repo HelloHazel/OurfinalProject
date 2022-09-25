@@ -36,7 +36,7 @@ public class AdminController {
 				//일반사용자용 세션변수
 				session.setAttribute("userid", dto.getUserid());
 				session.setAttribute("name", name);
-				mav.setViewName("admin/admin");//admin.jsp로 이동
+				mav.setViewName("admin/admin_menu");//admin_menu.jsp로 이동
 			}else {//로그인 실패
 				mav.setViewName("admin/login");
 				mav.addObject("message", "error");
@@ -47,6 +47,6 @@ public class AdminController {
 		@RequestMapping("logout.do")
 		public String logout(HttpSession session) {
 			session.invalidate();
-			return "redirect:/admin/login.do";
+			return "redirect:/member/login.do";
 		}
 }
