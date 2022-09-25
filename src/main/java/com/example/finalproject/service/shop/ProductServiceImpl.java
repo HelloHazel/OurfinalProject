@@ -1,28 +1,28 @@
-package com.example.finalproject.model.shop.dao;
+package com.example.finalproject.service.shop;
 
 import java.util.List;
 
 import javax.inject.Inject;
 
-import org.apache.ibatis.session.SqlSession;
-import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 
+import com.example.finalproject.model.shop.dao.ProductDAO;
 import com.example.finalproject.model.shop.dto.ProductDTO;
 
-@Repository //실질적인 DAO임을 알려주는 작업 
-public class ProductDAOImpl implements ProductDAO {
+@Service
+public class ProductServiceImpl implements ProductService {
 	
-	@Inject
-	SqlSession sqlSession;
+	@Inject //service는 dao랑 연결
+	ProductDAO productDao;
 
 	@Override
-	public List<ProductDTO> listProduct() { //목록보기
-		return sqlSession.selectList("product.product_list");
+	public List<ProductDTO> listProduct() {
+		return productDao.listProduct();
 	}
 
 	@Override
 	public ProductDTO detailProduct(int product_id) {
-		return sqlSession.selectOne("product.detail_product", product_id); //해당되는 productid
+		return productDao.detailProduct(product_id);
 	}
 
 	@Override
