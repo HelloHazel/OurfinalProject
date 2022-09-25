@@ -14,10 +14,11 @@
 	<!--    Main Content-->
 	<!-- ===============================================-->
 
-			<div >
+
 	<main class="main" id="top" >
 		<nav
-			class="navbar navbar-expand-lg navbar-light fixed-top py-3 d-block" style="background-color: #FFE08C; background-size: cover;"
+			class="navbar navbar-expand-lg navbar-light fixed-top py-3 d-block" style="background-color: #FFE08C; background-size: cover; position : fixed;
+			top: 0; left: 0; right: 0;"
 			data-navbar-on-scroll="data-navbar-on-scroll">
 			<div class="container">
 				<a class="navbar-brand d-inline-flex" href="${path}/"><img
@@ -124,5 +125,4 @@
 			</div>
 		</nav>
 </main>
-</div>
 </body>
