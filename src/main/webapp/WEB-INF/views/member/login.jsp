@@ -8,8 +8,6 @@
 <head>
 <meta charset="utf-8">
 <title>로그인</title>
-<%@ include file="../include/header.jsp" %>
-
 <script src="${path}/include/jquery-3.6.0.min.js"></script>
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/resources/assets/css/theme.css">
@@ -56,7 +54,7 @@ $(function(){
 							<div class="col-lg-6">
 								<div class="p-5">
 									<div class="text-center">
-										<h1 class="h4 text-gray-900 mb-4">오독오독</h1>
+										<a href="${path}/"><h1 class="h4 text-gray-900 mb-4">오독오독</h1></a>
 									</div>
 									<form  name="user" method="post" action="${path}/member/login_check.do">
 										<div class="form-group">
