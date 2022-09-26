@@ -77,7 +77,7 @@ $(function(){
 									</form>
 									<hr>
 									<div class="text-center">
-										<a class="small" href="forgot-password.html">아이디 찾기</a> |
+										<a class="small" href="${path}/member/findId.do">아이디 찾기</a> |
 										<a class="small" href="forgot-password.html">비밀번호 찾기</a> |
 										<a class="small" href="${path}/member/join.do">회원가입</a>
 									</div>

@@ -30,7 +30,9 @@
 					aria-controls="navbarSupportedContent" aria-expanded="false"
 					aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
-				</button>	
+				</button>
+				<c:choose>
+				<c:when test="${sessionScope.userid == null || sessionScope.userid != 'admin'}">
 				<!-- 메뉴 부분 -->
 				<div
 					class="collapse navbar-collapse border-top border-lg-0 mt-4 mt-lg-0"
@@ -122,6 +124,25 @@
 						</c:choose>
 					</form>
 				</div>
+				</c:when>
+				<c:when test="${sessionScope.userid == 'admin'}">
+				<c:choose>
+							<c:when
+								test="${sessionScope.userid == null}">
+								<!-- 로그인하지 않은 상태 -->
+								<a class="btn btn-lg btn-success btn-block"
+									href="${pageContext.request.contextPath}/member/login.do">로그인</a>
+								<button class="btn btn-lg btn-secondary btn-block" type="button"
+									onclick="#">회원가입</button>
+							</c:when>
+							<c:otherwise>
+								<!-- 로그인한 상태 -->
+			 				${sessionScope.name}님이 로그인 중입니다.
+			 				<a href="${path}/member/logout.do">로그아웃</a>
+							</c:otherwise>
+						</c:choose>
+				</c:when>
+				</c:choose>
 			</div>
 		</nav>
 </main>

@@ -50,4 +50,9 @@ public class MemberController {
 		mav.setViewName("main");
 		return mav;
 	}
+	
+	@RequestMapping("findId.do")
+	public String findId() {
+		return "member/findId";
+	}
 }
