@@ -39,7 +39,7 @@ function drawChart(){
 </script>
 </head>
 <body>
-<%@ include file="../include/admin_menu.jsp" %>
+<%@ include file="../include/menu.jsp" %>
 <div id="chart_div" style="width: 600px; height: 440px"></div>
 <button id="btn" type="button" onclick="drawChart()">refresh</button>
 

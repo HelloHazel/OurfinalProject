@@ -47,25 +47,5 @@
 	<!-- aop의 설정으로 Proxy 객체를 자동으로 생성 -->
 	<aop:aspectj-autoproxy></aop:aspectj-autoproxy>
 	
-	<!-- 인터셉터 빈을 등록 -->	
-	<beans:bean id="adminInterceptor" 
-	class="com.example.finalproject.interceptor.AdminInterceptor" >
-	</beans:bean>
-	
-	<!-- 인터셉터 호출을 위한 url mapping -->
-	<interceptors>
-	 <interceptor>
-	 <mapping path="/chart/**" />
-	  <mapping path="/admin/write.do" />
-	  <mapping path="/admin/list.do" />
-	  <mapping path="/shop/product/insert.do" />
-	  <mapping path="/notice/write.do" />
-	 <mapping path="/notice/insert.do" />
-	 <mapping path="/notice/update.do" />
-	 <mapping path="/notice/delete.do" />
-	  <beans:ref bean="adminInterceptor" />
-	 </interceptor>
-	 
-	</interceptors>
 	
 </beans:beans>
