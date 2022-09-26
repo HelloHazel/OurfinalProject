@@ -23,7 +23,7 @@ public class CartServiceImpl implements CartService {
 
 	@Override
 	public void insert(CartDTO dto) {
-		// TODO Auto-generated method stub
+		cartDao.insert(dto);//dao와 연결
 
 	}
 
@@ -34,14 +34,13 @@ public class CartServiceImpl implements CartService {
 
 	@Override
 	public void delete(int cart_no) {
-		// TODO Auto-generated method stub
+		cartDao.delete(cart_no);
 
 	}
 
 	@Override
 	public void deleteAll(String userid) {
-		// TODO Auto-generated method stub
-
+		cartDao.deleteAll(userid);
 	}
 
 	@Override
@@ -52,8 +51,7 @@ public class CartServiceImpl implements CartService {
 
 	@Override
 	public int sumMoney(String userid) {
-		// TODO Auto-generated method stub
-		return 0;
+		return cartDao.sumMoney(userid);
 	}
 
 	@Override
@@ -70,7 +68,7 @@ public class CartServiceImpl implements CartService {
 
 	@Override
 	public void modifyCart(CartDTO dto) {
-		// TODO Auto-generated method stub
+		cartDao.modifyCart(dto);
 
 	}
 
