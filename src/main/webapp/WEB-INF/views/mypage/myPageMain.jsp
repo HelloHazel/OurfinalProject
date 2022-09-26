@@ -159,12 +159,9 @@
 </svg>
 <br>
 <br>
-
-
 <br>
-<div class="container">
-	<div class="row">
-	<div class="col-3">
+
+
 <main class="d-flex flex-nowrap">
   <div class="d-flex flex-column flex-shrink-0 p-3 text-bg-dark" style="width: 280px;">
     <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
@@ -219,10 +216,7 @@
  
   <div class="b-example-divider b-example-vr"></div>
 
- 
-</main>
-		</div>
-		<div class="col-9">
+		 <div>
 		<h1>여기는 컨텐츠 부분</h1>
 		<h1>여기는 컨텐츠 부분</h1>
 		<h1>여기는 컨텐츠 부분</h1>
@@ -232,8 +226,11 @@
 		<h1>여기는 컨텐츠 부분</h1>
 		</div>
 		
-	</div>
-</div>
+</main>
+		
+	
+		
+
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
       <script src="sidebars.js"></script>
   </body>
