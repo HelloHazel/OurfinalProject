@@ -68,7 +68,7 @@ $(function(){ //자동으로 실행되는 코드
 	
 	//목록 버튼
 	$("#btnList").click(function(){
-		location.href="${path}/board/list.do";
+		location.href="${path}/notice/list.do";
 	});
 	//수정 버튼
 	$("#btnUpdate").click(function(){
@@ -81,13 +81,13 @@ $(function(){ //자동으로 실행되는 코드
 				+$(this).val()+"'>";
 		});
 		$("#form1").append(str);
-		document.form1.action="${path}/board/update.do";
+		document.form1.action="${path}/notice/update.do";
 		document.form1.submit();
 	});
 	//삭제 버튼
 	$("#btnDelete").click(function(){
 		if(confirm("삭제하시겠습니까?")){
-			document.form1.action="${path}/board/delete.do";
+			document.form1.action="${path}/notice/delete.do";
 			document.form1.submit();
 		}
 	});
@@ -185,7 +185,7 @@ function changeDate(date){
 function listAttach(){
 	$.ajax({
 		type: "post",
-		url: "${path}/board/getAttach/${dto.bno}",
+		url: "${path}/notice/getAttach/${dto.bno}",
 		success: function(list){
 // Controller에서 List<String>타입으로 넘어온 값을 처리하기 위해 json으로 처리
 			// list : json
@@ -220,7 +220,7 @@ background-color: gray;
 <%@ include file="../include/menu.jsp" %>
 <h2>게시물 보기</h2>
 <form id="form1" name="form1" method="post"
-action="${path}/board/insert.do">
+action="${path}/notice/insert.do">
 <div>제목 <input name="title" id="title" size="80"
 				value="${dto.title}"
 				placeholder="제목을 입력하세요">

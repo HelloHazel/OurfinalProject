@@ -8,7 +8,7 @@
 <%@ include file="../include/header.jsp" %>
 </head>
 <body>
-<%@ include file="../include/admin_menu.jsp" %>
+<%@ include file="../include/menu.jsp" %>
 <h2>
  ${sessionScope.admin_name}(${sessionScope.admin_userid})님 환영합니다.
 </h2>
