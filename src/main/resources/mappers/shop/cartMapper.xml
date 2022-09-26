@@ -13,6 +13,36 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		where m.userid=c.userid and p.product_id=c.product_id
 		    and m.userid=#{userid}
 	</select>
+	
+	<insert id="insert">
+	insert into cart (cart_no,userid,product_id,amount) values
+	(cart_seq.nextval,#{userid},#{product_id},#{amount})
+	</insert>
+	
+	<select id="sumMoney" resultType="int">
+	select nvl(sum(price*amount), 0) money
+	from product p, cart c
+	where p.product_id=c.product_id and userid=#{userid}
+	</select>
+	
+	<!-- 장바구니 개별 상품 삭제 -->
+	<delete id="delete">
+	delete from cart
+	where cart_no=#{cart_no}
+	</delete>
+	
+	<!-- 장바구니 비우기 -->
+	<delete id="deleteAll">
+	delete from cart
+	where userid=#{userid}
+	</delete>
+	
+	<!-- 장바구니 수정 -->
+	<update id="modifyCart">
+	update cart
+	set amount=#{amount}
+	where cart_no=#{cart_no}
+	</update>
 </mapper>
 
 
