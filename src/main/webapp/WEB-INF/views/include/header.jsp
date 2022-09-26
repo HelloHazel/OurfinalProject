@@ -30,10 +30,7 @@
 					aria-controls="navbarSupportedContent" aria-expanded="false"
 					aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
-				</button>
-				<c:choose>
-				<!-- 관리자가 아니라면 -->
-				<c:when test="${sessionScope.userid != 'admin'}" >				
+				</button>	
 				<!-- 메뉴 부분 -->
 				<div
 					class="collapse navbar-collapse border-top border-lg-0 mt-4 mt-lg-0"
@@ -125,8 +122,6 @@
 						</c:choose>
 					</form>
 				</div>
-				</c:when>
-				</c:choose>
 			</div>
 		</nav>
 </main>
