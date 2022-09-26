@@ -65,7 +65,7 @@
 
       .b-example-vr {
         flex-shrink: 0;
-        width: 1.5rem;
+        width: 0.5rem;
         height: 100vh;
       }
 
@@ -163,8 +163,8 @@
 
 
 <main class="d-flex flex-nowrap">
-  <div class="d-flex flex-column flex-shrink-0 p-3 text-bg-dark" style="width: 280px;">
-    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+  <div class="d-flex flex-column flex-shrink-0 p-3 text-bg-light" style="width: 280px;">
+    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
       <!-- <svg class="bi pe-none me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg> -->
       <span class="fs-4">마이 페이지</span>
     </a>
@@ -177,25 +177,25 @@
         </a>
       </li>
       <li>
-        <a href="#" class="nav-link text-white">
+        <a href="#" class="nav-link text-dark">
           <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#speedometer2"/></svg>
          문의하기
         </a>
       </li>
       <li>
-        <a href="#" class="nav-link text-white">
+        <a href="#" class="nav-link text-dark">
           <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#table"/></svg>
           나의 문의내역
         </a>
       </li>
       <li>
-        <a href="#" class="nav-link text-white">
+        <a href="#" class="nav-link text-dark">
           <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#grid"/></svg>
           나의 게시글
         </a>
       </li>
       <li>
-        <a href="#" class="nav-link text-white">
+        <a href="#" class="nav-link text-dark">
           <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#people-circle"/></svg>
           나의 리뷰
         </a>
@@ -203,20 +203,19 @@
     </ul>
     <hr>
     <div class="dropdown">
-      <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+      <a href="#" class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
         <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
         <strong>회원정보</strong>
       </a>
-      <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
+      <ul class="dropdown-menu dropdown-menu text-small shadow">
         <li><a class="dropdown-item" href="#">회원정보 확인/수정</a></li>
         <li><a class="dropdown-item" href="#">회원탈퇴</a></li>
       </ul>
     </div>
   </div>
  
-  <div class="b-example-divider b-example-vr"></div>
-
-		 <div>
+ <div class="b-example-divider b-example-vr"></div> 
+<div>
 		<h1>여기는 컨텐츠 부분</h1>
 		<h1>여기는 컨텐츠 부분</h1>
 		<h1>여기는 컨텐츠 부분</h1>
