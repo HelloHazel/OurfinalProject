@@ -16,14 +16,14 @@
 <body>
 
 	<section
-		class="py-11 bg-light-gradient border-bottom border-white border-5">
+		class="py-10 bg-light-gradient border-bottom border-white border-5">
 		<div class="bg-holder overlay overlay-light"
 			style="background-color: #FFE08C; background-size: cover;"></div>
 		<!--/.bg-holder-->
 
 		<div class="container">
 			<div class="row flex-center">
-				<div class="col-12 mb-10">
+				<div class="col-11 mb-10">
 					<div class="d-flex align-items-center flex-column">
 						<img class="d-inline-block"
 							style="display: block; margin: 0px auto;"
@@ -98,12 +98,12 @@
 									<div class="col-sm-6 col-md-3 mb-3 mb-md-0 h-100">
 										<div class="card card-span h-100 text-white">
 											<img class="img-fluid h-100"
-												src="${pageContext.request.contextPath}/resources/assets/img/gallery/flat-hill.png"
+												src="${path}/resources/assets/img/gallery/flat-hill.png"
 												alt="..." />
 											<div class="card-img-overlay ps-0"></div>
 											<div class="card-body ps-0 bg-200">
-												<h5 class="fw-bold text-1000 text-truncate">Flat Hill
-													Slingback</h5>
+												<h5 class="fw-bold text-1000 text-truncate">상품1
+													</h5>
 												<div class="fw-bold">
 													<span class="text-600 me-2 text-decoration-line-through">$200</span><span
 														class="text-primary">$175</span>
@@ -119,8 +119,7 @@
 												alt="..." />
 											<div class="card-img-overlay ps-0"></div>
 											<div class="card-body ps-0 bg-200">
-												<h5 class="fw-bold text-1000 text-truncate">Ocean Blue
-													Ring</h5>
+												<h5 class="fw-bold text-1000 text-truncate">상품2</h5>
 												<div class="fw-bold">
 													<span class="text-600 me-2 text-decoration-line-through">$200</span><span
 														class="text-primary">$175</span>
@@ -136,8 +135,7 @@
 												alt="..." />
 											<div class="card-img-overlay ps-0"></div>
 											<div class="card-body ps-0 bg-200">
-												<h5 class="fw-bold text-1000 text-truncate">Brown
-													Leathered Wallet</h5>
+												<h5 class="fw-bold text-1000 text-truncate">상품3</h5>
 												<div class="fw-bold">
 													<span class="text-600 me-2 text-decoration-line-through">$200</span><span
 														class="text-primary">$175</span>
@@ -153,8 +151,7 @@
 												alt="..." />
 											<div class="card-img-overlay ps-0"></div>
 											<div class="card-body ps-0 bg-200">
-												<h5 class="fw-bold text-1000 text-truncate">Silverside
-													Wristwatch</h5>
+												<h5 class="fw-bold text-1000 text-truncate">상품4</h5>
 												<div class="fw-bold">
 													<span class="text-600 me-2 text-decoration-line-through">$200</span><span
 														class="text-primary">$175</span>
@@ -174,8 +171,7 @@
 												alt="..." />
 											<div class="card-img-overlay ps-0"></div>
 											<div class="card-body ps-0 bg-200">
-												<h5 class="fw-bold text-1000 text-truncate">Flat Hill
-													Slingback</h5>
+												<h5 class="fw-bold text-1000 text-truncate">상품1</h5>
 												<div class="fw-bold">
 													<span class="text-600 me-2 text-decoration-line-through">$200</span><span
 														class="text-primary">$175</span>
@@ -191,8 +187,7 @@
 												alt="..." />
 											<div class="card-img-overlay ps-0"></div>
 											<div class="card-body ps-0 bg-200">
-												<h5 class="fw-bold text-1000 text-truncate">Ocean Blue
-													Ring</h5>
+												<h5 class="fw-bold text-1000 text-truncate">상품2</h5>
 												<div class="fw-bold">
 													<span class="text-600 me-2 text-decoration-line-through">$200</span><span
 														class="text-primary">$175</span>
@@ -208,8 +203,7 @@
 												alt="..." />
 											<div class="card-img-overlay ps-0"></div>
 											<div class="card-body ps-0 bg-200">
-												<h5 class="fw-bold text-1000 text-truncate">Brown
-													Leathered Wallet</h5>
+												<h5 class="fw-bold text-1000 text-truncate">상품3</h5>
 												<div class="fw-bold">
 													<span class="text-600 me-2 text-decoration-line-through">$200</span><span
 														class="text-primary">$175</span>
@@ -313,8 +307,7 @@
 												alt="..." />
 											<div class="card-img-overlay ps-0"></div>
 											<div class="card-body ps-0 bg-200">
-												<h5 class="fw-bold text-1000 text-truncate">Flat Hill
-													Slingback</h5>
+												<h5 class="fw-bold text-1000 text-truncate">상품1</h5>
 												<div class="fw-bold">
 													<span class="text-600 me-2 text-decoration-line-through">$200</span><span
 														class="text-primary">$175</span>
@@ -330,8 +323,7 @@
 												alt="..." />
 											<div class="card-img-overlay ps-0"></div>
 											<div class="card-body ps-0 bg-200">
-												<h5 class="fw-bold text-1000 text-truncate">Ocean Blue
-													Ring</h5>
+												<h5 class="fw-bold text-1000 text-truncate">상품2</h5>
 												<div class="fw-bold">
 													<span class="text-600 me-2 text-decoration-line-through">$200</span><span
 														class="text-primary">$175</span>
@@ -347,8 +339,7 @@
 												alt="..." />
 											<div class="card-img-overlay ps-0"></div>
 											<div class="card-body ps-0 bg-200">
-												<h5 class="fw-bold text-1000 text-truncate">Brown
-													Leathered Wallet</h5>
+												<h5 class="fw-bold text-1000 text-truncate">상품3</h5>
 												<div class="fw-bold">
 													<span class="text-600 me-2 text-decoration-line-through">$200</span><span
 														class="text-primary">$175</span>
@@ -364,8 +355,7 @@
 												alt="..." />
 											<div class="card-img-overlay ps-0"></div>
 											<div class="card-body ps-0 bg-200">
-												<h5 class="fw-bold text-1000 text-truncate">Silverside
-													Wristwatch</h5>
+												<h5 class="fw-bold text-1000 text-truncate">상품4</h5>
 												<div class="fw-bold">
 													<span class="text-600 me-2 text-decoration-line-through">$200</span><span
 														class="text-primary">$175</span>
@@ -404,9 +394,9 @@
 
 
 
-	<section class="mt-5">
+	<section class="mt-10">
 		<div class="container" >
-			<div class="row h-100">
+			<div class="row h-100 mt-8">
 				<div class="col-lg-7 mx-auto text-center mb-6 ">
 					<h5 class="fw-bold fs-3 fs-lg-5 lh-sm mb-3">Best Sellers</h5>
 				</div>
@@ -422,8 +412,7 @@
 												src="assets/img/gallery/handbag.png" alt="..." />
 											<div class="card-img-overlay ps-0"></div>
 											<div class="card-body ps-0 bg-200">
-												<h5 class="fw-bold text-1000 text-truncate">Marie
-													Claire Handbag</h5>
+												<h5 class="fw-bold text-1000 text-truncate">베스트 상품1</h5>
 												<div class="fw-bold">
 													<span class="text-600 me-2 text-decoration-line-through">$399</span><span
 														class="text-danger">$365</span>
@@ -438,8 +427,7 @@
 												src="assets/img/gallery/earrings.png" alt="..." />
 											<div class="card-img-overlay ps-0"></div>
 											<div class="card-body ps-0 bg-200">
-												<h5 class="fw-bold text-1000 text-truncate">Red Gem
-													Earrings</h5>
+												<h5 class="fw-bold text-1000 text-truncate">베스트 상품2</h5>
 												<div class="fw-bold">
 													<span class="text-600 me-2 text-decoration-line-through">$489</span><span
 														class="text-danger">$466</span>
@@ -454,8 +442,7 @@
 												src="assets/img/gallery/lathered-wristwatch.png" alt="..." />
 											<div class="card-img-overlay ps-0"></div>
 											<div class="card-body ps-0 bg-200">
-												<h5 class="fw-bold text-1000 text-truncate">Black
-													Leathered Wristwatch</h5>
+												<h5 class="fw-bold text-1000 text-truncate">베스트 상품3</h5>
 												<div class="fw-bold">
 													<span class="text-600 me-2 text-decoration-line-through">$799</span><span
 														class="text-danger">$745</span>
@@ -470,8 +457,7 @@
 												alt="..." />
 											<div class="card-img-overlay ps-0"></div>
 											<div class="card-body ps-0 bg-200">
-												<h5 class="fw-bold text-1000 text-truncate">Red-White
-													Stripped Tie</h5>
+												<h5 class="fw-bold text-1000 text-truncate">베스트 상품4</h5>
 												<div class="fw-bold">
 													<span class="text-600 me-2 text-decoration-line-through">$299</span><span
 														class="text-danger">$243</span>
@@ -490,8 +476,7 @@
 												src="assets/img/gallery/handbag.png" alt="..." />
 											<div class="card-img-overlay ps-0"></div>
 											<div class="card-body ps-0 bg-200">
-												<h5 class="fw-bold text-1000 text-truncate">Marie
-													Claire Handbag</h5>
+												<h5 class="fw-bold text-1000 text-truncate">베스트 상품1</h5>
 												<div class="fw-bold">
 													<span class="text-600 me-2 text-decoration-line-through">$399</span><span
 														class="text-danger">$365</span>
@@ -506,8 +491,7 @@
 												src="assets/img/gallery/earrings.png" alt="..." />
 											<div class="card-img-overlay ps-0"></div>
 											<div class="card-body ps-0 bg-200">
-												<h5 class="fw-bold text-1000 text-truncate">Red Gem
-													Earrings</h5>
+												<h5 class="fw-bold text-1000 text-truncate">베스트 상품2</h5>
 												<div class="fw-bold">
 													<span class="text-600 me-2 text-decoration-line-through">$489</span><span
 														class="text-danger">$466</span>
@@ -522,8 +506,7 @@
 												src="assets/img/gallery/lathered-wristwatch.png" alt="..." />
 											<div class="card-img-overlay ps-0"></div>
 											<div class="card-body ps-0 bg-200">
-												<h5 class="fw-bold text-1000 text-truncate">Black
-													Leathered Wristwatch</h5>
+												<h5 class="fw-bold text-1000 text-truncate">베스트 상품3</h5>
 												<div class="fw-bold">
 													<span class="text-600 me-2 text-decoration-line-through">$799</span><span
 														class="text-danger">$745</span>
@@ -538,8 +521,7 @@
 												alt="..." />
 											<div class="card-img-overlay ps-0"></div>
 											<div class="card-body ps-0 bg-200">
-												<h5 class="fw-bold text-1000 text-truncate">Red-White
-													Stripped Tie</h5>
+												<h5 class="fw-bold text-1000 text-truncate">베스트 상품4</h5>
 												<div class="fw-bold">
 													<span class="text-600 me-2 text-decoration-line-through">$299</span><span
 														class="text-danger">$243</span>
@@ -558,8 +540,7 @@
 												src="assets/img/gallery/handbag.png" alt="..." />
 											<div class="card-img-overlay ps-0"></div>
 											<div class="card-body ps-0 bg-200">
-												<h5 class="fw-bold text-1000 text-truncate">Marie
-													Claire Handbag</h5>
+												<h5 class="fw-bold text-1000 text-truncate">베스트 상품1</h5>
 												<div class="fw-bold">
 													<span class="text-600 me-2 text-decoration-line-through">$399</span><span
 														class="text-danger">$365</span>
@@ -574,8 +555,7 @@
 												src="assets/img/gallery/earrings.png" alt="..." />
 											<div class="card-img-overlay ps-0"></div>
 											<div class="card-body ps-0 bg-200">
-												<h5 class="fw-bold text-1000 text-truncate">Red Gem
-													Earrings</h5>
+												<h5 class="fw-bold text-1000 text-truncate">베스트 상품2</h5>
 												<div class="fw-bold">
 													<span class="text-600 me-2 text-decoration-line-through">$489</span><span
 														class="text-danger">$466</span>
@@ -590,8 +570,7 @@
 												src="assets/img/gallery/lathered-wristwatch.png" alt="..." />
 											<div class="card-img-overlay ps-0"></div>
 											<div class="card-body ps-0 bg-200">
-												<h5 class="fw-bold text-1000 text-truncate">Black
-													Leathered Wristwatch</h5>
+												<h5 class="fw-bold text-1000 text-truncate">베스트 상품3</h5>
 												<div class="fw-bold">
 													<span class="text-600 me-2 text-decoration-line-through">$799</span><span
 														class="text-danger">$745</span>
@@ -606,8 +585,7 @@
 												alt="..." />
 											<div class="card-img-overlay ps-0"></div>
 											<div class="card-body ps-0 bg-200">
-												<h5 class="fw-bold text-1000 text-truncate">Red-White
-													Stripped Tie</h5>
+												<h5 class="fw-bold text-1000 text-truncate">베스트 상품4</h5>
 												<div class="fw-bold">
 													<span class="text-600 me-2 text-decoration-line-through">$299</span><span
 														class="text-danger">$243</span>
@@ -626,8 +604,7 @@
 												src="assets/img/gallery/handbag.png" alt="..." />
 											<div class="card-img-overlay ps-0"></div>
 											<div class="card-body ps-0 bg-200">
-												<h5 class="fw-bold text-1000 text-truncate">Marie
-													Claire Handbag</h5>
+												<h5 class="fw-bold text-1000 text-truncate">베스트 상품1</h5>
 												<div class="fw-bold">
 													<span class="text-600 me-2 text-decoration-line-through">$399</span><span
 														class="text-danger">$365</span>
@@ -642,8 +619,7 @@
 												src="assets/img/gallery/earrings.png" alt="..." />
 											<div class="card-img-overlay ps-0"></div>
 											<div class="card-body ps-0 bg-200">
-												<h5 class="fw-bold text-1000 text-truncate">Red Gem
-													Earrings</h5>
+												<h5 class="fw-bold text-1000 text-truncate">베스트 상품2</h5>
 												<div class="fw-bold">
 													<span class="text-600 me-2 text-decoration-line-through">$489</span><span
 														class="text-danger">$466</span>
@@ -658,8 +634,7 @@
 												src="assets/img/gallery/lathered-wristwatch.png" alt="..." />
 											<div class="card-img-overlay ps-0"></div>
 											<div class="card-body ps-0 bg-200">
-												<h5 class="fw-bold text-1000 text-truncate">Black
-													Leathered Wristwatch</h5>
+												<h5 class="fw-bold text-1000 text-truncate">베스트 상품3</h5>
 												<div class="fw-bold">
 													<span class="text-600 me-2 text-decoration-line-through">$799</span><span
 														class="text-danger">$745</span>
@@ -674,8 +649,7 @@
 												alt="..." />
 											<div class="card-img-overlay ps-0"></div>
 											<div class="card-body ps-0 bg-200">
-												<h5 class="fw-bold text-1000 text-truncate">Red-White
-													Stripped Tie</h5>
+												<h5 class="fw-bold text-1000 text-truncate">베스트 상품4</h5>
 												<div class="fw-bold">
 													<span class="text-600 me-2 text-decoration-line-through">$299</span><span
 														class="text-danger">$243</span>
@@ -706,13 +680,13 @@
 	</section>
 
 	
+<!-- 애견 신상품 코너 -->
 
-
-	<section class="py-0">
+	<section class="py-0 mt-8">
 		<div class="container">
 			<div class="row h-100">
 				<div class="col-lg-7 mx-auto text-center mb-6">
-					<h5 class="fs-3 fs-lg-5 lh-sm mb-3">Checkout New Arrivals</h5>
+					<h5 class="fs-3 fs-lg-5 lh-sm mb-3">신상품</h5>
 				</div>
 				<div class="col-12">
 					<div class="carousel slide" id="carouselNewArrivals"
@@ -727,8 +701,8 @@
 											<div
 												class="card-img-overlay bg-dark-gradient d-flex flex-column-reverse">
 												<h6 class="text-primary">$175</h6>
-												<p class="text-400 fs-1">Jumper set for Women</p>
-												<h4 class="text-light">Flat Hill Slingback</h4>
+												<p class="text-400 fs-1">우리 강아지를 위한 사료 (추후 멘트 수정)</p>
+												<h4 class="text-light">사료 브랜드 A</h4>
 											</div>
 											<a class="stretched-link" href="#"></a>
 										</div>
@@ -740,8 +714,8 @@
 											<div
 												class="card-img-overlay bg-dark-gradient d-flex flex-column-reverse">
 												<h6 class="text-primary">$175</h6>
-												<p class="text-400 fs-1">Jumper set for Women</p>
-												<h4 class="text-light">Ocean Blue Ring</h4>
+												<p class="text-400 fs-1">우리 강아지를 위한 사료</p>
+												<h4 class="text-light">사료 브랜드 B</h4>
 											</div>
 											<a class="stretched-link" href="#"></a>
 										</div>
@@ -753,8 +727,8 @@
 											<div
 												class="card-img-overlay bg-dark-gradient d-flex flex-column-reverse">
 												<h6 class="text-primary">$175</h6>
-												<p class="text-400 fs-1">Jumper set for Women</p>
-												<h4 class="text-light">Brown Leathered Wallet</h4>
+												<p class="text-400 fs-1">우리 강아지를 위한 사료</p>
+												<h4 class="text-light">사료 브랜드 C</h4>
 											</div>
 											<a class="stretched-link" href="#"></a>
 										</div>
@@ -766,8 +740,8 @@
 											<div
 												class="card-img-overlay bg-dark-gradient d-flex flex-column-reverse">
 												<h6 class="text-primary">$175</h6>
-												<p class="text-400 fs-1">Jumper set for Women</p>
-												<h4 class="text-light">Silverside Wristwatch</h4>
+												<p class="text-400 fs-1">우리 강아지를 위한 사료</p>
+												<h4 class="text-light">사료 브랜드 D</h4>
 											</div>
 											<a class="stretched-link" href="#"></a>
 										</div>
@@ -783,8 +757,8 @@
 											<div
 												class="card-img-overlay bg-dark-gradient d-flex flex-column-reverse">
 												<h6 class="text-primary">$175</h6>
-												<p class="text-400 fs-1">Jumper set for Women</p>
-												<h4 class="text-light">Flat Hill Slingback</h4>
+												<p class="text-400 fs-1">우리 강아지 오래오래 건강히!</p>
+												<h4 class="text-light">영양제 A</h4>
 											</div>
 											<a class="stretched-link" href="#"></a>
 										</div>
@@ -796,8 +770,8 @@
 											<div
 												class="card-img-overlay bg-dark-gradient d-flex flex-column-reverse">
 												<h6 class="text-primary">$175</h6>
-												<p class="text-400 fs-1">Jumper set for Women</p>
-												<h4 class="text-light">Ocean Blue Ring</h4>
+												<p class="text-400 fs-1">우리 강아지 오래오래 건강히!</p>
+												<h4 class="text-light">영양제 B</h4>
 											</div>
 											<a class="stretched-link" href="#"></a>
 										</div>
@@ -809,8 +783,8 @@
 											<div
 												class="card-img-overlay bg-dark-gradient d-flex flex-column-reverse">
 												<h6 class="text-primary">$175</h6>
-												<p class="text-400 fs-1">Jumper set for Women</p>
-												<h4 class="text-light">Brown Leathered Wallet</h4>
+												<p class="text-400 fs-1">우리 강아지 오래오래 건강히!</p>
+												<h4 class="text-light">영양제 C</h4>
 											</div>
 											<a class="stretched-link" href="#"></a>
 										</div>
@@ -822,8 +796,8 @@
 											<div
 												class="card-img-overlay bg-dark-gradient d-flex flex-column-reverse">
 												<h6 class="text-primary">$175</h6>
-												<p class="text-400 fs-1">Jumper set for Women</p>
-												<h4 class="text-light">Silverside Wristwatch</h4>
+												<p class="text-400 fs-1">우리 강아지 오래오래 건강히!</p>
+												<h4 class="text-light">영양제 D</h4>
 											</div>
 											<a class="stretched-link" href="#"></a>
 										</div>
@@ -960,9 +934,10 @@
 			</div>
 		</div>
 	</section>
+	
 	<section id="categoryWomen">
 		<div class="container">
-			<div class="row h-100">
+			<div class="row h-100 mt-8">
 				<div class="col-lg-7 mx-auto text-center mb-6">
 					<h5 class="fw-bold fs-3 fs-lg-5 lh-sm mb-3">Shop By Category</h5>
 				</div>
