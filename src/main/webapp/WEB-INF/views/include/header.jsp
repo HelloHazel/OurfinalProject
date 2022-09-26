@@ -126,6 +126,28 @@
 				</div>
 				</c:when>
 				<c:when test="${sessionScope.userid == 'admin'}">
+				<div
+					class="collapse navbar-collapse border-top border-lg-0 mt-4 mt-lg-0"
+					id="navbarSupportedContent">
+					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+						<li class="nav-item px-2"><a
+							class="nav-link fw-medium active" aria-current="page"
+							href="${path}/admin/noticeList.do">Notice</a></li>
+						<li class="nav-item px-2"><a class="nav-link fw-medium"
+							href="${path}/admin/list.do">ProductList</a></li>
+							<li class="nav-item px-2"><a class="nav-link fw-medium"
+							href="${path}/admin/write.do">ProductRegi</a></li>
+							<li class="nav-item px-2"><a class="nav-link fw-medium"
+							href="${path}/admin/orderList.do">Order</a></li>
+							<li class="nav-item px-2"><a class="nav-link fw-medium"
+							href="${path}/admin/memberList.do">Member</a></li>
+						<li class="nav-item px-2"><a class="nav-link fw-medium"
+							href="admin/inqueryList.do">1:1문의</a></li>
+					</ul>
+					<form class="d-flex">
+					</form>
+					</div>
+				
 				<c:choose>
 							<c:when
 								test="${sessionScope.userid == null}">
