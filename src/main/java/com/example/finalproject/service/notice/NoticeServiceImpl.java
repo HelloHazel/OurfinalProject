@@ -68,7 +68,7 @@ public class NoticeServiceImpl implements NoticeService {
 	@Transactional
 	@Override
 	public void delete(int bno) throws Exception {
-		//reply 레코드 삭제
+				//reply 레코드 삭제
 				//attach 레코드 삭제
 				//notice 레코드 삭제
 				noticeDao.delete(bno);

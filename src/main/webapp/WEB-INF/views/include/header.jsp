@@ -5,16 +5,20 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <c:set var="path" value="${pageContext.request.contextPath}" />
 <script src="${path}/include/jquery-3.6.0.min.js"></script>
-
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/resources/assets/css/theme.css">
+</head>
+<body>
 
 	<!-- ===============================================-->
 	<!--    Main Content-->
 	<!-- ===============================================-->
-	<main class="main" id="top">
+
+
+	<main class="main" id="top" >
 		<nav
-			class="navbar navbar-expand-lg navbar-light fixed-top py-3 d-block"
+			class="navbar navbar-expand-lg navbar-light fixed-top py-3 d-block" style="background-color: #FFE08C; background-size: cover; position : fixed;
+			top: 0; left: 0; right: 0;"
 			data-navbar-on-scroll="data-navbar-on-scroll">
 			<div class="container">
 				<a class="navbar-brand d-inline-flex" href="${path}/"><img
@@ -103,7 +107,7 @@
 						<!-- 로그인/회원가입 (추후 디자인 수정 예정) -->
 						<c:choose>
 							<c:when
-								test="${sessionScope.userid == null || sessionScope.admin_userid == null }">
+								test="${sessionScope.userid == null}">
 								<!-- 로그인하지 않은 상태 -->
 								<a class="btn btn-lg btn-success btn-block"
 									href="${pageContext.request.contextPath}/member/login.do">로그인</a>
@@ -121,3 +125,4 @@
 			</div>
 		</nav>
 </main>
+</body>

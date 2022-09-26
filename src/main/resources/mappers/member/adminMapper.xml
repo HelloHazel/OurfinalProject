@@ -6,8 +6,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <!-- 다른 mapper와 중복되지 않도록 네임스페이스 기재 -->
 <mapper namespace="admin">
 	<select id="login_check" resultType="String">
-		select admin_name from admin
-		where admin_userid=#{admin_userid} and admin_passwd=#{admin_passwd}
+		select name from admin
+		where userid=#{userid} and passwd=#{passwd}
 	</select>
 </mapper>
 
