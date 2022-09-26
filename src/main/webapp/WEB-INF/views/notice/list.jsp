@@ -9,11 +9,11 @@
 <script type="text/javascript">
 $(function(){
 	$("#btnWrite").click(function(){
-		location.href="${path}/board/write.do";
+		location.href="${path}/notice/write.do";
 	});
 });
 function list(page){
-	location.href="${path}/board/list.do?curPage="+page;
+	location.href="${path}/notice/list.do?curPage="+page;
 } 
 
 </script>
@@ -23,7 +23,7 @@ function list(page){
 <h2>게시판</h2>
 <!-- 검색폼 -->
 <form name="form1" method="post"
-	action="${path}/board/list.do">
+	action="${path}/notice/list.do">
 	<select name="search_option">
 		<option value="name"
 <c:if test="${map.search_option == 'name'}">
@@ -58,7 +58,7 @@ ${map.count}개의 게시물이 있습니다.
  <c:when test="${row.show == 'y'}">
   <tr>
     <td>${row.bno}</td>
-    <td><a href="${path}/board/view.do?bno=${row.bno}">${row.title}</a>
+    <td><a href="${path}/notice/view.do?bno=${row.bno}">${row.title}</a>
      <c:if test="${row.cnt > 0}">
       <span style="color: red;">(${row.cnt})</span>
      </c:if>
