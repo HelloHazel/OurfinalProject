@@ -15,4 +15,5 @@ public interface MemberService {
 	public boolean checkPw(String userid, String passwd);
 	public void updateMember(MemberDTO dto);
 	public void deleteMember(String userid);
+	public String find_id(String name, String email); //아이디 찾기
 }

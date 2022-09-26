@@ -70,6 +70,11 @@ public class MemberServiceImpl implements MemberService {
 		
 	}
 
+	@Override
+	public String find_id(String name, String email) {
+		return memberDao.find_id(name, email);
+	}
+
 	
 
 }
