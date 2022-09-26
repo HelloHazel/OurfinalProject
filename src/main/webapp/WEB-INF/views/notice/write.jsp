@@ -68,13 +68,13 @@ $(function(){
 	background-color: gray;
 }
 </style>
+
 </head>
-<body>
 <body>
 <%@ include file="../include/menu.jsp" %>
 <h2>글쓰기</h2>
 <form id="form1" name="form1" method="post"
-action="${path}/notice/insert.do">
+action="${path}/board/insert.do">
 	<div>제목 <input name="title" id="title" size="80"
 					placeholder="제목을 입력하세요">
 	</div>
@@ -99,3 +99,6 @@ rows="3" cols="80" placeholder="내용을 입력하세요"></textarea>
 </form>
 </body>
 </html>
+
+
+		

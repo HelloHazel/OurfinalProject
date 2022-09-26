@@ -12,23 +12,23 @@
 <script>
 $(function(){ //자동으로 실행되는 코드
 	//댓글 목록 출력
-	//listReply();
-	listReply2();
+	listReply();
+	// listReply2();
 	
 	//댓글 쓰기
 	$("#btnReply").click(function(){
 		var replytext=$("#replytext").val(); //댓글 내용
-		var notice_bno="${dto.notice_bno}"; //게시물 번호
-		var param={ "replytext": replytext, "notice_bno": notice_bno};
-		//var param="replytext="+replytext+"&notice_bno="+notice_bno;
+		var bno="${dto.bno}"; //게시물 번호
+		var param={ "replytext": replytext, "bno": bno};
+		//var param="replytext="+replytext+"&bno="+bno;
 		$.ajax({
 			type: "post",
 			url: "${path}/reply/insert.do",
 			data: param,
 			success: function(){
 				alert("댓글이 등록되었습니다.");
-				//listReply();
-				listReply2(); //댓글 목록 출력
+				listReply();
+				// listReply2(); //댓글 목록 출력
 			}
 		});
 	});
@@ -68,7 +68,7 @@ $(function(){ //자동으로 실행되는 코드
 	
 	//목록 버튼
 	$("#btnList").click(function(){
-		location.href="${path}/notice/list.do";
+		location.href="${path}/board/list.do";
 	});
 	//수정 버튼
 	$("#btnUpdate").click(function(){
@@ -81,13 +81,13 @@ $(function(){ //자동으로 실행되는 코드
 				+$(this).val()+"'>";
 		});
 		$("#form1").append(str);
-		document.form1.action="${path}/notice/update.do";
+		document.form1.action="${path}/board/update.do";
 		document.form1.submit();
 	});
 	//삭제 버튼
 	$("#btnDelete").click(function(){
 		if(confirm("삭제하시겠습니까?")){
-			document.form1.action="${path}/notice/delete.do";
+			document.form1.action="${path}/board/delete.do";
 			document.form1.submit();
 		}
 	});
@@ -132,7 +132,7 @@ $(function(){ //자동으로 실행되는 코드
 function listReply(){
 	$.ajax({
 		type: "get",
-		url: "${path}/reply/list.do?notice_bno=${dto.notice_bno}",
+		url: "${path}/reply/list.do?bno=${dto.bno}",
 		success: function(result){
 			//result : responseText 응답텍스트(html)
 			$("#listReply").html(result);
@@ -152,11 +152,11 @@ function changeDate(date){
 		year+"-"+month+"-"+day+" "+hour+":"+minute+":"+second;
 	return strDate;
 }
-function listReply2(){
+/* function listReply2(){
 	$.ajax({
 		type: "get",
 		contentType: "application/json",
-		url: "${path}/reply/list_json.do?notice_bno=${dto.notice_bno}",
+		url: "${path}/reply/list_json.do?bno=${dto.bno}",
 		success: function(result){
 //view를 만들지 않는 대신에 자바스크립트로 table등을 만들어야 한다.
 			console.log(result);
@@ -180,12 +180,12 @@ function listReply2(){
 			$("#listReply").html(output);
 		}
 	});
-}
+} */
 //첨부파일 리스트를 출력하는 함수
 function listAttach(){
 	$.ajax({
 		type: "post",
-		url: "${path}/notice/getAttach/${dto.notice_bno}",
+		url: "${path}/board/getAttach/${dto.bno}",
 		success: function(list){
 // Controller에서 List<String>타입으로 넘어온 값을 처리하기 위해 json으로 처리
 			// list : json
@@ -195,7 +195,7 @@ function listAttach(){
 				//console.log(fileInfo);
 				var html="<div><a href='"+fileInfo.getLink+"'>"
 					+fileInfo.fileName+"</a>&nbsp;&nbsp;";
-				<c:if test="${sessionScope.admin_id == dto.notice_writer}">	
+				<c:if test="${sessionScope.userid == dto.writer}">	
 				html+="<a href='#' class='file_del' data-src='"
 					+this+"'>[삭제]</a></div>";
 			</c:if>
@@ -220,16 +220,16 @@ background-color: gray;
 <%@ include file="../include/menu.jsp" %>
 <h2>게시물 보기</h2>
 <form id="form1" name="form1" method="post"
-action="${path}/notice/insert.do">
+action="${path}/board/insert.do">
 <div>제목 <input name="title" id="title" size="80"
-				value="${dto.notice_title}"
+				value="${dto.title}"
 				placeholder="제목을 입력하세요">
 </div>
-<div>조회수 : ${dto.notice_viewcnt}	</div>
+<div>조회수 : ${dto.viewcnt}	</div>
 <div style="width:800px;">
 	내용 <textarea id="content" name="content"
 rows="3" cols="80" 
-placeholder="내용을 입력하세요">${dto.notice_content}</textarea>
+placeholder="내용을 입력하세요">${dto.content}</textarea>
 <script>
 //ckeditor 적용
 CKEDITOR.replace("content",{
@@ -244,10 +244,10 @@ height: "300px"
 	</div>
 	<div style="width:700px; text-align:center;">
 <!-- 수정,삭제에 필요한 글번호를 hidden 태그에 저장 -->	
-		<input type="hidden" name="notice_bno" value="${dto.notice_bno}">
+		<input type="hidden" name="bno" value="${dto.bno}">
 		
 		<!-- 본인만 수정,삭제 버튼 표시 -->
-		<c:if test="${sessionScope.admin_id == dto.notice_writer}">
+		<c:if test="${sessionScope.userid == dto.writer}">
 			<button type="button" id="btnUpdate">수정</button>
 			<button type="button" id="btnDelete">삭제</button>
 		</c:if>
@@ -257,7 +257,7 @@ height: "300px"
 </form>
 <!-- 댓글 작성 -->
 <div style="width:700px; text-align:center;">
-	 <c:if test="${sessionScope.admin_id != null }">
+	 <c:if test="${sessionScope.userid != null }">
 	 	<textarea rows="5" cols="80" id="replytext"
 	 		placeholder="댓글을 작성하세요"></textarea>
 	 	<br>
@@ -271,4 +271,4 @@ height: "300px"
 </html>
 
 
-	
+		
