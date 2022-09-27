@@ -128,8 +128,8 @@
 							</c:when>
 							<c:otherwise>
 								<!-- 로그인한 상태 -->
-			 				${sessionScope.name}님이 로그인 중입니다.
-			 				<a class=" mt-4" href="${path}/member/logout.do">로그아웃</a>
+			 				<label class="mt-4">${sessionScope.name}님이 로그인 중입니다 | </label>
+			 				<a class=" mt-4" href="${path}/member/logout.do">&nbsp;로그아웃</a>
 							</c:otherwise>
 						</c:choose>
 					</form>
@@ -142,17 +142,17 @@
 					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 						<li class="nav-item px-2"><a
 							class="nav-link fw-medium active" aria-current="page"
-							href="${path}/admin/noticeList.do">Notice</a></li>
-						<li class="nav-item px-2"><a class="nav-link fw-medium"
-							href="${path}/admin/list.do">ProductList</a></li>
-							<li class="nav-item px-2"><a class="nav-link fw-medium"
-							href="${path}/admin/write.do">ProductRegi</a></li>
-							<li class="nav-item px-2"><a class="nav-link fw-medium"
-							href="${path}/admin/orderList.do">Order</a></li>
-							<li class="nav-item px-2"><a class="nav-link fw-medium"
-							href="${path}/admin/memberList.do">Member</a></li>
+							href="${path}/notice/list.do">공지사항</a></li>
 						<li class="nav-item px-2"><a class="nav-link fw-medium"
 							href="admin/inqueryList.do">1:1문의</a></li>
+						<li class="nav-item px-2"><a class="nav-link fw-medium"
+							href="${path}/admin/list.do">회원관리</a></li>
+							<li class="nav-item px-2"><a class="nav-link fw-medium"
+							href="${path}/admin/list.do">상품등록</a></li>
+							<li class="nav-item px-2"><a class="nav-link fw-medium"
+							href="${path}/admin/list.do">상품목록</a></li>
+							<li class="nav-item px-2"><a class="nav-link fw-medium"
+							href="${path}/admin/list.do">주문관리</a></li>
 					</ul>
 					<form class="d-flex">
 					</form>
@@ -169,8 +169,8 @@
 							</c:when>
 							<c:otherwise>
 								<!-- 로그인한 상태 -->
-			 				${sessionScope.name}님이 로그인 중입니다.
-			 				<a href="${path}/member/logout.do">로그아웃</a>
+			 				<label class="mt-4">${sessionScope.name}님이 로그인 중입니다 | </label>
+			 				<a class=" mt-4" href="${path}/member/logout.do">&nbsp;로그아웃</a>
 							</c:otherwise>
 						</c:choose>
 				</c:when>

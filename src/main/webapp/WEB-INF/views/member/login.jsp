@@ -23,8 +23,8 @@
 	href="${pageContext.request.contextPath}/resources/assets/css/sb-admin-2.min.css"
 	rel="stylesheet">
 <script>
-$(function(){
-	$("#Login").click(function(){
+function login(){
+	    var form = document.user;
 		var userid=$("#userid").val(); //태그의 value 속성값
 		var passwd=$("#passwd").val();
 		if(userid==""){
@@ -37,8 +37,9 @@ $(function(){
 			$("#passwd").focus();
 			return;
 		}
-	});
-});
+		 form.action="${path}/member/login_check.do";
+		 form.submit();
+}
 </script>
 </head>
 <body class="bg-gradient-primary">
@@ -56,7 +57,7 @@ $(function(){
 									<div class="text-center">
 										<a href="${path}/"><img alt="오독오독 로고" src="${path}/resources/assets/img/gallery/logo5.png" width="30%" height="auto"></a>
 									</div>
-									<form  name="user" method="post" action="${path}/member/login_check.do">
+									<form  name="user" method="post">
 										<div class="form-group">
 											<input class="form-control form-control-user"
 												id="userid" name="userid"   placeholder="아이디를 입력해주세요">
@@ -65,8 +66,8 @@ $(function(){
 											<input type="password" class="form-control form-control-user"
 												id="passwd" name="passwd" placeholder="비밀번호를 입력해주세요">
 										</div>
-										<input type="submit" id="Login"
-											class="btn btn-primary btn-user btn-block"  value="로그인"> 
+										<input type="button" id="Login"
+											class="btn btn-primary btn-user btn-block"  onclick="login()" value="로그인"> 
 										<hr>
 										<a href="index.html" class="btn btn-google btn-user btn-block">
 											<i class="fab fa-google fa-fw"></i> 구글로 로그인하기
