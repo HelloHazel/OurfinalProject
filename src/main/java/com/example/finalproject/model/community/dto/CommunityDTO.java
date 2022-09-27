@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class CommunityDTO {
 	
-	private int comm_bno;
+	private int comm_no;
 	private String comm_title;
 	private String comm_content;
 	private String userid; //작성자 id
@@ -15,10 +15,10 @@ public class CommunityDTO {
 	private int cnt; //댓글 갯수
 	//getter, setter, toString()
 	public int getComm_bno() {
-		return comm_bno;
+		return comm_no;
 	}
 	public void setComm_bno(int comm_bno) {
-		this.comm_bno = comm_bno;
+		this.comm_no = comm_bno;
 	}
 	public String getComm_title() {
 		return comm_title;
@@ -70,7 +70,7 @@ public class CommunityDTO {
 	}
 	@Override
 	public String toString() {
-		return "CommunityDTO [comm_bno=" + comm_bno + ", comm_title=" + comm_title + ", comm_content=" + comm_content
+		return "CommunityDTO [comm_bno=" + comm_no + ", comm_title=" + comm_title + ", comm_content=" + comm_content
 				+ ", userid=" + userid + ", comm_regdate=" + comm_regdate + ", comm_url=" + comm_url + ", comm_viewcnt="
 				+ comm_viewcnt + ", name=" + name + ", cnt=" + cnt + "]";
 	}
