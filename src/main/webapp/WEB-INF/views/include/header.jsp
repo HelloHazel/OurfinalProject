@@ -132,17 +132,17 @@
 					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 						<li class="nav-item px-2"><a
 							class="nav-link fw-medium active" aria-current="page"
-							href="${path}/admin/noticeList.do">Notice</a></li>
-						<li class="nav-item px-2"><a class="nav-link fw-medium"
-							href="${path}/admin/list.do">ProductList</a></li>
-							<li class="nav-item px-2"><a class="nav-link fw-medium"
-							href="${path}/admin/write.do">ProductRegi</a></li>
-							<li class="nav-item px-2"><a class="nav-link fw-medium"
-							href="${path}/admin/orderList.do">Order</a></li>
-							<li class="nav-item px-2"><a class="nav-link fw-medium"
-							href="${path}/admin/memberList.do">Member</a></li>
+							href="${path}/notice/list.do">공지사항</a></li>
 						<li class="nav-item px-2"><a class="nav-link fw-medium"
 							href="admin/inqueryList.do">1:1문의</a></li>
+						<li class="nav-item px-2"><a class="nav-link fw-medium"
+							href="${path}/admin/list.do">회원관리</a></li>
+							<li class="nav-item px-2"><a class="nav-link fw-medium"
+							href="${path}/admin/list.do">상품등록</a></li>
+							<li class="nav-item px-2"><a class="nav-link fw-medium"
+							href="${path}/admin/list.do">상품목록</a></li>
+							<li class="nav-item px-2"><a class="nav-link fw-medium"
+							href="${path}/admin/list.do">주문관리</a></li>
 					</ul>
 					<form class="d-flex">
 					</form>
