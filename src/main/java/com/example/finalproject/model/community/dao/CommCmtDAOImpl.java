@@ -2,8 +2,11 @@ package com.example.finalproject.model.community.dao;
 
 import java.util.List;
 
+import org.springframework.stereotype.Repository;
+
 import com.example.finalproject.model.community.dto.CommCmtDTO;
 
+@Repository
 public class CommCmtDAOImpl implements CommCmtDAO {
 
 	@Override

@@ -2,14 +2,22 @@ package com.example.finalproject.service.community;
 
 import java.util.List;
 
+import javax.inject.Inject;
+
+import org.springframework.stereotype.Service;
+
+import com.example.finalproject.model.community.dao.CommunityDAO;
 import com.example.finalproject.model.community.dto.CommunityDTO;
 
+@Service
 public class CommunityServiceImpl implements CommunityService {
 
+	@Inject
+	CommunityDAO communityDao;
+	
 	@Override
 	public List<CommunityDTO> listPost() {
-		// TODO Auto-generated method stub
-		return null;
+		return communityDao.listPost();
 	}
 
 	@Override

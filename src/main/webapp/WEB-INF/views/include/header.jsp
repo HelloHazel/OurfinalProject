@@ -54,7 +54,7 @@
 						<li class="nav-item px-2"><a class="nav-link fw-medium"
 							href="${path}/shop/product/list.do">Product</a></li>
 						<li class="nav-item px-2"><a class="nav-link fw-medium"
-							href="{path}/community/list.do">Community</a></li>
+							href="${path}/community/list.do">Community</a></li>
 						<li class="nav-item px-2"><a class="nav-link fw-medium"
 							href="#">Q&A</a></li>
 					</ul>
