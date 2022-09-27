@@ -7,6 +7,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.example.finalproject.HomeController;
@@ -51,8 +52,16 @@ public class MemberController {
 		return mav;
 	}
 	
+	//아이디 찾기 페이지로 이동
 	@RequestMapping("findId.do")
 	public String findId() {
 		return "member/findId";
+	}
+	
+	//아이디 찾기
+	@RequestMapping("find_id.do")
+	public String find_id(@RequestParam("name") String name, @RequestParam("email") String email) {
+		String result = memberService.find_id(name, email);
+		return result;
 	}
 }
