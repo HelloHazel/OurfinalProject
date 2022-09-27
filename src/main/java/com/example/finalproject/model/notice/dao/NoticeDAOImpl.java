@@ -1,8 +1,6 @@
 package com.example.finalproject.model.notice.dao;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import javax.inject.Inject;
 
@@ -19,75 +17,67 @@ public class NoticeDAOImpl implements NoticeDAO {
 
 	@Override
 	public void deleteFile(String fullName) {
-		sqlSession.delete("notice.deleteFile", fullName);
+		// TODO Auto-generated method stub
 
 	}
 
 	@Override
 	public List<String> getAttach(int bno) {
-		return sqlSession.selectList("notice.getAttach", bno);
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	@Override
 	public void addAttach(String fullName) {
-		sqlSession.insert("notice.addAttach", fullName);
+		// TODO Auto-generated method stub
 
 	}
 
 	@Override
 	public void updateAttach(String fullName, int bno) {
-		Map<String,Object> map=new HashMap<>();
-		map.put("fullName", fullName);
-		map.put("bno", bno);
-		sqlSession.insert("notice.updateAttach", map);
-		//게시물notice는 update이지만 첨부파일attach는 기존 파일이 있다 하더라도 기존것은 그대로 두거나
-		//또는 새파일을 올려 수정하는 것이기 때문에 insert()를 씀
+		// TODO Auto-generated method stub
 
 	}
 
 	@Override
 	public void create(NoticeDTO dto) throws Exception {
-		sqlSession.insert("notice.insert", dto);
+		// TODO Auto-generated method stub
 
 	}
 
 	@Override
 	public void update(NoticeDTO dto) throws Exception {
-		sqlSession.update("notice.update", dto);
+		// TODO Auto-generated method stub
 
 	}
 
 	@Override
 	public void delete(int bno) throws Exception {
-		sqlSession.delete("notice.delete", bno);
+		// TODO Auto-generated method stub
 
 	}
 
-	//게시물 목록
 	@Override
-	public List<NoticeDTO> listAll(String search_option, String keyword, int start, int end) throws Exception {
-		Map<String,Object> map=new HashMap<>();
-		map.put("search_option", search_option);
-		map.put("keyword", "%"+keyword+"%");
-		map.put("start", start);
-		map.put("end", end);
-		return sqlSession.selectList("notice.listAll", map);
+	public List<NoticeDTO> listAll() throws Exception {
+		return sqlSession.selectList("notice.listAll");
 	}
 
 	@Override
 	public void increaseViewcnt(int bno) throws Exception {
-		sqlSession.update("notice.increaseViewcnt", bno);
+		// TODO Auto-generated method stub
 
 	}
 
 	@Override
 	public int countArticle() throws Exception {
-		return sqlSession.selectOne("notice.countArticle");
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 	@Override
 	public NoticeDTO read(int bno) throws Exception {
-		return sqlSession.selectOne("notice.read", bno);
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
