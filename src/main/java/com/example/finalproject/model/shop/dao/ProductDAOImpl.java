@@ -27,7 +27,7 @@ public class ProductDAOImpl implements ProductDAO {
 
 	@Override
 	public void updateProduct(ProductDTO dto) {
-		// TODO Auto-generated method stub
+		sqlSession.update("product.update_product", dto);
 
 	}
 
@@ -39,7 +39,7 @@ public class ProductDAOImpl implements ProductDAO {
 
 	@Override
 	public void insertProduct(ProductDTO dto) {
-		// TODO Auto-generated method stub
+		sqlSession.insert("product.insert", dto);
 
 	}
 
