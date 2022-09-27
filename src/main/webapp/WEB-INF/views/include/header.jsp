@@ -128,8 +128,8 @@
 							</c:when>
 							<c:otherwise>
 								<!-- 로그인한 상태 -->
-			 				${sessionScope.name}님이 로그인 중입니다.
-			 				<a class=" mt-4" href="${path}/member/logout.do">로그아웃</a>
+			 				<label class="mt-4">${sessionScope.name}님이 로그인 중입니다 | </label>
+			 				<a class=" mt-4" href="${path}/member/logout.do">&nbsp;로그아웃</a>
 							</c:otherwise>
 						</c:choose>
 					</form>
@@ -169,8 +169,8 @@
 							</c:when>
 							<c:otherwise>
 								<!-- 로그인한 상태 -->
-			 				${sessionScope.name}님이 로그인 중입니다.
-			 				<a href="${path}/member/logout.do">로그아웃</a>
+			 				<label class="mt-4">${sessionScope.name}님이 로그인 중입니다 | </label>
+			 				<a class=" mt-4" href="${path}/member/logout.do">&nbsp;로그아웃</a>
 							</c:otherwise>
 						</c:choose>
 				</c:when>

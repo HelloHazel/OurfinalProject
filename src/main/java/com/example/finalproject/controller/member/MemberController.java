@@ -1,11 +1,13 @@
 package com.example.finalproject.controller.member;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
@@ -60,8 +62,8 @@ public class MemberController {
 	
 	//아이디 찾기
 	@RequestMapping("find_id.do")
-	public String find_id(@RequestParam("name") String name, @RequestParam("email") String email) {
-		String result = memberService.find_id(name, email);
-		return result;
+	public String find_id(HttpServletResponse response, @RequestParam("name") String name, @RequestParam("email") String email, Model model) throws Exception{
+		model.addAttribute("userid", memberService.find_id(response, name, email));
+		return "member/findIdResult";
 	}
 }

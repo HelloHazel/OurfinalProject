@@ -1,8 +1,11 @@
 package com.example.finalproject.service.member;
 
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.List;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Service;
@@ -71,8 +74,21 @@ public class MemberServiceImpl implements MemberService {
 	}
 
 	@Override
-	public String find_id(String name, String email) {
-		return memberDao.find_id(name, email);
+	public String find_id(HttpServletResponse response, String name, String email) throws Exception {
+		response.setContentType("text/html;charset=utf-8");
+		PrintWriter out = response.getWriter();
+		String userid = memberDao.find_id(name, email);
+		
+		if (userid == null) {
+			out.println("<script>");
+			out.println("alert('가입된 아이디가 없습니다.');");
+			out.println("history.go(-1);");
+			out.println("</script>");
+			out.close();
+			return null;
+		} else {
+			return userid;
+		}
 	}
 
 	
