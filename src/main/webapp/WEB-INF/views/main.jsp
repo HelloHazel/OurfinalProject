@@ -2921,8 +2921,7 @@
 																	src="assets/img/gallery/black-tshirt.png" alt="..." />
 																<div class="card-img-overlay ps-0"></div>
 																<div class="card-body ps-0 bg-200">
-																	<h5 class="fw-bold text-1000 text-truncate">Black
-																		T-Shirt</h5>
+																	<h5 class="fw-bold text-1000 text-truncate">상품2</h5>
 																	<div class="fw-bold">
 																		<span
 																			class="text-600 me-2 text-decoration-line-through">$200</span><span
