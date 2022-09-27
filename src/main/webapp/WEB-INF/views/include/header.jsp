@@ -7,6 +7,16 @@
 <script src="${path}/include/jquery-3.6.0.min.js"></script>
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/resources/assets/css/theme.css">
+	
+	<style>
+		.navbar-expand-lg{
+			background: #FFE08C !important;
+		}
+		.navbar{
+			background: #FFE08C !important; 
+		}
+		.
+	</style>
 </head>
 <body>
 
@@ -17,7 +27,7 @@
 
 	<main class="main" id="top" >
 		<nav
-			class="navbar navbar-expand-lg navbar-light fixed-top py-3 d-block" style="background-color: #FFE08C; background-size: cover; position : fixed;
+			class="navbar navbar-expand-lg navbar-light fixed-top py-1 d-block" style="background-color: #FFE08C; background-size: cover; position : fixed;
 			top: 0; left: 0; right: 0;"
 			data-navbar-on-scroll="data-navbar-on-scroll">
 			<div class="container">
@@ -55,7 +65,7 @@
 						<!-- 우측 아이콘 메뉴 -->
 						<!-- contact/Q&A 아이콘 -->
 						<a class="text-1000" href="#!"> <svg
-								class="feather feather-phone me-3"
+								class="feather feather-phone me-3 mt-4"
 								xmlns="http://www.w3.org/2000/svg" width="16" height="16"
 								viewBox="0 0 24 24" fill="none" stroke="currentColor"
 								stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -65,7 +75,7 @@
 
 						<!-- 장바구니 아이콘 -->
 						<a class="text-1000" href="#!"> <svg
-								class="feather feather-shopping-cart me-3"
+								class="feather feather-shopping-cart me-3 mt-4"
 								xmlns="http://www.w3.org/2000/svg" width="16" height="16"
 								viewBox="0 0 24 24" fill="none" stroke="currentColor"
 								stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -77,7 +87,7 @@
 
 						<!-- 상품 검색 아이콘 (필요 없을 시 제거 가능 -->
 						<a class="text-1000" href="#!"> <svg
-								class="feather feather-search me-3"
+								class="feather feather-search me-3 mt-4"
 								xmlns="http://www.w3.org/2000/svg" width="16" height="16"
 								viewBox="0 0 24 24" fill="none" stroke="currentColor"
 								stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -86,7 +96,7 @@
                 </svg></a>
 						<!-- 커뮤니티 아이콘 -->
 						<a class="text-1000" href="#!"> <svg
-								class="feather feather-heart me-3"
+								class="feather feather-heart me-3 mt-4"
 								xmlns="http://www.w3.org/2000/svg" width="16" height="16"
 								viewBox="0 0 24 24" fill="none" stroke="currentColor"
 								stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -97,7 +107,7 @@
 						<!-- 마이페이지 아이콘 -->
 						<a class="text-1000"
 							href="${pageContext.request.contextPath}/mypage/mypagemain.do">
-							<svg class="feather feather-user me-3"
+							<svg class="feather feather-user me-3 mt-4"
 								xmlns="http://www.w3.org/2000/svg" width="16" height="16"
 								viewBox="0 0 24 24" fill="none" stroke="currentColor"
 								stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -111,15 +121,15 @@
 							<c:when
 								test="${sessionScope.userid == null}">
 								<!-- 로그인하지 않은 상태 -->
-								<a class="btn btn-lg btn-success btn-block"
+								<a class="btn btn-lg btn-success btn-block mt-3"
 									href="${pageContext.request.contextPath}/member/login.do">로그인</a>
-								<button class="btn btn-lg btn-secondary btn-block" type="button"
+								<button class="btn btn-lg btn-secondary btn-block mt-3" type="button"
 									onclick="#">회원가입</button>
 							</c:when>
 							<c:otherwise>
 								<!-- 로그인한 상태 -->
-			 				${sessionScope.name}님이 로그인 중입니다.
-			 				<a href="${path}/member/logout.do">로그아웃</a>
+			 				<label class="mt-4">${sessionScope.name}님이 로그인 중입니다 | </label>
+			 				<a class=" mt-4" href="${path}/member/logout.do">&nbsp;로그아웃</a>
 							</c:otherwise>
 						</c:choose>
 					</form>
@@ -132,17 +142,17 @@
 					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 						<li class="nav-item px-2"><a
 							class="nav-link fw-medium active" aria-current="page"
-							href="${path}/admin/noticeList.do">Notice</a></li>
-						<li class="nav-item px-2"><a class="nav-link fw-medium"
-							href="${path}/admin/list.do">ProductList</a></li>
-							<li class="nav-item px-2"><a class="nav-link fw-medium"
-							href="${path}/admin/write.do">ProductRegi</a></li>
-							<li class="nav-item px-2"><a class="nav-link fw-medium"
-							href="${path}/admin/orderList.do">Order</a></li>
-							<li class="nav-item px-2"><a class="nav-link fw-medium"
-							href="${path}/admin/memberList.do">Member</a></li>
+							href="${path}/notice/list.do">공지사항</a></li>
 						<li class="nav-item px-2"><a class="nav-link fw-medium"
 							href="admin/inqueryList.do">1:1문의</a></li>
+						<li class="nav-item px-2"><a class="nav-link fw-medium"
+							href="${path}/admin/list.do">회원관리</a></li>
+							<li class="nav-item px-2"><a class="nav-link fw-medium"
+							href="${path}/admin/list.do">상품등록</a></li>
+							<li class="nav-item px-2"><a class="nav-link fw-medium"
+							href="${path}/admin/list.do">상품목록</a></li>
+							<li class="nav-item px-2"><a class="nav-link fw-medium"
+							href="${path}/admin/list.do">주문관리</a></li>
 					</ul>
 					<form class="d-flex">
 					</form>
@@ -152,15 +162,15 @@
 							<c:when
 								test="${sessionScope.userid == null}">
 								<!-- 로그인하지 않은 상태 -->
-								<a class="btn btn-lg btn-success btn-block"
+								<a class="btn btn-lg btn-success btn-block mt-3"
 									href="${pageContext.request.contextPath}/member/login.do">로그인</a>
-								<button class="btn btn-lg btn-secondary btn-block" type="button"
+								<button class="btn btn-lg btn-secondary btn-block mt-3" type="button"
 									onclick="#">회원가입</button>
 							</c:when>
 							<c:otherwise>
 								<!-- 로그인한 상태 -->
-			 				${sessionScope.name}님이 로그인 중입니다.
-			 				<a href="${path}/member/logout.do">로그아웃</a>
+			 				<label class="mt-4">${sessionScope.name}님이 로그인 중입니다 | </label>
+			 				<a class=" mt-4" href="${path}/member/logout.do">&nbsp;로그아웃</a>
 							</c:otherwise>
 						</c:choose>
 				</c:when>

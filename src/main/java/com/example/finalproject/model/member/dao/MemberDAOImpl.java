@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpServletResponse;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
@@ -60,13 +61,11 @@ public class MemberDAOImpl implements MemberDAO {
 	}
 
 	@Override
-	public String find_id(String name, String email) {
-		String result = "";
+	public String find_id(String name, String email) throws Exception{
 		Map<String, String> map = new HashMap<>();
 		map.put("name", name);
-		map.put("email", email);
-		result = sqlSession.selectOne("member.findId",map);
-		return result;
+		map.put("email",email);
+		return sqlSession.selectOne("member.findId", map);
 	}
 	
 	
