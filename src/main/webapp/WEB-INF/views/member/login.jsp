@@ -41,6 +41,21 @@ function login(){
 		 form.submit();
 }
 </script>
+
+<!-- 카카오 로그인 -->
+<script type="text/javascript" src="https://developers.kakao.com/sdk/js/kakao.min.js" charset="utf-8"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        Kakao.init('6fea8608c699c1f3a4565f35ee367101');
+        Kakao.isInitialized();
+    });
+
+    function loginWithKakao() {
+        Kakao.Auth.authorize({ 
+        redirectUri: 'http://localhost/finalproject/member/login.do'
+        }); // 등록한 리다이렉트uri 입력
+    }
+</script>
 </head>
 <body class="bg-gradient-primary">
 	<div class="container">
@@ -57,7 +72,7 @@ function login(){
 									<div class="text-center">
 										<a href="${path}/"><img alt="오독오독 로고" src="${path}/resources/assets/img/gallery/logo5.png" width="30%" height="auto"></a>
 									</div>
-									<form  name="user" method="post">
+									<form  name="user" method="post"> 
 										<div class="form-group">
 											<input class="form-control form-control-user"
 												id="userid" name="userid"   placeholder="아이디를 입력해주세요">
@@ -71,15 +86,15 @@ function login(){
 										<hr>
 										<a href="index.html" class="btn btn-google btn-user btn-block">
 											<i class="fab fa-google fa-fw"></i> 구글로 로그인하기
-										</a> <a href="index.html"
+										</a> <button
 											class="btn btn-warning btn-user btn-block"> <i
-											class="fab fa-facebook-f fa-fw"></i>카카오톡 로그인
-										</a>
+											class="fab fa-facebook-f fa-fw" onclick="loginWithKakao()"></i>카카오톡 로그인
+										</button>
 									</form>
 									<hr>
 									<div class="text-center">
 										<a class="small" href="${path}/member/findId.do">아이디 찾기</a> |
-										<a class="small" href="forgot-password.html">비밀번호 찾기</a> |
+										<a class="small" href="${path}/member/findpw.do">비밀번호 찾기</a> |
 										<a class="small" href="${path}/member/join.do">회원가입</a>
 									</div>
 								</div>

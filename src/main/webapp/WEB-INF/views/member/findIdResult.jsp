@@ -30,7 +30,7 @@ h3 {
 		회원님의 아이디는 <strong style="color: red;">${userid}</strong> 입니다.
 	</h5>
 </div>
-		<input type="button" value="비밀번호 찾기" class="btn btn-outline-warning" onclick="location.href=${path}/member/findpw.do">
+		<input type="button" value="비밀번호 찾기" class="btn btn-outline-warning" onclick="location.href='${path}/member/findpw.do'">
 		<input type="button" value="홈으로 가기" class="btn btn-outline-warning" onclick="location.href='${path}/'"> 
 </fieldset>
 </body>
