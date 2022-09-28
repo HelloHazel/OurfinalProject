@@ -5,7 +5,6 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script src="${path}/include/jquery-3.6.0.min.js"></script>
 <style type="text/css">
 *{
 margin-left: auto;
@@ -14,20 +13,12 @@ margin-top: auto;
 text-align: center;
 }
 </style>
-<script type="text/javascript">
-$(function(){
-	$("#btnWrite").click(function(){
-		location.href="${path}/notice/write.do";
-	});
-});
-
-</script>
 <%@ include file="../include/header.jsp" %>
 </head>
 <body>
 <%@ include file="../include/menu.jsp" %>
 <h2>게시판</h2>
-<button type="button" id="btnWrite">글쓰기</button>
+<input type="button" value="글쓰기" onclick="location.href='${path}/notice/write.do'">
 ${map.count}개의 게시물이 있습니다.
 <table border="1">
 <tr>

@@ -41,8 +41,7 @@ public class NoticeServiceImpl implements NoticeService {
 
 	@Override
 	public void create(NoticeDTO dto) throws Exception {
-		// TODO Auto-generated method stub
-
+			noticeDao.create(dto);
 	}
 
 	@Override

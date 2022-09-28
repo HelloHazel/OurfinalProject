@@ -41,7 +41,7 @@ public class NoticeDAOImpl implements NoticeDAO {
 
 	@Override
 	public void create(NoticeDTO dto) throws Exception {
-		// TODO Auto-generated method stub
+		sqlSession.insert("notice.insert", dto);
 
 	}
 

@@ -5,10 +5,13 @@ import java.util.List;
 import java.util.Map;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -39,5 +42,15 @@ public class NoticeController {
 	@RequestMapping("write.do")
 	public String write() {
 		return "notice/write";
+	}
+	
+	@PostMapping("insert.do")
+	public String insert(@ModelAttribute NoticeDTO dto, HttpSession session) throws Exception {
+		String writer=(String)session.getAttribute("userid");
+		dto.setWriter(writer);
+		// 레코드 저장
+		noticeService.create(dto);
+		// 게시물 목록 이동
+		return "redirect:/notice/list.do";
 	}
 }

@@ -11,6 +11,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	where n.writer=m.userid
 	order by bno asc
 	</select>
+	
+	<insert id="insert" parameterType="com.example.finalproject.model.notice.dto.NoticeDTO">
+	insert into notice(bno, title, content, writer) values
+	(seq_notice.nextval,  #{title},  #{content}, #{writer})
+	</insert>
 </mapper>
 
 
