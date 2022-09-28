@@ -9,13 +9,19 @@
 </head>
 <body>
 <%@ include file="../include/menu.jsp" %>
+
+<br>
 <h2>상품 상세 정보</h2>
 <table>
 	<tr>
-		<td><img src="{path}/images/${dto.picture_url}"
+		<td><img src="${path}/images/${dto.product_url}"
 				width="300px" height="300px"></td>
 				<td align="center">
 				<table>
+					<tr>
+						<td>상품분류</td>
+						<td>${dto.product_kind}</td>
+					</tr>
 					<tr>
 						<td>상품명</td>
 						<td>${dto.product_name}</td>
@@ -26,7 +32,7 @@
 					</tr>
 					<tr>
 						<td>&nbsp;</td>
-						<td>${dto.description}</td>		
+						<td>${dto.product_desc}</td>		
 					</tr>
 					<tr>
 						<td colspan="2">
