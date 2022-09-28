@@ -18,4 +18,5 @@ public interface MemberService {
 	public void updateMember(MemberDTO dto);
 	public void deleteMember(String userid);
 	public String find_id(HttpServletResponse response,String name, String email) throws  Exception; //아이디 찾기
+	public Object find_pw(HttpServletResponse response, String name, String userid, String email) throws IOException;
 }
