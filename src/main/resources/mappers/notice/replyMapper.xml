@@ -12,9 +12,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
  </insert>
  
  <select id="listReply" resultType="com.example.finalproject.model.notice.dto.ReplyDTO">
-  select rno, bno, replytext, replyer, regdate, updatedate, a.name
-  from reply r, admin a
-  where r.replyer=a.userid and bno=#{bno}
+  select rno, bno, replytext, replyer, regdate, updatedate, m.name
+  from reply r, member m
+  where r.replyer=m.userid and bno=#{bno}
   order by rno
  </select>
 	
