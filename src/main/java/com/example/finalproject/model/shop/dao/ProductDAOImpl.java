@@ -33,7 +33,7 @@ public class ProductDAOImpl implements ProductDAO {
 
 	@Override
 	public void deleteProduct(int product_id) {
-		// TODO Auto-generated method stub
+		sqlSession.delete("product.product_delete", product_id);
 
 	}
 
@@ -45,8 +45,7 @@ public class ProductDAOImpl implements ProductDAO {
 
 	@Override
 	public String fileInfo(int product_id) {
-		// TODO Auto-generated method stub
-		return null;
+		return sqlSession.selectOne("product.fileInfo", product_id);
 	}
 
 }
