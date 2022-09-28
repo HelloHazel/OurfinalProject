@@ -27,7 +27,7 @@
 	<td><img src="${path}/images/${row.product_url}"
 		width="100px" height="100px"></td>
 		<td><a href="${path}/shop/product/detail/${row.product_id}">${row.product_name}</a>
-		<c:if test="${sessionScope.userid=='admin'">
+		<c:if test="${sessionScope.userid=='admin'}">
 		<br> 
 		<a href="${path}/shop/product/edit/${row.product_id}">[편집]</a>		
 		</c:if>
