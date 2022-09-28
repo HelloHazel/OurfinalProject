@@ -148,9 +148,9 @@
 						<li class="nav-item px-2"><a class="nav-link fw-medium"
 							href="${path}/admin/list.do">회원관리</a></li>
 							<li class="nav-item px-2"><a class="nav-link fw-medium"
-							href="${path}/admin/list.do">상품등록</a></li>
+							href="${path}/shop/product/write.do">상품등록</a></li>
 							<li class="nav-item px-2"><a class="nav-link fw-medium"
-							href="${path}/admin/list.do">상품목록</a></li>
+							href="${path}/shop/product/list.do">상품목록</a></li>
 							<li class="nav-item px-2"><a class="nav-link fw-medium"
 							href="${path}/admin/list.do">주문관리</a></li>
 					</ul>
