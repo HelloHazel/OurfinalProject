@@ -6,16 +6,48 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <!-- 다른 mapper와 중복되지 않도록 네임스페이스 기재 -->
 <mapper namespace="notice">
 	<select id="listAll" resultType="com.example.finalproject.model.notice.dto.NoticeDTO">
-	select bno, title, content, writer, name, regdate, viewcnt
-	from notice n, member m
-	where n.writer=m.userid
-	order by bno asc
+	select *
+		from (
+				select rownum as rn,  A.*
+				from(
+							select bno, title, writer, name, content, regdate, viewcnt
+							from notice n, member m
+							where n.writer=m.userid
+							order by bno desc
+				)A
+		) where rn between #{start} and #{end}
 	</select>
 	
 	<insert id="insert" parameterType="com.example.finalproject.model.notice.dto.NoticeDTO">
 	insert into notice(bno, title, content, writer) values
 	(seq_notice.nextval,  #{title},  #{content}, #{writer})
 	</insert>
+	
+	<!-- 레코드의 갯수 계산 -->
+	<select id="countArticle" resultType="int" parameterType="com.example.finalproject.model.notice.dto.NoticeDTO">
+	select count(*)
+	from notice n, member m
+	where n.writer=m.userid
+	</select>
+	
+	<!-- 조회수 증가 처리 -->
+	<update id="increaseViewcnt" parameterType="com.example.finalproject.model.notice.dto.NoticeDTO">
+	update notice set viewcnt=viewcnt+1
+	where bno=#{bno}
+	</update>
+	
+	<select id="read" resultType="com.example.finalproject.model.notice.dto.NoticeDTO">
+	select bno, title, writer, name, content, regdate, viewcnt
+	from notice n, member m
+	where n.writer=m.userid and bno=#{bno}
+	</select>
+	
+	<!-- 게시물 내용 수정 -->
+	<update id="update" parameterType="com.example.finalproject.model.notice.dto.NoticeDTO">
+	update notice
+	set title=#{title}, content=#{content}
+	where bno=#{bno}
+	</update>
 </mapper>
 
 
