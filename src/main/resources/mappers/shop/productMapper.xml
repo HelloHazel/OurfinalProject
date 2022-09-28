@@ -19,16 +19,17 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <!-- 상품 등록 -->
 <insert id="insert">
 	insert into product values
-	(seq_product.nextval, #{product_name}, #{price}, #{description}, #{picture_url})
+	(seq_product.nextval, #{product_name}, #{price}, #{product_desc}, #{product_kind}, #{product_url})
 </insert>
 
 <!-- 상품정보 수정 -->
 <update id="update_product">
 	update product
 	set
-	product name=#{product_name},
+	product_name=#{product_name},
 	price=#{price}
-	description=#{description},
+	product_desc=#{product_desc},
+	product_kind=#{product_kind},
 	product_url=#{product_url}
 	where product_id=#{product_id}
 </update>

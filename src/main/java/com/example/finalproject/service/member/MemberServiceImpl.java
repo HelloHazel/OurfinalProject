@@ -91,6 +91,24 @@ public class MemberServiceImpl implements MemberService {
 		}
 	}
 
+	@Override
+	public Object find_pw(HttpServletResponse response, String name, String userid, String email) throws IOException {
+		response.setContentType("text/html;charset=utf-8");
+		PrintWriter out = response.getWriter();
+		String passwd = memberDao.find_pw(name, userid, email);
+		
+		if (passwd == null) {
+			out.println("<script>");
+			out.println("alert('일치하는 정보가 없습니다.');");
+			out.println("history.go(-1);");
+			out.println("</script>");
+			out.close();
+			return null;
+		} else {
+			return passwd;
+		}
+	}
+
 	
 
 }

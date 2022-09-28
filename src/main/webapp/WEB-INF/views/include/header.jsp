@@ -74,7 +74,7 @@
                 </svg></a>
 
 						<!-- 장바구니 아이콘 -->
-						<a class="text-1000" href="#!"> <svg
+						<a class="text-1000" href="${path}/shop/cart/list.do"> <svg
 								class="feather feather-shopping-cart me-3 mt-4"
 								xmlns="http://www.w3.org/2000/svg" width="16" height="16"
 								viewBox="0 0 24 24" fill="none" stroke="currentColor"

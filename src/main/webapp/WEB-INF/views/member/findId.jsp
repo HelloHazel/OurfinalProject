@@ -52,10 +52,10 @@ function findId() {
 <form  method="post" name="form1" id="form1">
 <div class="col-lg-4" id="inputGroup">
 <input id="name" name="name" class="form-control" placeholder="이름을 입력해주세요" ><br>
-<input id="email" name="email" class="form-control" placeholder="이메일을 입력해주세요" ><br>
+<input type="email" id="email" name="email" class="form-control" placeholder="이메일을 입력해주세요" ><br>
 <div class="d-grid gap-2 d-md-flex" >
 <input type="button" value="아이디 찾기" id="find" class="btn btn-outline-warning" onclick="findId()">
-<input type="button" value="비밀번호 찾기" class="btn btn-outline-warning" onclick="location.href=${path}/member/findpw.do">
+<input type="button" value="비밀번호 찾기" class="btn btn-outline-warning" onclick="location.href='${path}/member/findpw.do'">
 <input type="button" value="홈으로 가기" class="btn btn-outline-warning" onclick="location.href='${path}/'"> 
 </div>
 </div>

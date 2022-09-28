@@ -61,7 +61,7 @@ public class CartController {
 		cartService.insert(dto);//
 		
 		//로그인 된 상태 (장바구니에 insert 처리 후 장바구니 목록으로 이동)
-		return "redirect:shop/cart/list.do";
+		return "redirect:/shop/cart/list.do";
 	}
 	
 	//장바구니 개별 상품 삭제
@@ -90,7 +90,7 @@ public class CartController {
 		String userid=(String)session.getAttribute("userid");
 		if(userid != null) {
 			for (int i=0; i<cart_no.length; i++) {
-				if(amount[i] == 0) {//수량이 0이면 레코드
+				if(amount[i] == 0) {//수량이 0이면 레코드 삭제
 					cartService.delete(cart_no[i]);
 				}else {//0이 아니면 수정
 					CartDTO dto = new CartDTO();

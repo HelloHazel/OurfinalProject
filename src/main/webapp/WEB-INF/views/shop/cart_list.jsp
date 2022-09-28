@@ -23,6 +23,7 @@ $(function() {
 </head>
 <body>
 <%@ include file="../include/menu.jsp" %>
+<br>
 <h2>장바구니</h2>
 <c:choose>
 	<c:when test="${map.count == 0}">
@@ -37,6 +38,7 @@ $(function() {
 				<th>단가</th>
 				<th>수량</th>
 				<th>금액</th>
+				<th>&nbsp;</th>
 			</tr>
 		 <c:forEach var="row" items="${map.list}">
 		 	<tr>

@@ -67,6 +67,15 @@ public class MemberDAOImpl implements MemberDAO {
 		map.put("email",email);
 		return sqlSession.selectOne("member.findId", map);
 	}
+
+	@Override
+	public String find_pw(String name, String userid, String email) {
+		Map<String, String> map = new HashMap<>();
+		map.put("name", name);
+		map.put("userid",userid);
+		map.put("email",email);
+		return sqlSession.selectOne("member.findPw", map);
+	}
 	
 	
 
