@@ -15,7 +15,7 @@ import com.example.finalproject.service.shop.ProductService;
 
 @Controller
 @RequestMapping("shop/product/*")//공통 URL 처리 
-public class ProdouctController {
+public class ProductController {
 
 	@Inject
 	ProductService productService; //controller는 service와 연결
@@ -29,7 +29,7 @@ public class ProdouctController {
 		return mav;
 	}
 	
-	@RequestMapping("detail/${row.product_id}")
+	@RequestMapping("detail/{product_id}")
 	//리턴 타입: ModelAndView, 메소드 이름:detail(들어오는값), RESTful 사용을 위한 @PathVariable 입력
 	public ModelAndView detail(@PathVariable int product_id, ModelAndView mav) {
 		//포워딩할 뷰

@@ -66,4 +66,17 @@ public class MemberController {
 		model.addAttribute("userid", memberService.find_id(response, name, email));
 		return "member/findIdResult";
 	}
+	
+	//비밀번호 찾기 페이지로 이동
+		@RequestMapping("findpw.do")
+		public String findPw() {
+			return "member/findPw";
+		}
+		
+		//비밀번호 찾기
+		@RequestMapping("find_pw.do")
+		public String find_pw(HttpServletResponse response, @RequestParam("name") String name, @RequestParam("userid") String userid, @RequestParam("email") String email, Model model) throws Exception{
+			model.addAttribute("passwd", memberService.find_pw(response, name, userid, email));
+			return "member/findPwResult";
+		}
 }

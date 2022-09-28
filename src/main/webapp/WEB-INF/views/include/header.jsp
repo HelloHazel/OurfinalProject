@@ -74,7 +74,7 @@
                 </svg></a>
 
 						<!-- 장바구니 아이콘 -->
-						<a class="text-1000" href="#!"> <svg
+						<a class="text-1000" href="${path}/shop/cart/list.do"> <svg
 								class="feather feather-shopping-cart me-3 mt-4"
 								xmlns="http://www.w3.org/2000/svg" width="16" height="16"
 								viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -148,9 +148,9 @@
 						<li class="nav-item px-2"><a class="nav-link fw-medium"
 							href="${path}/admin/list.do">회원관리</a></li>
 							<li class="nav-item px-2"><a class="nav-link fw-medium"
-							href="${path}/admin/list.do">상품등록</a></li>
+							href="${path}/shop/product/write.do">상품등록</a></li>
 							<li class="nav-item px-2"><a class="nav-link fw-medium"
-							href="${path}/admin/list.do">상품목록</a></li>
+							href="${path}/shop/product/list.do">상품목록</a></li>
 							<li class="nav-item px-2"><a class="nav-link fw-medium"
 							href="${path}/admin/list.do">주문관리</a></li>
 					</ul>

@@ -3,10 +3,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <%@ include file="../include/header.jsp" %>
-<script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
 $(function() {
 	$("#btnList").click(function(){
 		//상품 목록으로 이동
@@ -17,12 +18,13 @@ $(function() {
 			//장바구니 전체 삭제
 			location.href="${path}/shop/cart/deleteAll.do";
 		}
-	})
+	});
 });
 </script>
 </head>
 <body>
 <%@ include file="../include/menu.jsp" %>
+<br>
 <h2>장바구니</h2>
 <c:choose>
 	<c:when test="${map.count == 0}">
@@ -37,6 +39,7 @@ $(function() {
 				<th>단가</th>
 				<th>수량</th>
 				<th>금액</th>
+				<th>&nbsp;</th>
 			</tr>
 		 <c:forEach var="row" items="${map.list}">
 		 	<tr>
@@ -49,7 +52,9 @@ $(function() {
 		 		<td>${row.money}</td>
 		 		<td>
 		 <c:if test="${sessionScope.userid != null}">
-		 	<a href="${path}/shop/cart/delete.do?cart_no=${row.cart_no}">삭제</a></c:if>
+		 	<a href="${path}/shop/cart/delete.do?cart_no=${row.cart_no}">
+		 	삭제</a>
+		 	</c:if>
 		 		</td>
 		 		</tr>
 		 		</c:forEach>

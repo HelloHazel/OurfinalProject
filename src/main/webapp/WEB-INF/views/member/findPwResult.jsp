@@ -20,17 +20,17 @@ h3 {
 	margin-bottom: 20px;
 }
 </style>
-<title>아이디 찾기</title>
+<title>비밀번호 찾기</title>
 </head>
 <body>
 <fieldset>
-<h3>아이디 찾기 검색 결과</h3>
+<h3>비밀번호 찾기 검색 결과</h3>
 <div class="id">
 	<h5>
-		회원님의 아이디는 <strong style="color: red;">${userid}</strong> 입니다.
+		회원님의 비밀번호는 <strong style="color: red;">${passwd}</strong> 입니다.
 	</h5>
 </div>
-		<input type="button" value="비밀번호 찾기" class="btn btn-outline-warning" onclick="location.href='${path}/member/findpw.do'">
+		<input type="button" value="로그인" class="btn btn-outline-warning" onclick="location.href='${path}/member/login.do'">
 		<input type="button" value="홈으로 가기" class="btn btn-outline-warning" onclick="location.href='${path}/'"> 
 </fieldset>
 </body>
