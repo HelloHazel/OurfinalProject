@@ -32,9 +32,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</delete>
 	
 	<!-- 장바구니 비우기 -->
-	<delete id="deleteAll">
-	delete from cart
-	where userid=#{userid}
+ 	<delete id="deleteAll">
+  	delete from cart
+  	where userid=#{userid}
 	</delete>
 	
 	<!-- 장바구니 수정 -->
