@@ -29,4 +29,21 @@ public class MyPageController {
 		else //로그인하지 않은 경우
 			return "member/login";
 	}
+	
+	@RequestMapping("myquery.do")
+	public String my_query() {
+		return "mypage/myQuery";
+	}
+	
+	@RequestMapping("mypost.do")
+	public String my_post() {
+		return "mypage/myPost";
+	}
+	
+	@RequestMapping("myreview.do")
+	public String my_review() {
+		return "mypage/myReview";
+	}
+	
+	
 }

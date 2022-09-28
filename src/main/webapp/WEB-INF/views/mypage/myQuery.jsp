@@ -40,7 +40,6 @@
 <meta name="theme-color" content="#712cf9">
 
 
-
     <style>
       .bd-placeholder-img {
         font-size: 1.125rem;
@@ -96,8 +95,9 @@
 
  .nav > .nav-item > .nav-link {
   background-color: #FFE08C;
-} 
+}
  
+
 
     </style>
 
@@ -180,8 +180,8 @@
     </a>
     <hr>
     <ul class="nav nav-pills flex-column mb-auto">
-      <li class="nav-item">
-        <a href="${pageContext.request.contextPath}/mypage/mypagemain.do" class="nav-link active" aria-current="page">
+      <li>
+        <a href="${pageContext.request.contextPath}/mypage/mypagemain.do" class="nav-link text-dark">
           <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#home"/></svg>
           나의 구매내역
         </a>
@@ -192,8 +192,8 @@
          문의하기
         </a>
       </li>
-      <li>
-        <a href="${pageContext.request.contextPath}/mypage/myquery.do" class="nav-link text-dark">
+      <li class="nav-item">
+        <a href="${pageContext.request.contextPath}/mypage/myquery.do" class="nav-link active" aria-current="page">
           <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#table"/></svg>
           나의 문의내역
         </a>
@@ -230,28 +230,7 @@
 </main>
 		</div>
 		<div class="col-9 text-bg-light">
-			<table border="1">
-			  <tr>
-			    <th>번호</th>
-			    <th>상품사진</th>
-			    <th>상품이름</th>
-			    <th>갯수</th>
-			    <th>금액</th>
-			    <th>날짜</th>
-			  </tr>
-  <%-- <c:forEach var="row" items="${map.list}"> 
-<c:choose>
- <c:when test="${row.show == 'y'}">
-  <tr>
-    <td>${row.bno}</td>
-    <td><a href="${path}/board/view.do?bno=${row.bno}">${row.title}</a>
-    </td>
-    <td><fmt:formatDate value="${row.regdate}" pattern="yyyy-MM-dd HH:mm:ss" /></td>
-  </tr>
-  </c:when>
- </c:choose> 
-</c:forEach>   --%>
-  </table>
+			<h1>여기는 나의 문의내역</h1>
 			
 		</div>
 	</div>		
