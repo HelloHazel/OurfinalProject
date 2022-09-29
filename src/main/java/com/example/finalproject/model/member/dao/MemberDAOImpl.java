@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.Map;
 
 import javax.inject.Inject;
-import javax.servlet.http.HttpServletResponse;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
@@ -38,8 +37,7 @@ public class MemberDAOImpl implements MemberDAO {
 
 	@Override
 	public void insertMember(MemberDTO dto) {
-		// TODO Auto-generated method stub
-		
+		sqlSession.insert("member.insertMember",dto);
 	}
 
 	@Override
@@ -75,6 +73,12 @@ public class MemberDAOImpl implements MemberDAO {
 		map.put("userid",userid);
 		map.put("email",email);
 		return sqlSession.selectOne("member.findPw", map);
+	}
+
+	@Override
+	public int idCheck(String userid) throws Exception {
+		int result = sqlSession.selectOne("member.idCheck",userid);
+		return result;
 	}
 	
 	

@@ -24,5 +24,16 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select passwd from member
 		where name=#{name} and userid=#{userid} and email=#{email}
 	</select>
+	
+	<insert id="insertMember">
+	insert into member (name, userid, passwd, email, phone, zipcode, address1, address2)
+	values (#{name}, #{userid}, #{passwd}, #{email}, #{phone}, #{zipcode}, #{address1}, #{address2})
+	</insert>
+	
+	<select id="idCheck"  resultType="int">
+		select count(*)
+		from member
+		where userid=#{userid}
+	</select>
 </mapper>
 
