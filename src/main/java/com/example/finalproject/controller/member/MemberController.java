@@ -8,8 +8,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.example.finalproject.HomeController;
@@ -24,16 +27,19 @@ public class MemberController {
 	@Inject
 	MemberService memberService;
 	
+	//로그인 페이지 이동
 	@RequestMapping("login.do")
 	public String login() {
 		return "member/login";
 	}
 	
+	//회원가입 페이지 이동
 	@RequestMapping("join.do")
 	public String join() {
 		return "member/join";
 	}
 	
+	//로그인 확인
 	@RequestMapping("login_check.do")
 	public ModelAndView login_check(MemberDTO dto, HttpSession session) {
 		//로그인이 성공 true, 실패 false
@@ -48,7 +54,6 @@ public class MemberController {
 			mav.addObject("message", "error");
 		}
 		return mav;
-		
 	}
 	
 	@RequestMapping("logout.do")
@@ -83,5 +88,20 @@ public class MemberController {
 		public String find_pw(HttpServletResponse response, @RequestParam("name") String name, @RequestParam("userid") String userid, @RequestParam("email") String email, Model model) throws Exception{
 			model.addAttribute("passwd", memberService.find_pw(response, name, userid, email));
 			return "member/findPwResult";
+		}
+		
+		//회원정보 저장
+		@RequestMapping("write.do")
+		public String insert(@ModelAttribute MemberDTO dto) {
+			memberService.insertMember(dto);
+			return "main";
+		}
+		
+		//아이디 중복 체크
+		@ResponseBody
+		@RequestMapping(value = "/idCheck.do", method = RequestMethod.POST)
+		public int idCheck(String userid) throws Exception{
+			int result = memberService.idCheck(userid);
+			return result;
 		}
 }

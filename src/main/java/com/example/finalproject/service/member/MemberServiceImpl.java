@@ -51,8 +51,7 @@ public class MemberServiceImpl implements MemberService {
 
 	@Override
 	public void insertMember(MemberDTO dto) {
-		// TODO Auto-generated method stub
-		
+		memberDao.insertMember(dto);
 	}
 
 	@Override
@@ -107,6 +106,12 @@ public class MemberServiceImpl implements MemberService {
 		} else {
 			return passwd;
 		}
+	}
+
+	@Override
+	public int idCheck(String userid) throws Exception {
+		int result = memberDao.idCheck(userid);
+		return result;
 	}
 
 	

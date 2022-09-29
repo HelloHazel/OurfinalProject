@@ -68,6 +68,116 @@
             }
         }).open();
     }
+    
+function find_id() {
+    	$.ajax({
+    		url : "${path}/member/idCheck.do",
+    		type:"POST",
+    		dataType:"JSON",
+    		data:{"userid":$("#userid").val()},
+    		success: function(data) {
+    			if(data == 1){
+    				alert("이미 있는 아이디입니다.");
+    			} else if(data == 0){
+    				$("#idCheck").attr("value","Y");
+    				alert("사용 가능한 아이디입니다.");
+    			}
+    		}
+    	});
+    }   
+
+//회원가입 버튼 클릭 시
+function join() {
+	var form = document.user;
+	var name = $("#name").val();
+	var userid = $("#userid").val(); //태그의 value 속성값
+	var passwd = $("#passwd").val();
+	var passwdCheck = $("#passwdCheck").val();
+	var email = $("#email").val();
+	var phone = $("#phone").val();
+	var zipcode = $("#zipcode").val();
+	var address1 = $("#address1").val();
+	var address2 = $("#address2").val();
+	var idCheck = $("#idCheck").val();
+	
+	var exp1 = /^[A-Za-z0-9]{4,10}$/; //아이디 영문자, 숫자 포함 4~10자리
+	var exp2 = /(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*\d){6,12}/;
+	var exp3 = /^[가-힣]+$/;//한글만 입력하는 정규식
+	var exp4 = /01[016789]-[^0][0-9]{2,3}-[0-9]{3,4}/;//휴대폰 번호 정규식
+	
+	if (userid == "") {
+		alert("아이디를 입력하세요.");
+		$("#userid").focus(); //입력 포커스 이동
+		return; //함수 종료
+	}else if(!exp1.test(userid)){
+		alert("아이디는 영문, 숫자를 사용한 4~10자리로 입력");
+		$("#userid").focus();
+		return;
+	}
+	if(idCheck == "N"){
+		alert("아이디 중복 체크를 하세요.");
+		return;
+	}
+	if (name == "") {
+		alert("이름을 입력하세요.");
+		$("#name").focus();
+		return;
+	}else if(!exp3.test(name)){
+		alert("이름은 한글만 입력가능합니다.");
+		$("#name").focus();
+		return;
+	}
+	if (passwd == "") {
+		alert("비밀번호를 입력하세요.");
+		$("#passwd").focus();
+		return;
+	}else if(!exp2.test(passwd)){
+		alert("비밀번호는 영문자, 숫자, 특수기호(!@#$%^*+=-)를 모두 사용하여 6~12자리로 입력하세요");
+		$("#passwd").focus();
+		return;
+	}
+	if (passwdCheck == "") {
+		alert("비밀번호확인을 입력하세요.");
+		$("#passwdCheck").focus();
+		return;
+	}
+	if(passwd != passwdCheck){
+		alert("비밀번호가 일치하지 않습니다.");
+		return;
+	}
+	if (email == "") {
+		alert("이메일을 입력하세요.");
+		$("#email").focus();
+		return;
+	}
+	if (phone == "") {
+		alert("전화번호를 입력하세요.");
+		$("#phone").focus();
+		return;
+	}else if(!exp4.test(phone)){
+		alert("휴대폰 번호를 다시 확인해주세요!");
+		$("#phone").focus();
+		return;
+	}
+	if (zipcode == "") {
+		alert("우편번호를 입력하세요.");
+		$("#zipcode").focus();
+		return;
+	}
+	if (address1 == "") {
+		alert("주소를 입력하세요.");
+		$("#address1").focus();
+		return;
+	}
+	if (address2 == "") {
+		alert("상세주소를 입력하세요.");
+		$("#address2").focus();
+		return;
+	}
+		
+	form.action = "${path}/member/write.do";
+	form.submit();
+}
 </script>
 </head>
 <body>
@@ -85,41 +195,46 @@
                             <div class="text-center">
                                 <h1 class="h4 text-gray-900 mb-4">회원가입</h1>
                             </div>
-                            <form class="user">
+                            <form class="user" name="user"  id="user"> 
                             <div class="form-group">
-                                        <input type="text" class="form-control form-control-user" id="exampleFirstName"
+                                        <input type="text" class="form-control form-control-user" id="name" name="name"
                                             placeholder="이름">
 								 </div>
-								  <div class="form-group">
-                                        <input type="text" class="form-control form-control-user" id="exampleLastName"
-                                            placeholder="아이디">     
-                                 </div>                
+                                 <div class="form-group row">
+                                    <div class="col-sm-8 mb-3 mb-sm-0">
+                                         <input type="text" class="form-control form-control-user" id="userid" name="userid"
+                                            placeholder="아이디">  
+                                    </div>
+                                    <div class="col-sm-4">
+                                       <button type="button" class="btn btn-warning btn-user btn-block" onclick="find_id();" id="idCheck"  value="N">아이디 중복 체크</button>
+                                    </div>
+                                </div>                
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input type="password" class="form-control form-control-user"
-                                            id="exampleInputPassword" placeholder="비밀번호">
+                                        <input type="password" class="form-control form-control-user" name="passwd"
+                                            id="passwd" placeholder="비밀번호">
                                     </div>
                                     <div class="col-sm-6">
-                                        <input type="password" class="form-control form-control-user"
-                                            id="exampleRepeatPassword" placeholder="비밀번호 확인">
+                                        <input type="password" class="form-control form-control-user" name="passwdCheck"
+                                            id="passwdCheck" placeholder="비밀번호 확인">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                 <div class="col-sm-6 mb-3 mb-sm-0">
-                                    <input type="email" class="form-control form-control-user" id="exampleInputEmail"
+                                    <input type="email" class="form-control form-control-user" id="email" name="email"
                                         placeholder="이메일">
                                 </div>
                                  <div class="col-sm-6">
-                                    <input type="tel" class="form-control form-control-user" id="exampleInputPhone"
+                                    <input type="tel" class="form-control form-control-user" id="phone" name="phone"
                                         placeholder="전화번호">
                                 </div>
                                 </div>
                                 <div class="form-group row">
-                                <div class="col-sm-6 mb-3 mb-sm-0">
+                                <div class="col-sm-8 mb-3 mb-sm-0">
                                     <input type="text" class="form-control form-control-user" id="zipcode" name="zipcode" readonly
                                         placeholder="우편번호">
                                 </div>
-                                 <div class="col-sm-6">
+                                 <div class="col-sm-4">
                                     <input type="button"  class="btn btn-warning btn-user btn-block" onclick="daumZipCode()" value="우편번호 찾기">
                                 </div>
                                 </div>
@@ -131,9 +246,9 @@
                                         <input type="text" class="form-control form-control-user"
                                             id="address2" name="address2"  placeholder="상세주소">
                                     </div>
-                                <a href="login.html" class="btn btn-warning btn-user btn-block">
+                                <button class="btn btn-warning btn-user btn-block" type="button" onclick="join()">
                                    회원가입
-                                </a>
+                                </button>
                             </form>
                             <hr>
                             <div class="text-center">
