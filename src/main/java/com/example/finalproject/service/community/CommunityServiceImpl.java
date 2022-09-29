@@ -21,9 +21,8 @@ public class CommunityServiceImpl implements CommunityService {
 	}
 
 	@Override
-	public void create(CommunityDTO dto) {
-		// TODO Auto-generated method stub
-
+	public void create(CommunityDTO dto) throws Exception{
+		communityDao.create(dto);
 	}
 
 	@Override

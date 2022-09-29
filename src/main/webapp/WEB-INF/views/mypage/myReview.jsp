@@ -218,7 +218,7 @@
         <strong>회원정보</strong>
       </a>
       <ul class="dropdown-menu dropdown-menu text-small shadow">
-        <li><a class="dropdown-item" href="#">회원정보 확인/수정</a></li>
+        <li><a class="dropdown-item" href="${pageContext.request.contextPath}/mypage/myinfo.do?userid=${sessionScope.userid}">회원정보 확인/수정</a></li>
         <li><a class="dropdown-item" href="#">회원탈퇴</a></li>
       </ul>
     </div>

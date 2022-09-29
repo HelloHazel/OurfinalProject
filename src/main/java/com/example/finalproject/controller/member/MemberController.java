@@ -29,6 +29,11 @@ public class MemberController {
 		return "member/login";
 	}
 	
+	@RequestMapping("join.do")
+	public String join() {
+		return "member/join";
+	}
+	
 	@RequestMapping("login_check.do")
 	public ModelAndView login_check(MemberDTO dto, HttpSession session) {
 		//로그인이 성공 true, 실패 false

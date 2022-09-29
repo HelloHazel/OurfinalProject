@@ -9,6 +9,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select * from community
 		order by comm_regdate desc
 	</select>
+	
+	<insert id="insert">
+	 insert into community (comm_no,comm_title,comm_content,userid) values
+     (comm_seq.nextval, #{comm_title}, #{comm_content}, #{userid})
+	
+	</insert>
 </mapper>
 
 

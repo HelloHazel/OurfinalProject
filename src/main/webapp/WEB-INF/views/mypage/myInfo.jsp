@@ -40,6 +40,7 @@
 <meta name="theme-color" content="#712cf9">
 
 
+
     <style>
       .bd-placeholder-img {
         font-size: 1.125rem;
@@ -92,18 +93,66 @@
         -webkit-overflow-scrolling: touch;
       }
 
-
- .nav > .nav-item > .nav-link {
-  background-color: #FFE08C;
-}
- 
-
-
     </style>
 
     
     <!-- Custom styles for this template -->
     <link href="sidebars.css" rel="stylesheet">
+   <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+    <script>
+    function daumZipCode() {
+        new daum.Postcode({
+            oncomplete: function(data) {
+                // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+
+                // 각 주소의 노출 규칙에 따라 주소를 조합한다.
+                // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+                var addr = ''; // 주소 변수
+                var extraAddr = ''; // 참고항목 변수
+
+                //사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
+                if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
+                    addr = data.roadAddress;
+                } else { // 사용자가 지번 주소를 선택했을 경우(J)
+                    addr = data.jibunAddress;
+                }
+
+                // 사용자가 선택한 주소가 도로명 타입일때 참고항목을 조합한다.
+                if(data.userSelectedType === 'R'){
+                    // 법정동명이 있을 경우 추가한다. (법정리는 제외)
+                    // 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
+                    if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
+                        extraAddr += data.bname;
+                    }
+                    // 건물명이 있고, 공동주택일 경우 추가한다.
+                    if(data.buildingName !== '' && data.apartment === 'Y'){
+                        extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+                    }
+                    // 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
+                    if(extraAddr !== ''){
+                        extraAddr = ' (' + extraAddr + ')';
+                    }
+                    // 조합된 참고항목을 해당 필드에 넣는다.
+                    document.getElementById("address1").value = extraAddr;
+                } else {
+                    document.getElementById("address2").value = '';
+                }
+                // 우편번호와 주소 정보를 해당 필드에 넣는다.
+                document.getElementById('zipcode').value = data.zonecode;
+                document.getElementById("address1").value = addr;
+                // 커서를 상세주소 필드로 이동한다.
+                document.getElementById("address2").focus();
+            }
+        }).open();
+    }
+    
+    $(function(){
+    	$("#btnUpdate").click(function(){
+    		document.form1.action="${path}/member/update.do";
+    		document.form1.submit();
+    	});
+    });
+    </script> 
   </head>
   <body>
     
@@ -167,76 +216,125 @@
 </svg>
 
 <section>
-			<div class="bg-holder overlay overlay-light"
-				style="background-color: #FFE08C; background-size: cover;"></div>
+<div class="bg-holder overlay overlay-light"
+	style="background-color: #FFE08C; background-size: cover;"></div>
 
 <div class="container">
 	<div class="row">
 		<div class="col-3">
-<main class="d-flex flex-nowrap">
-  <div class="d-flex flex-column flex-shrink-0 p-3 text-bg-light" style="width: 280px;">
-    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
-      <span class="fs-4">마이 페이지</span>
-    </a>
-    <hr>
-    <ul class="nav nav-pills flex-column mb-auto">
-      <li>
-        <a href="${pageContext.request.contextPath}/mypage/mypagemain.do" class="nav-link text-dark">
-          <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#home"/></svg>
-          나의 구매내역
-        </a>
-      </li>
-      <li>
-        <a href="#" class="nav-link text-dark">
-          <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#speedometer2"/></svg>
-         문의하기
-        </a>
-      </li>
-      <li class="nav-item">
-        <a href="${pageContext.request.contextPath}/mypage/myquery.do" class="nav-link active" aria-current="page">
-          <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#table"/></svg>
-          나의 문의내역
-        </a>
-      </li>
-      <li>
-        <a href="${pageContext.request.contextPath}/mypage/mypost.do" class="nav-link text-dark">
-          <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#grid"/></svg>
-          나의 게시글
-        </a>
-      </li>
-      <li>
-        <a href="${pageContext.request.contextPath}/mypage/myreview.do" class="nav-link text-dark">
-          <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#people-circle"/></svg>
-          나의 리뷰
-        </a>
-      </li>
-    </ul>
-    <hr>
-    <div class="dropdown">
-      <a href="#" class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-        <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
-        <strong>회원정보</strong>
-      </a>
-      <ul class="dropdown-menu dropdown-menu text-small shadow">
-        <li><a class="dropdown-item" href="${pageContext.request.contextPath}/mypage/myinfo.do?userid=${sessionScope.userid}">회원정보 확인/수정</a></li>
-        <li><a class="dropdown-item" href="#">회원탈퇴</a></li>
-      </ul>
-    </div>
-  </div>
- 
- <div class="b-example-divider b-example-vr"></div> 
-
-		
-</main>
+			<main class="d-flex flex-nowrap">
+			  <div class="d-flex flex-column flex-shrink-0 p-3 text-bg-light" style="width: 280px;">
+			    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+			      <span class="fs-4">마이 페이지</span>
+			    </a>
+			    <hr>
+			    <ul class="nav nav-pills flex-column mb-auto">
+			      <li class="nav-item">
+			        <a href="${pageContext.request.contextPath}/mypage/mypagemain.do"class="nav-link text-dark">
+			          <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#home"/></svg>
+			          나의 구매내역
+			        </a>
+			      </li>
+			      <li>
+			        <a href="#" class="nav-link text-dark">
+			          <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#speedometer2"/></svg>
+			         문의하기
+			        </a>
+			      </li>
+			      <li>
+			        <a href="${pageContext.request.contextPath}/mypage/myquery.do" class="nav-link text-dark">
+			          <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#table"/></svg>
+			          나의 문의내역
+			        </a>
+			      </li>
+			      <li>
+			        <a href="${pageContext.request.contextPath}/mypage/mypost.do" class="nav-link text-dark">
+			          <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#grid"/></svg>
+			          나의 게시글
+			        </a>
+			      </li>
+			      <li>
+			        <a href="${pageContext.request.contextPath}/mypage/myreview.do" class="nav-link text-dark">
+			          <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#people-circle"/></svg>
+			          나의 리뷰
+			        </a>
+			      </li>
+			    </ul>
+			    <hr>
+			    <div class="dropdown">
+			      <a href="#" class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+			        <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
+			        <strong>회원정보</strong>
+			      </a>
+			      <ul class="dropdown-menu dropdown-menu text-small shadow">
+			        <li><a class="dropdown-item" href="${pageContext.request.contextPath}/mypage/myinfo.do?userid=${sessionScope.userid}">회원정보 확인/수정</a></li>
+			        <li><a class="dropdown-item" href="#">회원탈퇴</a></li>
+			      </ul>
+			    </div>
+			  </div>
+			 
+			 <div class="b-example-divider b-example-vr"></div> 
+			
+					
+			</main>
 		</div>
 		<div class="col-9 text-bg-light">
-			<h1>여기는 나의 문의내역</h1>
+			<form name="form1" method="post">
+				<table border="1" style="width: 100%">
+				 <tr>
+				  <td>아이디</td>
+				  <td><input name="userid" value="${dto.userid}" readonly> </td>
+				 </tr>
+				 <tr>
+				  <td>비밀번호</td>
+				  <td><input type="password" name="passwd"> </td>
+				 </tr>
+				 <tr>
+				  <td>이름</td>
+				  <td><input name="name" value="${dto.name}"> </td>
+				 </tr>
+				 <tr>
+				  <td>이메일</td>
+				  <td><input name="email" value="${dto.email}"> </td>
+				 </tr>
+				 <tr>
+				  <td>우편번호</td>
+				  <td> <input name="zipcode" id="zipcode" value="${dto.zipcode}" readonly>
+				  <input type="text" onclick="daumZipCode()" value="우편번호 찾기">
+				  </td>
+				 </tr>
+				 <tr>
+				  <td>도로명주소</td>
+				  <td><input name="address1" id="address1" value="${dto.address1}">   </td>
+				 </tr>
+				 <tr>
+				  <td>상세주소</td>
+				  <td><input name="address2" id="address2" value="${dto.address2}"> </td>
+				 </tr>
+				 <tr>
+				  <td>회원가입일자</td>
+				  <td>
+				   <c:if test="${join_date != null }">
+				    <fmt:formatDate value="${join_date}" 
+				    pattern="yyyy-MM-dd HH:mm:ss"/>
+				   </c:if>
+				  </td>
+				 </tr>
+				 <tr>
+				  <td colspan="2" align="center">
+				   <input type="button" value="수정" id="btnUpdate">
+				   <input type="button" value="삭제" id="btnDelete">
+				   <div style="color: red;">${message}</div>
+				  </td>
+				 </tr>
+				</table>
+			</form>
+			
 			
 		</div>
 	</div>		
 </div>
-
-	</section>
+</section>
 		
 
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>

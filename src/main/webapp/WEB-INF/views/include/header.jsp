@@ -123,8 +123,8 @@
 								<!-- 로그인하지 않은 상태 -->
 								<a class="btn btn-lg btn-success btn-block mt-3"
 									href="${pageContext.request.contextPath}/member/login.do">로그인</a>
-								<button class="btn btn-lg btn-secondary btn-block mt-3" type="button"
-									onclick="#">회원가입</button>
+								<a class="btn btn-lg btn-secondary btn-block mt-3"
+									href="${pageContext.request.contextPath}/member/join.do">회원가입</a>
 							</c:when>
 							<c:otherwise>
 								<!-- 로그인한 상태 -->
@@ -164,8 +164,8 @@
 								<!-- 로그인하지 않은 상태 -->
 								<a class="btn btn-lg btn-success btn-block mt-3"
 									href="${pageContext.request.contextPath}/member/login.do">로그인</a>
-								<button class="btn btn-lg btn-secondary btn-block mt-3" type="button"
-									onclick="#">회원가입</button>
+								<a class="btn btn-lg btn-secondary btn-block mt-3"
+									href="${pageContext.request.contextPath}/member/join.do">회원가입</a>
 							</c:when>
 							<c:otherwise>
 								<!-- 로그인한 상태 -->
