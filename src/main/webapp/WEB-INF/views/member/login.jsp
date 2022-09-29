@@ -23,38 +23,39 @@
 	href="${pageContext.request.contextPath}/resources/assets/css/sb-admin-2.min.css"
 	rel="stylesheet">
 <script>
-function login(){
-	    var form = document.user;
-		var userid=$("#userid").val(); //태그의 value 속성값
-		var passwd=$("#passwd").val();
-		if(userid==""){
+	function login() {
+		var form = document.user;
+		var userid = $("#userid").val(); //태그의 value 속성값
+		var passwd = $("#passwd").val();
+		if (userid == "") {
 			alert("아이디를 입력하세요.");
 			$("#userid").focus(); //입력 포커스 이동
 			return; //함수 종료
 		}
-		if(passwd==""){
+		if (passwd == "") {
 			alert("비밀번호를 입력하세요.");
 			$("#passwd").focus();
 			return;
 		}
-		 form.action="${path}/member/login_check.do";
-		 form.submit();
-}
+		form.action = "${path}/member/login_check.do";
+		form.submit();
+	}
 </script>
 
 <!-- 카카오 로그인 -->
-<script type="text/javascript" src="https://developers.kakao.com/sdk/js/kakao.min.js" charset="utf-8"></script>
+<script type="text/javascript"
+	src="https://developers.kakao.com/sdk/js/kakao.min.js" charset="utf-8"></script>
 <script type="text/javascript">
-    $(document).ready(function(){
-        Kakao.init('6fea8608c699c1f3a4565f35ee367101');
-        Kakao.isInitialized();
-    });
+	$(document).ready(function() {
+		Kakao.init('6fea8608c699c1f3a4565f35ee367101');
+		Kakao.isInitialized();
+	});
 
-    function loginWithKakao() {
-        Kakao.Auth.authorize({ 
-        redirectUri: 'http://localhost/finalproject/member/login.do'
-        }); // 등록한 리다이렉트uri 입력
-    }
+	function loginWithKakao() {
+		Kakao.Auth.authorize({
+			redirectUri : 'http://localhost/finalproject/member/login.do'
+		}); // 등록한 리다이렉트uri 입력
+	}
 </script>
 </head>
 <body class="bg-gradient-primary">
@@ -70,25 +71,38 @@ function login(){
 							<div class="col-lg-6">
 								<div class="p-5">
 									<div class="text-center">
-										<a href="${path}/"><img alt="오독오독 로고" src="${path}/resources/assets/img/gallery/logo5.png" width="30%" height="auto"></a>
+										<a href="${path}/"><img alt="오독오독 로고"
+											src="${path}/resources/assets/img/gallery/logo5.png"
+											width="30%" height="auto"></a>
 									</div>
-									<form  name="user" method="post"> 
+									<form name="user" method="post">
 										<div class="form-group">
-											<input class="form-control form-control-user"
-												id="userid" name="userid"   placeholder="아이디를 입력해주세요">
+											<input class="form-control form-control-user" id="userid"
+												name="userid" placeholder="아이디를 입력해주세요">
 										</div>
 										<div class="form-group">
 											<input type="password" class="form-control form-control-user"
 												id="passwd" name="passwd" placeholder="비밀번호를 입력해주세요">
 										</div>
+										<c:if test="${param.message == 'nologin' }">
+											<div style="color: red;">로그인 하신 후 사용하세요.</div>
+										</c:if>
+										<c:if test="${message == 'error' }">
+											<div style="color: red;">아이디 또는 비밀번호가 일치하지 않습니다.</div>
+										</c:if>
+										<c:if test="${message == 'logout' }">
+											<div style="color: blue;">로그아웃 처리되었습니다.</div>
+										</c:if>
 										<input type="button" id="Login"
-											class="btn btn-primary btn-user btn-block"  onclick="login()" value="로그인"> 
+											class="btn btn-primary btn-user btn-block" onclick="login()"
+											value="로그인">
 										<hr>
 										<a href="index.html" class="btn btn-google btn-user btn-block">
 											<i class="fab fa-google fa-fw"></i> 구글로 로그인하기
-										</a> <button
-											class="btn btn-warning btn-user btn-block"> <i
-											class="fab fa-facebook-f fa-fw" onclick="loginWithKakao()"></i>카카오톡 로그인
+										</a>
+										<button class="btn btn-warning btn-user btn-block">
+											<i class="fab fa-facebook-f fa-fw" onclick="loginWithKakao()"></i>카카오톡
+											로그인
 										</button>
 									</form>
 									<hr>

@@ -12,7 +12,7 @@ public class NoticeDTO {
 	private int viewcnt;
 	private String name; // 작성자 이름
 	private int cnt; // 댓글 갯수
-	private String show; // 화면표시여부
+	private int pin; // 상단고정
 	private String[] files; // 첨부파일 이름 배열
 	
 	public int getBno() {
@@ -63,11 +63,11 @@ public class NoticeDTO {
 	public void setCnt(int cnt) {
 		this.cnt = cnt;
 	}
-	public String getShow() {
-		return show;
+	public int getPin() {
+		return pin;
 	}
-	public void setShow(String show) {
-		this.show = show;
+	public void setPin(int pin) {
+		this.pin = pin;
 	}
 	public String[] getFiles() {
 		return files;
@@ -78,7 +78,7 @@ public class NoticeDTO {
 	@Override
 	public String toString() {
 		return "NoticeDTO [bno=" + bno + ", title=" + title + ", content=" + content + ", writer=" + writer
-				+ ", regdate=" + regdate + ", viewcnt=" + viewcnt + ", name=" + name + ", cnt=" + cnt + ", show=" + show
+				+ ", regdate=" + regdate + ", viewcnt=" + viewcnt + ", name=" + name + ", cnt=" + cnt + ", pin=" + pin
 				+ ", files=" + Arrays.toString(files) + "]";
 	}
 }

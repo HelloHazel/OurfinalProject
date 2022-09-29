@@ -6,6 +6,7 @@ import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.example.finalproject.model.notice.dao.NoticeDAO;
 import com.example.finalproject.model.notice.dto.NoticeDTO;
@@ -51,9 +52,10 @@ public class NoticeServiceImpl implements NoticeService {
 
 	}
 
+	@Transactional
 	@Override
 	public void delete(int bno) throws Exception {
-		// TODO Auto-generated method stub
+		noticeDao.delete(bno);
 
 	}
 
@@ -79,8 +81,8 @@ public class NoticeServiceImpl implements NoticeService {
 	}
 
 	@Override
-	public int countArticle() throws Exception {
-		return noticeDao.countArticle();
+	public int countArticle(String search_option, String keyword) throws Exception {
+		return noticeDao.countArticle(search_option, keyword);
 	}
 
 	@Override

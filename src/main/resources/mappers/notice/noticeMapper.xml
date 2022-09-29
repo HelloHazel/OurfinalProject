@@ -8,12 +8,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="listAll" resultType="com.example.finalproject.model.notice.dto.NoticeDTO">
 	select *
 		from (
-				select rownum as rn,  A.*
+				select rownum as rn,   A.*
 				from(
-							select bno, title, writer, name, content, regdate, viewcnt
+							select bno, title, writer, name, content, regdate, viewcnt,pin
 							from notice n, member m
 							where n.writer=m.userid
-							order by bno desc
+							order by pin desc, bno desc
 				)A
 		) where rn between #{start} and #{end}
 	</select>
@@ -44,22 +44,16 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	<!-- 게시물 내용 수정 -->
 	<update id="update" parameterType="com.example.finalproject.model.notice.dto.NoticeDTO">
-	update notice
+	update notice 
 	set title=#{title}, content=#{content}
-	where bno=#{bno}
+  	where bno=#{bno}
 	</update>
+	
+	 <!-- 게시물 삭제 -->
+ 	<delete id="delete" parameterType="int">
+ 	 <!-- delete from board where bno=#{bno} -->
+  	delete 
+  	from notice 
+  	where bno=#{bno}
+ 	</delete>
 </mapper>
-
-
-
-
-
-
-
-
-
-
-
-
-
-

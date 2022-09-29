@@ -10,9 +10,12 @@ import javax.servlet.http.HttpSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -29,9 +32,11 @@ public class NoticeController {
 	NoticeService noticeService;
 	
 	@RequestMapping("list.do")
-	public ModelAndView list(@RequestParam(defaultValue = "1") int curPage) throws Exception {
+	public ModelAndView list(@RequestParam(defaultValue = "name") String search_option,
+	@RequestParam(defaultValue = "") String keyword,
+	@RequestParam(defaultValue = "1") int curPage) throws Exception {
 		// 레코드 갯수 계산
-		int count=noticeService.countArticle();
+		int count=noticeService.countArticle(search_option, keyword);
 		// 페이지 관련 설정
 		Pager pager=new Pager(count, curPage);
 		int start=pager.getPageBegin();
@@ -75,12 +80,20 @@ public class NoticeController {
 		return mav;
 	}
 	
+	// 게시판 수정
 	@RequestMapping("update.do")
-	public String update(NoticeDTO dto) throws Exception {
+	public String update(NoticeDTO dto) throws Exception{
 		System.out.println("dto:"+dto);
 		if(dto != null) {
 			noticeService.update(dto);
 		}
+		//수정 완료 후 목록 화면으로..
+		return "redirect:/notice/list.do";
+	}
+	
+	@RequestMapping("delete.do")
+	public String delete(int bno) throws Exception {
+		noticeService.delete(bno);
 		return "redirect:/notice/list.do";
 	}
 }

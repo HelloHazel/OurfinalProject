@@ -22,7 +22,6 @@ function btnReply(){
 		form.action="${path}/reply/insert.do";
 		form.submit();
 	}
-
 }
 
 function btnDelete() {
@@ -32,12 +31,13 @@ function btnDelete() {
 		form.submit();
 	}
 }
-	
+
 function btnUpdate() {
-		var form = document.form1;
-			form.action="${path}/notice/update.do";
-			form.submit();
+	var form = document.form1;
+		form.action="${path}/notice/update.do";
+		form.submit();
 }
+
 </script>
 <style>
 .fileDrop {
@@ -51,13 +51,17 @@ background-color: gray;
 </head>
 <body>
 <%@ include file="../include/menu.jsp" %>
-<h2>게시물 보기</h2>
+<h2>상세보기</h2>
 <form id="form1" name="form1" method="post">
-<div>제목 <input name="title" id="title" size="80" value="${dto.title}" placeholder="제목을 입력하세요">
+<div>제목 <input name="title" id="title" size="80"
+				value="${dto.title}"
+				placeholder="제목을 입력하세요">
 </div>
 <div>조회수 : ${dto.viewcnt}	</div>
 <div style="width:800px;">
-내용 <textarea id="content" name="content" rows="3" cols="80"  placeholder="내용을 입력하세요">${dto.content}</textarea>
+	내용 <textarea id="content" name="content"
+rows="3" cols="80" 
+placeholder="내용을 입력하세요">${dto.content}</textarea>
 	</div>
 	<div style="width:700px; text-align:center;">
 <!-- 수정,삭제에 필요한 글번호를 hidden 태그에 저장 -->	
@@ -84,6 +88,5 @@ background-color: gray;
 </div>
 <!-- 댓글 목록 -->
 <div id="listReply"></div>
-
 </body>
 </html>
