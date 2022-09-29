@@ -4,9 +4,12 @@ import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.finalproject.HomeController;
+import com.example.finalproject.service.member.MemberService;
 import com.example.finalproject.service.mypage.MyPageService;
 
 import org.slf4j.Logger;
@@ -19,6 +22,10 @@ public class MyPageController {
 
 	@Inject
 	MyPageService mypageservice;
+	
+    @Inject MemberService memberService;
+	 
+	
 	
 	@RequestMapping("mypagemain.do")
 	public String main(HttpSession session) {
@@ -45,5 +52,9 @@ public class MyPageController {
 		return "mypage/myReview";
 	}
 	
-	
+	@RequestMapping("myinfo.do")
+	public String my_info( @RequestParam String userid, Model model ) {
+		 model.addAttribute("dto", memberService.viewMember(userid)); 
+		return "mypage/myInfo";
+	}
 }
