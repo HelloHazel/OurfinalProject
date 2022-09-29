@@ -13,7 +13,7 @@ function product_write(){
 	//태그를 id로 조회할 경우
 	var product_name=$("#product_name").val();
 	var price=$("#price").val();
-	var description=$("#description").val();
+	var product_desc=$("#product_desc").val();
 	if(product_name==""){//빈값이면
 		//문자열 비교 : java는 a.equals(b), javascript는 a==b
 		alert("상품이름을 입력하세요");
@@ -25,9 +25,9 @@ function product_write(){
 		$("#price").focus();//입력포커스 이동
 		return;//리턴값없이 함수 종료
 	}
- 	if(description==""){
+ 	if(product_desc==""){
 		alert("상품설명을 입력하세요");
-		$("#description").focus();//입력포커스 이동
+		$("#product_desc").focus();//입력포커스 이동
 		return;//리턴값없이 함수 종료
 	} 
 	document.form1.action="${path}/shop/product/insert.do";
@@ -51,9 +51,9 @@ function product_write(){
  <tr>
   <td>상품설명</td>
   <td>
-   <textarea rows="5" cols="60" name="description" id="description"></textarea>
+   <textarea rows="5" cols="60" name="product_desc" id="product_desc"></textarea>
    <script>
-   CKEDITOR.replace("description", {
+   CKEDITOR.replace("product_desc", {
 	   filebrowserUploadUrl : "${path}/imageUpload.do"
    });
    </script>

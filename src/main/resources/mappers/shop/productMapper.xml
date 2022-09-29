@@ -27,11 +27,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	update product
 	set
 	product_name=#{product_name},
-	price=#{price}
+	price=#{price},
 	product_desc=#{product_desc},
 	product_kind=#{product_kind},
 	product_url=#{product_url}
-	where product_id=#{product_id}
+where product_id=#{product_id}
 </update>
 </mapper>
 
