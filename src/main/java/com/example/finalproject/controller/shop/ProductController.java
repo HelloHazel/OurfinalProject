@@ -46,8 +46,8 @@ public class ProductController {
 			filename=dto.getFile1().getOriginalFilename();
 			try {
 				String path="C:\\work_spring\\.metadata\\.plugins"
-						+ "\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps"
-						+ "\\OurfinalProject\\WEB-INF\\views\\images\\"; //배포 디렉토리
+			+"\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps"
+						+"\\OurfinalProject\\resources\\images\\";  //배포 디렉토리
 				//디렉토리가 존재하지 않으면 생성
 				new File(path).mkdir();
 				//임시 디렉토리에 저장된 첨부파일을 이동

@@ -6,6 +6,15 @@
 <meta charset="UTF-8">
 <title>Product_edit</title>
 <%@ include file="../include/header.jsp" %>
+<script type="text/javascript">
+//상품수정
+function product_update(){
+	
+	
+}
+
+
+</script>
 </head>
 <body>
 <%@ include file="../include/menu.jsp" %>
