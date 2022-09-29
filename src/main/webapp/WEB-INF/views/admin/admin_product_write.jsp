@@ -6,14 +6,21 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <%@ include file="../include/header.jsp" %>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript">
 function product_write(){
 	//태그를 name으로 조회할 경우(계층구조로 접근)
 	//var product_name=document.form1.product_name.value;
 	//태그를 id로 조회할 경우
+	var product_kind=$("#product_kind").val();
 	var product_name=$("#product_name").val();
 	var price=$("#price").val();
 	var product_desc=$("#product_desc").val();
+	if(product_kind==""){//빈값이면
+		alert("상품 분류를 입력하세요.");
+	$("#product_kind").focus();//입력 포커스 이동
+	return;
+	}
 	if(product_name==""){//빈값이면
 		//문자열 비교 : java는 a.equals(b), javascript는 a==b
 		alert("상품이름을 입력하세요");
@@ -37,9 +44,14 @@ function product_write(){
 </head>
 <body>
 <%@ include file="../include/menu.jsp" %>
+<br>
 <h2>상품 등록</h2>
 <form name="form1" method="post" enctype="multipart/form-data">
 <table>
+ <tr>
+  <td>상품분류</td>
+  <td><input name="product_kind" id="product_kind"> </td>
+ </tr>
  <tr>
   <td>상품명</td>
   <td><input name="product_name" id="product_name"> </td>

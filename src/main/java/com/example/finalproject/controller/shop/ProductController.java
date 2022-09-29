@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.example.finalproject.model.shop.dto.ProductDTO;
@@ -78,8 +79,8 @@ public class ProductController {
 			filename=dto.getFile1().getOriginalFilename();
 			try {
 				String path="C:\\work_spring\\.metadata\\.plugins"
-						+ "\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps"
-						+ "\\OurfinalProject\\WEB-INF\\views\\images\\"; //배포 디렉토리
+			+"\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps"
+						+"\\OurfinalProject\\resources\\images\\"; //배포 디렉토리
 				//디렉토리가 존재하지 않으면 생성
 				new File(path).mkdir();
 				//임시 디렉토리에 저장된 첨부파일을 이동
@@ -98,4 +99,25 @@ public class ProductController {
 		return "redirect:/shop/product/list.do";
 	}
 	
+	@RequestMapping("delete.do")
+		public String delete(@RequestParam int product_id) {
+		//첨부파일 삭제
+		String filename=productService.fileInfo(product_id);
+		System.out.println("첨부파일 이름 : " + filename);
+		if(filename != null && !filename.equals("-")) {//파일이 있으면
+			String path="C:\\work_spring\\.metadata\\.plugins"
+					+"\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps"
+					+"\\OurfinalProject\\resources\\images\\";
+			File f=new File(path+filename);
+			System.out.println("파일존재여부 : "+f.exists());
+			if(f.exists()) {//파일이 존재하면
+				f.delete();//파일 목록 삭제
+				System.out.println("삭제되었습니다.");
+			}
+		}
+		//레코드 삭제
+		productService.deleteProduct(product_id);
+		return "redirect:/shop/product/list.do";
+		
+	}
 }

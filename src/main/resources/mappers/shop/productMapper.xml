@@ -22,7 +22,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	(seq_product.nextval, #{product_name}, #{price}, #{product_desc}, #{product_kind}, #{product_url})
 </insert>
 
-<!-- 상품정보 수정 -->
+<!-- 상품 정보 수정 -->
 <update id="update_product">
 	update product
 	set
@@ -33,6 +33,19 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	product_url=#{product_url}
 where product_id=#{product_id}
 </update>
+
+<!-- 상품 삭제 -->
+<delete id="product_delete">
+	delete from product
+	where product_id=#{product_id} 
+</delete>
+
+<!-- 첨부파일 이름 -->
+	<select id="fileInfo" resultType="String">
+	select product_url
+	from product
+	where product_id=#{product_id}
+	</select>
 </mapper>
 
 
