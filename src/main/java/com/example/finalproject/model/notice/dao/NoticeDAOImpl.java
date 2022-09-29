@@ -54,7 +54,7 @@ public class NoticeDAOImpl implements NoticeDAO {
 
 	@Override
 	public void delete(int bno) throws Exception {
-		// TODO Auto-generated method stub
+		sqlSession.delete("notice.delete", bno);
 
 	}
 
@@ -73,7 +73,10 @@ public class NoticeDAOImpl implements NoticeDAO {
 	}
 
 	@Override
-	public int countArticle() throws Exception {
+	public int countArticle(String search_option, String keyword) throws Exception {
+		Map<String, String> map=new HashMap<>();
+		map.put("search_option", search_option);
+		map.put("keyword", keyword);
 		return sqlSession.selectOne("notice.countArticle");
 	}
 
