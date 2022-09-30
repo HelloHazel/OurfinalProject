@@ -7,7 +7,7 @@
 <title>community</title>
 <%@ include file="../include/header.jsp" %>
 <script src="${path}/include/js/common.js"></script>
-
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
@@ -39,12 +39,24 @@
       	font-size: 1.25rem;
       }
       
-      #contentText{
-      	line-height: 1;
+      #useridText{
+      	font-size: 0.8rem;
+      }
+      
+      #table1 {
+      	 margin-left:auto; 
+   		 margin-right:auto;
       }
           
       
     </style>
+    
+    <script type="text/javascript">
+	    function list(page){
+	    	location.href="${path}/community/list.do?curPage="+page;
+	    } 
+    
+    </script>
     
 
 </head>
@@ -81,11 +93,12 @@
   <div class="album py-5 bg-light">
     <div class="container">
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-       <c:forEach var="row" items="${list}">   
+       <c:forEach var="row" items="${map.list}">   
         <div class="col">
           <div class="card shadow-sm">
             <svg  class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/></svg>
             <div class="card-body">
+              <p class="card-text" id="useridText"><a href="${path}/community/detail.do?comm_no=${row.userid}">${row.userid}</a></p>
               <p class="card-text" id="titleText"><a href="${path}/community/detail.do?comm_no=${row.comm_no}">${row.comm_title}</a></p>
               
               <div class="d-flex justify-content-between align-items-center">
@@ -93,7 +106,7 @@
                   <button type="button" class="btn btn-sm btn-outline-secondary" onclick="location.href='${path}/community/detail.do?comm_no=${row.comm_no}'">♥</button>
                   <button type="button" class="btn btn-sm btn-outline-secondary">💬</button>
                 </div>
-                <small class="text-muted">${comm_regdate}</small>
+                <small class="text-muted">${row.comm_regdate}</small>
               </div>
             </div>
           </div>
@@ -103,7 +116,45 @@
     </div>     
   </div>
  </form>
+ 
+ 
 
+<!-- 페이지 네비게이션 출력 -->
+<table id="table1">
+	<tr>
+		<td colspan="6" align="center">
+			<c:if test="${map.pager.curBlock > 1}">
+				<a href="#" onclick="list('1')">[처음]</a>
+			</c:if>
+			<c:if test="${map.pager.curBlock > 1}">
+				<a href="#" onclick="list('${map.pager.prevPage}')">
+				[이전]</a>
+			</c:if>
+			<c:forEach var="num" 
+				begin="${map.pager.blockBegin}"
+				end="${map.pager.blockEnd}">
+				<c:choose>
+					<c:when test="${num == map.pager.curPage}">
+					<!-- 현재 페이지인 경우 하이퍼링크 제거 -->
+						<span style="color:red;">${num}</span>
+					</c:when>
+					<c:otherwise>
+						<a href="#" onclick="list('${num}')">${num}</a>
+					</c:otherwise>
+				</c:choose>
+			</c:forEach>
+			<c:if test="${map.pager.curBlock < map.pager.totBlock}">
+				<a href="#" 
+				onclick="list('${map.pager.nextPage}')">[다음]</a>
+			</c:if>
+			<c:if test="${map.pager.curPage < map.pager.totPage}">
+				<a href="#" 
+				onclick="list('${map.pager.totPage}')">[끝]</a>
+			</c:if>
+		</td>
+	</tr>
+</table>
+  
 </main>
 
 <footer class="text-muted py-5">
