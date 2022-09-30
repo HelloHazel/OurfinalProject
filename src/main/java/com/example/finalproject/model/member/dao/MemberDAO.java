@@ -16,4 +16,5 @@ public interface MemberDAO {
 	public String find_id(String name, String email) throws Exception; //아이디 찾기
 	public String find_pw(String name, String userid, String email);
 	public int idCheck(String userid) throws Exception;
+	public int emailCheck(String email);
 }

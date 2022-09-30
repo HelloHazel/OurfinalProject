@@ -20,4 +20,5 @@ public interface MemberService {
 	public String find_id(HttpServletResponse response,String name, String email) throws  Exception; //아이디 찾기
 	public Object find_pw(HttpServletResponse response, String name, String userid, String email) throws IOException;
 	public int idCheck(String userid) throws Exception;
+	public int emailCheck(String email);
 }

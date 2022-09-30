@@ -114,6 +114,12 @@ public class MemberServiceImpl implements MemberService {
 		return result;
 	}
 
+	@Override
+	public int emailCheck(String email) {
+		int result = memberDao.emailCheck(email);
+		return result;
+	}
+
 	
 
 }

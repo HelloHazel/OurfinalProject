@@ -80,6 +80,12 @@ public class MemberDAOImpl implements MemberDAO {
 		int result = sqlSession.selectOne("member.idCheck",userid);
 		return result;
 	}
+
+	@Override
+	public int emailCheck(String email) {
+		int result = sqlSession.selectOne("member.emailCheck",email);
+		return result;
+	}
 	
 	
 

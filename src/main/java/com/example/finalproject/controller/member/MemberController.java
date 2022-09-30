@@ -104,4 +104,12 @@ public class MemberController {
 			int result = memberService.idCheck(userid);
 			return result;
 		}
+		
+		//이메일 중복 체크
+				@ResponseBody
+				@RequestMapping(value = "/emailCheck.do", method = RequestMethod.POST)
+				public int emailCheck(String email) throws Exception{
+					int result = memberService.emailCheck(email);
+					return result;
+				}
 }
