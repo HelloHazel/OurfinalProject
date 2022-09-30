@@ -8,4 +8,5 @@ public interface ReplyDAO {
 	public List<ReplyDTO> list(int bno);
 	public int count(int bno);
 	public void create(ReplyDTO dto);
+
 }

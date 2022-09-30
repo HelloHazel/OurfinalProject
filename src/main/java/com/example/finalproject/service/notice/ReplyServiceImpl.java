@@ -11,7 +11,6 @@ import com.example.finalproject.model.notice.dto.ReplyDTO;
 
 @Service
 public class ReplyServiceImpl implements ReplyService {
-	
 	@Inject
 	ReplyDAO replyDao;
 

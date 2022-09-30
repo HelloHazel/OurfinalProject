@@ -7,8 +7,14 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="community">
 	<select id="post_list" resultType="com.example.finalproject.model.community.dto.CommunityDTO">
 		select * from community
-		order by comm_regdate desc
+		order by comm_no desc
 	</select>
+	
+	<insert id="insert">
+	 insert into community (comm_no,comm_title,comm_content,userid, comm_url) values
+     (comm_seq.nextval, #{comm_title}, #{comm_content}, #{userid}, #{comm_url})
+	
+	</insert>
 </mapper>
 
 

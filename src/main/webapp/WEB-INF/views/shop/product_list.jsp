@@ -6,6 +6,7 @@
 <meta charset="UTF-8">
 <title>Product_list</title>
 <%@ include file="../include/header.jsp" %>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
 <%@ include file="../include/menu.jsp" %>
@@ -24,7 +25,7 @@
 <tr>
 	<td>${row.product_kind}</td>
 	<td>${row.product_id}</td>
-	<td><img src="${path}/images/${row.product_url}"
+	<td><img src="${path}/resources/images/${row.product_url}"
 		width="100px" height="100px"></td>
 		<td><a href="${path}/shop/product/detail/${row.product_id}">${row.product_name}</a>
 		<c:if test="${sessionScope.userid=='admin'}">

@@ -14,8 +14,8 @@
 <h2>상품 상세 정보</h2>
 <table>
 	<tr>
-		<td><img src="${path}/images/${dto.product_url}"
-				width="300px" height="300px"></td>
+		<td><img src="${path}/resources/images/${dto.product_url}"
+		width="300px" height="300px"></td>
 				<td align="center">
 				<table>
 					<tr>

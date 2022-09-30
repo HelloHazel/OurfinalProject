@@ -51,26 +51,22 @@ public class MemberServiceImpl implements MemberService {
 
 	@Override
 	public void insertMember(MemberDTO dto) {
-		// TODO Auto-generated method stub
-		
+		memberDao.insertMember(dto);
 	}
 
 	@Override
 	public boolean checkPw(String userid, String passwd) {
-		// TODO Auto-generated method stub
-		return false;
+		return memberDao.checkPw(userid, passwd);
 	}
 
 	@Override
 	public void updateMember(MemberDTO dto) {
-		// TODO Auto-generated method stub
-		
+		memberDao.updateMember(dto);
 	}
 
 	@Override
 	public void deleteMember(String userid) {
-		// TODO Auto-generated method stub
-		
+		memberDao.deleteMember(userid);
 	}
 
 	@Override
@@ -107,6 +103,18 @@ public class MemberServiceImpl implements MemberService {
 		} else {
 			return passwd;
 		}
+	}
+
+	@Override
+	public int idCheck(String userid) throws Exception {
+		int result = memberDao.idCheck(userid);
+		return result;
+	}
+
+	@Override
+	public int emailCheck(String email) {
+		int result = memberDao.emailCheck(email);
+		return result;
 	}
 
 	

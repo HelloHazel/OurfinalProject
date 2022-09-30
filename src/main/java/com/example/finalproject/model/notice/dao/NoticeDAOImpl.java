@@ -1,6 +1,8 @@
 package com.example.finalproject.model.notice.dao;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.inject.Inject;
 
@@ -47,37 +49,42 @@ public class NoticeDAOImpl implements NoticeDAO {
 
 	@Override
 	public void update(NoticeDTO dto) throws Exception {
-		// TODO Auto-generated method stub
-
+			sqlSession.update("notice.update", dto);
 	}
 
 	@Override
 	public void delete(int bno) throws Exception {
-		// TODO Auto-generated method stub
+		sqlSession.delete("notice.delete", bno);
 
 	}
 
 	@Override
-	public List<NoticeDTO> listAll() throws Exception {
-		return sqlSession.selectList("notice.listAll");
+	public List<NoticeDTO> listAll(String search_option, String keyword, int start, int end) throws Exception {
+		Map<String, Object> map=new HashMap<>();
+		map.put("search_option", search_option);
+		map.put("keyword", "%"+keyword+"%");
+		map.put("start", start);
+		map.put("end", end);
+		return sqlSession.selectList("notice.listAll", map);
 	}
 
 	@Override
 	public void increaseViewcnt(int bno) throws Exception {
-		// TODO Auto-generated method stub
+		sqlSession.update("notice.increaseViewcnt", bno);
 
 	}
 
 	@Override
-	public int countArticle() throws Exception {
-		// TODO Auto-generated method stub
-		return 0;
+	public int countArticle(String search_option, String keyword) throws Exception {
+		Map<String, String> map=new HashMap<>();
+		map.put("search_option", search_option);
+		map.put("keyword", keyword);
+		return sqlSession.selectOne("notice.countArticle");
 	}
 
 	@Override
 	public NoticeDTO read(int bno) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+		return sqlSession.selectOne("notice.read", bno);
 	}
 
 }

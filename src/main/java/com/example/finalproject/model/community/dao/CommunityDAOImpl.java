@@ -22,8 +22,7 @@ public class CommunityDAOImpl implements CommunityDAO {
 
 	@Override
 	public void create(CommunityDTO dto) {
-		// TODO Auto-generated method stub
-
+		sqlSession.insert("community.insert", dto);
 	}
 
 	@Override

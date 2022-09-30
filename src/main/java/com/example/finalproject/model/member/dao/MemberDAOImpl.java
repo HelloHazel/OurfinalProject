@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.Map;
 
 import javax.inject.Inject;
-import javax.servlet.http.HttpServletResponse;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
@@ -38,26 +37,30 @@ public class MemberDAOImpl implements MemberDAO {
 
 	@Override
 	public void insertMember(MemberDTO dto) {
-		// TODO Auto-generated method stub
-		
+		sqlSession.insert("member.insertMember",dto);
 	}
 
 	@Override
 	public boolean checkPw(String userid, String passwd) {
-		// TODO Auto-generated method stub
-		return false;
+		boolean result=false;
+		Map<String,String> map=new HashMap<>();
+		map.put("userid", userid);
+		map.put("passwd", passwd);
+		int count=sqlSession.selectOne("member.checkPw", map);
+		//비번이 맞으면(1), 틀리면(0)
+		if(count==1) result=true;
+		return result;
 	}
 
 	@Override
 	public void updateMember(MemberDTO dto) {
-		// TODO Auto-generated method stub
+		sqlSession.update("member.updateMember", dto);
 		
 	}
 
 	@Override
 	public void deleteMember(String userid) {
-		// TODO Auto-generated method stub
-		
+		sqlSession.delete("member.deleteMember", userid);
 	}
 
 	@Override
@@ -75,6 +78,18 @@ public class MemberDAOImpl implements MemberDAO {
 		map.put("userid",userid);
 		map.put("email",email);
 		return sqlSession.selectOne("member.findPw", map);
+	}
+
+	@Override
+	public int idCheck(String userid) throws Exception {
+		int result = sqlSession.selectOne("member.idCheck",userid);
+		return result;
+	}
+
+	@Override
+	public int emailCheck(String email) {
+		int result = sqlSession.selectOne("member.emailCheck",email);
+		return result;
 	}
 	
 	

@@ -3,8 +3,10 @@ package com.example.finalproject.service.notice;
 import java.util.List;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.example.finalproject.model.notice.dao.NoticeDAO;
 import com.example.finalproject.model.notice.dto.NoticeDTO;
@@ -46,37 +48,46 @@ public class NoticeServiceImpl implements NoticeService {
 
 	@Override
 	public void update(NoticeDTO dto) throws Exception {
-		// TODO Auto-generated method stub
+		noticeDao.update(dto);
 
 	}
 
+	@Transactional
 	@Override
 	public void delete(int bno) throws Exception {
-		// TODO Auto-generated method stub
+		noticeDao.delete(bno);
 
 	}
 
 	@Override
-	public List<NoticeDTO> listAll() throws Exception {
-		return noticeDao.listAll();
+	public List<NoticeDTO> listAll(String search_option, String keyword, int start, int end) throws Exception {
+		return noticeDao.listAll(search_option, keyword,start, end);
 	}
 
 	@Override
-	public void increaseViewcnt(int bno) throws Exception {
-		// TODO Auto-generated method stub
-
+	public void increaseViewcnt(int bno, HttpSession session) throws Exception {
+		long update_time=0;
+		if(session.getAttribute("update_time_"+bno) != null) {
+			// 최근에 조회수를 올린 시간
+			update_time=(long)session.getAttribute("update_time_"+bno);
+		}
+		long current_time=System.currentTimeMillis();
+		// 일정시간이 경과한 후 조회수 증가 처리
+		if(current_time - update_time > 5*1000) {
+			noticeDao.increaseViewcnt(bno);
+			// 조회수를 올린 시간 저장
+			session.setAttribute("update_time_"+bno, current_time);
+		}
 	}
 
 	@Override
-	public int countArticle() throws Exception {
-		// TODO Auto-generated method stub
-		return 0;
+	public int countArticle(String search_option, String keyword) throws Exception {
+		return noticeDao.countArticle(search_option, keyword);
 	}
 
 	@Override
 	public NoticeDTO read(int bno) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+		return noticeDao.read(bno);
 	}
 
 }
