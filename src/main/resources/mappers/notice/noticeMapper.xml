@@ -13,7 +13,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 							select bno, title, writer, name, content, regdate, viewcnt,pin
 							from notice n, member m
 							where n.writer=m.userid
-							order by pin desc, bno desc
+							order by pin desc, bno asc
 				)A
 		) where rn between #{start} and #{end}
 	</select>
