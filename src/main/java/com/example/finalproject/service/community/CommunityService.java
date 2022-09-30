@@ -15,5 +15,6 @@ public interface CommunityService {
 	public void addAttach(String fullName); //첨부파일 저장
 	public void updateAttach(String fullName, int comm_no);//첨부파일 수정
 	public void increaseViewcnt(int comm_no) throws Exception;//조회수 증가 처리
+	public CommunityDTO detailPost(int comm_no);
 
 }

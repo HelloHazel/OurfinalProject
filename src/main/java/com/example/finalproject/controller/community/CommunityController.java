@@ -7,6 +7,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -58,6 +59,27 @@ public class CommunityController {
 		communityService.create(dto);
 		return "redirect:/community/list.do";
 	}
+	
+	@RequestMapping("detail.do")
+	public ModelAndView detail(int comm_no, HttpSession session) throws Exception{
+		ModelAndView mav=new ModelAndView();
+		mav.setViewName("community/post_detail");
+		mav.addObject("dto", communityService.detailPost(comm_no));
+		return mav;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 
 	

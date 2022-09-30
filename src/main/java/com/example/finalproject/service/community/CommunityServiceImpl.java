@@ -67,4 +67,9 @@ public class CommunityServiceImpl implements CommunityService {
 
 	}
 
+	@Override
+	public CommunityDTO detailPost(int comm_no) {
+		return communityDao.detailPost(comm_no);
+	}
+
 }

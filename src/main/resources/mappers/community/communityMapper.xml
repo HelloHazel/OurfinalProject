@@ -11,10 +11,14 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 	
 	<insert id="insert">
-	 insert into community (comm_no,comm_title,comm_content,userid, comm_url) values
-     (comm_seq.nextval, #{comm_title}, #{comm_content}, #{userid}, #{comm_url})
-	
+		insert into community (comm_no,comm_title,comm_content,userid, comm_url) values
+	    (comm_seq.nextval, #{comm_title}, #{comm_content}, #{userid}, #{comm_url})
 	</insert>
+	
+	<select id="detail_post" resultType="com.example.finalproject.model.community.dto.CommunityDTO">
+		select * from community
+		where comm_no=#{comm_no}
+	</select>
 </mapper>
 
 

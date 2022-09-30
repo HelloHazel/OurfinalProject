@@ -67,4 +67,9 @@ public class CommunityDAOImpl implements CommunityDAO {
 
 	}
 
+	@Override
+	public CommunityDTO detailPost(int comm_no) {
+		return sqlSession.selectOne("community.detail_post", comm_no);
+	}
+
 }
