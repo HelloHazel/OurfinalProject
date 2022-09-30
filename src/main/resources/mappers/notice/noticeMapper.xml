@@ -12,7 +12,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 				from(
 							select bno, title, writer, name, content, regdate, viewcnt,pin
 							from notice n, member m
-							where n.writer=m.userid
+							<include refid="search" />
 							order by pin desc, bno asc
 				)A
 		) where rn between #{start} and #{end}
@@ -24,11 +24,27 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</insert>
 	
 	<!-- 레코드의 갯수 계산 -->
-	<select id="countArticle" resultType="int" parameterType="com.example.finalproject.model.notice.dto.NoticeDTO">
+	<select id="countArticle" resultType="int">
 	select count(*)
 	from notice n, member m
-	where n.writer=m.userid
+	where n.writer=m.userid	
 	</select>
+	
+	<!-- 검색기능, sql태그는 다른 태그에 끼워넣을 수 있는 기능을 가지고 있음 -->
+ <sql id="search">
+  <choose>
+   <when test="search_option != 'all' ">
+    where n.writer=m.userid
+     and ${search_option} like #{keyword}
+   </when>
+   <otherwise>
+    where n.writer=m.userid
+     and (name like #{keyword} 
+     or title like #{keyword} 
+     or content like #{keyword})
+   </otherwise>
+  </choose>
+ </sql>
 	
 	<!-- 조회수 증가 처리 -->
 	<update id="increaseViewcnt" parameterType="com.example.finalproject.model.notice.dto.NoticeDTO">

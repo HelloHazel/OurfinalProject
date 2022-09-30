@@ -10,12 +10,9 @@ import javax.servlet.http.HttpSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -42,13 +39,15 @@ public class NoticeController {
 		int start=pager.getPageBegin();
 		int end=pager.getPageEnd();
 		
-		List<NoticeDTO> list=noticeService.listAll(start, end);
+		List<NoticeDTO> list=noticeService.listAll(search_option,keyword, start, end);
 		logger.info(list.toString());
 		ModelAndView mav=new ModelAndView();
 		Map<String, Object> map=new HashMap<>();
 		map.put("list", list);
 		map.put("count", count); // 레코드 갯수
 		map.put("pager", pager); // 페이지네이션을 위한 변수
+		map.put("search_option", search_option);
+		map.put("keyword", keyword);
 		mav.setViewName("notice/list"); // 포워딩 뷰
 		mav.addObject("map", map);
 		return mav;

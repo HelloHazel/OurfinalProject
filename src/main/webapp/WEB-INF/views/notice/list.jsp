@@ -5,6 +5,12 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+function list(page){
+	location.href="${path}/notice/list.do?curPage="+page;
+} 
+</script>
 <style type="text/css">
 .gongji {
 margin-left: auto;
@@ -33,9 +39,9 @@ text-align: center;
 <%@ include file="../include/menu.jsp" %>
 <br>
 <h2 class="gongji">Notice</h2>
-<%-- <!-- 검색폼 -->
-<form name="form1" method="post"
-	action="${path}/board/list.do">
+<br>
+<!-- 검색폼 -->
+<form name="form1" method="post" action="${path}/notice/list.do">
 	<select name="search_option">
 		<option value="name"
 <c:if test="${map.search_option == 'name'}">
@@ -50,9 +56,9 @@ selected</c:if>	>내용</option>
 <c:if test="${map.search_option == 'all'}">
 selected</c:if>	>이름+내용+제목</option>
 	</select>
-	<input name="keyword" value="${map.keyword}">
+	 <input name="keyword" value="${map.keyword}">
 	<input type="submit" value="조회">
-</form> --%>
+</form>
 <div class="gongji">${map.count}개의 게시물이 있습니다.</div>
 <table class="table">
   <thead>
