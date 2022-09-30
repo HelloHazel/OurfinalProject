@@ -129,4 +129,18 @@ public class MemberController {
 				return "mypage/myInfo";
 					}
 				}
+		
+		//회원삭제
+		@RequestMapping("delete.do")
+		public String delete(String userid, String passwd, Model model) {
+			boolean result=memberService.checkPw(userid, passwd);
+			if(result) {
+				memberService.deleteMember(userid);
+				return "main";
+			}else {
+				model.addAttribute("message", "비밀번호를 확인하세요.");
+				model.addAttribute("dto", memberService.viewMember(userid));
+				return "mypage/myInfo";
+			}
+		}
 }
