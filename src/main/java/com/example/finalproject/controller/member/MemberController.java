@@ -104,4 +104,43 @@ public class MemberController {
 			int result = memberService.idCheck(userid);
 			return result;
 		}
+		
+		//이메일 중복 체크
+				@ResponseBody
+				@RequestMapping(value = "/emailCheck.do", method = RequestMethod.POST)
+				public int emailCheck(String email) throws Exception{
+					int result = memberService.emailCheck(email);
+					return result;
+				}
+				
+		//회원수정
+		@RequestMapping("update.do")
+		public String update(MemberDTO dto, Model model) {
+		//비번 체크
+		boolean result=memberService.checkPw(dto.getUserid(), dto.getPasswd());
+			if(result) {//비번이 맞으면
+				//회원정보수정
+				memberService.updateMember(dto);
+				return "main";
+				}else {
+				model.addAttribute("dto", dto);
+				model.addAttribute("join_date", memberService.viewMember(dto.getUserid()).getJoin_date());
+				model.addAttribute("message", "비밀번호를 확인하세요.");
+				return "mypage/myInfo";
+					}
+				}
+		
+		//회원삭제
+		@RequestMapping("delete.do")
+		public String delete(String userid, String passwd, Model model) {
+			boolean result=memberService.checkPw(userid, passwd);
+			if(result) {
+				memberService.deleteMember(userid);
+				return "main";
+			}else {
+				model.addAttribute("message", "비밀번호를 확인하세요.");
+				model.addAttribute("dto", memberService.viewMember(userid));
+				return "mypage/myInfo";
+			}
+		}
 }

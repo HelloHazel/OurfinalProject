@@ -42,20 +42,25 @@ public class MemberDAOImpl implements MemberDAO {
 
 	@Override
 	public boolean checkPw(String userid, String passwd) {
-		// TODO Auto-generated method stub
-		return false;
+		boolean result=false;
+		Map<String,String> map=new HashMap<>();
+		map.put("userid", userid);
+		map.put("passwd", passwd);
+		int count=sqlSession.selectOne("member.checkPw", map);
+		//비번이 맞으면(1), 틀리면(0)
+		if(count==1) result=true;
+		return result;
 	}
 
 	@Override
 	public void updateMember(MemberDTO dto) {
-		// TODO Auto-generated method stub
+		sqlSession.update("member.updateMember", dto);
 		
 	}
 
 	@Override
 	public void deleteMember(String userid) {
-		// TODO Auto-generated method stub
-		
+		sqlSession.delete("member.deleteMember", userid);
 	}
 
 	@Override
@@ -78,6 +83,12 @@ public class MemberDAOImpl implements MemberDAO {
 	@Override
 	public int idCheck(String userid) throws Exception {
 		int result = sqlSession.selectOne("member.idCheck",userid);
+		return result;
+	}
+
+	@Override
+	public int emailCheck(String email) {
+		int result = sqlSession.selectOne("member.emailCheck",email);
 		return result;
 	}
 	
