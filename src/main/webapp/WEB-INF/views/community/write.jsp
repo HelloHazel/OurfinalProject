@@ -11,7 +11,6 @@
 <script src="https://cdn.ckeditor.com/ckeditor5/31.1.0/classic/ckeditor.js"></script>
 
 <style>
-
 	body {
 		background-color: white;
 	}
@@ -23,7 +22,7 @@
 	#title {
 		font-size: 30px;
 	}
-
+	
 	input::placeholder {
 		color: grey;
 		font-size: 30px;
@@ -39,8 +38,6 @@
 		
 	}
 	
-
-
 </style>
 
 
@@ -79,6 +76,11 @@
 						  
 						
 					</div>
+					
+					<div>
+						<input type="file" id="file1" name="file1">					
+					</div>
+					
 					
 					<div class="mb-3">
 						<input type="hidden" class="form-control" name="userid" id="userid" value="${sessionScope.userid}">
