@@ -56,14 +56,12 @@ public class MemberServiceImpl implements MemberService {
 
 	@Override
 	public boolean checkPw(String userid, String passwd) {
-		// TODO Auto-generated method stub
-		return false;
+		return memberDao.checkPw(userid, passwd);
 	}
 
 	@Override
 	public void updateMember(MemberDTO dto) {
-		// TODO Auto-generated method stub
-		
+		memberDao.updateMember(dto);
 	}
 
 	@Override

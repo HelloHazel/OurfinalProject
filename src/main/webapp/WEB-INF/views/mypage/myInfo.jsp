@@ -11,7 +11,7 @@
     <meta name="generator" content="Hugo 0.101.0">
     
     <title>Sidebars · Bootstrap v5.2</title>
-	 	 <script src="${path}/include/jquery-3.6.0.min.js"></script>
+	 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>	 
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/resources/assets/css/theme.css">
 <!-- Custom fonts for this template-->
@@ -292,6 +292,10 @@
 				 <tr>
 				  <td>이름</td>
 				  <td><input name="name" value="${dto.name}"> </td>
+				 </tr>
+				  <tr>
+				  <td>전화번호</td>
+				  <td><input name="phone" value="${dto.phone}"> </td>
 				 </tr>
 				 <tr>
 				  <td>이메일</td>
