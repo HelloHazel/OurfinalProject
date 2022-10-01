@@ -22,7 +22,6 @@
 	#title {
 		font-size: 30px;
 	}
-	
 	input::placeholder {
 		color: grey;
 		font-size: 30px;
