@@ -86,6 +86,22 @@ function find_id() {
     	});
     }   
 
+function find_email() {
+	$.ajax({
+		url : "${path}/member/emailCheck.do",
+		type:"POST",
+		dataType:"JSON",
+		data:{"email":$("#email").val()},
+		success: function(data) {
+			if(data == 1){
+				alert("이미 가입되어 있는 이메일입니다.");
+			} else if(data == 0){
+				$("#emailCheck").attr("value","Y");
+				alert("사용 가능한 이메일입니다.");
+			}
+		}
+	});
+}   
 //회원가입 버튼 클릭 시
 function join() {
 	var form = document.user;
@@ -99,11 +115,13 @@ function join() {
 	var address1 = $("#address1").val();
 	var address2 = $("#address2").val();
 	var idCheck = $("#idCheck").val();
+	var emailCheck = $("#emailCheck").val();
 	
 	var exp1 = /^[A-Za-z0-9]{4,10}$/; //아이디 영문자, 숫자 포함 4~10자리
 	var exp2 = /(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*\d){6,12}/;
 	var exp3 = /^[가-힣]+$/;//한글만 입력하는 정규식
 	var exp4 = /01[016789]-[^0][0-9]{2,3}-[0-9]{3,4}/;//휴대폰 번호 정규식
+	var exp5 = /^([0-9a-zA-Z_\.-]+)@([0-9a-zA-Z_-]+)(\.[0-9a-zA-Z_-]+){1,2}$/; //이메일 정규식
 	
 	if (userid == "") {
 		alert("아이디를 입력하세요.");
@@ -148,6 +166,14 @@ function join() {
 	if (email == "") {
 		alert("이메일을 입력하세요.");
 		$("#email").focus();
+		return;
+	}else if(!exp5.test(email)){
+		alert("이메일을 제대로 입력해주세요");
+		$("#email").focus();
+		return;
+	}
+	if(emailCheck == "N"){
+		alert("이메일 중복 체크를 하세요.");
 		return;
 	}
 	if (phone == "") {
@@ -220,14 +246,17 @@ function join() {
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                <div class="col-sm-6 mb-3 mb-sm-0">
-                                    <input type="email" class="form-control form-control-user" id="email" name="email"
-                                        placeholder="이메일">
+                                    <div class="col-sm-8 mb-3 mb-sm-0">
+                                           <input type="email" class="form-control form-control-user" id="email" name="email"
+                                        placeholder="이메일">  
+                                    </div>
+                                    <div class="col-sm-4">
+                                       <button type="button" class="btn btn-warning btn-user btn-block" onclick="find_email();" id="emailCheck"  value="N">이메일 중복 체크</button>
+                                    </div>
                                 </div>
-                                 <div class="col-sm-6">
+                                 <div class="form-group">
                                     <input type="tel" class="form-control form-control-user" id="phone" name="phone"
                                         placeholder="전화번호">
-                                </div>
                                 </div>
                                 <div class="form-group row">
                                 <div class="col-sm-8 mb-3 mb-sm-0">

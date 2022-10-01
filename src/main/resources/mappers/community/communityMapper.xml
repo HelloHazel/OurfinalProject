@@ -6,15 +6,45 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <!-- 다른 mapper와 중복되지 않도록 네임스페이스 기재 -->
 <mapper namespace="community">
 	<select id="post_list" resultType="com.example.finalproject.model.community.dto.CommunityDTO">
-		select * from community
-		order by comm_regdate desc
+	<include refid="paging_header" />
+		select *
+		from community
+		order by comm_no desc
+		<include refid="paging_footer" />
 	</select>
 	
-	<insert id="insert">
-	 insert into community (comm_no,comm_title,comm_content,userid) values
-     (comm_seq.nextval, #{comm_title}, #{comm_content}, #{userid})
+	<!-- select m.comm_no, m.comm_title, m.comm_content, m.userid, m.comm_url, m.comm_regdate, m.comm_viewcnt,
+		(select count(*) from COMMUNITY_COMMENT where m.comm_no=t.comm_no) cnt
+		from community m, COMMUNITY_COMMENT t
+		order by m.comm_no desc; -->
 	
+	<sql id="paging_header">
+	   select *
+				from (
+				    select rownum as rn, A.*
+				    from (
+	</sql>
+	<sql id="paging_footer">
+	          ) A    
+				) where rn between #{start} and #{end}
+	</sql>
+	
+	<insert id="insert">
+		insert into community (comm_no,comm_title,comm_content,userid, comm_url) values
+	    (comm_seq.nextval, #{comm_title}, #{comm_content}, #{userid}, #{comm_url})
 	</insert>
+	
+	<select id="detail_post" resultType="com.example.finalproject.model.community.dto.CommunityDTO">
+		select * from community
+		where comm_no=#{comm_no}
+	</select>
+	
+	<!-- 레코드 갯수 계산 -->
+	<select id="countArticle" resultType="int">
+		select count(*)
+		from community
+	</select>
+	
 </mapper>
 
 

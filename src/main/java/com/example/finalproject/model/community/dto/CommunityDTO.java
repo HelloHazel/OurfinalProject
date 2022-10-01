@@ -2,6 +2,8 @@ package com.example.finalproject.model.community.dto;
 
 import java.util.Date;
 
+import org.springframework.web.multipart.MultipartFile;
+
 public class CommunityDTO {
 	
 	private int comm_no;
@@ -13,6 +15,7 @@ public class CommunityDTO {
 	private int comm_viewcnt;
 	private String name; //작성자 이름
 	private int cnt; //댓글 갯수
+	private MultipartFile file1; //첨부파일(db에는 없다)
 	//getter, setter, toString()
 	public int getComm_no() {
 		return comm_no;
@@ -68,11 +71,18 @@ public class CommunityDTO {
 	public void setCnt(int cnt) {
 		this.cnt = cnt;
 	}
+	
+	public MultipartFile getFile1() {
+		return file1;
+	}
+	public void setFile1(MultipartFile file1) {
+		this.file1 = file1;
+	}
 	@Override
 	public String toString() {
 		return "CommunityDTO [comm_no=" + comm_no + ", comm_title=" + comm_title + ", comm_content=" + comm_content
 				+ ", userid=" + userid + ", comm_regdate=" + comm_regdate + ", comm_url=" + comm_url + ", comm_viewcnt="
-				+ comm_viewcnt + ", name=" + name + ", cnt=" + cnt + "]";
+				+ comm_viewcnt + ", name=" + name + ", cnt=" + cnt + ", file1=" + file1 + "]";
 	}
 	
 	

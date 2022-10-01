@@ -1,6 +1,8 @@
 package com.example.finalproject.model.community.dao;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.inject.Inject;
 
@@ -16,10 +18,13 @@ public class CommunityDAOImpl implements CommunityDAO {
 	SqlSession sqlSession;
 	
 	@Override
-	public List<CommunityDTO> listPost() {
-		return sqlSession.selectList("community.post_list");
+	public List<CommunityDTO> listPost(int start, int end) {
+		Map<String, Object> map=new HashMap<>();
+		map.put("start", start);
+		map.put("end", end);
+		return sqlSession.selectList("community.post_list", map);
 	}
-
+	
 	@Override
 	public void create(CommunityDTO dto) {
 		sqlSession.insert("community.insert", dto);
@@ -66,5 +71,17 @@ public class CommunityDAOImpl implements CommunityDAO {
 		// TODO Auto-generated method stub
 
 	}
+
+	@Override
+	public CommunityDTO detailPost(int comm_no) {
+		return sqlSession.selectOne("community.detail_post", comm_no);
+	}
+
+	@Override
+	public int countArticle() {
+		return sqlSession.selectOne("community.countArticle");
+	}
+
+	
 
 }

@@ -35,5 +35,32 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		from member
 		where userid=#{userid}
 	</select>
+	
+	<select id="emailCheck"  resultType="int">
+		select count(*)
+		from member
+		where email=#{email}
+	</select>
+
+	  <!-- 수정용 비밀번호 체크 -->
+	 <select id="checkPw" resultType="int">
+	  select count(*) from member
+	  where userid=#{userid} and passwd=#{passwd}
+	 </select>
+
+	
+	 <update id="updateMember">
+	  update member
+	  set passwd=#{passwd}, name=#{name}, phone=#{phone}, email=#{email}, zipcode=#{zipcode}, 
+	  address1=#{address1}, address2=#{address2}
+	  where userid=#{userid}
+	 </update>
+	 
+	  <delete id="deleteMember">
+	   delete from member
+	   where userid=#{userid}
+	  </delete>
+	 
+
 </mapper>
 
