@@ -26,7 +26,7 @@ margin-top: auto;
 text-align: center;
 top: 40px;
 }
-*{
+#gongji {
 margin-left: auto;
 margin-right: auto;
 margin-top: auto;
@@ -41,7 +41,7 @@ text-align: center;
 <h2 class="gongji">Notice</h2>
 <br>
 <!-- 검색폼 -->
-<form name="form1" method="post" action="${path}/notice/list.do">
+<form name="form1" method="post" action="${path}/notice/list.do" class="gongji">
 	<select name="search_option">
 		<option value="name"
 <c:if test="${map.search_option == 'name'}">
@@ -99,7 +99,9 @@ selected</c:if>	>이름+내용+제목</option>
   </tbody>
 </table>
  <c:if test="${sessionScope.userid == 'admin' }">
- <input type="button" id="gongji" class="btn btn-outline-warning btn-sm" value="글쓰기" onclick="location.href='${path}/notice/write.do'">
+ <div style="text-align: center;">
+ <input type="button" class="btn btn-outline-warning btn-sm" value="글쓰기" onclick="location.href='${path}/notice/write.do'">
+</div>
 </c:if>
 </body>
 </html>
