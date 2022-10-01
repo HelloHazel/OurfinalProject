@@ -7,6 +7,15 @@
 <title>Insert title here</title>
 <%@ include file="../include/header.jsp" %>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<style type="text/css">
+.table {
+margin-left: auto;
+margin-right: auto;
+margin-top: auto;
+text-align: center;
+top: 50px;
+}
+</style>
 <script type="text/javascript">
 $(function() {
 	$("#btnList").click(function(){
@@ -25,7 +34,9 @@ $(function() {
 <body>
 <%@ include file="../include/menu.jsp" %>
 <br>
-<h2>장바구니</h2>
+<div class="text-center">
+<h2 class="cart">Cart</h2>
+<br>
 <c:choose>
 	<c:when test="${map.count == 0}">
 		장바구니가 비었습니다.
@@ -33,14 +44,16 @@ $(function() {
 	<c:otherwise>
 		<form name="form1" method="post"
 		action="${path}/shop/cart/update.do">
-		<table border="1" style="width: 100%;">
-			<tr>
+		<table class="table">
+		<thead>
+			<tr style="font-weight:bold;">
 				<th>상품명</th>
 				<th>단가</th>
 				<th>수량</th>
 				<th>금액</th>
 				<th>&nbsp;</th>
 			</tr>
+		</thead>
 		 <c:forEach var="row" items="${map.list}">
 		 	<tr>
 		 		<td>${row.product_name}</td>
@@ -53,24 +66,25 @@ $(function() {
 		 		<td>
 		 <c:if test="${sessionScope.userid != null}">
 		 	<a href="${path}/shop/cart/delete.do?cart_no=${row.cart_no}">
-		 	삭제</a>
+		 	[삭제]</a>
 		 	</c:if>
 		 		</td>
 		 		</tr>
 		 		</c:forEach>
 		 	<tr>
-		 		<td colspan="5" align="right">
+		 		<td colspan="5" align="right" style="font-weight:bold;">
 		 			장바구니 금액 합계 : ${map.sumMoney}<br>
 		 			배송료 : ${map.fee}<br>
 		 			총합계 : ${map.sum}
 		 		</td>
 		 	</tr>	
 		</table>
-			<button id="btnUpdate">수정</button>
-			<button type="button" id="btnDelete">장바구니 비우기</button>
+			<button id="btnUpdate" class="btn btn-outline-warning btn-sm">수정</button>
+			<button type="button" id="btnDelete" class="btn btn-outline-warning btn-sm">장바구니 비우기</button>
+			<button type="button" id="btnList" class="btn btn-outline-warning btn-sm">상품 목록</button>
 		</form>
 	</c:otherwise>
 </c:choose>
-<button type="button" id="btnList">상품 목록</button>
+<br>
 </body>
 </html>

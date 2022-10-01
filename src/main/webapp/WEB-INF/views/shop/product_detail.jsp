@@ -38,7 +38,7 @@
 							<option value="${i}"  class="form-control text-center me-3">${i}</option>
 							</c:forEach>
 							</select>
-						<input type="submit" value="Add to cart" class="btn btn-outline-dark flex-shrink-0">						
+						<input type="submit" value="Add to cart" class="btn btn-outline-warning btn-sm">						
 							</form>
                         </div>
                     </div>

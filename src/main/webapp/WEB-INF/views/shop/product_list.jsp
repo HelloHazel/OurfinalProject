@@ -22,7 +22,7 @@
 <%@ include file="../include/menu.jsp" %>
 <br>
 <div class="text-center">
-<h5>검색란 추가 예정</h5>
+<h2>Product</h2>
 <table style="width: 100%";>
 <c:set var="i" value="0" /> 
 <c:set var="j" value="3" /> 
@@ -33,7 +33,7 @@
 <td>
 <div class="container px-4 px-lg-5 mt-5">
 <img src="${path}/resources/images/${row.product_url}"
-		width="300px" height="350px"><br><br>
+		width="250px" height="300px"><br><br>
 
 		<h6><a href="${path}/shop/product/detail/${row.product_id}">${row.product_name}</a></h6>
 		<c:if test="${sessionScope.userid=='admin'}">
@@ -42,7 +42,7 @@
 		<h5 class="fw-bolder"><fmt:formatNumber value="${row.price}"
 					pattern="#,###원"/></h5>
 					  <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <a class="btn btn-outline-dark mt-auto" 
+                                <a class="btn btn-outline-warning mt-auto" 
                                 href="${path}/shop/product/detail/${row.product_id}">View More</a>
                                 </div>
 		</td>
