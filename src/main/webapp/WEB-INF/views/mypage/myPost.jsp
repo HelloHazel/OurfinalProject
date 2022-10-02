@@ -231,7 +231,7 @@
 		</div>
 		<div class="col-9 text-bg-light">
 			<h1>여기는 나의 게시글 목록</h1>
-			 #{"list"}
+			 ${myCmmList}
 		</div>
 	</div>		
 </div>
