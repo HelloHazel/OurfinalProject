@@ -4,7 +4,6 @@ import java.util.List;
 
 import javax.inject.Inject;
 
-import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Service;
 
 import com.example.finalproject.model.community.dao.CommunityDAO;
@@ -78,6 +77,12 @@ public class CommunityServiceImpl implements CommunityService {
 		return communityDao.countArticle();
 	}
 
+	@Override
+	public List<CommunityDTO> myCmmList(String userId) {
+		return communityDao.myCmmList(userId);
+	}
+
+	
 	
 
 }

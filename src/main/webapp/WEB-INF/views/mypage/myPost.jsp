@@ -199,7 +199,7 @@
         </a>
       </li>
       <li class="nav-item">
-        <a href="${pageContext.request.contextPath}/mypage/mypost.do" class="nav-link active" aria-current="page">
+        <a href="${pageContext.request.contextPath}/mypage/myCmmList.do" class="nav-link active" aria-current="page">
           <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#grid"/></svg>
           나의 게시글
         </a>
@@ -231,7 +231,7 @@
 		</div>
 		<div class="col-9 text-bg-light">
 			<h1>여기는 나의 게시글 목록</h1>
-			
+			 #{"list"}
 		</div>
 	</div>		
 </div>

@@ -17,5 +17,11 @@ public interface CommunityService {
 	public void increaseViewcnt(int comm_no) throws Exception;//조회수 증가 처리
 	public CommunityDTO detailPost(int comm_no);
 	public int countArticle();
+	/**
+	 * 마이페이지 - 나의 게시글 내역 조회
+	 * @param userId
+	 * @return
+	 */
+	public List<CommunityDTO> myCmmList(String userId);
 	
 }

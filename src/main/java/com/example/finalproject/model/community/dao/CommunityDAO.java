@@ -17,5 +17,6 @@ public interface CommunityDAO {
 	public void increaseViewcnt(int comm_no) throws Exception;//조회수 증가 처리
 	public CommunityDTO detailPost(int comm_no);
 	public int countArticle();
+	public List<CommunityDTO> myCmmList(String userId);
 	
 }

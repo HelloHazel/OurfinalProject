@@ -82,6 +82,11 @@ public class CommunityDAOImpl implements CommunityDAO {
 		return sqlSession.selectOne("community.countArticle");
 	}
 
+	@Override
+	public List<CommunityDTO> myCmmList(String userId) {
+		return sqlSession.selectList("community.myCmmList",userId);
+	}
+
 	
 
 }

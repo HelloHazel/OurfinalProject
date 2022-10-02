@@ -199,7 +199,7 @@
         </a>
       </li>
       <li>
-        <a href="${pageContext.request.contextPath}/mypage/mypost.do" class="nav-link text-dark">
+        <a href="${pageContext.request.contextPath}/mypage/myCmmList.do" class="nav-link text-dark">
           <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#grid"/></svg>
           나의 게시글
         </a>
