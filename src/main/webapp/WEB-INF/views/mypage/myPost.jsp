@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
   <%@ include file="../include/header.jsp"%>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -40,7 +40,7 @@
 <meta name="theme-color" content="#712cf9">
 
 
-    <style>
+<style>
       .bd-placeholder-img {
         font-size: 1.125rem;
         text-anchor: middle;
@@ -97,15 +97,13 @@
   background-color: #FFE08C;
 }
  
-
-
-    </style>
+</style>
 
     
     <!-- Custom styles for this template -->
     <link href="sidebars.css" rel="stylesheet">
-  </head>
-  <body>
+</head>
+<body>
     
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
   <symbol id="bootstrap" viewBox="0 0 118 94">
@@ -167,76 +165,96 @@
 </svg>
 
 <section>
-			<div class="bg-holder overlay overlay-light"
-				style="background-color: #FFE08C; background-size: cover;"></div>
+	<div class="bg-holder overlay overlay-light" style="background-color: #FFE08C; background-size: cover;"></div>
 
-<div class="container">
-	<div class="row">
-		<div class="col-3">
-<main class="d-flex flex-nowrap">
-  <div class="d-flex flex-column flex-shrink-0 p-3 text-bg-light" style="width: 280px;">
-    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
-      <span class="fs-4">마이 페이지</span>
-    </a>
-    <hr>
-    <ul class="nav nav-pills flex-column mb-auto">
-      <li>
-        <a href="${pageContext.request.contextPath}/mypage/mypagemain.do" class="nav-link text-dark">
-          <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#home"/></svg>
-          나의 구매내역
-        </a>
-      </li>
-      <li>
-        <a href="#" class="nav-link text-dark">
-          <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#speedometer2"/></svg>
-         문의하기
-        </a>
-      </li>
-      <li>
-        <a href="${pageContext.request.contextPath}/mypage/myquery.do" class="nav-link text-dark">
-          <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#table"/></svg>
-          나의 문의내역
-        </a>
-      </li>
-      <li class="nav-item">
-        <a href="${pageContext.request.contextPath}/mypage/myCmmList.do" class="nav-link active" aria-current="page">
-          <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#grid"/></svg>
-          나의 게시글
-        </a>
-      </li>
-      <li>
-        <a href="${pageContext.request.contextPath}/mypage/myreview.do" class="nav-link text-dark">
-          <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#people-circle"/></svg>
-          나의 리뷰
-        </a>
-      </li>
-    </ul>
-    <hr>
-    <div class="dropdown">
-      <a href="#" class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-        <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
-        <strong>회원정보</strong>
-      </a>
-      <ul class="dropdown-menu dropdown-menu text-small shadow">
-        <li><a class="dropdown-item" href="${pageContext.request.contextPath}/mypage/myinfo.do?userid=${sessionScope.userid}">회원정보 확인/수정</a></li>
-        <li><a class="dropdown-item" href="#">회원탈퇴</a></li>
-      </ul>
-    </div>
-  </div>
- 
- <div class="b-example-divider b-example-vr"></div> 
+	<div class="container">
+		<div class="row">
+			<div class="col-3">
+				<main class="d-flex flex-nowrap">
+				  <div class="d-flex flex-column flex-shrink-0 p-3 text-bg-light" style="width: 280px;">
+				    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+				      <span class="fs-4">마이 페이지</span>
+				    </a>
+				    <hr>
+				    <ul class="nav nav-pills flex-column mb-auto">
+				      <li>
+				        <a href="${pageContext.request.contextPath}/mypage/mypagemain.do" class="nav-link text-dark">
+				          <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#home"/></svg>
+				          나의 구매내역
+				        </a>
+				      </li>
+				      <li>
+				        <a href="#" class="nav-link text-dark">
+				          <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#speedometer2"/></svg>
+				         문의하기
+				        </a>
+				      </li>
+				      <li>
+				        <a href="${pageContext.request.contextPath}/mypage/myquery.do" class="nav-link text-dark">
+				          <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#table"/></svg>
+				          나의 문의내역
+				        </a>
+				      </li>
+				      <li class="nav-item">
+				        <a href="${pageContext.request.contextPath}/mypage/myCmmList.do" class="nav-link active" aria-current="page">
+				          <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#grid"/></svg>
+				          나의 게시글
+				        </a>
+				      </li>
+				      <li>
+				        <a href="${pageContext.request.contextPath}/mypage/myreview.do" class="nav-link text-dark">
+				          <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#people-circle"/></svg>
+				          나의 리뷰
+				        </a>
+				      </li>
+				    </ul>
+				    <hr>
+				    <div class="dropdown">
+				      <a href="#" class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+				        <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
+				        <strong>회원정보</strong>
+				      </a>
+				      <ul class="dropdown-menu dropdown-menu text-small shadow">
+				        <li><a class="dropdown-item" href="${pageContext.request.contextPath}/mypage/myinfo.do?userid=${sessionScope.userid}">회원정보 확인/수정</a></li>
+				        <li><a class="dropdown-item" href="#">회원탈퇴</a></li>
+				      </ul>
+				    </div>
+				  </div>
+				 
+				 <div class="b-example-divider b-example-vr"></div> 
+				
+						
+				</main>
+			</div>
+			<div class="col-9 text-bg-light">
+				<h1>여기는 나의 게시글 목록</h1>
+					 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+			 <c:forEach var="row" items="${map.list}">		
+					<div class="col">
+          <div class="card shadow-sm">
+            <svg  class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/></svg>
+            <div class="card-body">
+              <p class="card-text" id="useridText"><a href="${path}/community/detail.do?comm_no=${row.userid}">${row.userid}</a></p>
+              <p class="card-text" id="titleText"><a href="${path}/community/detail.do?comm_no=${row.comm_no}">${row.comm_title}</a></p>
+              
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary" onclick="location.href='${path}/community/detail.do?comm_no=${row.comm_no}'">♥</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">💬</button>
+                </div>
+                <small class="text-muted">${row.comm_regdate}</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        </c:forEach> 
+        </div> 	
+					      
+			</div>
+		</div>		
+	</div>
 
-		
-</main>
-		</div>
-		<div class="col-9 text-bg-light">
-			<h1>여기는 나의 게시글 목록</h1>
-			 ${myCmmList}
-		</div>
-	</div>		
-</div>
-
-	</section>
+</section>
 		
 
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>

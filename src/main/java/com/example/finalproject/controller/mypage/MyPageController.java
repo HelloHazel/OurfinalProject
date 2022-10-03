@@ -1,5 +1,9 @@
 package com.example.finalproject.controller.mypage;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
 
@@ -11,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.example.finalproject.model.community.dto.CommunityDTO;
 import com.example.finalproject.service.community.CommunityService;
 import com.example.finalproject.service.member.MemberService;
 import com.example.finalproject.service.mypage.MyPageService;
@@ -69,13 +74,18 @@ public class MyPageController {
 	    * @return
 	    */
 		 @RequestMapping("myCmmList.do") 
-		 public ModelAndView list(ModelAndView mav, HttpSession session){ 
-			//포워딩 
-			mav.setViewName("/mypage/myPost"); 	
+			public ModelAndView list(HttpSession session){ 
+			 ModelAndView mav=new ModelAndView();
 			//세션 아이디
 			String userId=(String)session.getAttribute("userid");
-			//전달할 데이터
-			mav.addObject("myCmmList", communityService.myCmmList(userId));
-			return mav; 
+
+			List<CommunityDTO> list=communityService.myCmmList(userId);
+			
+			Map<String, Object> map=new HashMap<>();
+			map.put("list", list);
+			
+			mav.setViewName("mypage/myPost"); //포워딩 뷰
+			mav.addObject("map", map);
+			return mav;
 		}
 }
