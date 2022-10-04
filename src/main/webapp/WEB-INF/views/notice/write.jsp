@@ -14,7 +14,7 @@ margin-top: auto;
 text-align: center;
 top: 40px;
 }
-*{
+#gongji {
 margin-left: auto;
 margin-right: auto;
 margin-top: auto;
@@ -27,16 +27,14 @@ text-align: center;
 <%@ include file="../include/menu.jsp" %>
 <br>
 <h2 class="gongji">Write</h2>
-<form class="gongji" id="form1" name="form1" method="post" action="insert.do">
-	<div class="mb-3" style="width:800px;">
-  <label for="exampleFormControlInput1" class="form-label">제목</label>
-  <input type="text" class="form-control" id="exampleFormControlInput1" name="title" size="10" value="${dto.title}" placeholder="제목을 입력하세요">
+<form name="form1" method="post" action="insert.do">
+	<div class="mb-3" style="width:800px;" id="gongji">
+  <input type="text" style="text-align: center;" class="form-control" id="title" name="title" size="10" value="${dto.title}" placeholder="제목을 입력하세요">
 </div>
-<div class="mb-3" style="width:800px;">
-  <label for="exampleFormControlTextarea1" class="form-label">내용</label>
-  <textarea class="form-control" id="exampleFormControlTextarea1" name="content" rows="3" cols="80" placeholder="내용을 입력하세요">${dto.content}</textarea>
+<div class="mb-3" style="width:800px;" id="gongji">
+  <textarea style="text-align: center;" class="form-control" id="content" name="content" rows="3" cols="80" placeholder="내용을 입력하세요">${dto.content}</textarea>
 </div>
-	<div style="width:700px; text-align:center;">
+	<div style="width:700px; text-align:center;" class="gongji">
 		<input type="submit" class="btn btn-outline-warning btn-sm" value="확인">
 		
 	</div>

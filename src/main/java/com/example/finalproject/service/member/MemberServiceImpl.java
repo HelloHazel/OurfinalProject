@@ -117,6 +117,11 @@ public class MemberServiceImpl implements MemberService {
 		return result;
 	}
 
+	@Override
+	public void insertKakaoMember(MemberDTO dto) {
+		memberDao.insertKakaoMember(dto);
+	}
+
 	
 
 }

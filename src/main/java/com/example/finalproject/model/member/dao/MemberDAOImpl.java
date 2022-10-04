@@ -91,6 +91,11 @@ public class MemberDAOImpl implements MemberDAO {
 		int result = sqlSession.selectOne("member.emailCheck",email);
 		return result;
 	}
+
+	@Override
+	public void insertKakaoMember(MemberDTO dto) {
+		sqlSession.insert("member.insertKakaoMember",dto);
+	}
 	
 	
 

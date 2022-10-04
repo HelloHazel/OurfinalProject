@@ -16,10 +16,10 @@ public class CommunityServiceImpl implements CommunityService {
 	CommunityDAO communityDao;
 	
 	@Override
-	public List<CommunityDTO> listPost() {
-		return communityDao.listPost();
+	public List<CommunityDTO> listPost(int start, int end) {
+		return communityDao.listPost(start,end);
 	}
-
+	
 	@Override
 	public void create(CommunityDTO dto) throws Exception{
 		communityDao.create(dto);
@@ -66,5 +66,23 @@ public class CommunityServiceImpl implements CommunityService {
 		// TODO Auto-generated method stub
 
 	}
+
+	@Override
+	public CommunityDTO detailPost(int comm_no) {
+		return communityDao.detailPost(comm_no);
+	}
+
+	@Override
+	public int countArticle() {
+		return communityDao.countArticle();
+	}
+
+	@Override
+	public List<CommunityDTO> myCmmList(String userId) {
+		return communityDao.myCmmList(userId);
+	}
+
+	
+	
 
 }

@@ -41,50 +41,68 @@ function product_write(){
 	document.form1.submit();
 }
 </script>
+<style type="text/css">
+.table {
+margin-left: auto;
+margin-right: auto;
+margin-top: auto;
+}
+.reg {
+  width: 500px;
+  height: 32px;
+  font-size: 15px;
+  border: 1px;
+  border-radius: 2px;
+  outline:1px solid;
+  outline-color: #000000;
+  background-color: transparent;
+}
+</style>
 </head>
 <body>
 <%@ include file="../include/menu.jsp" %>
 <br>
-<h2>상품 등록</h2>
+<div class="text-center">
+<h2>Product registration</h2><br>
 <form name="form1" method="post" enctype="multipart/form-data">
-<table>
+<table style="width: 100%"; class="table">
  <tr>
   <td>상품분류</td>
-  <td><input name="product_kind" id="product_kind"> </td>
+  <td><input name="product_kind" id="product_kind" class="reg" placeholder="생활 or 의류 or 위생 or 장난감 or 목욕"> </td>
  </tr>
  <tr>
   <td>상품명</td>
-  <td><input name="product_name" id="product_name"> </td>
+  <td><input name="product_name" id="product_name" class="reg"> </td>
  </tr>
  <tr>
   <td>가격</td>
-  <td><input name="price" id="price"> </td>
+  <td><input name="price" id="price" class="reg"> </td>
  </tr>
  <tr>
   <td>상품설명</td>
   <td>
-   <textarea rows="5" cols="60" name="product_desc" id="product_desc"></textarea>
+   <textarea rows="5" cols="60" name="product_desc" id="product_desc" class="reg"></textarea>
    <script>
    CKEDITOR.replace("product_desc", {
 	   filebrowserUploadUrl : "${path}/imageUpload.do"
    });
-   </script>
-   
+   </script>  
   </td>
  </tr>
  <tr>
   <td>상품이미지</td>
   <td>
-   <input type="file" name="file1" id="file1">
+   <input type="file" name="file1" id="file1" class="reg">
   </td>
  </tr>
  <tr>
   <td colspan="2" align="center">
-   <input type="button" value="등록" onclick="product_write()">
-   <input type="button" value="목록" onclick="location.href='${path}/admin/list.do'">
+   <input type="button" class="btn btn-outline-warning btn-sm" value="등록" onclick="product_write()">
+   <input type="button" class="btn btn-outline-warning btn-sm" value="목록" onclick="location.href='${path}/admin/list.do'">
   </td>
  </tr>
 </table>
 </form>
+</div>
 </body>
 </html>

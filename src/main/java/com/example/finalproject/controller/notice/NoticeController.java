@@ -58,7 +58,7 @@ public class NoticeController {
 		return "notice/write";
 	}
 	
-	@PostMapping("insert.do")
+	@RequestMapping("insert.do")
 	public String insert(@ModelAttribute NoticeDTO dto, HttpSession session) throws Exception {
 		String writer=(String)session.getAttribute("userid");
 		dto.setWriter(writer);

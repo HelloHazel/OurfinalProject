@@ -8,7 +8,7 @@
 <head>
 <meta charset="utf-8">
 <title>로그인</title>
-<script src="${path}/include/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/resources/assets/css/theme.css">
 <!-- Custom fonts for this template-->
@@ -22,6 +22,9 @@
 <link
 	href="${pageContext.request.contextPath}/resources/assets/css/sb-admin-2.min.css"
 	rel="stylesheet">
+	
+<!-- 카카오 로그인 -->
+ <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
 <script>
 	function login() {
 		var form = document.user;
@@ -42,21 +45,7 @@
 	}
 </script>
 
-<!-- 카카오 로그인 -->
-<script type="text/javascript"
-	src="https://developers.kakao.com/sdk/js/kakao.min.js" charset="utf-8"></script>
-<script type="text/javascript">
-	$(document).ready(function() {
-		Kakao.init('6fea8608c699c1f3a4565f35ee367101');
-		Kakao.isInitialized();
-	});
 
-	function loginWithKakao() {
-		Kakao.Auth.authorize({
-			redirectUri : 'http://localhost/finalproject/member/login.do'
-		}); // 등록한 리다이렉트uri 입력
-	}
-</script>
 </head>
 <body class="bg-gradient-primary">
 	<div class="container">
@@ -100,10 +89,10 @@
 										<a href="index.html" class="btn btn-google btn-user btn-block">
 											<i class="fab fa-google fa-fw"></i> 구글로 로그인하기
 										</a>
-										<button class="btn btn-warning btn-user btn-block">
-											<i class="fab fa-facebook-f fa-fw" onclick="loginWithKakao()"></i>카카오톡
-											로그인
-										</button>
+										<a id="kakao-login-btn" class="btn btn-warning btn-user btn-block" 
+										 href="https://kauth.kakao.com/oauth/authorize?client_id=a59cae8f4aed13348f5f53790e2f08cf&redirect_uri=http://localhost/finalproject/member/oauth_kakao&response_type=code">
+											카카오톡 로그인
+										</a>
 									</form>
 									<hr>
 									<div class="text-center">
