@@ -21,4 +21,5 @@ public interface MemberService {
 	public Object find_pw(HttpServletResponse response, String name, String userid, String email) throws IOException;
 	public int idCheck(String userid) throws Exception;
 	public int emailCheck(String email);
+	public void insertKakaoMember(MemberDTO dto);
 }

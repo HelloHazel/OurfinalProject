@@ -1,5 +1,6 @@
 package com.example.finalproject.model.member.dao;
 
+import java.lang.reflect.Member;
 import java.util.List;
 
 
@@ -17,4 +18,5 @@ public interface MemberDAO {
 	public String find_pw(String name, String userid, String email);
 	public int idCheck(String userid) throws Exception;
 	public int emailCheck(String email);
+	public void insertKakaoMember(MemberDTO dto);
 }
