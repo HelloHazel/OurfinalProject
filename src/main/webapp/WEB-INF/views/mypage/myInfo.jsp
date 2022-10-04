@@ -23,7 +23,7 @@
 	rel="stylesheet">
     <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/sidebars/">
 	
-   
+ 
 
     
 
@@ -285,7 +285,7 @@
 			</main>
 		</div>
 		<div class="col-9 text-bg-light">
-			<form name="form1" method="post">
+			<%-- <form name="form1" method="post">
 				<table border="1" style="width: 100%">
 				 <tr>
 				  <td>아이디</td>
@@ -338,9 +338,66 @@
 				  </td>
 				 </tr>
 				</table>
-			</form>
+			</form> --%>
+			<div class="p-5">
+			         <div class="text-center">
+                                <h1 class="h4 text-gray-900 mb-4">나의 정보 확인</h1>
+                            </div>
+                            <form class="user" name="form1" method="post">
+                            <div>아이디:</div> 
+                                 <div class="form-group">
+                                    <div class="col-sm-8 mb-3 mb-sm-0">
+                                         <input class="form-control form-control-user" id="userid" name="userid"
+                                            value="${dto.userid}" readonly>  
+                                    </div>
+                            <div>비밀번호:</div> 
+							<div class="form-group row">
+                                    <input type="password" class="form-control form-control-user" name="passwd"
+                                            id="passwd">
+                            </div>
+                            <div>이름:</div> 
+                            <div class="form-group row">
+                                        <input class="form-control form-control-user" id="name" name="name"
+                                             value="${dto.name}">
+							</div>
+							<div>전화번호:</div> 
+						    <div class="form-group row">
+                                   <input class="form-control form-control-user" id="phone" name="phone"
+                                       value="${dto.phone}">  
+                            </div>
+                            <div>이메일:</div> 
+                                 <div class="form-group">
+                                    <input class="form-control form-control-user" id="email" name="email"
+                                        value="${dto.email}">
+                            </div>
+                            <div>우편번호:</div>  
+                            <div class="form-group row">
+	                            <div class="col-sm-8 mb-3 mb-sm-0">
+	                                    <input type="text" class="form-control form-control-user" id="zipcode" name="zipcode" readonly
+	                                        value="${dto.zipcode}" readonly>
+	                            </div>
+	                            <div class="col-sm-4">
+	                                    <input type="button"  class="btn btn-warning btn-user btn-block" onclick="daumZipCode()" value="우편번호 찾기">
+	                            </div>
+                             </div>
+                             <div>주소:</div> 
+                             <div class="form-group">
+                                        <input type="text" class="form-control form-control-user"
+                                            id="address1" name="address1" value="${dto.address1}">
+                                    </div>
+                             <div>상세주소:</div> 
+                                    <div class="form-group">
+                                        <input type="text" class="form-control form-control-user"
+                                            id="address2" name="address2"  value="${dto.address2}">
+                                    </div>
+                                <button class="btn btn-warning btn-user btn-block" type="button" id="btnUpdate">
+                                   수정
+                                </button>
+                            </form>
+                         
+                            
 			
-			
+			</div>
 		</div>
 	</div>		
 </div>
@@ -349,5 +406,6 @@
 
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
       <script src="sidebars.js"></script>
+      
   </body>
 </html>

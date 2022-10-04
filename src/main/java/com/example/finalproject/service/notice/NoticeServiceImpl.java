@@ -19,14 +19,13 @@ public class NoticeServiceImpl implements NoticeService {
 
 	@Override
 	public void deleteFile(String fullName) {
-		// TODO Auto-generated method stub
+		noticeDao.deleteFile(fullName);
 
 	}
 
 	@Override
 	public List<String> getAttach(int bno) {
-		// TODO Auto-generated method stub
-		return null;
+		return noticeDao.getAttach(bno);
 	}
 
 	@Override
@@ -41,15 +40,29 @@ public class NoticeServiceImpl implements NoticeService {
 
 	}
 
+	@Transactional
 	@Override
 	public void create(NoticeDTO dto) throws Exception {
 			noticeDao.create(dto);
+			//attach 테이블에 레코드 추가
+			String[] files=dto.getFiles();//첨부파일 이름 배열
+			if(files==null) return; //첨부파일이 없으면 skip
+			for(String name : files) {
+				noticeDao.addAttach(name);//attach 테이블에 insert
+			}
 	}
 
+	@Transactional
 	@Override
 	public void update(NoticeDTO dto) throws Exception {
 		noticeDao.update(dto);
-
+		//attach테이블도 함께 수정이 되어야한다.
+				String[] files=dto.getFiles();
+				if(files==null) return;
+				for(String name : files) {
+					System.out.println("첨부파일 이름 : " + name);
+					noticeDao.updateAttach(name, dto.getBno());
+			}
 	}
 
 	@Transactional

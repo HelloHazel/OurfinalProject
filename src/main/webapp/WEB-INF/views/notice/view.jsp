@@ -15,13 +15,11 @@ function btnDelete() {
 		form.submit();
 	}
 }
-
 function btnUpdate() {
 	var form = document.form1;
 		form.action="${path}/notice/update.do";
 		form.submit();
 }
-
 </script>
 <style type="text/css">
 .gongji {
@@ -37,7 +35,6 @@ margin-right: auto;
 margin-top: auto;
 text-align: center;
 }
-
 </style>
 </head>
 <body>

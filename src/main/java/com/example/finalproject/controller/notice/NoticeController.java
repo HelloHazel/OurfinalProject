@@ -11,9 +11,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.example.finalproject.model.notice.dto.NoticeDTO;
@@ -78,6 +79,13 @@ public class NoticeController {
 		
 		return mav;
 	}
+	
+	//첨부파일 목록을 리턴
+		@RequestMapping("getAttach/{bno}")
+		@ResponseBody
+		public List<String> getAttach(@PathVariable int bno){
+			return noticeService.getAttach(bno);
+		}
 	
 	// 게시판 수정
 	@RequestMapping("update.do")
