@@ -4,7 +4,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <c:set var="path" value="${pageContext.request.contextPath}" />
-<script src="${path}/include/jquery-3.6.0.min.js"></script>
+<%-- <script src="${path}/include/jquery-3.6.0.min.js"></script> --%>
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/resources/assets/css/theme.css">
 	
@@ -144,7 +144,7 @@
 							class="nav-link fw-medium active" aria-current="page"
 							href="${path}/notice/list.do">공지사항</a></li>
 						<li class="nav-item px-2"><a class="nav-link fw-medium"
-							href="admin/inqueryList.do">1:1문의</a></li>
+							href="${path}/inquery/list.do">1:1문의</a></li>
 						<li class="nav-item px-2"><a class="nav-link fw-medium"
 							href="${path}/admin/list.do">회원관리</a></li>
 							<li class="nav-item px-2"><a class="nav-link fw-medium"
