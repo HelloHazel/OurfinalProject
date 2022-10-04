@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 다른 mapper와 중복되지 않도록 네임스페이스 기재 -->
+<mapper namespace="inquery">
+	<!-- 게시물 목록 -->
+ <select id="list" resultType="com.example.finalproject.model.inquery.dto.InqueryDTO">
+		select no, title, userid, writeDate, hit, levNo
+		from(
+			select rownum rnum, no, title, userid, writeDate, hit, levNo
+			from(
+				select no, title, userid, writeDate, hit, levNo
+				from inquery
+				order by refNo desc, ordNo
+			)
+		)
+ </select>
+ 
+<select id="getTotalRow" resultType="int">
+	select count(*) from inquery
+</select>
+
+<insert id="question" parameterType="com.example.finalproject.model.inquery.dto.InqueryDTO">
+	insert into inquery(no, title, content, userid, refNo, ordNo, levNo, parentNo)
+	values(inq_seq.nextval, #{title}, #{content}, #{userid}, inq_seq.nextval, 1, 0, null)
+</insert>
+
+<select id="view" resultType="com.example.finalproject.model.inquery.dto.InqueryDTO">
+	select no, title, content, userid, writeDate, hit, refNo, ordNo, levNo
+	from inquery
+	where no=#{no}
+</select>
+
+<update id="increase">
+	update inquery set hit = hit + 1
+	where no=#{no}
+</update>
+
+<insert id="answer" parameterType="com.example.finalproject.model.inquery.dto.InqueryDTO">
+	insert into inquery(no, title, content, userid, refNo, ordNo, levNo, parentNo)
+	values(inq_seq.nextval, #{title}, #{content}, #{userid}, #{refNo}, #{ordNo}, #{levNo}, #{parentNo})
+</insert>
+
+<update id="increaseOrdNo">
+	update inquery set ordNo = ordNo + 1
+	where refNo=#{refNo} and ordNo >= #{ordNo}
+</update>
+
+<update id="update">
+	update inquery set title = #{title}, content = #{content}
+	where no = #{no}
+</update>
+
+<delete id="delete">
+	delete from inquery
+	where no=#{no}
+</delete>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

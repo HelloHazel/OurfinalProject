@@ -1,6 +1,5 @@
 package com.example.finalproject.model.member.dao;
 
-import java.lang.reflect.Member;
 import java.util.List;
 
 

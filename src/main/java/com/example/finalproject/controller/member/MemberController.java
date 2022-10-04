@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletResponse;
@@ -230,9 +231,25 @@ public class MemberController {
 	        JsonNode userInfo = getKakaoUserInfo(access_token);
 	        String id = userInfo.get("id").toString();
 	        String name = userInfo.get("properties").get("nickname").toString();
-	        session.setAttribute("userid", id);
-	        session.setAttribute("name", name);
-	        System.out.println(id+name);
-	        return "main";
+	        UUID garbagePassword = UUID.randomUUID();
+	         String email = userInfo.get("kakao_account").get("email").toString();
+	        MemberDTO member = new MemberDTO();
+	        member.setName(name);
+	        member.setUserid(id);
+	        member.setPasswd(garbagePassword.toString());
+	        member.setEmail(email);
+	        int result = memberService.emailCheck(member.getEmail());
+			if(result == 0) {
+				memberService.insertKakaoMember(member);
+				session.setAttribute("userid", id);
+		        session.setAttribute("name", name);
+		        System.out.println(id+name);
+		        return "main";
+			}else {
+				session.setAttribute("userid", id);
+		        session.setAttribute("name", name);
+		        System.out.println(id+name);
+		        return "main";
+			}
 	    }
 }

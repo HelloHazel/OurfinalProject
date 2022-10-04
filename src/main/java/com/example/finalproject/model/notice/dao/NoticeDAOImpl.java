@@ -19,25 +19,29 @@ public class NoticeDAOImpl implements NoticeDAO {
 
 	@Override
 	public void deleteFile(String fullName) {
-		// TODO Auto-generated method stub
+		sqlSession.delete("notice.deleteFile", fullName);
 
 	}
 
 	@Override
 	public List<String> getAttach(int bno) {
-		// TODO Auto-generated method stub
-		return null;
+		return sqlSession.selectList("notice.getAttach", bno);
 	}
 
 	@Override
 	public void addAttach(String fullName) {
-		// TODO Auto-generated method stub
+		sqlSession.insert("notice.addAttach", fullName);
 
 	}
 
 	@Override
 	public void updateAttach(String fullName, int bno) {
-		// TODO Auto-generated method stub
+		Map<String,Object> map=new HashMap<>();
+		map.put("fullName", fullName);
+		map.put("bno", bno);
+		sqlSession.insert("notice.updateAttach", map);
+		//게시물board는 update이지만 첨부파일attach는 기존 파일이 있다 하더라도 기존것은 그대로 두거나
+		//또는 새파일을 올려 수정하는 것이기 때문에 insert()를 씀
 
 	}
 

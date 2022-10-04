@@ -10,7 +10,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		from (
 				select rownum as rn,   A.*
 				from(
-							select bno, title, writer, name, content, regdate, viewcnt,pin
+							select bno, title, writer, name, content, regdate, viewcnt, pin
 							from notice n, member m
 							<include refid="search" />
 							order by pin desc, bno asc
@@ -67,7 +67,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	 <!-- 게시물 삭제 -->
  	<delete id="delete" parameterType="int">
- 	 <!-- delete from board where bno=#{bno} -->
   	delete 
   	from notice 
   	where bno=#{bno}
