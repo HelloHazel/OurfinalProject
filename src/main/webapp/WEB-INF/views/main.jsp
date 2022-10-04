@@ -5,6 +5,13 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>오독오독 | 반려견을 위한 모든것!</title>
+<% response.setHeader("Cache-Control", "no-store"); 
+	response.setHeader("Pragma","no-cache");
+	response.setDateHeader("Expires",0);
+	if(request.getProtocol().equals("HTTP/1.1")){
+		response.setHeader("Cache-Control", "no-cache");
+	}
+%>
 <%@ include file="./include/header.jsp"%>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,7 +26,6 @@
 		<div class="bg-holder overlay overlay-light"
 			style="background-color: #FFE08C; background-size: cover;"></div>
 		<!--/.bg-holder-->
-
 		<div class="container">
 			<div class="row flex-center">
 				<div class="col-11 mb-10">

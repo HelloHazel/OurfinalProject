@@ -15,7 +15,6 @@
 		.navbar{
 			background: #FFE08C !important; 
 		}
-		.
 	</style>
 </head>
 <body>
@@ -55,8 +54,14 @@
 							href="${path}/shop/product/list.do">Product</a></li>
 						<li class="nav-item px-2"><a class="nav-link fw-medium"
 							href="${path}/community/list.do">Community</a></li>
-						<li class="nav-item px-2"><a class="nav-link fw-medium"
-							href="#">Q&A</a></li>
+						<li class ="nav-item dropdown px-2">
+							<a class="nav-link fw-medium dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Q&A</a>
+							<ul class="dropdown-menu" aria-labelledby="navbarDarkDropdownMenuLink">
+								<a class="dropdown-item" href="#">1:1 문의</a>
+								<a class="dropdown-item" href="#">FAQ</a>
+							</ul>
+						</li>
+						
 					</ul>
 					<form class="d-flex">
 
