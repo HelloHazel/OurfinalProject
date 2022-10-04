@@ -1,6 +1,7 @@
 package com.example.finalproject.model.member.dto;
 
 import java.util.Date;
+import java.util.UUID;
 
 public class MemberDTO {
 	private String userid;
@@ -72,6 +73,7 @@ public class MemberDTO {
 				+ phone + ", join_date=" + join_date + ", zipcode=" + zipcode + ", address1=" + address1 + ", address2="
 				+ address2 + "]";
 	}
+
 	
 	
 }

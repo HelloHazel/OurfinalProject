@@ -61,6 +61,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	   where userid=#{userid}
 	  </delete>
 	 
+	 <insert id="insertKakaoMember">
+	insert into member (name, userid, passwd, email)
+	values (#{name}, #{userid}, #{passwd}, #{email})
+	</insert>
 
 </mapper>
 
