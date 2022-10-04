@@ -77,7 +77,7 @@
 					</div>
 					
 					<div>
-						<input type="file" id="file1" name="file1">					
+						<input type="file" name="file1" id="file1">			
 					</div>
 					
 					

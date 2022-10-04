@@ -11,6 +11,7 @@ import javax.servlet.http.HttpSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -67,10 +68,8 @@ public class CommunityController {
 		if (!dto.getFile1().isEmpty()) {
 			filename = dto.getFile1().getOriginalFilename();
 			try {
-				String path = "C:\\work_spring\\.metadata\\.plugins" 
-			+ "\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps"
-						+ "\\OurfinalProject\\resources\\images\\community\\"; //배포 디렉토리
-				// 디렉토리가 존재하지않으면 생성
+				String path = "C:\\work_spring\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps\\OurfinalProject\\WEB-INF\\views\\images\\community\\";//배포 디렉토리
+			    // 디렉토리가 존재하지않으면 생성
 				new File(path).mkdir();
 				// 임시 디텍토리에 저장된 첨부파일을 이동
 				dto.getFile1().transferTo(new File(path + filename));
@@ -89,6 +88,12 @@ public class CommunityController {
 		mav.setViewName("community/post_detail");
 		mav.addObject("dto", communityService.detailPost(comm_no));
 		return mav;
+	}
+	
+	@RequestMapping("update.do")
+	public String update(Model model) {
+		model.addAttribute("message", "업데이트 페이지 입니두");
+		return "community/post_edit";
 	}
 	
 	

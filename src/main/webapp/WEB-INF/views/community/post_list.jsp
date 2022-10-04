@@ -20,6 +20,13 @@
 <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
+	    @font-face {
+	    font-family: 'InkLipquid';
+	    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/InkLipquid.woff') format('woff');
+	    font-weight: normal;
+	    font-style: normal;
+		}
+    
       .bd-placeholder-img {
         font-size: 1.125rem;
         text-anchor: middle;
@@ -47,6 +54,14 @@
       	 margin-left:auto; 
    		 margin-right:auto;
       }
+      
+      #maintext{
+      	font-family: 'InkLipquid';
+      	font-size: 100px;
+      	color: white;
+      	transform: translate(0, -50%);
+      }
+    
           
       
     </style>
@@ -66,11 +81,15 @@
 <main>
   <section class="py-5 text-center container">
     <div class="row py-lg-5">
-      <div class="col-lg-6 col-md-8 mx-auto">
-        <h1 class="fw-light">Album example</h1>
-        <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.</p>
-        
-        <c:choose>
+      <div class="row-cols-1" id="mainbox" >
+      
+        <img src="${path}/resources/images/community/banner.png" width="100%" height="100%" id="mainimg" class="img-responsive">
+        <div class="card-img-overlay d-flex flex-center">
+        	<p id="maintext">How was your day?</p>
+		</div>
+		<br><br>
+		<div class="btn-group">
+	       <c:choose>
            <c:when test="${sessionScope.userid == null}">
            	<!-- 로그인하지 않은 상태 -->
            	<p>
@@ -79,12 +98,12 @@
            </c:when>
            <c:otherwise>
            <!-- 로그인한 상태 -->
-	        <p>
+	       <p>
 	          <button type="button" onclick="location.href='${path}/community/write.do'" class="btn btn-primary my-1">글쓰기</button>
-	        </p>
+	       </p> 
 	       </c:otherwise>
-        </c:choose>
-        
+          </c:choose>
+        </div>
       </div>
     </div>
   </section>
@@ -96,9 +115,9 @@
        <c:forEach var="row" items="${map.list}">   
         <div class="col">
           <div class="card shadow-sm">
-            <svg  class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/></svg>
+            <a href="${path}/community/detail.do?comm_no=${row.comm_no}"><img  class="bd-placeholder-img card-img-top" src="${path}/resources/images/community/${row.comm_url}" width="100%" height="225"></a>
             <div class="card-body">
-              <p class="card-text" id="useridText"><a href="${path}/community/detail.do?comm_no=${row.userid}">${row.userid}</a></p>
+              <p class="card-text" id="useridText"><a href="${path}/community/detail.do?comm_no=${row.comm_no}">${row.userid}</a></p>
               <p class="card-text" id="titleText"><a href="${path}/community/detail.do?comm_no=${row.comm_no}">${row.comm_title}</a></p>
               
               <div class="d-flex justify-content-between align-items-center">
@@ -124,11 +143,11 @@
 	<tr>
 		<td colspan="6" align="center">
 			<c:if test="${map.pager.curBlock > 1}">
-				<a href="#" onclick="list('1')">[처음]</a>
+				<a href="#" onclick="list('1')">&laquo;</a>
 			</c:if>
 			<c:if test="${map.pager.curBlock > 1}">
 				<a href="#" onclick="list('${map.pager.prevPage}')">
-				[이전]</a>
+				&lt;</a>
 			</c:if>
 			<c:forEach var="num" 
 				begin="${map.pager.blockBegin}"
@@ -145,11 +164,11 @@
 			</c:forEach>
 			<c:if test="${map.pager.curBlock < map.pager.totBlock}">
 				<a href="#" 
-				onclick="list('${map.pager.nextPage}')">[다음]</a>
+				onclick="list('${map.pager.nextPage}')">&gt;</a>
 			</c:if>
 			<c:if test="${map.pager.curPage < map.pager.totPage}">
 				<a href="#" 
-				onclick="list('${map.pager.totPage}')">[끝]</a>
+				onclick="list('${map.pager.totPage}')">&raquo;</a>
 			</c:if>
 		</td>
 	</tr>

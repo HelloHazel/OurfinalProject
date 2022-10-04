@@ -43,15 +43,22 @@
         
         <div class="col">
           <div class="card shadow-sm">
-            <img class="bd-placeholder-img card-img-top" width="100%" height="100%" src="${path}/images/community/${dto.comm_url}">
-            <div class="card-body">
+            <img class="bd-placeholder-img card-img-top img-fluid" width="100%" height="100%" src="${path}/resources/images/community/${dto.comm_url}">
+             <div class="card-body">
             
            	  <p class="card-text" id="useridText">${dto.userid}</p>
            	  <p class="card-text" id="contentText">${dto.comm_content}</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary" onclick="location.href='${path}/community/detail.do?comm_no=${dto.comm_no}'">View</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary" onclick="location.href='${path}/community/list.do'">View</button>
+                  <c:choose>
+                    <c:when test="${sessionScope.userid == dto.userid}">
+                      <button type="button" class="btn btn-sm btn-outline-secondary" onclick="location.href='${path}/community/update.do'">Edit</button>
+                    </c:when>
+                    <c:otherwise>  
+                      <button type="button" class="btn btn-sm btn-outline-secondary" onclick="location.href='${path}/community/list.do'">comment</button>
+                    </c:otherwise>
+                  </c:choose>
                 </div>
                 <small class="text-muted">${dto.comm_regdate}</small>
               </div>

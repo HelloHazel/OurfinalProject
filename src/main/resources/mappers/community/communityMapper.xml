@@ -29,6 +29,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 				) where rn between #{start} and #{end}
 	</sql>
 	
+	<!-- post 등록 -->
 	<insert id="insert">
 		insert into community (comm_no,comm_title,comm_content,userid, comm_url) values
 	    (comm_seq.nextval, #{comm_title}, #{comm_content}, #{userid}, #{comm_url})
