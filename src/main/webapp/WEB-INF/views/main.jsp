@@ -14,7 +14,6 @@
 	href="${pageContext.request.contextPath}/resources/assets/css/theme.css">
 </head>
 <body>
-
 	<section
 		class="py-10 bg-light-gradient border-bottom border-white border-5">
 		<div class="bg-holder overlay overlay-light"
@@ -36,8 +35,6 @@
 			</div>
 		</div>
 	</section>
-	
-
 
 	<!-- ============================================-->
 	<!-- <section> begin ============================-->
