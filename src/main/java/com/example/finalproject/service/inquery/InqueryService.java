@@ -2,6 +2,8 @@ package com.example.finalproject.service.inquery;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import com.example.finalproject.model.inquery.dto.InqueryDTO;
 
 public interface InqueryService {
@@ -12,7 +14,9 @@ public interface InqueryService {
 		// 질문하기
 		public int question(InqueryDTO dto) throws Exception;
 		// 질문답변 보기
-		public InqueryDTO view(int no, int inc) throws Exception;
+		public InqueryDTO view(int no) throws Exception;
+		// 조회수
+		public void increase(int no, HttpSession session) throws Exception;
 		// 답변하기
 		public int answer(InqueryDTO dto) throws Exception;
 		// 수정하기

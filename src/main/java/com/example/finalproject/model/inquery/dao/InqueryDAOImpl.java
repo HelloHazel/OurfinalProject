@@ -1,8 +1,6 @@
 package com.example.finalproject.model.inquery.dao;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import javax.inject.Inject;
 
@@ -38,8 +36,8 @@ public class InqueryDAOImpl implements InqueryDAO {
 	}
 	
 	@Override
-	public int increase(int no) throws Exception {
-		return sqlSession.update("inquery.increase", no);
+	public void increase(int no) throws Exception {
+		sqlSession.update("inquery.increase", no);
 	}
 	
 	@Override

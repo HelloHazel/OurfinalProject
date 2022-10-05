@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.example.finalproject.model.inquery.dto.InqueryDTO;
 import com.example.finalproject.service.inquery.InqueryService;
@@ -33,7 +34,8 @@ public class InqueryController {
 		}
 		
 		 
-		 @GetMapping("question.do") public String questionForm() throws Exception {
+		 @GetMapping("question.do") 
+		 public String questionForm() throws Exception {
 		  return "inquery/question"; 
 		  }
 		
@@ -47,27 +49,25 @@ public class InqueryController {
 			
 			inqueryService.question(dto);
 
-			return "redirect:/inquery/list.do";
+			return "redirect:list.do?no="+dto.getNo();
 		}
 		
 		// 질문답변 보기
 		@GetMapping("view.do")
-		public String view(int no, int inc, Model model) throws Exception {
-			
-			// enter처리 \n -> <br>, '  ' -> &nbps;
-			InqueryDTO dto = inqueryService.view(no, inc);
-			dto.setContent(dto.getContent().replace("\n", "<br>"));
-			
-			model.addAttribute("dto", dto);
-			
-			return "inquery/view";
+		public ModelAndView view(int no, HttpSession session) throws Exception {
+			//조회수 증가 처리
+			inqueryService.increase(no, session);
+			ModelAndView mav=new ModelAndView();
+			mav.setViewName("inquery/view");
+			mav.addObject("dto", inqueryService.view(no));
+			return mav;
 		}
 		
 		// 답변하기 폼
 		@GetMapping("answer.do")
 		public String answerForm(int no, Model model) throws Exception {
 			
-			model.addAttribute("dto", inqueryService.view(no, 0));
+			model.addAttribute("dto", inqueryService.view(no));
 			
 			return "inquery/answer";
 		}
@@ -91,7 +91,7 @@ public class InqueryController {
 		public String updateForm(int no, Model model) throws Exception{
 			
 			// db에서 데이터 가져오기
-			model.addAttribute("dto", inqueryService.view(no, 0));
+			model.addAttribute("dto", inqueryService.view(no));
 			
 			return "inquery/update";
 		}

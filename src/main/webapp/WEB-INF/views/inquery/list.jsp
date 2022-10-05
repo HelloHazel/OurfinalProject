@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>1:1문의 게시판</title>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <%@ include file="../include/header.jsp" %>
 <style type="text/css">
@@ -24,23 +25,29 @@ $(function() {
 </head>
 <body>
 <%@ include file="../include/menu.jsp" %>
+&nbsp;&nbsp;&nbsp;&nbsp;
 <div class="container">
-<h2>1:1문의 게시판 리스트</h2>
+<h2 style="text-align: center;">1:1문의</h2>
+&nbsp;
 <table class="table">
-	<tr>
-		<th>번호</th>
-		<th>제목</th>
-		<th>작성자</th>
-		<th>작성일</th>
-		<th>조회수</th>
-	</tr>
-	<c:forEach items="${list }" var="dto">
-		<tr class="dataRow">
-			<td class="no">${dto.no }</td>
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">title</th>
+      <th scope="col">writer</th>
+      <th scope="col">date</th>
+      <th scope="col">cnt</th>
+    </tr>
+  </thead>
+
+  <tbody>
+<c:forEach items="${list }" var="dto">
+    <tr class="dataRow">
+      <td class="no">${dto.no }</td>
 			<td>
 				<c:forEach begin="1" end="${dto.levNo * 3}">&nbsp;</c:forEach>
 				<c:if test="${dto.levNo > 0}">
-				▶
+				<i class="material-icons">subdirectory_arrow_right</i>
 				</c:if>
 				${dto.title }
 			</td>
@@ -49,12 +56,13 @@ $(function() {
 			<td>${dto.hit }</td>
 		</tr>
 	</c:forEach>
-	<tr>
-		<td colspan="5">
-				<input type="button" class="btn btn-default" value="질문하기" onclick="location.href='${path}/inquery/question.do'">
-		</td>
-	</tr>
+  </tbody>
 </table>
+ <c:if test="${sessionScope.userid != null}">
+ <div style="text-align: center;">
+<input type="button" class="btn btn-outline-warning btn-sm" value="질문하기" onclick="location.href='${path}/inquery/question.do'">
+</div>
+</c:if>
 </div>
 </body>
 </html>

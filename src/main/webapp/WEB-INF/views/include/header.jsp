@@ -57,7 +57,7 @@
 						<li class ="nav-item dropdown px-2">
 							<a class="nav-link fw-medium dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Q&A</a>
 							<ul class="dropdown-menu" aria-labelledby="navbarDarkDropdownMenuLink">
-								<a class="dropdown-item" href="#">1:1 문의</a>
+								<a class="dropdown-item" href="${path}/inquery/list.do">1:1 문의</a>
 								<a class="dropdown-item" href="#">FAQ</a>
 							</ul>
 						</li>
