@@ -53,7 +53,7 @@
                   <button type="button" class="btn btn-sm btn-outline-secondary" onclick="location.href='${path}/community/list.do'">View</button>
                   <c:choose>
                     <c:when test="${sessionScope.userid == dto.userid}">
-                      <button type="button" class="btn btn-sm btn-outline-secondary" onclick="location.href='${path}/community/update.do'">Edit</button>
+                      <button type="button" class="btn btn-sm btn-outline-secondary" onclick="location.href='${path}/community/edit/${dto.comm_no}'">Edit</button>
                     </c:when>
                     <c:otherwise>  
                       <button type="button" class="btn btn-sm btn-outline-secondary" onclick="location.href='${path}/community/list.do'">comment</button>
