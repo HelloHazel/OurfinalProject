@@ -59,4 +59,9 @@ public class InqueryDAOImpl implements InqueryDAO {
 	public int delete(int no) throws Exception {
 		return sqlSession.delete("inquery.delete", no);
 	}
+	
+	@Override
+	public List<InqueryDTO> myquerylist(String userId) {
+		return sqlSession.selectList("inquery.myquerylist", userId);
+	}
 }

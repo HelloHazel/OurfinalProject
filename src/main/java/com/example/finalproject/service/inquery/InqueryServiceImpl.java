@@ -72,5 +72,10 @@ public class InqueryServiceImpl implements InqueryService {
 	public int delete(int no) throws Exception {
 		return inqueryDao.delete(no);
 	}
+	
+	@Override
+	public List<InqueryDTO> myquerylist(String userId) {
+		return inqueryDao.myquerylist(userId);
+	}
 
 }

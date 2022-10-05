@@ -16,7 +16,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.example.finalproject.model.community.dto.CommunityDTO;
+import com.example.finalproject.model.inquery.dto.InqueryDTO;
 import com.example.finalproject.service.community.CommunityService;
+import com.example.finalproject.service.inquery.InqueryService;
 import com.example.finalproject.service.member.MemberService;
 import com.example.finalproject.service.mypage.MyPageService;
 
@@ -34,7 +36,8 @@ public class MyPageController {
     @Inject 
     CommunityService communityService;
 	 
-	
+    @Inject
+	InqueryService inqueryService;
 	
 	@RequestMapping("mypagemain.do")
 	public String main(HttpSession session) {
@@ -47,8 +50,19 @@ public class MyPageController {
 	}
 	
 	@RequestMapping("myquery.do")
-	public String my_query() {
-		return "mypage/myQuery";
+	public ModelAndView my_query(HttpSession session) {
+		 ModelAndView mav=new ModelAndView();
+			//세션 아이디
+			String userId=(String)session.getAttribute("userid");
+		
+			List<InqueryDTO> list=inqueryService.myquerylist(userId);
+			
+			Map<String, Object> map=new HashMap<>();
+			map.put("list", list);
+			
+			mav.setViewName("mypage/myQuery"); //포워딩 뷰
+			mav.addObject("map", map);
+			return mav;
 	}
 	
 	@RequestMapping("mypost.do")
@@ -88,4 +102,6 @@ public class MyPageController {
 			mav.addObject("map", map);
 			return mav;
 		}
+		 
+		
 }
