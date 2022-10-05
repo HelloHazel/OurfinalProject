@@ -14,4 +14,5 @@ public interface InqueryDAO {
 	public int increaseOrdNo(InqueryDTO dto) throws Exception;
 	public int update(InqueryDTO dto) throws Exception;
 	public int delete(int no) throws Exception;
+	public List<InqueryDTO> myquerylist(String userId);
 }

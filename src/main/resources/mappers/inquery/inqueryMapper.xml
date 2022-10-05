@@ -57,6 +57,14 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	delete from inquery
 	where no=#{no}
 </delete>
+
+<select id="myquerylist" resultType="com.example.finalproject.model.inquery.dto.InqueryDTO">
+		<![CDATA[ 
+			select * from inquery
+			where userid = #{userId}
+			order by refNo desc
+		]]> 
+</select>
 </mapper>
 
 
