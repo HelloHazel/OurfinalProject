@@ -58,8 +58,10 @@ public class InqueryController {
 			//조회수 증가 처리
 			inqueryService.increase(no, session);
 			ModelAndView mav=new ModelAndView();
+			InqueryDTO dto=inqueryService.view(no);
+			dto.setContent(dto.getContent().replace("\n", "<br>"));
 			mav.setViewName("inquery/view");
-			mav.addObject("dto", inqueryService.view(no));
+			mav.addObject("dto", dto);
 			return mav;
 		}
 		

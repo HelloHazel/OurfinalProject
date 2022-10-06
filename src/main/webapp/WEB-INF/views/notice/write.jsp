@@ -6,38 +6,31 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<style type="text/css">
-.gongji {
-margin-left: auto;
-margin-right: auto;
-margin-top: auto;
-text-align: center;
-top: 40px;
-}
-#gongji {
-margin-left: auto;
-margin-right: auto;
-margin-top: auto;
-text-align: center;
-}
-</style>
 <%@ include file="../include/header.jsp" %>
 </head>
 <body>
 <%@ include file="../include/menu.jsp" %>
-<br>
-<h2 class="gongji">Write</h2>
-<form name="form1" method="post" action="insert.do">
-	<div class="mb-3" style="width:800px;" id="gongji">
-  <input type="text" style="text-align: center;" class="form-control" id="title" name="title" size="10" value="${dto.title}" placeholder="제목을 입력하세요">
+&nbsp;&nbsp;&nbsp;&nbsp;
+<div class="container">
+<h2 style="text-align: center;">Notice write</h2>
+&nbsp;
+<form method="post" action="write.do">
+<div class="form-group">
+	<label>title</label>
+	<input name="title" id="title" class="form-control">
 </div>
-<div class="mb-3" style="width:800px;" id="gongji">
-  <textarea style="text-align: center;" class="form-control" id="content" name="content" rows="3" cols="80" placeholder="내용을 입력하세요">${dto.content}</textarea>
+<div class="form-group">
+	<label>content</label>
+	<textarea name="content" id="content" class="form-control" rows="7"></textarea>
 </div>
-	<div style="width:700px; text-align:center;" class="gongji">
-		<input type="submit" class="btn btn-outline-warning btn-sm" value="확인">
-		
-	</div>
-	</form>
+ <c:if test="${sessionScope.userid == 'admin' }">
+ <div style="text-align: center;">
+<input type="submit" class="btn btn-outline-warning btn-sm" value="등록">
+<input type="reset" class="btn btn-outline-warning btn-sm" value="새로입력">
+ <input type="button" class="btn btn-outline-warning btn-sm" value="목록" onclick="location.href='${path}/notice/list.do'">
+</div>
+</c:if>
+</form>
+</div>
 </body>
 </html>

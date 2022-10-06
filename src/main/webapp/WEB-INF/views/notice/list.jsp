@@ -6,92 +6,61 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script type="text/javascript">
-function list(page){
-	location.href="${path}/notice/list.do?curPage="+page;
-} 
-</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<%@ include file="../include/header.jsp" %>
 <style type="text/css">
-.gongji {
-margin-left: auto;
-margin-right: auto;
-margin-top: auto;
-text-align: center;
-top: 40px;
-}
-.table {
-margin-left: auto;
-margin-right: auto;
-margin-top: auto;
-text-align: center;
-top: 40px;
-}
-#gongji {
-margin-left: auto;
-margin-right: auto;
-margin-top: auto;
-text-align: center;
+.dataRow:hover {
+	background: #eee;
+	cursor: pointer;
 }
 </style>
-<%@ include file="../include/header.jsp" %>
+<script type="text/javascript">
+$(function(){
+	$(".dataRow").click(function(){
+		var no = $(this).find(".no").text();
+		location="view.do?no="+no
+	});
+});
+</script>
 </head>
 <body>
 <%@ include file="../include/menu.jsp" %>
-<br>
-<h2 class="gongji">Notice</h2>
-<br>
-<!-- 검색폼 -->
-<form name="form1" method="post" action="${path}/notice/list.do" class="gongji">
-	<select name="search_option">
-		<option value="name"
-<c:if test="${map.search_option == 'name'}">
-selected</c:if>	>이름</option>
-		<option value="title" 
-<c:if test="${map.search_option == 'title'}">
-selected</c:if>	>제목</option>
-		<option value="content" 
-<c:if test="${map.search_option == 'content'}">
-selected</c:if>	>내용</option>
-		<option value="all" 
-<c:if test="${map.search_option == 'all'}">
-selected</c:if>	>이름+내용+제목</option>
-	</select>
-	 <input name="keyword" value="${map.keyword}">
-	<input type="submit" value="조회">
-</form>
-<div class="gongji">${map.count}개의 게시물이 있습니다.</div>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<div class="container">
+<h2 style="text-align: center;">Notice</h2>
+&nbsp;
 <table class="table">
   <thead>
     <tr>
       <th scope="col">#</th>
       <th scope="col">title</th>
-      <th scope="col">name</th>
       <th scope="col">writer</th>
 	  <th scope="col">date</th>
 	  <th scope="col">cnt</th>
     </tr>
   </thead>
   <tbody>
-<c:forEach var="row" items="${map.list}">
+<c:forEach items="${list }" var="dto">
 <c:choose>
- <c:when test="${row.pin == '1'}">
-    <tr>
-      <td>${row.bno}</td>
-	<td><a href="${path}/notice/view.do?bno=${row.bno}">${row.title}</a></td>
-	<td>${row.name}</td>
-	<td>${row.content}</td>
-	<td><fmt:formatDate value="${row.regdate}" pattern="yyyy-MM-dd"/></td>
-	<td>${row.viewcnt}</td>
+ <c:when test="${dto.pin == '1'}">
+    <tr class="dataRow">
+     <td class="no">${dto.no}</td>
+	<td>
+	<i class="material-icons">notifications</i>
+	${dto.title }</td>
+	<td>${dto.userid}</td>
+	<td><fmt:formatDate value="${dto.writeDate}" pattern="yyyy-MM-dd"/></td>
+	<td>${dto.hit}</td>
     </tr>
 	</c:when>
 	<c:otherwise>
-    <tr>
-     <td>${row.bno}</td>
-	<td><a href="${path}/notice/view.do?bno=${row.bno}">${row.title}</a></td>
-	<td>${row.name}</td>
-	<td>${row.content}</td>
-	<td><fmt:formatDate value="${row.regdate}" pattern="yyyy-MM-dd"/></td>
-	<td>${row.viewcnt}</td>
+    <tr class="dataRow">
+     <td class="no">${dto.no}</td>
+	<td>${dto.title }</td>
+	<td>${dto.userid}</td>
+	<td><fmt:formatDate value="${dto.writeDate}" pattern="yyyy-MM-dd"/></td>
+	<td>${dto.hit}</td>
     </tr>
    </c:otherwise>
  </c:choose>
@@ -103,5 +72,6 @@ selected</c:if>	>이름+내용+제목</option>
  <input type="button" class="btn btn-outline-warning btn-sm" value="글쓰기" onclick="location.href='${path}/notice/write.do'">
 </div>
 </c:if>
+</div>
 </body>
 </html>
