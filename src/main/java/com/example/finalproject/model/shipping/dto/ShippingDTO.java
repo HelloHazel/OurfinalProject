@@ -4,17 +4,17 @@ import java.util.Date;
 
 public class ShippingDTO {
 	private int order_id;
-	private String userid;	
-	private String name;	
-	private int product_id;	
-	private String product_name;	
+	private String userid;
+	private String name;
+	private int product_id;
 	private int price;
 	private int amount;
-	private Date pay_date;	
-	private String receiver;	
-	private String address;	
-	private String alert;	
-	
+	private Date pay_date;
+	 private String receiver;
+	 private String address1;
+	 private String address2;
+	 private String alert;
+	 private String order_status;
 	public int getOrder_id() {
 		return order_id;
 	}
@@ -38,12 +38,6 @@ public class ShippingDTO {
 	}
 	public void setProduct_id(int product_id) {
 		this.product_id = product_id;
-	}
-	public String getProduct_name() {
-		return product_name;
-	}
-	public void setProduct_name(String product_name) {
-		this.product_name = product_name;
 	}
 	public int getPrice() {
 		return price;
@@ -69,11 +63,17 @@ public class ShippingDTO {
 	public void setReceiver(String receiver) {
 		this.receiver = receiver;
 	}
-	public String getAddress() {
-		return address;
+	public String getAddress1() {
+		return address1;
 	}
-	public void setAddress(String address) {
-		this.address = address;
+	public void setAddress1(String address1) {
+		this.address1 = address1;
+	}
+	public String getAddress2() {
+		return address2;
+	}
+	public void setAddress2(String address2) {
+		this.address2 = address2;
 	}
 	public String getAlert() {
 		return alert;
@@ -81,12 +81,18 @@ public class ShippingDTO {
 	public void setAlert(String alert) {
 		this.alert = alert;
 	}
+	public String getOrder_status() {
+		return order_status;
+	}
+	public void setOrder_status(String order_status) {
+		this.order_status = order_status;
+	}
 	@Override
 	public String toString() {
 		return "ShippingDTO [order_id=" + order_id + ", userid=" + userid + ", name=" + name + ", product_id="
-				+ product_id + ", product_name=" + product_name + ", price=" + price + ", amount=" + amount
-				+ ", pay_date=" + pay_date + ", receiver=" + receiver + ", address=" + address + ", alert=" + alert
-				+ "]";
+				+ product_id + ", price=" + price + ", amount=" + amount + ", pay_date=" + pay_date + ", receiver="
+				+ receiver + ", address1=" + address1 + ", address2=" + address2 + ", alert=" + alert
+				+ ", order_status=" + order_status + "]";
 	}
 	
 	

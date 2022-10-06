@@ -82,6 +82,7 @@ $(function() {
 			<button id="btnUpdate" class="btn btn-outline-warning btn-sm">수정</button>
 			<button type="button" id="btnDelete" class="btn btn-outline-warning btn-sm">장바구니 비우기</button>
 			<button type="button" id="btnList" class="btn btn-outline-warning btn-sm">상품 목록</button>
+			<button type="button" id="btnOrder" class="btn btn-outline-warning btn-sm" onclick="location.href=''${path}/shop/cart/orderAll.do?cart_no=${cart_no}">상품 주문</button>
 		</form>
 	</c:otherwise>
 </c:choose>
