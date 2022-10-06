@@ -18,5 +18,6 @@ public interface CommunityDAO {
 	public CommunityDTO detailPost(int comm_no);
 	public int countArticle();
 	public List<CommunityDTO> myCmmList(String userId);
+	public CommunityDTO read(int comm_no);
 	
 }
