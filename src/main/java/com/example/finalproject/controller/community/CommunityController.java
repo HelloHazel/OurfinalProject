@@ -62,6 +62,10 @@ public class CommunityController {
 	 	
 	@RequestMapping("insert.do")
 	public String insert(@ModelAttribute CommunityDTO dto) throws Exception {
+		System.out.println("comm번호 : "+dto.getComm_no());
+		
+		
+		
 		String filename = "-";
 		// 첨부 파일이 있으면
 		if (!dto.getFile1().isEmpty()) {

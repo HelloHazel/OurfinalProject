@@ -9,6 +9,9 @@ public class CommCmtDTO {
 	private String cmt_content;
 	private Date cmt_regdate; 
 	private int comm_no; //게시물번호
+	private String commenter; //댓글 작성자 id
+	private Date updatedate; //수정일자
+	
 	//getter, setter, toString()
 	public int getCmt_no() {
 		return cmt_no;
@@ -40,11 +43,28 @@ public class CommCmtDTO {
 	public void setComm_no(int comm_no) {
 		this.comm_no = comm_no;
 	}
+	public String getCommenter() {
+		return commenter;
+	}	
+	public void setCommenter(String commenter) {
+		this.commenter = commenter;
+	}
+		
+	public Date getUpdatedate() {
+		return updatedate;
+	}
+	public void setUpdatedate(Date updatedate) {
+		this.updatedate = updatedate;
+	}
 	@Override
 	public String toString() {
 		return "CommCmtDTO [cmt_no=" + cmt_no + ", name=" + name + ", cmt_content=" + cmt_content + ", cmt_regdate="
-				+ cmt_regdate + ", comm_no=" + comm_no + "]";
+				+ cmt_regdate + ", comm_no=" + comm_no + ", commenter=" + commenter + ", updatedate=" + updatedate
+				+ "]";
 	}
+	
+	
+	
 	
 	
 
