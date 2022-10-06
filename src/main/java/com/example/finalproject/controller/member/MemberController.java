@@ -39,7 +39,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 public class MemberController {
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	
-	 private final static String id = "a59cae8f4aed13348f5f53790e2f08cf"; 
+	 private final static String id = "5e271ef689167248b66474ccae13b1e6"; 
 	 private final static String url = "http://localhost/finalproject/member/oauth_kakao";
 	
 	@Inject
