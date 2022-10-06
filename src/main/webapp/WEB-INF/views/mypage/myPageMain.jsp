@@ -11,7 +11,7 @@
     <meta name="generator" content="Hugo 0.101.0">
     
     <title>Sidebars · Bootstrap v5.2</title>
-	 	 <script src="${path}/include/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/resources/assets/css/theme.css">
 <!-- Custom fonts for this template-->
@@ -230,15 +230,31 @@
 </main>
 		</div>
 		<div class="col-9 text-bg-light">
-			<table border="1">
-			  <tr>
-			    <th>번호</th>
-			    <th>상품사진</th>
-			    <th>상품이름</th>
-			    <th>갯수</th>
-			    <th>금액</th>
-			    <th>날짜</th>
-			  </tr>
+		<h2 style="text-align: center;">나의 구매내역</h2>
+	
+&nbsp;
+			<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">주문번호</th>
+      <th scope="col">상품명</th>
+      <th scope="col">가격</th>
+      <th scope="col">수량</th>
+      <th scope="col">주문일자</th>
+    </tr>
+  </thead>
+  <tbody>
+  <c:forEach var="row" items="${map.list}">
+  <tr>
+   <td>${row.order_id}</td>
+   <td><a href="${path}/shop/product/detail/${row.product_id}">${row.product_name}</a></td>
+   <td>${row.price}</td>
+   <td>${row.amount}</td>
+   <td><fmt:formatDate value="${row.pay_date}" pattern="yyyy-MM-dd HH:mm:ss" /></td>
+  </tr>
+  </c:forEach>
+  </tbody> 
+</table>
   <%-- <c:forEach var="row" items="${map.list}"> 
 <c:choose>
  <c:when test="${row.show == 'y'}">
