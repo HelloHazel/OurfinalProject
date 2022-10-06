@@ -5,7 +5,7 @@ import java.util.List;
 import com.example.finalproject.model.inquery.dto.InqueryDTO;
 
 public interface InqueryDAO {
-	public List<InqueryDTO> list() throws Exception;
+	public List<InqueryDTO> list(String search_option, String keyword, int start, int end) throws Exception;
 	public int getTotalRow() throws Exception;
 	public int question(InqueryDTO dto) throws Exception;
 	public InqueryDTO view(int no) throws Exception;

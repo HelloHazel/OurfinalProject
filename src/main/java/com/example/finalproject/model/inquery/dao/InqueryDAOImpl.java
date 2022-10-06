@@ -1,6 +1,8 @@
 package com.example.finalproject.model.inquery.dao;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.inject.Inject;
 
@@ -16,8 +18,13 @@ public class InqueryDAOImpl implements InqueryDAO {
 	SqlSession sqlSession;
 	
 	@Override
-	public List<InqueryDTO> list() throws Exception {
-		return sqlSession.selectList("inquery.list");
+	public List<InqueryDTO> list(String search_option, String keyword, int start, int end) throws Exception {
+		Map<String,Object> map=new HashMap<>();
+		map.put("search_option", search_option);
+		map.put("keyword", "%"+keyword+"%");
+		map.put("start", start);
+		map.put("end", end);
+		return sqlSession.selectList("inquery.list", map);
 	}
 	
 	@Override

@@ -1,5 +1,9 @@
 package com.example.finalproject.controller.inquery;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
 
@@ -11,10 +15,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.example.finalproject.model.inquery.dto.InqueryDTO;
 import com.example.finalproject.service.inquery.InqueryService;
+import com.example.finalproject.service.inquery.Pager;
 
 @Controller
 @RequestMapping("inquery/*")
@@ -26,11 +32,31 @@ public class InqueryController {
 		
 		// 질문답변 리스트
 		@RequestMapping("list.do")
-		public String list(Model model) throws Exception {
+		public ModelAndView list(
+				@RequestParam(defaultValue = "userid") String search_option,
+				@RequestParam(defaultValue = "") String keyword,
+				@RequestParam(defaultValue = "1") int curPage) 
+				throws Exception {
 			
-			model.addAttribute("list", inqueryService.list());
+			//레코드 갯수 계산
+			int count=inqueryService.getTotalRow();
+			//페이지 관련 설정
+			Pager pager=new Pager(count, curPage);
+			int start=pager.getPageBegin();
+			int end=pager.getPageEnd();
 			
-			return "inquery/list";
+			List<InqueryDTO> list=inqueryService.list(search_option, keyword, start, end);
+			logger.info(list.toString());
+			ModelAndView mav=new ModelAndView();
+			Map<String, Object> map=new HashMap<>();
+			map.put("list", list);
+			map.put("count", count);//레코드의 갯수
+			map.put("pager", pager); //페이지네이션을 위한 변수
+			map.put("search_option", search_option);
+			map.put("keyword", keyword);
+			mav.setViewName("inquery/list");//포워딩 뷰
+			mav.addObject("map", map);
+			return mav;
 		}
 		
 		 
