@@ -27,14 +27,12 @@ public class CommunityServiceImpl implements CommunityService {
 
 	@Override
 	public void update(CommunityDTO dto) {
-		// TODO Auto-generated method stub
-
+		communityDao.update(dto);
 	}
 
 	@Override
 	public void delete(int comm_no) {
-		// TODO Auto-generated method stub
-
+		communityDao.delete(comm_no);
 	}
 
 	@Override
@@ -44,9 +42,8 @@ public class CommunityServiceImpl implements CommunityService {
 	}
 
 	@Override
-	public List<String> getAttach(int comm_no) {
-		// TODO Auto-generated method stub
-		return null;
+	public String getAttach(int comm_no) {
+		return communityDao.getAttach(comm_no);
 	}
 
 	@Override

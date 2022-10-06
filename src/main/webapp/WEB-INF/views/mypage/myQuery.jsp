@@ -11,7 +11,7 @@
     <meta name="generator" content="Hugo 0.101.0">
     
     <title>Sidebars · Bootstrap v5.2</title>
-	 	 <script src="${path}/include/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/resources/assets/css/theme.css">
 <!-- Custom fonts for this template-->
@@ -104,6 +104,8 @@
     
     <!-- Custom styles for this template -->
     <link href="sidebars.css" rel="stylesheet">
+    
+
   </head>
   <body>
     
@@ -187,7 +189,7 @@
         </a>
       </li>
       <li>
-        <a href="#" class="nav-link text-dark">
+        <a href="${path}/inquery/question.do" class="nav-link text-dark">
           <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#speedometer2"/></svg>
          문의하기
         </a>
@@ -230,7 +232,40 @@
 </main>
 		</div>
 		<div class="col-9 text-bg-light">
-			<h1>여기는 나의 문의내역</h1>
+			<h2 style="text-align: center;">1:1문의</h2>
+&nbsp;
+
+
+ <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">title</th>
+      <th scope="col">writer</th>
+      <th scope="col">date</th>
+      <th scope="col">cnt</th>
+    </tr>
+  </thead>
+  <tbody>
+<c:forEach items="${map.list}" var="row">
+    <tr class="dataRow">
+      <td class="no">${row.no}</td>
+			<td>
+				<c:forEach begin="1" end="${row.levNo * 3}">&nbsp;</c:forEach>
+				<c:if test="${row.levNo > 0}">
+				<i class="material-icons">subdirectory_arrow_right</i>
+				</c:if>
+				<a href="${path}/inquery/view.do?no=${row.getNo()}&inc=1">
+				${row.title}
+				</a>
+			</td>
+			<td>${row.userid}</td>
+			<td><fmt:formatDate value="${row.writeDate }" pattern="yyyy-MM-dd"/></td>
+			<td>${row.hit}</td>
+		</tr>
+	</c:forEach>
+  </tbody> 
+</table>
 			
 		</div>
 	</div>		

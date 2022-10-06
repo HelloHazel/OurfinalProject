@@ -8,58 +8,52 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <%@ include file="../include/header.jsp" %>
 <script type="text/javascript">
-function btnDelete() {
-	var form = document.form1;
-	if(confirm("삭제하시겠습니까?")){
-		form.action="${path}/notice/delete.do";
-		form.submit();
-	}
-}
-function btnUpdate() {
-	var form = document.form1;
-		form.action="${path}/notice/update.do";
-		form.submit();
-}
+$(function() {
+	$("#deleteBtn").click(function(){
+		return confirm("정말 삭제하시겠습니까?");
+	});
+});
 </script>
-<style type="text/css">
-.gongji {
-margin-left: auto;
-margin-right: auto;
-margin-top: auto;
-text-align: center;
-top: 40px;
-}
-#gongji {
-margin-left: auto;
-margin-right: auto;
-margin-top: auto;
-text-align: center;
-}
-</style>
 </head>
 <body>
 <%@ include file="../include/menu.jsp" %>
-<br>
-<h2 class="gongji">View</h2>
-<form id="form1" name="form1" method="post" class="gongji">
-<div class="mb-3" style="width:800px;" id="gongji">
-  <input type="text" style="text-align: center;" class="form-control" id="exampleFormControlInput1" name="title" size="10" value="${dto.title}" placeholder="제목을 입력하세요">
+&nbsp;&nbsp;&nbsp;&nbsp;
+<div class="container">
+<h2 style="text-align: center;">Notice view</h2>
+&nbsp;
+<table class="table">
+    <tr>
+     	 <th scope="col">#</th>
+    	  <td>${dto.no }</td>
+    </tr>
+    <tr>
+     	 <th scope="col">title</th>
+     	 <td>${dto.title }</td>
+    </tr>
+    <tr>
+	      <th scope="col">content</th>
+	      <td>${dto.content }</td>
+    </tr>
+    <tr>
+	      <th scope="col">writer</th>
+	      <td>${dto.userid }</td>
+    </tr>
+    <tr>
+	      <th scope="col">date</th>
+	      <td><fmt:formatDate value="${dto.writeDate }" pattern="yyyy-MM-dd" /></td>
+    </tr>
+    <tr>
+	      <th scope="col">cnt</th>
+	      <td>${dto.hit }</td>
+    </tr>
+</table>
+ <c:if test="${sessionScope.userid == 'admin' }">
+ <div style="text-align: center;">
+<input type="button" class="btn btn-outline-warning btn-sm" value="수정" onclick="location.href='${path}/notice/update.do?no=${dto.no}'">
+<input type="button" class="btn btn-outline-warning btn-sm" id="deleteBtn" value="삭제" onclick="location.href='${path}/notice/delete.do?no=${dto.no}'">
+ <input type="button" class="btn btn-outline-warning btn-sm" value="목록" onclick="location.href='${path}/notice/list.do'">
 </div>
-<%-- <div>조회수 : ${dto.viewcnt}</div> --%>
-<div class="mb-3" style="width:800px;" id="gongji">
-  <textarea style="text-align: center;" class="form-control" id="exampleFormControlTextarea1" name="content" rows="3" cols="80" placeholder="내용을 입력하세요">${dto.content}</textarea>
+</c:if>
 </div>
-	<div style="width:700px; text-align:center; position: relative; left: 400px;">
-<!-- 수정,삭제에 필요한 글번호를 hidden 태그에 저장 -->	
-		<input type="hidden" name="bno" value="${dto.bno}" class="gongji">
-		
-		<!-- 본인만 수정,삭제 버튼 표시 -->
-		<c:if test="${sessionScope.userid == 'admin'}">
-			<input type="button" class="btn btn-outline-warning btn-sm" value="수정" onclick="btnUpdate()">
-			<input type="button" class="btn btn-outline-warning btn-sm" value="삭제" onclick="btnDelete()">
-		</c:if>
-		<input type="button" class="btn btn-outline-warning btn-sm" value="목록" onclick="location.href='${path}/notice/list.do'">
-	</div>
-</form>
 </body>
 </html>

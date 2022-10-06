@@ -9,8 +9,10 @@
 </head>
 <body>
 <%@ include file="../include/menu.jsp" %>
+&nbsp;&nbsp;&nbsp;&nbsp;
 <div class="container">
-	<h2>답변하기</h2>
+	<h2 style="text-align: center;">답변하기</h2>
+	&nbsp;
 	<form method="post" action="answer.do">
 	<input name="no" value="${ dto.no}" type="hidden">
 	<input name="refNo" value="${ dto.refNo}" type="hidden">

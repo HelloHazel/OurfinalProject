@@ -3,6 +3,7 @@ package com.example.finalproject.service.inquery;
 import java.util.List;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Service;
 
@@ -16,8 +17,8 @@ public class InqueryServiceImpl implements InqueryService {
 	InqueryDAO inqueryDao;
 	
 	@Override
-	public List<InqueryDTO> list() throws Exception {
-		return inqueryDao.list();
+	public List<InqueryDTO> list(String search_option, String keyword, int start, int end) throws Exception {
+		return inqueryDao.list(search_option,keyword,start,end);
 	}
 	
 	@Override
@@ -31,9 +32,24 @@ public class InqueryServiceImpl implements InqueryService {
 	}
 	
 	@Override
-	public InqueryDTO view(int no, int inc) throws Exception {
-		if(inc == 1) inqueryDao.increase(inc);
+	public InqueryDTO view(int no) throws Exception {
 		return inqueryDao.view(no);
+	}
+	
+	@Override
+	public void increase(int no, HttpSession session) throws Exception {
+		long update_time=0;
+		if(session.getAttribute("update_time_"+no) != null) {
+			//최근에 조회수를 올린 시간
+			update_time=(long)session.getAttribute("update_time_"+no);
+		}
+		long current_time=System.currentTimeMillis();
+		//일정시간이 경과한 후 조회수 증가 처리
+		if(current_time - update_time > 5*1000) {//24*60*60*1000 (하루)
+			inqueryDao.increase(no);
+			//조회수를 올린 시간 저장
+			session.setAttribute("update_time_"+no, current_time);
+		}
 	}
 	
 	@Override
@@ -55,6 +71,11 @@ public class InqueryServiceImpl implements InqueryService {
 	@Override
 	public int delete(int no) throws Exception {
 		return inqueryDao.delete(no);
+	}
+	
+	@Override
+	public List<InqueryDTO> myquerylist(String userId) {
+		return inqueryDao.myquerylist(userId);
 	}
 
 }

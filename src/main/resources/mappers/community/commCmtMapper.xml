@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 다른 mapper와 중복되지 않도록 네임스페이스 기재 -->
+<mapper namespace="commCmt">
+	<insert id="insertComment">
+		insert into community_comment (cmt_no, comm_no, cmt_content, commenter) values 
+		( comm_cmt_seq.nextval, #{comm_no}, #{cmt_content}, #{commenter} )
+	</insert>
+	
+	<select id="listComment" resultType="com.example.finalproject.model.community.dto.CommCmtDTO">
+		select cmt_no,comm_no,cmt_content,commenter,cmt_regdate,updatedate, m.name
+		from community_comment t, member m
+		where t.commenter=m.userid and comm_no=#{comm_no}
+		order by cmt_no
+	</select>
+	
+	
+	
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

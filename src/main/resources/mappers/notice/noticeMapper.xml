@@ -5,70 +5,62 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <!-- 다른 mapper와 중복되지 않도록 네임스페이스 기재 -->
 <mapper namespace="notice">
-	<select id="listAll" resultType="com.example.finalproject.model.notice.dto.NoticeDTO">
-	select *
-		from (
-				select rownum as rn,   A.*
-				from(
-							select bno, title, writer, name, content, regdate, viewcnt, pin
-							from notice n, member m
-							<include refid="search" />
-							order by pin desc, bno asc
-				)A
-		) where rn between #{start} and #{end}
+	<select id="list" resultType="com.example.finalproject.model.notice.dto.NoticeDTO">
+		select no, title, userid, writeDate, hit, pin
+		from(
+			select rownum rnum, no, title, userid, writeDate, hit, pin
+			from(
+						select no, title, userid, writeDate, hit, pin
+						from notice
+						<include refid="search" />
+						order by pin desc, no asc
+			)
+		) 
+		where rnum between #{start} and #{end}
 	</select>
 	
-	<insert id="insert" parameterType="com.example.finalproject.model.notice.dto.NoticeDTO">
-	insert into notice(bno, title, content, writer) values
-	(seq_notice.nextval,  #{title},  #{content}, #{writer})
-	</insert>
-	
-	<!-- 레코드의 갯수 계산 -->
-	<select id="countArticle" resultType="int">
-	select count(*)
-	from notice n, member m
-	where n.writer=m.userid	
+	<select id="getTotalRow" resultType="int">
+		select count(*) from notice
 	</select>
 	
 	<!-- 검색기능, sql태그는 다른 태그에 끼워넣을 수 있는 기능을 가지고 있음 -->
  <sql id="search">
   <choose>
    <when test="search_option != 'all' ">
-    where n.writer=m.userid
-     and ${search_option} like #{keyword}
+    where ${search_option} like #{keyword}
    </when>
    <otherwise>
-    where n.writer=m.userid
-     and (name like #{keyword} 
+    where (userid like #{keyword} 
      or title like #{keyword} 
      or content like #{keyword})
    </otherwise>
   </choose>
  </sql>
 	
-	<!-- 조회수 증가 처리 -->
-	<update id="increaseViewcnt" parameterType="com.example.finalproject.model.notice.dto.NoticeDTO">
-	update notice set viewcnt=viewcnt+1
-	where bno=#{bno}
-	</update>
-	
-	<select id="read" resultType="com.example.finalproject.model.notice.dto.NoticeDTO">
-	select bno, title, writer, name, content, regdate, viewcnt
-	from notice n, member m
-	where n.writer=m.userid and bno=#{bno}
+	<select id="view" resultType="com.example.finalproject.model.notice.dto.NoticeDTO">
+		select no, title, content, userid, writeDate, hit
+		from notice
+		where no=#{no}
 	</select>
 	
-	<!-- 게시물 내용 수정 -->
-	<update id="update" parameterType="com.example.finalproject.model.notice.dto.NoticeDTO">
-	update notice 
-	set title=#{title}, content=#{content}
-  	where bno=#{bno}
+	<update id="increase">
+		update notice
+		set hit = hit + 1
+		where no=#{no}
 	</update>
 	
-	 <!-- 게시물 삭제 -->
- 	<delete id="delete" parameterType="int">
-  	delete 
-  	from notice 
-  	where bno=#{bno}
- 	</delete>
+	<insert id="write">
+		insert into notice(no, title, content, userid)
+		values(notice_seq.nextval, #{title}, #{content}, #{userid})
+	</insert>
+	
+	<update id="update">
+		update notice set title=#{title}, content=#{content}
+		where no=#{no}
+	</update>
+	
+	<delete id="delete">
+		delete from notice
+		where no=#{no}
+	</delete>
 </mapper>

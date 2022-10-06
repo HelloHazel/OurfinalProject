@@ -32,14 +32,12 @@ public class CommunityDAOImpl implements CommunityDAO {
 
 	@Override
 	public void update(CommunityDTO dto) {
-		// TODO Auto-generated method stub
-
+		sqlSession.update("community.update", dto);
 	}
 
 	@Override
 	public void delete(int comm_no) {
-		// TODO Auto-generated method stub
-
+		sqlSession.delete("community.delete", comm_no);
 	}
 
 	@Override
@@ -49,9 +47,8 @@ public class CommunityDAOImpl implements CommunityDAO {
 	}
 
 	@Override
-	public List<String> getAttach(int comm_no) {
-		// TODO Auto-generated method stub
-		return null;
+	public String getAttach(int comm_no) {
+		return sqlSession.selectOne("community.getAttach", comm_no);
 	}
 
 	@Override

@@ -77,7 +77,7 @@
 </head>
 <body>
 <%@ include file="../include/menu.jsp" %>
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 <main>
   <section class="py-5 text-center container">
     <div class="row py-lg-5">

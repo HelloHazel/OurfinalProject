@@ -17,8 +17,10 @@ $(function() {
 </head>
 <body>
 	<%@ include file="../include/menu.jsp"%>
-	<h2>질문&amp;답변보기</h2>
-	<div class="list-group">
+	&nbsp;&nbsp;&nbsp;&nbsp;
+	<h2 style="text-align: center;">질문&amp;답변보기</h2>
+	&nbsp;
+	<div class="list-group" style="text-align: center;">
 		<div class="list-group-item row">
 			<div class="col-md-3">번호</div>
 			<div class="col-md-9">${dto.no}</div>
@@ -44,9 +46,15 @@ $(function() {
 			<div class="col-md-9">${dto.hit}</div>
 		</div>
 	</div>
-	<input type="button" class="btn btn-default" value="답변" onclick="location.href='${path}/inquery/answer.do?no=${dto.no}'">
-	<input type="button" class="btn btn-default" value="수정" onclick="location.href='${path}/inquery/update.do?no=${dto.no}'">
-	<input type="button" class="btn btn-default" id="deleteBtn" value="삭제" onclick="location.href='${path}/inquery/delete.do?no=${dto.no}'">
-	<input type="button" class="btn btn-default" value="목록" onclick="location.href='${path}/inquery/list.do'">
+	<div style="text-align: center;">
+	 <c:if test="${sessionScope.userid == 'admin'}">
+	<input type="button" class="btn btn-outline-warning btn-sm" value="답변" onclick="location.href='${path}/inquery/answer.do?no=${dto.no}'">
+	</c:if>
+	<c:if test="${sessionScope.userid != null || sessionScope.userid == 'admin'}">
+	<input type="button" class="btn btn-outline-warning btn-sm" value="수정" onclick="location.href='${path}/inquery/update.do?no=${dto.no}'">
+	<input type="button" class="btn btn-outline-warning btn-sm" id="deleteBtn" value="삭제" onclick="location.href='${path}/inquery/delete.do?no=${dto.no}'">
+	</c:if>
+	<input type="button" class="btn btn-outline-warning btn-sm" value="목록" onclick="location.href='${path}/inquery/list.do'">
+	</div>
 </body>
 </html>

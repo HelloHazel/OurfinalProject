@@ -18,8 +18,13 @@ public class InqueryDAOImpl implements InqueryDAO {
 	SqlSession sqlSession;
 	
 	@Override
-	public List<InqueryDTO> list() throws Exception {
-		return sqlSession.selectList("inquery.list");
+	public List<InqueryDTO> list(String search_option, String keyword, int start, int end) throws Exception {
+		Map<String,Object> map=new HashMap<>();
+		map.put("search_option", search_option);
+		map.put("keyword", "%"+keyword+"%");
+		map.put("start", start);
+		map.put("end", end);
+		return sqlSession.selectList("inquery.list", map);
 	}
 	
 	@Override
@@ -38,8 +43,8 @@ public class InqueryDAOImpl implements InqueryDAO {
 	}
 	
 	@Override
-	public int increase(int no) throws Exception {
-		return sqlSession.update("inquery.increase", no);
+	public void increase(int no) throws Exception {
+		sqlSession.update("inquery.increase", no);
 	}
 	
 	@Override
@@ -60,5 +65,10 @@ public class InqueryDAOImpl implements InqueryDAO {
 	@Override
 	public int delete(int no) throws Exception {
 		return sqlSession.delete("inquery.delete", no);
+	}
+	
+	@Override
+	public List<InqueryDTO> myquerylist(String userId) {
+		return sqlSession.selectList("inquery.myquerylist", userId);
 	}
 }

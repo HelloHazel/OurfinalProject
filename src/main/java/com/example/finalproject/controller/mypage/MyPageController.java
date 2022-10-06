@@ -16,9 +16,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.example.finalproject.model.community.dto.CommunityDTO;
+import com.example.finalproject.model.inquery.dto.InqueryDTO;
+import com.example.finalproject.model.shipping.dto.ShippingDTO;
 import com.example.finalproject.service.community.CommunityService;
+import com.example.finalproject.service.inquery.InqueryService;
 import com.example.finalproject.service.member.MemberService;
 import com.example.finalproject.service.mypage.MyPageService;
+import com.example.finalproject.service.shipping.ShippingService;
 
 @Controller
 @RequestMapping("mypage/*")
@@ -34,21 +38,28 @@ public class MyPageController {
     @Inject 
     CommunityService communityService;
 	 
+    @Inject
+	InqueryService inqueryService;
+    
+    @Inject
+   	ShippingService shippingService;
 	
-	
-	@RequestMapping("mypagemain.do")
-	public String main(HttpSession session) {
-		//세션변수 확인
-		String userid=(String)session.getAttribute("userid");
-		if(userid !=null)//로그인한 경우
-		return "mypage/myPageMain";
-		else //로그인하지 않은 경우
-			return "member/login";
-	}
+
 	
 	@RequestMapping("myquery.do")
-	public String my_query() {
-		return "mypage/myQuery";
+	public ModelAndView my_query(HttpSession session) {
+		 ModelAndView mav=new ModelAndView();
+			//세션 아이디
+			String userId=(String)session.getAttribute("userid");
+		
+			List<InqueryDTO> list=inqueryService.myquerylist(userId);
+			
+			Map<String, Object> map=new HashMap<>();
+			map.put("list", list);
+			
+			mav.setViewName("mypage/myQuery"); //포워딩 뷰
+			mav.addObject("map", map);
+			return mav;
 	}
 	
 	@RequestMapping("mypost.do")
@@ -83,9 +94,40 @@ public class MyPageController {
 			
 			Map<String, Object> map=new HashMap<>();
 			map.put("list", list);
+			System.out.println(list);
 			
 			mav.setViewName("mypage/myPost"); //포워딩 뷰
 			mav.addObject("map", map);
 			return mav;
 		}
+		 
+			@RequestMapping("mypagemain.do")
+			public ModelAndView main(HttpSession session) {
+				//세션변수 확인
+				String userid=(String)session.getAttribute("userid");
+				if(userid !=null){//로그인한 경우
+					ModelAndView mav=new ModelAndView();
+					
+					String userId=(String)session.getAttribute("userid");
+
+					List<ShippingDTO> list=shippingService.myShippingList(userId);
+					
+					Map<String, Object> map=new HashMap<>();
+					map.put("list", list);
+					
+					System.out.println(list);
+					mav.setViewName("mypage/myPageMain"); //포워딩 뷰
+					mav.addObject("map", map);
+					return mav;
+				
+				}else { //로그인하지 않은 경우
+					ModelAndView mav=new ModelAndView();
+					mav.setViewName("member/login");
+					return mav;
+				}
+			}
+		 
+
+		 
+		
 }
