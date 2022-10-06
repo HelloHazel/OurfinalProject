@@ -23,6 +23,23 @@
 <br>
 <div class="text-center">
 <h2>Product</h2>
+<!-- 검색 -->
+<form name="form1" method="post" action="${path}/shop/list.do" class="search">
+	<select name="search_option">
+		<option value="name">
+		<c:if test="${map.search_option == 'product_name'}">
+selected</c:if>상품명</option>
+		<option value="product_desc">
+		<c:if test="${map.search_option == 'product_desc'}">
+selected</c:if>상세설명</option>
+		<option value="all">
+		<c:if test="${map.search_option == 'all'}">
+selected</c:if> 상품명+상세설명</option>
+	</select>
+		<input name="keyword" value="${map.keyword}">
+		<input type="submit" value="조회">
+</form>
+<div class="search">${map.count}개의 게시물이 있습니다.</div>
 <table style="width: 100%";>
 <c:set var="i" value="0" /> 
 <c:set var="j" value="3" /> 
