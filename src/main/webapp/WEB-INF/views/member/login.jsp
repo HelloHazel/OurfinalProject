@@ -90,7 +90,7 @@
 											<i class="fab fa-google fa-fw"></i> 구글로 로그인하기
 										</a>
 										<a id="kakao-login-btn" class="btn btn-warning btn-user btn-block" 
-										 href="https://kauth.kakao.com/oauth/authorize?client_id=a59cae8f4aed13348f5f53790e2f08cf&redirect_uri=http://localhost/finalproject/member/oauth_kakao&response_type=code">
+										 href="https://kauth.kakao.com/oauth/authorize?client_id=5e271ef689167248b66474ccae13b1e6&redirect_uri=http://localhost/finalproject/member/oauth_kakao&response_type=code">
 											카카오톡 로그인
 										</a>
 									</form>

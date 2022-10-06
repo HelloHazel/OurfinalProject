@@ -184,7 +184,7 @@
 				        </a>
 				      </li>
 				      <li>
-				        <a href="${path}/inquery/list.do" class="nav-link text-dark">
+				        <a href="${path}/inquery/question.do" class="nav-link text-dark">
 				          <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#speedometer2"/></svg>
 				         문의하기
 				        </a>
