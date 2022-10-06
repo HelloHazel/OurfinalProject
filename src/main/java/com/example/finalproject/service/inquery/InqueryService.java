@@ -23,4 +23,6 @@ public interface InqueryService {
 		public int update(InqueryDTO dto) throws Exception;
 		// 삭제하기
 		public int delete(int no) throws Exception;
+		//나의 문의 내역
+		public List<InqueryDTO> myquerylist(String userId);
 }

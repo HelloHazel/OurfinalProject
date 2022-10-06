@@ -59,7 +59,7 @@
 					<div class="mb-3">
 												
 						<div>
-							<textarea class="form-control" rows="5" name="comm_content" id="comm_content" placeholder="오늘의 댕댕이를 자랑해주세요~!"  "></textarea>
+							<textarea class="form-control" rows="5" name="comm_content" id="comm_content" placeholder="오늘의 댕댕이를 자랑해주세요~!"></textarea>
 						</div>
 						
 						<script>

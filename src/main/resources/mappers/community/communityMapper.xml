@@ -35,6 +35,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	    (comm_seq.nextval, #{comm_title}, #{comm_content}, #{userid}, #{comm_url})
 	</insert>
 	
+	<!-- post 목록 -->
 	<select id="detail_post" resultType="com.example.finalproject.model.community.dto.CommunityDTO">
 		select * from community
 		where comm_no=#{comm_no}
@@ -53,6 +54,30 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			order by comm_no desc
 		]]> 
 	</select>
+	
+	<!-- post 수정 -->
+	<update id="update">
+		update community
+		set 
+		comm_title=#{comm_title}
+		, comm_content=#{comm_content} 
+		, comm_url=#{comm_url}
+		where comm_no=#{comm_no}
+	</update>
+	
+	<!-- post 삭제 -->
+	<delete id="delete">
+		delete from community 
+		where comm_no=#{comm_no}
+	</delete>
+	
+	<!-- 첨부파일 이름 -->
+	<select id="getAttach" resultType="String">
+		select comm_url
+		from community
+		where comm_no=#{comm_no}
+	</select>
+	
 	
 </mapper>
 
