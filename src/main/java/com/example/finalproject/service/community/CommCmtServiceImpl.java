@@ -2,17 +2,23 @@ package com.example.finalproject.service.community;
 
 import java.util.List;
 
+import javax.inject.Inject;
+
 import org.springframework.stereotype.Service;
 
+import com.example.finalproject.model.community.dao.CommCmtDAO;
 import com.example.finalproject.model.community.dto.CommCmtDTO;
 
 @Service
 public class CommCmtServiceImpl implements CommCmtService {
 
+	@Inject
+	CommCmtDAO commCmtDao;
+	
+	
 	@Override
 	public List<CommCmtDTO> list(int comm_no) {
-		// TODO Auto-generated method stub
-		return null;
+		return commCmtDao.list(comm_no);
 	}
 
 	@Override
@@ -23,8 +29,7 @@ public class CommCmtServiceImpl implements CommCmtService {
 
 	@Override
 	public void create(CommCmtDTO dto) {
-		// TODO Auto-generated method stub
-
+		commCmtDao.create(dto);
 	}
 
 }

@@ -2,6 +2,8 @@ package com.example.finalproject.service.community;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import com.example.finalproject.model.community.dto.CommunityDTO;
 
 public interface CommunityService {
@@ -14,7 +16,7 @@ public interface CommunityService {
 	public String getAttach(int comm_no); //첨부파일 정보
 	public void addAttach(String fullName); //첨부파일 저장
 	public void updateAttach(String fullName, int comm_no);//첨부파일 수정
-	public void increaseViewcnt(int comm_no) throws Exception;//조회수 증가 처리
+	public void increaseViewcnt(int comm_no, HttpSession session) throws Exception;//조회수 증가 처리
 	public CommunityDTO detailPost(int comm_no);
 	public int countArticle();
 	/**
@@ -23,5 +25,6 @@ public interface CommunityService {
 	 * @return
 	 */
 	public List<CommunityDTO> myCmmList(String userId);
+	public CommunityDTO read(int comm_no);
 	
 }

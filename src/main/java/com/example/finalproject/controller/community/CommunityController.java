@@ -61,7 +61,11 @@ public class CommunityController {
 	
 	 	
 	@RequestMapping("insert.do")
-	public String insert(@ModelAttribute CommunityDTO dto) throws Exception {
+	public String insert(@ModelAttribute CommunityDTO dto, HttpSession session) throws Exception {
+		System.out.println("comm번호 : "+dto.getComm_no());
+		//이름이 없기 때문에 대신 세션에서 사용자 ID를 가져옴
+		String writer=(String)session.getAttribute("userid");
+		dto.setWriter(writer);
 		String filename = "-";
 		// 첨부 파일이 있으면
 		if (!dto.getFile1().isEmpty()) {
@@ -76,6 +80,7 @@ public class CommunityController {
 				e.printStackTrace();
 			}
 		}
+		
 		dto.setComm_url(filename);
 		communityService.create(dto);
 		return "redirect:/community/list.do";
@@ -144,7 +149,15 @@ public class CommunityController {
 		return "redirect:/community/list.do";
 	}
 	
-	
+	@RequestMapping("view.do")
+	public ModelAndView view(int comm_no, HttpSession session) throws Exception {
+		//조회수 증가처리
+		communityService.increaseViewcnt(comm_no, session);
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("community/post_detail");
+		mav.addObject("dto", communityService.read(comm_no));
+		return mav;		
+	}
 	
 	
 	

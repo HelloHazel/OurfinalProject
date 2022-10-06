@@ -3,6 +3,7 @@ package com.example.finalproject.service.community;
 import java.util.List;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Service;
 
@@ -59,9 +60,19 @@ public class CommunityServiceImpl implements CommunityService {
 	}
 
 	@Override
-	public void increaseViewcnt(int comm_no) throws Exception {
-		// TODO Auto-generated method stub
-
+	public void increaseViewcnt(int comm_no, HttpSession session) throws Exception {
+		long update_time=0;
+		if(session.getAttribute("update_time_" + comm_no) != null) {
+			//최근에 조회수를 올린 시간
+			update_time=(long) session.getAttribute("update_time_"+comm_no);
+		}
+		long current_time=System.currentTimeMillis();
+		//일정 시간이 경화한 후 조회수 증가 처리
+		if(current_time - update_time > 5*1000) { //5초     24*60*60*1000 (하루)
+			communityDao.increaseViewcnt(comm_no);
+			//조회수를 올린 시간 저장
+			session.setAttribute("update_time_"+comm_no, current_time);
+		}
 	}
 
 	@Override
@@ -77,6 +88,11 @@ public class CommunityServiceImpl implements CommunityService {
 	@Override
 	public List<CommunityDTO> myCmmList(String userId) {
 		return communityDao.myCmmList(userId);
+	}
+
+	@Override
+	public CommunityDTO read(int comm_no) {
+		return communityDao.read(comm_no);
 	}
 
 	

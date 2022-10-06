@@ -11,7 +11,7 @@
     <meta name="generator" content="Hugo 0.101.0">
     
     <title>Sidebars · Bootstrap v5.2</title>
-	 	 <script src="${path}/include/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/resources/assets/css/theme.css">
 <!-- Custom fonts for this template-->
@@ -104,6 +104,8 @@
     
     <!-- Custom styles for this template -->
     <link href="sidebars.css" rel="stylesheet">
+    
+
   </head>
   <body>
     
@@ -253,7 +255,9 @@
 				<c:if test="${row.levNo > 0}">
 				<i class="material-icons">subdirectory_arrow_right</i>
 				</c:if>
+				<a href="${path}/inquery/view.do?no=${row.getNo()}&inc=1">
 				${row.title}
+				</a>
 			</td>
 			<td>${row.userid}</td>
 			<td><fmt:formatDate value="${row.writeDate }" pattern="yyyy-MM-dd"/></td>

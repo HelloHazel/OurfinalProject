@@ -1,5 +1,9 @@
 package com.example.finalproject.controller.notice;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
 
@@ -10,10 +14,12 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.example.finalproject.model.notice.dto.NoticeDTO;
 import com.example.finalproject.service.notice.NoticeService;
+import com.example.finalproject.service.notice.Pager;
 
 @Controller
 @RequestMapping("notice/*")
@@ -24,11 +30,32 @@ public class NoticeController {
 	@Inject
 	NoticeService noticeService;
 	
-	@GetMapping("list.do")
-	public String list(Model model) throws Exception {
-		model.addAttribute("list", noticeService.list());
+	@RequestMapping("list.do")
+	public ModelAndView list(
+			@RequestParam(defaultValue = "userid") String search_option,
+			@RequestParam(defaultValue = "") String keyword,
+			@RequestParam(defaultValue = "1") int curPage) 
+			throws Exception {
 		
-		return "notice/list";
+		//레코드 갯수 계산
+		int count=noticeService.getTotalRow();
+		//페이지 관련 설정
+		Pager pager=new Pager(count, curPage);
+		int start=pager.getPageBegin();
+		int end=pager.getPageEnd();
+		
+		List<NoticeDTO> list=noticeService.list(search_option,keyword,start,end);
+		logger.info(list.toString());
+		ModelAndView mav=new ModelAndView();
+		Map<String, Object> map=new HashMap<>();
+		map.put("list", list);
+		map.put("count", count);//레코드의 갯수
+		map.put("pager", pager); //페이지네이션을 위한 변수
+		map.put("search_option", search_option);
+		map.put("keyword", keyword);
+		mav.setViewName("notice/list");//포워딩 뷰
+		mav.addObject("map", map);
+		return mav;
 	}
 	
 	// 질문답변 보기

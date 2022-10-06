@@ -17,8 +17,8 @@ public class NoticeServiceImpl implements NoticeService {
 	NoticeDAO noticeDao;
 
 	@Override
-	public List<NoticeDTO> list() throws Exception {
-		return noticeDao.list();
+	public List<NoticeDTO> list(String search_option, String keyword, int start, int end) throws Exception {	
+		return noticeDao.list(search_option,keyword,start,end);
 	}
 
 	@Override
