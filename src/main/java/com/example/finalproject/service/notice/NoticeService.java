@@ -8,7 +8,7 @@ import com.example.finalproject.model.notice.dto.NoticeDTO;
 
 public interface NoticeService {
 			// 리스트
-			public List<NoticeDTO> list() throws Exception;
+			public List<NoticeDTO> list(String search_option, String keyword, int start, int end) throws Exception;
 			// 전체 데이터 개수
 			public int getTotalRow() throws Exception;
 			// 보기

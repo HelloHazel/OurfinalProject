@@ -17,8 +17,8 @@ public class InqueryServiceImpl implements InqueryService {
 	InqueryDAO inqueryDao;
 	
 	@Override
-	public List<InqueryDTO> list() throws Exception {
-		return inqueryDao.list();
+	public List<InqueryDTO> list(String search_option, String keyword, int start, int end) throws Exception {
+		return inqueryDao.list(search_option,keyword,start,end);
 	}
 	
 	@Override

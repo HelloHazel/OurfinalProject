@@ -16,6 +16,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 				order by refNo desc, ordNo
 			)
 		)
+		where rnum between #{start} and #{end}
  </select>
  
 <select id="getTotalRow" resultType="int">

@@ -8,7 +8,7 @@ import com.example.finalproject.model.inquery.dto.InqueryDTO;
 
 public interface InqueryService {
 		// 리스트
-		public List<InqueryDTO> list() throws Exception;
+		public List<InqueryDTO> list(String search_option, String keyword, int start, int end) throws Exception;
 		// 전체 데이터 개수
 		public int getTotalRow() throws Exception;
 		// 질문하기
