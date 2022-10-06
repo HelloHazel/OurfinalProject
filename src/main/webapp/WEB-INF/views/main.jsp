@@ -57,7 +57,7 @@
 						<div class="card-img-overlay d-flex flex-center">
 							<a class="btn btn-lg btn-light"
 								style="color: white; background-color: rgba(0, 0, 128, 0.1); backdrop-filter: blur(10px); box-shadow: 2px 7px 15px 8px rgba(0, 0, 0, 0.3);"
-								href="#!">product</a>
+								href="${path}/shop/product/list.do">product</a>
 						</div>
 					</div>
 				</div>
@@ -69,7 +69,7 @@
 						<div class="card-img-overlay d-flex flex-center ">
 							<a class="btn btn-lg btn-light"
 								style="color: white; background-color: rgba(0, 0, 128, 0.1); backdrop-filter: blur(10px); box-shadow: 2px 7px 15px 8px rgba(0, 0, 0, 0.3);"
-								href="#!">Community </a>
+								href="${path}/community/list.do">Community </a>
 						</div>
 					</div>
 				</div>
@@ -102,66 +102,66 @@
 									<div class="col-sm-6 col-md-3 mb-3 mb-md-0 h-100">
 										<div class="card card-span h-100 text-white">
 											<img class="img-fluid h-100"
-												src="${path}/resources/assets/img/gallery/flat-hill.png"
-												alt="..." />
+												src="${path}/resources/images/1.jpg"
+												alt="천연 피부 진정 허니 샴푸" />
 											<div class="card-img-overlay ps-0"></div>
 											<div class="card-body ps-0 bg-200">
-												<h5 class="fw-bold text-1000 text-truncate">상품1
+												<h5 class="fw-bold text-1000 text-truncate">천연 피부 진정 허니 샴푸
 													</h5>
 												<div class="fw-bold">
-													<span class="text-600 me-2 text-decoration-line-through">$200</span><span
-														class="text-primary">$175</span>
+													<span class="text-600 me-2 text-decoration-line-through">30,000원</span><span
+														class="text-primary">26,500원</span>
 												</div>
 											</div>
-											<a class="stretched-link" href="#"></a>
+											<a class="stretched-link" href="${path}/shop/product/detail/1"></a>
 										</div>
 									</div>
 									<div class="col-sm-6 col-md-3 mb-3 mb-md-0 h-100">
 										<div class="card card-span h-100 text-white">
 											<img class="img-fluid h-100"
-												src="${pageContext.request.contextPath}/resources/assets/img/gallery/blue-ring.png"
-												alt="..." />
+												src="${path}/resources/images/2.jpg"
+												alt="무독성 물림 방지 장난감 공" />
 											<div class="card-img-overlay ps-0"></div>
 											<div class="card-body ps-0 bg-200">
-												<h5 class="fw-bold text-1000 text-truncate">상품2</h5>
+												<h5 class="fw-bold text-1000 text-truncate">무독성 물림 방지 장난감 공</h5>
 												<div class="fw-bold">
-													<span class="text-600 me-2 text-decoration-line-through">$200</span><span
-														class="text-primary">$175</span>
+													<span class="text-600 me-2 text-decoration-line-through">12.000원</span><span
+														class="text-primary">9,770원</span>
 												</div>
 											</div>
-											<a class="stretched-link" href="#"></a>
+											<a class="stretched-link" href="${path}/shop/product/detail/2"></a>
 										</div>
 									</div>
 									<div class="col-sm-6 col-md-3 mb-3 mb-md-0 h-100">
 										<div class="card card-span h-100 text-white">
 											<img class="img-fluid h-100"
-												src="${pageContext.request.contextPath}/resources/assets/img/gallery/wallet.png"
-												alt="..." />
+												src="${path}/resources/images/3.jpg"
+												alt="라텍스 러프(15.2cm) 장난감" />
 											<div class="card-img-overlay ps-0"></div>
 											<div class="card-body ps-0 bg-200">
-												<h5 class="fw-bold text-1000 text-truncate">상품3</h5>
+												<h5 class="fw-bold text-1000 text-truncate">라텍스 러프(15.2cm) 장난감</h5>
 												<div class="fw-bold">
-													<span class="text-600 me-2 text-decoration-line-through">$200</span><span
-														class="text-primary">$175</span>
+													<span class="text-600 me-2 text-decoration-line-through">7,500원</span><span
+														class="text-primary">5,860원</span>
 												</div>
 											</div>
-											<a class="stretched-link" href="#"></a>
+											<a class="stretched-link" href="${path}/shop/product/detail/3"></a>
 										</div>
 									</div>
 									<div class="col-sm-6 col-md-3 mb-3 mb-md-0 h-100">
 										<div class="card card-span h-100 text-white">
 											<img class="img-fluid h-100"
-												src="${pageContext.request.contextPath}/resources/assets/img/gallery/wrist-watch.png"
-												alt="..." />
+												src="${path}/resources/images/4.jpg"
+												alt="퀼트 강아지 패드 XL, 20팩" />
 											<div class="card-img-overlay ps-0"></div>
 											<div class="card-body ps-0 bg-200">
-												<h5 class="fw-bold text-1000 text-truncate">상품4</h5>
+												<h5 class="fw-bold text-1000 text-truncate">퀼트 강아지 패드 XL, 20팩</h5>
 												<div class="fw-bold">
-													<span class="text-600 me-2 text-decoration-line-through">$200</span><span
-														class="text-primary">$175</span>
+													<span class="text-600 me-2 text-decoration-line-through">22,000원</span><span
+														class="text-primary">18,070원</span>
 												</div>
 											</div>
-											<a class="stretched-link" href="#"></a>
+											<a class="stretched-link" href="${path}/shop/product/detail/4"></a>
 										</div>
 									</div>
 								</div>
@@ -234,142 +234,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="carousel-item" data-bs-interval="3000">
-								<div class="row h-100 align-items-center g-2">
-									<div class="col-sm-6 col-md-3 mb-3 mb-md-0 h-100">
-										<div class="card card-span h-100 text-white">
-											<img class="img-fluid h-100"
-												src="${pageContext.request.contextPath}/resources/assets/img/gallery/flat-hill.png"
-												alt="..." />
-											<div class="card-img-overlay ps-0"></div>
-											<div class="card-body ps-0 bg-200">
-												<h5 class="fw-bold text-1000 text-truncate">상품1</h5>
-												<div class="fw-bold">
-													<span class="text-600 me-2 text-decoration-line-through">$200</span><span
-														class="text-primary">$175</span>
-												</div>
-											</div>
-											<a class="stretched-link" href="#"></a>
-										</div>
-									</div>
-									<div class="col-sm-6 col-md-3 mb-3 mb-md-0 h-100">
-										<div class="card card-span h-100 text-white">
-											<img class="img-fluid h-100"
-												src="${pageContext.request.contextPath}/resources/assets/img/gallery/blue-ring.png"
-												alt="..." />
-											<div class="card-img-overlay ps-0"></div>
-											<div class="card-body ps-0 bg-200">
-												<h5 class="fw-bold text-1000 text-truncate">상품2</h5>
-												<div class="fw-bold">
-													<span class="text-600 me-2 text-decoration-line-through">$200</span><span
-														class="text-primary">$175</span>
-												</div>
-											</div>
-											<a class="stretched-link" href="#"></a>
-										</div>
-									</div>
-									<div class="col-sm-6 col-md-3 mb-3 mb-md-0 h-100">
-										<div class="card card-span h-100 text-white">
-											<img class="img-fluid h-100"
-												src="${pageContext.request.contextPath}/resources/assets/img/gallery/wallet.png"
-												alt="..." />
-											<div class="card-img-overlay ps-0"></div>
-											<div class="card-body ps-0 bg-200">
-												<h5 class="fw-bold text-1000 text-truncate">상품3</h5>
-												<div class="fw-bold">
-													<span class="text-600 me-2 text-decoration-line-through">$200</span><span
-														class="text-primary">$175</span>
-												</div>
-											</div>
-											<a class="stretched-link" href="#"></a>
-										</div>
-									</div>
-									<div class="col-sm-6 col-md-3 mb-3 mb-md-0 h-100">
-										<div class="card card-span h-100 text-white">
-											<img class="img-fluid h-100"
-												src="${pageContext.request.contextPath}/resources/assets/img/gallery/wrist-watch.png"
-												alt="..." />
-											<div class="card-img-overlay ps-0"></div>
-											<div class="card-body ps-0 bg-200">
-												<h5 class="fw-bold text-1000 text-truncate">상품4</h5>
-												<div class="fw-bold">
-													<span class="text-600 me-2 text-decoration-line-through">$200</span><span
-														class="text-primary">$175</span>
-												</div>
-											</div>
-											<a class="stretched-link" href="#"></a>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="carousel-item">
-								<div class="row h-100 align-items-center g-2">
-									<div class="col-sm-6 col-md-3 mb-3 mb-md-0 h-100">
-										<div class="card card-span h-100 text-white">
-											<img class="img-fluid h-100"
-												src="${pageContext.request.contextPath}/resources/assets/img/gallery/flat-hill.png"
-												alt="..." />
-											<div class="card-img-overlay ps-0"></div>
-											<div class="card-body ps-0 bg-200">
-												<h5 class="fw-bold text-1000 text-truncate">상품1</h5>
-												<div class="fw-bold">
-													<span class="text-600 me-2 text-decoration-line-through">$200</span><span
-														class="text-primary">$175</span>
-												</div>
-											</div>
-											<a class="stretched-link" href="#"></a>
-										</div>
-									</div>
-									<div class="col-sm-6 col-md-3 mb-3 mb-md-0 h-100">
-										<div class="card card-span h-100 text-white">
-											<img class="img-fluid h-100"
-												src="${pageContext.request.contextPath}/resources/assets/img/gallery/blue-ring.png"
-												alt="..." />
-											<div class="card-img-overlay ps-0"></div>
-											<div class="card-body ps-0 bg-200">
-												<h5 class="fw-bold text-1000 text-truncate">상품2</h5>
-												<div class="fw-bold">
-													<span class="text-600 me-2 text-decoration-line-through">$200</span><span
-														class="text-primary">$175</span>
-												</div>
-											</div>
-											<a class="stretched-link" href="#"></a>
-										</div>
-									</div>
-									<div class="col-sm-6 col-md-3 mb-3 mb-md-0 h-100">
-										<div class="card card-span h-100 text-white">
-											<img class="img-fluid h-100"
-												src="${pageContext.request.contextPath}/resources/assets/img/gallery/wallet.png"
-												alt="..." />
-											<div class="card-img-overlay ps-0"></div>
-											<div class="card-body ps-0 bg-200">
-												<h5 class="fw-bold text-1000 text-truncate">상품3</h5>
-												<div class="fw-bold">
-													<span class="text-600 me-2 text-decoration-line-through">$200</span><span
-														class="text-primary">$175</span>
-												</div>
-											</div>
-											<a class="stretched-link" href="#"></a>
-										</div>
-									</div>
-									<div class="col-sm-6 col-md-3 mb-3 mb-md-0 h-100">
-										<div class="card card-span h-100 text-white">
-											<img class="img-fluid h-100"
-												src="${pageContext.request.contextPath}/resources/assets/img/gallery/wrist-watch.png"
-												alt="..." />
-											<div class="card-img-overlay ps-0"></div>
-											<div class="card-body ps-0 bg-200">
-												<h5 class="fw-bold text-1000 text-truncate">상품4</h5>
-												<div class="fw-bold">
-													<span class="text-600 me-2 text-decoration-line-through">$200</span><span
-														class="text-primary">$175</span>
-												</div>
-											</div>
-											<a class="stretched-link" href="#"></a>
-										</div>
-									</div>
-								</div>
-							</div>
+							
 							<div class="row">
 								<button class="carousel-control-prev" type="button"
 									data-bs-target="" data-bs-slide="prev">
@@ -386,7 +251,7 @@
 					</div>
 				</div>
 				<div class="col-12 d-flex justify-content-center mt-5">
-					<a class="btn btn-lg btn-dark" href="#!">View All </a>
+					<a class="btn btn-lg btn-dark" href="${path}/shop/product/list.do">View All </a>
 				</div>
 			</div>
 		</div>
@@ -415,193 +280,66 @@
 									<div class="col-md-3 mb-3 mb-md-0 h-100">
 										<div class="card card-span h-100 text-white">
 											<img class="img-fluid h-100"
-												src="${path}/resources/assets/img/gallery/handbag.png" alt="..." />
+												src="${path}/resources/images/5.jpg" alt="..." />
 											<div class="card-img-overlay ps-0"></div>
 											<div class="card-body ps-0 bg-200">
-												<h5 class="fw-bold text-1000 text-truncate">베스트 상품1</h5>
+												<h5 class="fw-bold text-1000 text-truncate">펫 프렌들리 워터리스 샴푸(210ml)</h5>
 												<div class="fw-bold">
-													<span class="text-600 me-2 text-decoration-line-through">$399</span><span
-														class="text-danger">$365</span>
+													<span class="text-600 me-2 text-decoration-line-through">23,500원</span><span
+														class="text-danger">21,020원</span>
 												</div>
 											</div>
-											<a class="stretched-link" href="#"></a>
+											<a class="stretched-link" href="${path}/shop/product/detail/5"></a>
 										</div>
 									</div>
 									<div class="col-md-3 mb-3 mb-md-0 h-100">
 										<div class="card card-span h-100 text-white">
 											<img class="img-fluid h-100"
-												src="${path}/resources/assets/img/gallery/earrings.png" alt="..." />
+												src="${path}/resources/images/6.jpg" alt="..." />
 											<div class="card-img-overlay ps-0"></div>
 											<div class="card-body ps-0 bg-200">
-												<h5 class="fw-bold text-1000 text-truncate">베스트 상품2</h5>
+												<h5 class="fw-bold text-1000 text-truncate">반려동물 그루밍 해먹</h5>
 												<div class="fw-bold">
-													<span class="text-600 me-2 text-decoration-line-through">$489</span><span
-														class="text-danger">$466</span>
+													<span class="text-600 me-2 text-decoration-line-through">20,000원</span><span
+														class="text-danger">17,210원</span>
 												</div>
 											</div>
-											<a class="stretched-link" href="#"></a>
+											<a class="stretched-link" href="${path}/shop/product/detail/6"></a>
 										</div>
 									</div>
 									<div class="col-md-3 mb-3 mb-md-0 h-100">
 										<div class="card card-span h-100 text-white">
 											<img class="img-fluid h-100"
-												src="${path}/resources/assets/img/gallery/lathered-wristwatch.png" alt="..." />
+												src="${path}/resources/images/7.jpg" alt="..." />
 											<div class="card-img-overlay ps-0"></div>
 											<div class="card-body ps-0 bg-200">
-												<h5 class="fw-bold text-1000 text-truncate">베스트 상품3</h5>
+												<h5 class="fw-bold text-1000 text-truncate">컨디셔너 코코넛 바닐라 98.2%</h5>
 												<div class="fw-bold">
-													<span class="text-600 me-2 text-decoration-line-through">$799</span><span
-														class="text-danger">$745</span>
+													<span class="text-600 me-2 text-decoration-line-through">35,000원</span><span
+														class="text-danger">31,000원</span>
 												</div>
 											</div>
-											<a class="stretched-link" href="#"></a>
+											<a class="stretched-link" href="${path}/shop/product/detail/7"></a>
 										</div>
 									</div>
 									<div class="col-md-3 mb-3 mb-md-0 h-100">
 										<div class="card card-span h-100 text-white">
-											<img class="img-fluid h-100" src="${path}/resources/assets/img/gallery/tie.png"
+											<img class="img-fluid h-100" src="${path}/resources/images/8.jpg"
 												alt="..." />
 											<div class="card-img-overlay ps-0"></div>
 											<div class="card-body ps-0 bg-200">
-												<h5 class="fw-bold text-1000 text-truncate">베스트 상품4</h5>
+												<h5 class="fw-bold text-1000 text-truncate">반려동물용 울타리 4패널 화이트</h5>
 												<div class="fw-bold">
-													<span class="text-600 me-2 text-decoration-line-through">$299</span><span
-														class="text-danger">$243</span>
+													<span class="text-600 me-2 text-decoration-line-through">100,000원</span><span
+														class="text-danger">84,680원</span>
 												</div>
 											</div>
-											<a class="stretched-link" href="#"></a>
+											<a class="stretched-link" href="${path}/shop/product/detail/8"></a>
 										</div>
 									</div>
 								</div>
 							</div>
-							<div class="carousel-item" data-bs-interval="5000">
-								<div class="row h-100 align-items-center g-2">
-									<div class="col-md-3 mb-3 mb-md-0 h-100">
-										<div class="card card-span h-100 text-white">
-											<img class="img-fluid h-100"
-												src="${path}/resources/assets/img/gallery/handbag.png" alt="..." />
-											<div class="card-img-overlay ps-0"></div>
-											<div class="card-body ps-0 bg-200">
-												<h5 class="fw-bold text-1000 text-truncate">베스트 상품1</h5>
-												<div class="fw-bold">
-													<span class="text-600 me-2 text-decoration-line-through">$399</span><span
-														class="text-danger">$365</span>
-												</div>
-											</div>
-											<a class="stretched-link" href="#"></a>
-										</div>
-									</div>
-									<div class="col-md-3 mb-3 mb-md-0 h-100">
-										<div class="card card-span h-100 text-white">
-											<img class="img-fluid h-100"
-												src="${path}/resources/assets/img/gallery/earrings.png" alt="..." />
-											<div class="card-img-overlay ps-0"></div>
-											<div class="card-body ps-0 bg-200">
-												<h5 class="fw-bold text-1000 text-truncate">베스트 상품2</h5>
-												<div class="fw-bold">
-													<span class="text-600 me-2 text-decoration-line-through">$489</span><span
-														class="text-danger">$466</span>
-												</div>
-											</div>
-											<a class="stretched-link" href="#"></a>
-										</div>
-									</div>
-									<div class="col-md-3 mb-3 mb-md-0 h-100">
-										<div class="card card-span h-100 text-white">
-											<img class="img-fluid h-100"
-												src="${path}/resources/assets/img/gallery/lathered-wristwatch.png" alt="..." />
-											<div class="card-img-overlay ps-0"></div>
-											<div class="card-body ps-0 bg-200">
-												<h5 class="fw-bold text-1000 text-truncate">베스트 상품3</h5>
-												<div class="fw-bold">
-													<span class="text-600 me-2 text-decoration-line-through">$799</span><span
-														class="text-danger">$745</span>
-												</div>
-											</div>
-											<a class="stretched-link" href="#"></a>
-										</div>
-									</div>
-									<div class="col-md-3 mb-3 mb-md-0 h-100">
-										<div class="card card-span h-100 text-white">
-											<img class="img-fluid h-100" src="${path}/resources/assets/img/gallery/tie.png"
-												alt="..." />
-											<div class="card-img-overlay ps-0"></div>
-											<div class="card-body ps-0 bg-200">
-												<h5 class="fw-bold text-1000 text-truncate">베스트 상품4</h5>
-												<div class="fw-bold">
-													<span class="text-600 me-2 text-decoration-line-through">$299</span><span
-														class="text-danger">$243</span>
-												</div>
-											</div>
-											<a class="stretched-link" href="#"></a>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="carousel-item" data-bs-interval="3000">
-								<div class="row h-100 align-items-center g-2">
-									<div class="col-md-3 mb-3 mb-md-0 h-100">
-										<div class="card card-span h-100 text-white">
-											<img class="img-fluid h-100"
-												src="${path}/resources/assets/img/gallery/handbag.png" alt="..." />
-											<div class="card-img-overlay ps-0"></div>
-											<div class="card-body ps-0 bg-200">
-												<h5 class="fw-bold text-1000 text-truncate">베스트 상품1</h5>
-												<div class="fw-bold">
-													<span class="text-600 me-2 text-decoration-line-through">$399</span><span
-														class="text-danger">$365</span>
-												</div>
-											</div>
-											<a class="stretched-link" href="#"></a>
-										</div>
-									</div>
-									<div class="col-md-3 mb-3 mb-md-0 h-100">
-										<div class="card card-span h-100 text-white">
-											<img class="img-fluid h-100"
-												src="${path}/resources/assets/img/gallery/earrings.png" alt="..." />
-											<div class="card-img-overlay ps-0"></div>
-											<div class="card-body ps-0 bg-200">
-												<h5 class="fw-bold text-1000 text-truncate">베스트 상품2</h5>
-												<div class="fw-bold">
-													<span class="text-600 me-2 text-decoration-line-through">$489</span><span
-														class="text-danger">$466</span>
-												</div>
-											</div>
-											<a class="stretched-link" href="#"></a>
-										</div>
-									</div>
-									<div class="col-md-3 mb-3 mb-md-0 h-100">
-										<div class="card card-span h-100 text-white">
-											<img class="img-fluid h-100"
-												src="${path}/resources/assets/img/gallery/lathered-wristwatch.png" alt="..." />
-											<div class="card-img-overlay ps-0"></div>
-											<div class="card-body ps-0 bg-200">
-												<h5 class="fw-bold text-1000 text-truncate">베스트 상품3</h5>
-												<div class="fw-bold">
-													<span class="text-600 me-2 text-decoration-line-through">$799</span><span
-														class="text-danger">$745</span>
-												</div>
-											</div>
-											<a class="stretched-link" href="#"></a>
-										</div>
-									</div>
-									<div class="col-md-3 mb-3 mb-md-0 h-100">
-										<div class="card card-span h-100 text-white">
-											<img class="img-fluid h-100" src="${path}/resources/assets/img/gallery/tie.png"
-												alt="..." />
-											<div class="card-img-overlay ps-0"></div>
-											<div class="card-body ps-0 bg-200">
-												<h5 class="fw-bold text-1000 text-truncate">베스트 상품4</h5>
-												<div class="fw-bold">
-													<span class="text-600 me-2 text-decoration-line-through">$299</span><span
-														class="text-danger">$243</span>
-												</div>
-											</div>
-											<a class="stretched-link" href="#"></a>
-										</div>
-									</div>
-								</div>
-							</div>
+							
 							<div class="carousel-item">
 								<div class="row h-100 align-items-center g-2">
 									<div class="col-md-3 mb-3 mb-md-0 h-100">
@@ -610,10 +348,10 @@
 												src="${path}/resources/assets/img/gallery/handbag.png" alt="..." />
 											<div class="card-img-overlay ps-0"></div>
 											<div class="card-body ps-0 bg-200">
-												<h5 class="fw-bold text-1000 text-truncate">베스트 상품1</h5>
+												<h5 class="fw-bold text-1000 text-truncate">펫 프렌들리 워터리스 샴푸(210ml)</h5>
 												<div class="fw-bold">
-													<span class="text-600 me-2 text-decoration-line-through">$399</span><span
-														class="text-danger">$365</span>
+													<span class="text-600 me-2 text-decoration-line-through">23,500원</span><span
+														class="text-danger">21,020원</span>
 												</div>
 											</div>
 											<a class="stretched-link" href="#"></a>
@@ -625,10 +363,10 @@
 												src="assets/img/gallery/earrings.png" alt="..." />
 											<div class="card-img-overlay ps-0"></div>
 											<div class="card-body ps-0 bg-200">
-												<h5 class="fw-bold text-1000 text-truncate">베스트 상품2</h5>
+												<h5 class="fw-bold text-1000 text-truncate">반려동물 그루밍 해먹</h5>
 												<div class="fw-bold">
-													<span class="text-600 me-2 text-decoration-line-through">$489</span><span
-														class="text-danger">$466</span>
+													<span class="text-600 me-2 text-decoration-line-through">20,000원</span><span
+														class="text-danger">17,210원</span>
 												</div>
 											</div>
 											<a class="stretched-link" href="#"></a>
@@ -640,10 +378,10 @@
 												src="${path}/resources/assets/img/gallery/lathered-wristwatch.png" alt="..." />
 											<div class="card-img-overlay ps-0"></div>
 											<div class="card-body ps-0 bg-200">
-												<h5 class="fw-bold text-1000 text-truncate">베스트 상품3</h5>
+												<h5 class="fw-bold text-1000 text-truncate">컨디셔너 코코넛 바닐라 98.2%</h5>
 												<div class="fw-bold">
-													<span class="text-600 me-2 text-decoration-line-through">$799</span><span
-														class="text-danger">$745</span>
+													<span class="text-600 me-2 text-decoration-line-through">35,000원</span><span
+														class="text-danger">31,000원</span>
 												</div>
 											</div>
 											<a class="stretched-link" href="#"></a>
@@ -655,10 +393,10 @@
 												alt="..." />
 											<div class="card-img-overlay ps-0"></div>
 											<div class="card-body ps-0 bg-200">
-												<h5 class="fw-bold text-1000 text-truncate">베스트 상품4</h5>
+												<h5 class="fw-bold text-1000 text-truncate">반려동물용 울타리 4패널 화이트</h5>
 												<div class="fw-bold">
-													<span class="text-600 me-2 text-decoration-line-through">$299</span><span
-														class="text-danger">$243</span>
+													<span class="text-600 me-2 text-decoration-line-through">100,000원</span><span
+														class="text-danger">84,680원</span>
 												</div>
 											</div>
 											<a class="stretched-link" href="#"></a>
@@ -681,7 +419,10 @@
 						</div>
 					</div>
 				</div>
-			</div>
+				<div class="col-12 d-flex justify-content-center mt-5">
+					<a class="btn btn-lg btn-dark" href="${path}/shop/product/list.do">View All </a>
+				</div>
+			</div>			
 		</div>
 	</section>
 	<!-- <베스트셀러> close ============================-->
@@ -692,7 +433,7 @@
 	<!-- <애견 신상품 코너>  ============================-->
 	<!-- ============================================-->
 
-	<section class="py-0 mt-8">
+	<section class="py-5 mt-10">
 		<div class="container">
 			<div class="row h-100">
 				<div class="col-lg-7 mx-auto text-center mb-6">
