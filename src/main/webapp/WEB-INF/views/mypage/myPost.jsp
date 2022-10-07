@@ -232,15 +232,15 @@
 			<c:forEach var="row" items="${map.list}">   
         <div class="col">
           <div class="card shadow-sm">
-            <a href="${path}/community/detail.do?comm_no=${row.comm_no}"><img  class="bd-placeholder-img card-img-top" src="${path}/resources/images/community/${row.comm_url}" width="100%" height="225"></a>
+            <a href="${path}/community/view.do?comm_no=${row.comm_no}"><img  class="bd-placeholder-img card-img-top" src="${path}/resources/images/community/${row.comm_url}" width="100%" height="225"></a>
             <div class="card-body">
-              <p class="card-text" id="useridText"><a href="${path}/community/detail.do?comm_no=${row.comm_no}">${row.userid}</a></p>
-              <p class="card-text" id="titleText"><a href="${path}/community/detail.do?comm_no=${row.comm_no}">${row.comm_title}</a></p>
+              <p class="card-text" id="writerText"><a href="${path}/community/view.do?comm_no=${row.comm_no}">${row.writer}</a></p>
+              <p class="card-text" id="titleText"><a href="${path}/community/view.do?comm_no=${row.comm_no}">${row.comm_title}</a></p>
               
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary" onclick="location.href='${path}/community/detail.do?comm_no=${row.comm_no}'">♥</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">💬</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary" onclick="location.href='${path}/community/view.do?comm_no=${row.comm_no}'">👀 ${row.comm_viewcnt}</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary" onclick="location.href='${path}/community/view.do?comm_no=${row.comm_no}'">💬</button>
                 </div>
                 <small class="text-muted">${row.comm_regdate}</small>
               </div>
