@@ -65,8 +65,7 @@ public class CommunityDAOImpl implements CommunityDAO {
 
 	@Override
 	public void increaseViewcnt(int comm_no) throws Exception {
-		// TODO Auto-generated method stub
-
+		sqlSession.update("community.increaseViewcnt", comm_no);
 	}
 
 	@Override
@@ -82,6 +81,11 @@ public class CommunityDAOImpl implements CommunityDAO {
 	@Override
 	public List<CommunityDTO> myCmmList(String userId) {
 		return sqlSession.selectList("community.myCmmList",userId);
+	}
+
+	@Override
+	public CommunityDTO read(int comm_no) {
+		return sqlSession.selectOne("community.read", comm_no);
 	}
 
 	

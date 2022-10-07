@@ -9,7 +9,7 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 <style type="text/css">
-#useridText {
+#writerText {
 	font-weight: bold;
 	float: left;
 	margin-right: 15px;
@@ -141,47 +141,35 @@
 								src="${path}/resources/images/community/${dto.comm_url}">
 							<div class="card-body">
 
-								<p class="card-text" id="useridText">${dto.userid}</p>
-								<p class="card-text" id="contentText">${dto.comm_content}</p>
+							<p class="card-text" id="writerText">${dto.writer}</p>
+							<p class="card-text" id="contentText">${dto.comm_content}</p>
 								<div class="d-flex justify-content-between align-items-center">
 									<div class="btn-group">
-										<button type="button" class="btn btn-sm btn-outline-secondary"
-											onclick="location.href='${path}/community/list.do'">View</button>
-										<c:choose>
-											<c:when test="${sessionScope.userid == dto.userid}">
-												<button type="button"
-													class="btn btn-sm btn-outline-secondary"
-													onclick="location.href='${path}/community/edit/${dto.comm_no}'">Edit</button>
-											</c:when>
-											<c:otherwise>
-												<button type="button"
-													class="btn btn-sm btn-outline-secondary"
-													onclick="location.href='${path}/community/list.do'">comment</button>
-											</c:otherwise>
-										</c:choose>
+										<c:if test="${sessionScope.userid == dto.writer}">
+											<button type="button" class="btn btn-sm btn-outline-secondary"
+												onclick="location.href='${path}/community/list.do'">View</button>
+											<button type="button"
+												class="btn btn-sm btn-outline-secondary"
+												onclick="location.href='${path}/community/edit/${dto.comm_no}'">Edit</button>
+										</c:if>
 									</div>
 									<small class="text-muted">${dto.comm_regdate}</small>
 								</div>
 
-
 								<!-- 댓글 목록 -->
 								<div id="listComment"></div>
-
-
+								<hr>
 
 								<!-- 댓글 작성 -->
-								
-									<c:if test="${sessionScope.userid != null }">
-										<input type="text" id="cmt_content" name="cmt_content"
-											placeholder="댓글 달기...">
-										<button type="button" id="btnComment">게시</button>
-									</c:if>
+								<c:if test="${sessionScope.userid != null }">
+									<input type="text" id="cmt_content" name="cmt_content"
+										placeholder="댓글 달기...">
+									<button type="button" id="btnComment">게시</button>
+								</c:if>
 								
 							</div>
-
 						</div>
 					</div>
-
 				</div>
 			</div>
 		</div>
