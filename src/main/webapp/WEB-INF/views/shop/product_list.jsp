@@ -39,7 +39,7 @@ selected</c:if> 상품명+상세설명</option>
 		<input name="keyword" value="${map.keyword}">
 		<input type="submit" value="조회">
 </form>
-<div class="search">${map.count}개의 게시물이 있습니다.</div>
+<div class="search">${map.count}개의 상품이 있습니다.</div>
 <table style="width: 100%";>
 <c:set var="i" value="0" /> 
 <c:set var="j" value="3" /> 

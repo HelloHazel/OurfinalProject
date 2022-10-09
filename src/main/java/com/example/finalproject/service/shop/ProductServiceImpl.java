@@ -48,4 +48,11 @@ public class ProductServiceImpl implements ProductService {
 		return productDao.fileInfo(product_id);
 	}
 
+	@Override
+	public ProductDTO read(int product_id) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	
 }

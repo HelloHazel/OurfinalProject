@@ -11,5 +11,6 @@ public interface ProductDAO {
 	void deleteProduct(int product_id);//삭제
 	void insertProduct(ProductDTO dto);//삽입
 	String fileInfo(int product_id); //파일 첨부
+	public ProductDTO read(int product_id) throws Exception;//레코드 조회
 
 }

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 다른 mapper와 중복되지 않도록 네임스페이스 기재 -->
+<mapper namespace="review">
+	<insert id="insertReview">
+	insert into review(review_no,product_id,review_content,review_date,userid) values
+	(review_seq.nextval, #{product_id}, #{review_content}, #{review_date}, #{userid} )
+	</insert>
+
+<select id="listReview" resultType="com.example.finalproject.model.shop.dto.ReviewDTO">
+   select review_no,review_content,review_date,r.userid,product_id
+   from review r, member m
+   where r.userid=m.userid and product_id=#{product_id}
+   order by review_no
+</select>	
+	
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
