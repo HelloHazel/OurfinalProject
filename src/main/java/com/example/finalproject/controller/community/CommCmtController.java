@@ -7,6 +7,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.example.finalproject.model.community.dto.CommCmtDTO;
@@ -38,5 +39,14 @@ public class CommCmtController {
 	public List<CommCmtDTO> list_json(int comm_no) {
 		return commCmtService.list(comm_no);
 	}
+	
+	@RequestMapping("delete.do")
+	public String delete(@RequestParam int cmt_no) throws Exception {
+		System.out.println("cmt_no : " + cmt_no);
+		commCmtService.delete(cmt_no);
+		return "redirect:/community/list.do";
+				
+	}
+	
 
 }

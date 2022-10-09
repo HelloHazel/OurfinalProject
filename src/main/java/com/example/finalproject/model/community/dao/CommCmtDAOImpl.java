@@ -31,4 +31,9 @@ public class CommCmtDAOImpl implements CommCmtDAO {
 		sqlSession.insert("commCmt.insertComment", dto);
 	}
 
+	@Override
+	public void delete(int cmt_no) {
+		sqlSession.delete("commCmt.delete", cmt_no);
+	}
+
 }

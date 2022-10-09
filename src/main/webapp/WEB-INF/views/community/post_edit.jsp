@@ -43,7 +43,7 @@
 
 <script type="text/javascript">
 
-//상품 수정
+//post 수정
 function post_update(){
     //태그를 name으로 조회할 경우(계층구조로 접근)
 	//var product_name=document.form1.product_name.value;
@@ -67,7 +67,7 @@ function post_update(){
 }
 
 
-//상품삭제
+//post 삭제
 function post_delete() { 
 	if(confirm("삭제하시겠습니까?")){
 	 	document.form1.action="${path}/community/delete.do";

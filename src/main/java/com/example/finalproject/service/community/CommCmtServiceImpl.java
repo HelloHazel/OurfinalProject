@@ -32,4 +32,9 @@ public class CommCmtServiceImpl implements CommCmtService {
 		commCmtDao.create(dto);
 	}
 
+	@Override
+	public void delete(int cmt_no) {
+		commCmtDao.delete(cmt_no);
+	}
+
 }
