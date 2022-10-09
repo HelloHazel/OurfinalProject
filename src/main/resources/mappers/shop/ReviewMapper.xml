@@ -5,10 +5,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <!-- 다른 mapper와 중복되지 않도록 네임스페이스 기재 -->
 <mapper namespace="review">
-	<insert id="insertReview">
-	insert into review(review_no,product_id,review_content,review_date,userid) values
-	(review_seq.nextval, #{product_id}, #{review_content}, #{review_date}, #{userid} )
-	</insert>
+<insert id="insertReview">
+   insert into review(review_no,product_id,review_content,userid) values
+   (review_seq.nextval, #{product_id}, #{review_content}, #{userid} )
+   </insert>
 
 <select id="listReview" resultType="com.example.finalproject.model.shop.dto.ReviewDTO">
    select review_no,review_content,review_date,r.userid,product_id
@@ -17,6 +17,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
    order by review_no
 </select>	
 	
+<!-- 리뷰 내용 삭제 -->
+<delete id="deleteReview">
+ delete from review where product_id=#{product_id}
+</delete>
+
 </mapper>
 
 

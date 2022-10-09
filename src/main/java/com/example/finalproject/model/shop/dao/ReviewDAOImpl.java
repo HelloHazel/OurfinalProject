@@ -33,4 +33,9 @@ public class ReviewDAOImpl implements ReviewDAO {
 
 	}
 
+	@Override
+	public void delete(int product_id) throws Exception {
+		sqlSession.delete("review.deleteReview", product_id);
+	}
+
 }

@@ -5,6 +5,7 @@ import java.util.List;
 import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
 
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
@@ -28,9 +29,15 @@ public class ReviewController {
 	@RequestMapping("list.do")
 	public ModelAndView list(int product_id, ModelAndView mav) {
 		List<ReviewDTO> list=reviewService.list(product_id);//댓글 목록
-		mav.setViewName("product/review_list");
+		mav.setViewName("shop/review_list");
 		mav.addObject("list", list);
 		return mav;
+	}
+	
+	@RequestMapping("delete.do")
+	public String delete(int product_id) throws Exception {
+		reviewService.delete(product_id);
+		return "redirect:/shop/review/list.do";
 	}
 
 }

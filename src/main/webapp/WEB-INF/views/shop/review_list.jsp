@@ -7,29 +7,29 @@
 <title>Insert title here</title>
 <%@ include file="../include/header.jsp" %>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+//삭제 버튼
+$(function(){
+	$("#btnDeleteReview").click(function(){
+		if(confirm("삭제하시겠습니까?")){
+			document.form1.action="${path}/review/delete.do";	
+			document.form1.submit();
+		}
+	});
+});
+</script>
 </head>
 <body>
-<%@ include file="../include/menu.jsp" %>
-<% pageContext.setAttribute("newLineChar", "\n"); %>
 <table style="width:700px">
-<!-- fn: header.jsp의 jstl -->
 <c:forEach var="row" items="${list}">   
-	<c:set var="str"
-value="${fn:replace(row.review_content,'<','&lt;') }" />
-	<c:set var="str"
-value="${fn:replace(str,'>','&gt;') }" />	
-	<c:set var="str"  
-value="${fn:replace(str,'  ','&nbsp;&nbsp;')}" />
-	<c:set var="str"
-value="${fn:replace(str,newLineChar,'<br>') }" />
-
-<%-- <c:set var="str" value="${fn:replace(str, '\\','<br>') }" /> --%>
-<!-- c:set 태그안에는 역슬래쉬를 쓸 수 없어서 별도로 처리해야함 -->
 	<tr>
 		<td>
-			${row.userid}
+			[${row.userid}]
 			( <fmt:formatDate value="${row.review_date}"
 				 pattern="yyyy-MM-dd a HH:mm:ss" /> )<br>
+				  ${row.review_content} <br>
+        <button type="button" class="btn btn-outline-warning btn-sm" id="btnDeleteReview">삭제</button>	  
+				  <br>
 			${str}
 		</td>
 	</tr>

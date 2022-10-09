@@ -31,4 +31,10 @@ public class ReviewServiceImpl implements ReviewService {
 
 	}
 
+	@Override
+	public void delete(int product_id) throws Exception {
+		reviewDao.delete(product_id);
+		
+	}
+
 }

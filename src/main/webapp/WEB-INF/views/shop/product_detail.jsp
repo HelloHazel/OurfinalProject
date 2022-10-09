@@ -31,8 +31,8 @@ $(function(){
 		});
 	});
 });
-	//리뷰 목록 출력 함수
-	function listReview(){
+//리뷰 목록 출력 함수
+function listReview(){
 		$.ajax({
 			type: "get",
 			url: "${path}/review/list.do?product_id=${dto.product_id}",
@@ -41,7 +41,7 @@ $(function(){
 			$("#listReview").html(result);
 			}
 		});
-	}
+}
 //타임스탬프값(숫자형)을 문자열 형식으로 변환
 function changeDate(date){
 	date = new Date(parseInt(date));
@@ -56,6 +56,13 @@ function changeDate(date){
 	return strDate;
 }
 </script>
+<style type="text/css">
+.table {
+margin-left: auto;
+margin-right: auto;
+margin-top: auto;
+}
+</style>
  <!-- Core theme CSS (includes Bootstrap)-->
         <link href="../resources/css/styles2.css" rel="stylesheet" />
 </head>
@@ -93,22 +100,18 @@ function changeDate(date){
             </div>
         </section>
         <!-- 리뷰 작성 -->
-        <div style="width:700px; text-align:center;">
+        <div style="width:700px; text-align:center;" class="table">
         	<c:if test="${sessionScope.userid != null }">
-        		<textarea rows="5" cols="80" id="review_content"
+        		<textarea rows="5" cols="100" id="review_content"
         				placeholder="댓글을 작성하세요"></textarea>
         				<br>
         				<button type="button" class="btn btn-outline-warning btn-sm" id="btnReview">리뷰 쓰기</button>
         				<br>
-        				</c:if>
-        </div>
+        				</c:if>    
         <!-- 리뷰 목록 -->
-		<div id="listReview"></div>        
-        
-               <!-- Footer-->
-        <footer class="py-5 bg-grey">
-            <div class="container"><p class="m-0 text-center text-white">&nbsp</p></div>
-        </footer>
+		<div id="listReview"></div> 
+        </div>
+        <br>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
