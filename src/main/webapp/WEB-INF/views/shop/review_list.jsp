@@ -10,17 +10,17 @@
 <script>
 //삭제 버튼
 $(function(){
-	$("#btnDeleteReview").click(function(){
-		if(confirm("삭제하시겠습니까?")){
-			document.form1.action="${path}/review/delete.do";	
-			document.form1.submit();
-		}
-	});
+   $("#btnDeleteReview").click(function(){
+      if(confirm("삭제하시겠습니까?")){
+         document.form1.action="${path}/review/delete.do";   
+         document.form1.submit();
+      }
+   });
 });
 </script>
 </head>
 <body>
-<table style="width:700px">
+<table style="width:700px" id="form1" name="form1">
 <c:forEach var="row" items="${list}">   
 	<tr>
 		<td>

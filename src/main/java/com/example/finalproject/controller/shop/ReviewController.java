@@ -37,7 +37,7 @@ public class ReviewController {
 	@RequestMapping("delete.do")
 	public String delete(int product_id) throws Exception {
 		reviewService.delete(product_id);
-		return "redirect:/shop/review/list.do";
+		return "redirect:/review/list.do";
 	}
 
 }
