@@ -50,7 +50,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="myCmmList" resultType="com.example.finalproject.model.community.dto.CommunityDTO">
 		<![CDATA[ 
 			select * from community
-			where userid = #{userId}
+			where writer = #{userId}
 			order by comm_no desc
 		]]> 
 	</select>
