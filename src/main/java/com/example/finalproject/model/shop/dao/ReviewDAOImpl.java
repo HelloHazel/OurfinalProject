@@ -38,4 +38,10 @@ public class ReviewDAOImpl implements ReviewDAO {
 		sqlSession.delete("review.deleteReview", product_id);
 	}
 
+	@Override
+	public List<ReviewDTO> myReviewList(String userId) {
+		return sqlSession.selectList("review.myReviewList", userId);
+		
+	}
+
 }

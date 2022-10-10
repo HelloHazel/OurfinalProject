@@ -22,6 +22,15 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
  delete from review where product_id=#{product_id}
 </delete>
 
+<select id="myReviewList" resultType="com.example.finalproject.model.shop.dto.ReviewDTO">
+   <![CDATA[ 
+   select *
+   from review
+   where userid = #{userId}
+   order by review_no
+   ]]> 
+</select>	
+
 </mapper>
 
 

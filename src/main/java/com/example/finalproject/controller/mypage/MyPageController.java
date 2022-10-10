@@ -18,11 +18,13 @@ import org.springframework.web.servlet.ModelAndView;
 import com.example.finalproject.model.community.dto.CommunityDTO;
 import com.example.finalproject.model.inquery.dto.InqueryDTO;
 import com.example.finalproject.model.shipping.dto.ShippingDTO;
+import com.example.finalproject.model.shop.dto.ReviewDTO;
 import com.example.finalproject.service.community.CommunityService;
 import com.example.finalproject.service.inquery.InqueryService;
 import com.example.finalproject.service.member.MemberService;
 import com.example.finalproject.service.mypage.MyPageService;
 import com.example.finalproject.service.shipping.ShippingService;
+import com.example.finalproject.service.shop.ReviewService;
 
 @Controller
 @RequestMapping("mypage/*")
@@ -43,6 +45,9 @@ public class MyPageController {
     
     @Inject
    	ShippingService shippingService;
+    
+    @Inject
+   	ReviewService reviewService;
 	
 
 	
@@ -62,15 +67,6 @@ public class MyPageController {
 			return mav;
 	}
 	
-	@RequestMapping("mypost.do")
-	public String my_post() {
-		return "mypage/myPost";
-	}
-	
-	@RequestMapping("myreview.do")
-	public String my_review() {
-		return "mypage/myReview";
-	}
 	
 	@RequestMapping("myinfo.do")
 	public String my_info( @RequestParam String userid, Model model ) {
@@ -128,6 +124,19 @@ public class MyPageController {
 			}
 		 
 
-		 
-		
+			@RequestMapping("myreview.do")
+			public ModelAndView my_reivew(HttpSession session) {
+				 ModelAndView mav=new ModelAndView();
+					//세션 아이디
+					String userId=(String)session.getAttribute("userid");
+				
+					List<ReviewDTO> list=reviewService.myReviewList(userId);
+					
+					Map<String, Object> map=new HashMap<>();
+					map.put("list", list);
+					
+					mav.setViewName("mypage/myReview"); //포워딩 뷰
+					mav.addObject("map", map);
+					return mav;
+			}
 }

@@ -6,6 +6,7 @@ import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
@@ -37,7 +38,8 @@ public class ReviewController {
 	@RequestMapping("delete.do")
 	public String delete(int product_id) throws Exception {
 		reviewService.delete(product_id);
-		return "redirect:/review/list.do";
+		/* return "redirect:/review/list.do"; */
+		return "shop/product_detail";
 	}
 
 }

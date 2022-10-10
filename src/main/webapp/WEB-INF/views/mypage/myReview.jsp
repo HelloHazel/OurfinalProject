@@ -230,7 +230,28 @@
 </main>
 		</div>
 		<div class="col-9 text-bg-light">
-			<h1>여기는 나의 리뷰내역</h1>
+			
+		 <h2 style="text-align: center;">나의 리뷰내역</h2>
+	
+&nbsp;
+			<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">번호</th>
+      <th scope="col">내용</th>
+      <th scope="col">날짜</th>
+    </tr>
+  </thead>
+  <tbody>
+  <c:forEach var="row" items="${map.list}">
+  <tr>
+   <td>${row.review_no}</td>
+   <td><a href="${path}/shop/product/detail/${row.product_id}">${row.review_content}</a></td>
+   <td><fmt:formatDate value="${row.review_date}" pattern="yyyy-MM-dd HH:mm:ss" /></td>
+  </tr>
+  </c:forEach>
+  </tbody> 
+</table> 
 			
 		</div>
 	</div>		

@@ -37,4 +37,9 @@ public class ReviewServiceImpl implements ReviewService {
 		
 	}
 
+	@Override
+	public List<ReviewDTO> myReviewList(String userId) {
+		return reviewDao.myReviewList(userId);
+	}
+
 }
