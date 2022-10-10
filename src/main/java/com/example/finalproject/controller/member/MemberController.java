@@ -150,10 +150,11 @@ public class MemberController {
 		
 		//회원삭제
 		@RequestMapping("delete.do")
-		public String delete(String userid, String passwd, Model model) {
+		public String delete(String userid, String passwd, Model model, HttpSession session) {
 			boolean result=memberService.checkPw(userid, passwd);
 			if(result) {
 				memberService.deleteMember(userid);
+				memberService.logout(session);
 				return "main";
 			}else {
 				model.addAttribute("message", "비밀번호를 확인하세요.");
@@ -162,6 +163,7 @@ public class MemberController {
 			}
 		}
 	    
+		//카카오톡 로그인
 	    public static JsonNode getAccessToken(String autorize_code){ 
 	        final String RequestUrl = "https://kauth.kakao.com/oauth/token";
 	        final List<BasicNameValuePair> postParams = new ArrayList<BasicNameValuePair>();

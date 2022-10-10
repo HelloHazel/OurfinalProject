@@ -65,6 +65,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	insert into member (name, userid, passwd, email)
 	values (#{name}, #{userid}, #{passwd}, #{email})
 	</insert>
-
+	
+	<select id="addressInfo"  resultType="com.example.finalproject.model.member.dto.MemberDTO">
+	select name, zipcode, address1, address2, phone
+	from member
+	where userid=#{userid}
+	</select>
 </mapper>
 

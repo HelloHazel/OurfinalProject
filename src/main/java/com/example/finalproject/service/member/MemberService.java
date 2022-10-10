@@ -22,4 +22,5 @@ public interface MemberService {
 	public int idCheck(String userid) throws Exception;
 	public int emailCheck(String email);
 	public void insertKakaoMember(MemberDTO dto);
+	public List<MemberDTO> addressInfo(String userid);
 }
