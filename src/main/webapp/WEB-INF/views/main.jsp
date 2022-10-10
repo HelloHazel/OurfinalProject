@@ -176,7 +176,7 @@ if (request.getProtocol().equals("HTTP/1.1")) {
 									<div class="col-sm-6 col-md-3 mb-3 mb-md-0 h-100">
 										<div class="card card-span h-100 text-white">
 											<img class="img-fluid h-100"
-												src="${pageContext.request.contextPath}/resources/assets/img/gallery/flat-hill.png"
+												src="${path}/resources/images/9.jpg"
 												alt="..." />
 											<div class="card-img-overlay ps-0"></div>
 											<div class="card-body ps-0 bg-200">
@@ -186,13 +186,13 @@ if (request.getProtocol().equals("HTTP/1.1")) {
 														class="text-primary">$175</span>
 												</div>
 											</div>
-											<a class="stretched-link" href="#"></a>
+											<a class="stretched-link" href="${path}/shop/product/detail/9"></a>
 										</div>
 									</div>
 									<div class="col-sm-6 col-md-3 mb-3 mb-md-0 h-100">
 										<div class="card card-span h-100 text-white">
 											<img class="img-fluid h-100"
-												src="${pageContext.request.contextPath}/resources/assets/img/gallery/blue-ring.png"
+												src="${path}/resources/images/10.jpg"
 												alt="..." />
 											<div class="card-img-overlay ps-0"></div>
 											<div class="card-body ps-0 bg-200">
@@ -202,13 +202,13 @@ if (request.getProtocol().equals("HTTP/1.1")) {
 														class="text-primary">$175</span>
 												</div>
 											</div>
-											<a class="stretched-link" href="#"></a>
+											<a class="stretched-link" href="${path}/shop/product/detail/10"></a>
 										</div>
 									</div>
 									<div class="col-sm-6 col-md-3 mb-3 mb-md-0 h-100">
 										<div class="card card-span h-100 text-white">
 											<img class="img-fluid h-100"
-												src="${pageContext.request.contextPath}/resources/assets/img/gallery/wallet.png"
+												src="${path}/resources/images/11.jpg"
 												alt="..." />
 											<div class="card-img-overlay ps-0"></div>
 											<div class="card-body ps-0 bg-200">
@@ -218,13 +218,13 @@ if (request.getProtocol().equals("HTTP/1.1")) {
 														class="text-primary">$175</span>
 												</div>
 											</div>
-											<a class="stretched-link" href="#"></a>
+											<a class="stretched-link" href="${path}/shop/product/detail/11"></a>
 										</div>
 									</div>
 									<div class="col-sm-6 col-md-3 mb-3 mb-md-0 h-100">
 										<div class="card card-span h-100 text-white">
 											<img class="img-fluid h-100"
-												src="${pageContext.request.contextPath}/resources/assets/img/gallery/wrist-watch.png"
+												src="${path}/resources/images/12.jpg"
 												alt="..." />
 											<div class="card-img-overlay ps-0"></div>
 											<div class="card-body ps-0 bg-200">
@@ -234,7 +234,7 @@ if (request.getProtocol().equals("HTTP/1.1")) {
 														class="text-primary">$175</span>
 												</div>
 											</div>
-											<a class="stretched-link" href="#"></a>
+											<a class="stretched-link" href="${path}/shop/product/detail/12"></a>
 										</div>
 									</div>
 								</div>
@@ -358,66 +358,63 @@ if (request.getProtocol().equals("HTTP/1.1")) {
 									<div class="col-md-3 mb-3 mb-md-0 h-100">
 										<div class="card card-span h-100 text-white">
 											<img class="img-fluid h-100"
-												src="${path}/resources/assets/img/gallery/handbag.png"
+												src="${path}/resources/images/13.jpg"
 												alt="..." />
 											<div class="card-img-overlay ps-0"></div>
 											<div class="card-body ps-0 bg-200">
-												<h5 class="fw-bold text-1000 text-truncate">펫 프렌들리 워터리스
-													샴푸(210ml)</h5>
+												<h5 class="fw-bold text-1000 text-truncate">미끄럼 방지 방수 패드</h5>
 												<div class="fw-bold">
-													<span class="text-600 me-2 text-decoration-line-through">23,500원</span><span
-														class="text-danger">21,020원</span>
+													<span class="text-600 me-2 text-decoration-line-through">33,500원</span><span
+														class="text-danger">28,060원</span>
 												</div>
 											</div>
-											<a class="stretched-link" href="#"></a>
-										</div>
-									</div>
-									<div class="col-md-3 mb-3 mb-md-0 h-100">
-										<div class="card card-span h-100 text-white">
-											<img class="${path}/resources/img-fluid h-100"
-												src="assets/img/gallery/earrings.png" alt="..." />
-											<div class="card-img-overlay ps-0"></div>
-											<div class="card-body ps-0 bg-200">
-												<h5 class="fw-bold text-1000 text-truncate">반려동물 그루밍 해먹</h5>
-												<div class="fw-bold">
-													<span class="text-600 me-2 text-decoration-line-through">20,000원</span><span
-														class="text-danger">17,210원</span>
-												</div>
-											</div>
-											<a class="stretched-link" href="#"></a>
+											<a class="stretched-link" href="${path}/shop/product/detail/13"></a>
 										</div>
 									</div>
 									<div class="col-md-3 mb-3 mb-md-0 h-100">
 										<div class="card card-span h-100 text-white">
 											<img class="img-fluid h-100"
-												src="${path}/resources/assets/img/gallery/lathered-wristwatch.png"
-												alt="..." />
+												src="${path}/resources/images/14.jpg" alt="..." />
 											<div class="card-img-overlay ps-0"></div>
 											<div class="card-body ps-0 bg-200">
-												<h5 class="fw-bold text-1000 text-truncate">컨디셔너 코코넛
-													바닐라 98.2%</h5>
+												<h5 class="fw-bold text-1000 text-truncate">부드러운 패딩 조끼 하네스 M</h5>
 												<div class="fw-bold">
-													<span class="text-600 me-2 text-decoration-line-through">35,000원</span><span
-														class="text-danger">31,000원</span>
+													<span class="text-600 me-2 text-decoration-line-through">26,000원</span><span
+														class="text-danger">19,460원</span>
 												</div>
 											</div>
-											<a class="stretched-link" href="#"></a>
+											<a class="stretched-link" href="${path}/shop/product/detail/14"></a>
 										</div>
 									</div>
 									<div class="col-md-3 mb-3 mb-md-0 h-100">
 										<div class="card card-span h-100 text-white">
 											<img class="img-fluid h-100"
-												src="${path}/resources/assets/img/gallery/tie.png" alt="..." />
+												src="${path}/resources/images/15.jpg"
+												alt="..." />
 											<div class="card-img-overlay ps-0"></div>
 											<div class="card-body ps-0 bg-200">
-												<h5 class="fw-bold text-1000 text-truncate">반려동물용 울타리
-													4패널 화이트</h5>
+												<h5 class="fw-bold text-1000 text-truncate">강아지용 미니 칫솔 6개 세트</h5>
 												<div class="fw-bold">
-													<span class="text-600 me-2 text-decoration-line-through">100,000원</span><span
-														class="text-danger">84,680원</span>
+													<span class="text-600 me-2 text-decoration-line-through">18,000원</span><span
+														class="text-danger">14,860원원</span>
 												</div>
 											</div>
-											<a class="stretched-link" href="#"></a>
+											<a class="stretched-link" href="${path}/shop/product/detail/15"></a>
+										</div>
+									</div>
+									<div class="col-md-3 mb-3 mb-md-0 h-100">
+										<div class="card card-span h-100 text-white">
+											<img class="img-fluid h-100"
+												src="${path}/resources/images/16.jpg" alt="..." />
+											<div class="card-img-overlay ps-0"></div>
+											<div class="card-body ps-0 bg-200">
+												<h5 class="fw-bold text-1000 text-truncate">반려동물용 브라이트닝 바디 워시</h5>
+												<div class="fw-bold">
+													<span class="text-600 me-2 text-decoration-line-through">90,000원</span><span
+														class="text-danger">80,820원</span>
+												</div>
+											</div>
+											<a class="stretched-link" href="${path}/shop/product/detail/16"></a>
 										</div>
 									</div>
 								</div>
@@ -467,233 +464,63 @@ if (request.getProtocol().equals("HTTP/1.1")) {
 									<div class="col-sm-6 col-md-3 mb-3 mb-md-0 h-100">
 										<div class="card card-span h-100 text-white">
 											<img class="card-img h-100"
-												src="${path}/resources/assets/img/gallery/full-body.png"
+												src="${path}/resources/images/17.jpg"
 												alt="..." />
 											<div
 												class="card-img-overlay bg-dark-gradient d-flex flex-column-reverse">
-												<h6 class="text-primary">$175</h6>
-												<p class="text-400 fs-1">우리 강아지를 위한 사료 (추후 멘트 수정)</p>
-												<h4 class="text-light">사료 브랜드 A</h4>
+												<h6 class="text-primary">34,370원</h6>
+												<p class="text-400 fs-1">무자극 소재로 만들어져 예민한 피부에도  괜찮아요!</p>
+												<h4 class="text-light">디즈니 펫 미키 하네스</h4>
 											</div>
-											<a class="stretched-link" href="#"></a>
+											<a class="stretched-link" href="${path}/shop/product/detail/17"></a>
 										</div>
 									</div>
 									<div class="col-sm-6 col-md-3 mb-3 mb-md-0 h-100">
 										<div class="card card-span h-100 text-white">
 											<img class="card-img h-100"
-												src="${path}/resources/assets/img/gallery/formal-coat.png"
+												src="${path}/resources/images/18.jpg"
 												alt="..." />
 											<div
 												class="card-img-overlay bg-dark-gradient d-flex flex-column-reverse">
 												<h6 class="text-primary">$175</h6>
-												<p class="text-400 fs-1">우리 강아지를 위한 사료</p>
-												<h4 class="text-light">사료 브랜드 B</h4>
+												<p class="text-400 fs-1">우리 강아지, 밥을 너무 빨리 먹는다면?</p>
+												<h4 class="text-light">슬로우 퍼즐 그릇 소형견용(그린)</h4>
 											</div>
-											<a class="stretched-link" href="#"></a>
+											<a class="stretched-link" href="${path}/shop/product/detail/18"></a>
 										</div>
 									</div>
 									<div class="col-sm-6 col-md-3 mb-3 mb-md-0 h-100">
 										<div class="card card-span h-100 text-white">
 											<img class="card-img h-100"
-												src="${path}/resources/assets/img/gallery/ocean-blue.png"
+												src="${path}/resources/images/19.jpg"
 												alt="..." />
 											<div
 												class="card-img-overlay bg-dark-gradient d-flex flex-column-reverse">
 												<h6 class="text-primary">$175</h6>
-												<p class="text-400 fs-1">우리 강아지를 위한 사료</p>
-												<h4 class="text-light">사료 브랜드 C</h4>
+												<p class="text-400 fs-1">추운 겨을 산책, 안심하고 다녀와요!</p>
+												<h4 class="text-light">편안한 점프수트 강아지 파자마</h4>
 											</div>
-											<a class="stretched-link" href="#"></a>
+											<a class="stretched-link" href="${path}/shop/product/detail/19"></a>
 										</div>
 									</div>
 									<div class="col-sm-6 col-md-3 mb-3 mb-md-0 h-100">
 										<div class="card card-span h-100 text-white">
 											<img class="card-img h-100"
-												src="${path}/resources/assets/img/gallery/sweater.png"
+												src="${path}/resources/images/20.jpg"
 												alt="..." />
 											<div
 												class="card-img-overlay bg-dark-gradient d-flex flex-column-reverse">
 												<h6 class="text-primary">$175</h6>
-												<p class="text-400 fs-1">우리 강아지를 위한 사료</p>
-												<h4 class="text-light">사료 브랜드 D</h4>
+												<p class="text-400 fs-1">노즈워크, 간편하고 쉽게 할 수 있어요!</p>
+												<h4 class="text-light">퍼즐 인터랙티브 간식 장난감</h4>
 											</div>
-											<a class="stretched-link" href="#"></a>
+											<a class="stretched-link" href="${path}/shop/product/detail/20"></a>
 										</div>
 									</div>
 								</div>
 							</div>
-							<div class="carousel-item" data-bs-interval="5000">
-								<div class="row h-100 align-items-center g-2">
-									<div class="col-sm-6 col-md-3 mb-3 mb-md-0 h-100">
-										<div class="card card-span h-100 text-white">
-											<img class="card-img h-100"
-												src="${path}/resources/assets/img/gallery/full-body.png"
-												alt="..." />
-											<div
-												class="card-img-overlay bg-dark-gradient d-flex flex-column-reverse">
-												<h6 class="text-primary">$175</h6>
-												<p class="text-400 fs-1">우리 강아지 오래오래 건강히!</p>
-												<h4 class="text-light">영양제 A</h4>
-											</div>
-											<a class="stretched-link" href="#"></a>
-										</div>
-									</div>
-									<div class="col-sm-6 col-md-3 mb-3 mb-md-0 h-100">
-										<div class="card card-span h-100 text-white">
-											<img class="card-img h-100"
-												src="${path}/resources/assets/img/gallery/formal-coat.png"
-												alt="..." />
-											<div
-												class="card-img-overlay bg-dark-gradient d-flex flex-column-reverse">
-												<h6 class="text-primary">$175</h6>
-												<p class="text-400 fs-1">우리 강아지 오래오래 건강히!</p>
-												<h4 class="text-light">영양제 B</h4>
-											</div>
-											<a class="stretched-link" href="#"></a>
-										</div>
-									</div>
-									<div class="col-sm-6 col-md-3 mb-3 mb-md-0 h-100">
-										<div class="card card-span h-100 text-white">
-											<img class="card-img h-100"
-												src="${path}/resources/assets/img/gallery/ocean-blue.png"
-												alt="..." />
-											<div
-												class="card-img-overlay bg-dark-gradient d-flex flex-column-reverse">
-												<h6 class="text-primary">$175</h6>
-												<p class="text-400 fs-1">우리 강아지 오래오래 건강히!</p>
-												<h4 class="text-light">영양제 C</h4>
-											</div>
-											<a class="stretched-link" href="#"></a>
-										</div>
-									</div>
-									<div class="col-sm-6 col-md-3 mb-3 mb-md-0 h-100">
-										<div class="card card-span h-100 text-white">
-											<img class="card-img h-100"
-												src="${path}/resources/assets/img/gallery/sweater.png"
-												alt="..." />
-											<div
-												class="card-img-overlay bg-dark-gradient d-flex flex-column-reverse">
-												<h6 class="text-primary">$175</h6>
-												<p class="text-400 fs-1">우리 강아지 오래오래 건강히!</p>
-												<h4 class="text-light">영양제 D</h4>
-											</div>
-											<a class="stretched-link" href="#"></a>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="carousel-item" data-bs-interval="3000">
-								<div class="row h-100 align-items-center g-2">
-									<div class="col-sm-6 col-md-3 mb-3 mb-md-0 h-100">
-										<div class="card card-span h-100 text-white">
-											<img class="card-img h-100"
-												src="assets/img/gallery/full-body.png" alt="..." />
-											<div
-												class="card-img-overlay bg-dark-gradient d-flex flex-column-reverse">
-												<h6 class="text-primary">$175</h6>
-												<p class="text-400 fs-1">Jumper set for Women</p>
-												<h4 class="text-light">Flat Hill Slingback</h4>
-											</div>
-											<a class="stretched-link" href="#"></a>
-										</div>
-									</div>
-									<div class="col-sm-6 col-md-3 mb-3 mb-md-0 h-100">
-										<div class="card card-span h-100 text-white">
-											<img class="card-img h-100"
-												src="assets/img/gallery/formal-coat.png" alt="..." />
-											<div
-												class="card-img-overlay bg-dark-gradient d-flex flex-column-reverse">
-												<h6 class="text-primary">$175</h6>
-												<p class="text-400 fs-1">Jumper set for Women</p>
-												<h4 class="text-light">Ocean Blue Ring</h4>
-											</div>
-											<a class="stretched-link" href="#"></a>
-										</div>
-									</div>
-									<div class="col-sm-6 col-md-3 mb-3 mb-md-0 h-100">
-										<div class="card card-span h-100 text-white">
-											<img class="card-img h-100"
-												src="assets/img/gallery/ocean-blue.png" alt="..." />
-											<div
-												class="card-img-overlay bg-dark-gradient d-flex flex-column-reverse">
-												<h6 class="text-primary">$175</h6>
-												<p class="text-400 fs-1">Jumper set for Women</p>
-												<h4 class="text-light">Brown Leathered Wallet</h4>
-											</div>
-											<a class="stretched-link" href="#"></a>
-										</div>
-									</div>
-									<div class="col-sm-6 col-md-3 mb-3 mb-md-0 h-100">
-										<div class="card card-span h-100 text-white">
-											<img class="card-img h-100"
-												src="assets/img/gallery/sweater.png" alt="..." />
-											<div
-												class="card-img-overlay bg-dark-gradient d-flex flex-column-reverse">
-												<h6 class="text-primary">$175</h6>
-												<p class="text-400 fs-1">Jumper set for Women</p>
-												<h4 class="text-light">Silverside Wristwatch</h4>
-											</div>
-											<a class="stretched-link" href="#"></a>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="carousel-item">
-								<div class="row h-100 align-items-center g-2">
-									<div class="col-sm-6 col-md-3 mb-3 mb-md-0 h-100">
-										<div class="card card-span h-100 text-white">
-											<img class="card-img h-100"
-												src="assets/img/gallery/full-body.png" alt="..." />
-											<div
-												class="card-img-overlay bg-dark-gradient d-flex flex-column-reverse">
-												<h6 class="text-primary">$175</h6>
-												<p class="text-400 fs-1">Jumper set for Women</p>
-												<h4 class="text-light">Flat Hill Slingback</h4>
-											</div>
-											<a class="stretched-link" href="#"></a>
-										</div>
-									</div>
-									<div class="col-sm-6 col-md-3 mb-3 mb-md-0 h-100">
-										<div class="card card-span h-100 text-white">
-											<img class="card-img h-100"
-												src="assets/img/gallery/formal-coat.png" alt="..." />
-											<div
-												class="card-img-overlay bg-dark-gradient d-flex flex-column-reverse">
-												<h6 class="text-primary">$175</h6>
-												<p class="text-400 fs-1">Jumper set for Women</p>
-												<h4 class="text-light">Ocean Blue Ring</h4>
-											</div>
-											<a class="stretched-link" href="#"></a>
-										</div>
-									</div>
-									<div class="col-sm-6 col-md-3 mb-3 mb-md-0 h-100">
-										<div class="card card-span h-100 text-white">
-											<img class="card-img h-100"
-												src="assets/img/gallery/ocean-blue.png" alt="..." />
-											<div
-												class="card-img-overlay bg-dark-gradient d-flex flex-column-reverse">
-												<h6 class="text-primary">$175</h6>
-												<p class="text-400 fs-1">Jumper set for Women</p>
-												<h4 class="text-light">Brown Leathered Wallet</h4>
-											</div>
-											<a class="stretched-link" href="#"></a>
-										</div>
-									</div>
-									<div class="col-sm-6 col-md-3 mb-3 mb-md-0 h-100">
-										<div class="card card-span h-100 text-white">
-											<img class="card-img h-100"
-												src="assets/img/gallery/sweater.png" alt="..." />
-											<div
-												class="card-img-overlay bg-dark-gradient d-flex flex-column-reverse">
-												<h6 class="text-primary">$175</h6>
-												<p class="text-400 fs-1">Jumper set for Women</p>
-												<h4 class="text-light">Silverside Wristwatch</h4>
-											</div>
-											<a class="stretched-link" href="#"></a>
-										</div>
-									</div>
-								</div>
-							</div>
+							
+							
 							<div class="row">
 								<button class="carousel-control-prev" type="button"
 									data-bs-target="#carouselNewArrivals" data-bs-slide="prev">
