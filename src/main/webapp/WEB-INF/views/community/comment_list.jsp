@@ -52,7 +52,7 @@ function comment_delete() {
 					<c:if test="${sessionScope.userid == row.commenter}">
 					 	<input type="hidden" name="cmt_no" value="${row.cmt_no}">
 					 	<input type="hidden" name="comm_no" value="${row.comm_no}">
-					 	<button type="button" onclick="comment_delete()">삭제</button>
+					 	<button type="button" class="btn btn-outline-warning btn-sm" onclick="comment_delete()">삭제</button>
 					</c:if>
 				 	<br>
 				${str} 
