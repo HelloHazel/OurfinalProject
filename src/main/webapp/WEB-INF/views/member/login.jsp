@@ -86,9 +86,6 @@
 											class="btn btn-primary btn-user btn-block" onclick="login()"
 											value="로그인">
 										<hr>
-										<a href="index.html" class="btn btn-google btn-user btn-block">
-											<i class="fab fa-google fa-fw"></i> 구글로 로그인하기
-										</a>
 										<a id="kakao-login-btn" class="btn btn-warning btn-user btn-block" 
 										 href="https://kauth.kakao.com/oauth/authorize?client_id=5e271ef689167248b66474ccae13b1e6&redirect_uri=http://localhost/finalproject/member/oauth_kakao&response_type=code">
 											카카오톡 로그인

@@ -220,16 +220,17 @@ function join() {
                         <div class="p-5">
                             <div class="text-center">
                                 <h1 class="h4 text-gray-900 mb-4">회원가입</h1>
+                                <p style="color: red;">* 표시는 필수 입력사항입니다</p>
                             </div>
                             <form class="user" name="user"  id="user"> 
                             <div class="form-group">
                                         <input type="text" class="form-control form-control-user" id="name" name="name"
-                                            placeholder="이름">
+                                            placeholder="* 이름">
 								 </div>
                                  <div class="form-group row">
                                     <div class="col-sm-8 mb-3 mb-sm-0">
                                          <input type="text" class="form-control form-control-user" id="userid" name="userid"
-                                            placeholder="아이디">  
+                                            placeholder="* 아이디">  
                                     </div>
                                     <div class="col-sm-4">
                                        <button type="button" class="btn btn-warning btn-user btn-block" onclick="find_id();" id="idCheck"  value="N">아이디 중복 체크</button>
@@ -238,17 +239,17 @@ function join() {
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
                                         <input type="password" class="form-control form-control-user" name="passwd"
-                                            id="passwd" placeholder="비밀번호">
+                                            id="passwd" placeholder="* 비밀번호">
                                     </div>
                                     <div class="col-sm-6">
                                         <input type="password" class="form-control form-control-user" name="passwdCheck"
-                                            id="passwdCheck" placeholder="비밀번호 확인">
+                                            id="passwdCheck" placeholder="* 비밀번호 확인">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-8 mb-3 mb-sm-0">
                                            <input type="email" class="form-control form-control-user" id="email" name="email"
-                                        placeholder="이메일">  
+                                        placeholder="* 이메일">  
                                     </div>
                                     <div class="col-sm-4">
                                        <button type="button" class="btn btn-warning btn-user btn-block" onclick="find_email();" id="emailCheck"  value="N">이메일 중복 체크</button>

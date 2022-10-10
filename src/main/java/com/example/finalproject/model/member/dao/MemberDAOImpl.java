@@ -95,6 +95,11 @@ public class MemberDAOImpl implements MemberDAO {
 	public void insertKakaoMember(MemberDTO dto) {
 		sqlSession.insert("member.insertKakaoMember",dto);
 	}
+
+	@Override
+	public List<MemberDTO> addressInfo(String userid) {
+		return sqlSession.selectList("member.addressInfo", userid);
+	}
 	
 	
 

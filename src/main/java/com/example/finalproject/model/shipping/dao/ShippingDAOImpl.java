@@ -8,6 +8,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
 import com.example.finalproject.model.shipping.dto.ShippingDTO;
+import com.example.finalproject.model.shop.dto.CartDTO;
 
 
 @Repository
@@ -19,6 +20,16 @@ public class ShippingDAOImpl implements ShippingDAO {
 	@Override
 	public List<ShippingDTO> myShippingList(String userId) {
 		return sqlSession.selectList("shipping.myShippingList",userId);
+	}
+
+	@Override
+	public List<CartDTO> listOrder(String userid) {
+		return sqlSession.selectList("cart.listCart", userid);
+	}
+
+	@Override
+	public void insert(ShippingDTO dto) {
+		sqlSession.insert("shipping.insertOrder",dto);
 	}
 
 }
