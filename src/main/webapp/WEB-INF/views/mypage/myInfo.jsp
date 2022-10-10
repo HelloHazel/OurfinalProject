@@ -365,6 +365,7 @@
                                    <input class="form-control form-control-user" id="phone" name="phone"
                                        value="${dto.phone}">  
                             </div>
+                            </div>
                             <div>이메일:</div> 
                                  <div class="form-group">
                                     <input class="form-control form-control-user" id="email" name="email"
@@ -392,6 +393,9 @@
                                     </div>
                                 <button class="btn btn-warning btn-user btn-block" type="button" id="btnUpdate">
                                    수정
+                                </button>
+                                 <button class="btn btn-warning btn-user btn-block" type="button" id="btnDelete">
+                                   삭제
                                 </button>
                             </form>
                          
