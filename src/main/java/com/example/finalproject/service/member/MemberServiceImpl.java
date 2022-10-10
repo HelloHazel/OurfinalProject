@@ -122,6 +122,11 @@ public class MemberServiceImpl implements MemberService {
 		memberDao.insertKakaoMember(dto);
 	}
 
+	@Override
+	public List<MemberDTO> addressInfo(String userid) {
+		return memberDao.addressInfo(userid);
+	}
+
 	
 
 }

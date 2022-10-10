@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.example.finalproject.model.shipping.dao.ShippingDAO;
 import com.example.finalproject.model.shipping.dto.ShippingDTO;
+import com.example.finalproject.model.shop.dto.CartDTO;
 
 @Service
 public class ShippingServiceImpl implements ShippingService {
@@ -17,6 +18,16 @@ public class ShippingServiceImpl implements ShippingService {
 	@Override
 	public List<ShippingDTO> myShippingList(String userId){
 		return shippingDao.myShippingList(userId);
+	}
+
+	@Override
+	public List<CartDTO> listOrder(String userid) {
+		return shippingDao.listOrder(userid);
+	}
+
+	@Override
+	public void insert(ShippingDTO dto) {
+		shippingDao.insert(dto);
 	}
 
 }

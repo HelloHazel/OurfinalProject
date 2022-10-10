@@ -5,16 +5,16 @@ import java.util.Date;
 public class ShippingDTO {
 	private int order_id;
 	private String userid;
-	private String name;
-	private int product_id;
 	private int price;
 	private int amount;
 	private Date pay_date;
-	 private String receiver;
-	 private String address1;
-	 private String address2;
-	 private String alert;
-	 private String order_status;
+	private String receiver;
+	private String address1;
+	private String address2;
+	private String phone;
+	private String alert;
+	private String order_status;
+
 	public int getOrder_id() {
 		return order_id;
 	}
@@ -26,18 +26,6 @@ public class ShippingDTO {
 	}
 	public void setUserid(String userid) {
 		this.userid = userid;
-	}
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	public int getProduct_id() {
-		return product_id;
-	}
-	public void setProduct_id(int product_id) {
-		this.product_id = product_id;
 	}
 	public int getPrice() {
 		return price;
@@ -87,14 +75,18 @@ public class ShippingDTO {
 	public void setOrder_status(String order_status) {
 		this.order_status = order_status;
 	}
+	public String getPhone() {
+		return phone;
+	}
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
 	@Override
 	public String toString() {
-		return "ShippingDTO [order_id=" + order_id + ", userid=" + userid + ", name=" + name + ", product_id="
-				+ product_id + ", price=" + price + ", amount=" + amount + ", pay_date=" + pay_date + ", receiver="
-				+ receiver + ", address1=" + address1 + ", address2=" + address2 + ", alert=" + alert
-				+ ", order_status=" + order_status + "]";
+		return "ShippingDTO [order_id=" + order_id + ", userid=" + userid + ", price=" + price + ", amount=" + amount
+				+ ", pay_date=" + pay_date + ", receiver=" + receiver + ", address1=" + address1 + ", address2="
+				+ address2 + ", phone=" + phone + ", alert=" + alert + ", order_status=" + order_status + "]";
 	}
-	
-	
+
 
 }

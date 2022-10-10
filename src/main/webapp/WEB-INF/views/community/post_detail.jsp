@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 <%@ include file="../include/header.jsp"%>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
+<meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
 <style type="text/css">
 #writerText {
 	font-weight: bold;
@@ -71,7 +71,7 @@
 				"comm_no" : comm_no
 			};
 			
-			listComment();
+			//listComment();
 			//var param="cmt_content="+cmt_content+"&comm_no="+comm_no;
 			$.ajax({
 				type : "post",
