@@ -74,13 +74,13 @@
 												id="passwd" name="passwd" placeholder="비밀번호를 입력해주세요">
 										</div>
 										<c:if test="${param.message == 'nologin' }">
-											<div style="color: red;">로그인 하신 후 사용하세요.</div>
+											<div style="color: red; text-align: center; padding-bottom: 10px;">로그인 하신 후 사용하세요.</div>
 										</c:if>
 										<c:if test="${message == 'error' }">
-											<div style="color: red;">아이디 또는 비밀번호가 일치하지 않습니다.</div>
+											<div style="color: red; text-align: center; padding-bottom: 10px;">아이디 또는 비밀번호가 일치하지 않습니다.</div>
 										</c:if>
 										<c:if test="${message == 'logout' }">
-											<div style="color: blue;">로그아웃 처리되었습니다.</div>
+											<div style="color: blue; text-align: center; padding-bottom: 10px;">로그아웃 처리되었습니다.</div>
 										</c:if>
 										<input type="button" id="Login"
 											class="btn btn-primary btn-user btn-block" onclick="login()"
