@@ -233,7 +233,7 @@
 		<h2 style="text-align: center;">나의 구매내역</h2>
 	
 &nbsp;
-			<table class="table">
+	<%-- 		<table class="table">
   <thead>
     <tr>
       <th scope="col">주문번호</th>
@@ -254,7 +254,7 @@
   </tr>
   </c:forEach>
   </tbody> 
-</table>
+</table> --%>
   <%-- <c:forEach var="row" items="${map.list}"> 
 <c:choose>
  <c:when test="${row.show == 'y'}">
