@@ -32,10 +32,18 @@ body {
 	padding-top: 100px;
 }
 </style>
+<script type="text/javascript">
+function pay() {
+	alert("주문이 완료되었습니다");
+	var form = document.form1;
+	form.action = "${path}/shipping/insert.do";
+	form.submit();
+}
+</script>
 </head>
 <body>
 	<div class="orderInfo">
-		<form action="${path}/shipping/insert.do" method="post" name="form1"
+		<form method="post" name="form1"
 			id="form1">
 			<div class="Info" >
 				<h3 class="page-header">배송지 정보</h3>
@@ -43,7 +51,6 @@ body {
 			</div>
 			<c:forEach var="row" items="${map2.info}">
 				<div class="form-horizontal">
-				<input id="order_id" name="order_id" type="hidden">
 					<div class="form-group row">
 						<div class="col-sm-1">
 							<label for="inputReceiver" class="control-label" id="label">받는사람</label>
@@ -54,19 +61,6 @@ body {
 						</div>
 					</div>
 					<div>
-						<div class="form-group row">
-							<div class="col-sm-1">
-								<label for="inputZipcode" class="control-label" id="label">우편번호</label>
-							</div>
-							<div class="col-sm-8">
-								<input type="text" class="form-control" id="zipcode"
-									name="zipcode" value="${row.zipcode}" readonly>&nbsp;
-							</div>
-							<div class="col-sm-3">
-								<input type="button" class="btn btn-outline-warning btn-sm"
-									id="searchZipcode" value="우편번호 찾기">
-							</div>
-						</div>
 						<div class="form-group row">
 						<div class="col-sm-1">
 							<label for="inputAddress1" class="control-label" id="label">주소</label>
@@ -135,26 +129,8 @@ body {
 	<!-- class=row -->
 	<br>
 	<div class="row"  id="payment">
-		<h3 class="page-header">결제수단 확인</h3>
 		<div style="text-align: center;">
-			<input type="radio" name="cal_info" value="transfer"><label
-				style="margin-right: 50px;">&nbsp;계좌이체</label> <input type="radio"
-				name="cal_info" value="no_bankingBook"><label
-				style="margin-right: 50px;">&nbsp;무통장 입금</label> <input type="radio"
-				name="cal_info" value="tel_billing"><label
-				style="margin-right: 50px;">&nbsp;핸드폰 결제</label> <input type="radio"
-				name="cal_info" value="card"><label>&nbsp;카드 결제</label>
-		</div>
-		<hr>
-		<div class="row" style="text-align: center; margin: 50px 0;">
-			<label>상품가격 : ${map.sumMoney}원</label> <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> 
-			<label>배송비 : ${map.fee}원</label> <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
-			<label style="font-size: 1.5em;">총 결제금액 :  ${map.sum}원<input type="hidden" id="amount"
-				name="totalAmount">
-			</label>
-		</div>
-		<div style="text-align: center;">
-			<button class="btn btn-default cal-btn" type="submit">결제하기</button>
+			<button class="btn btn-default cal-btn" type="button"  onclick="pay()">결제하기</button>
 			<button class="btn btn-default back_btn">돌아가기</button>
 		</div>
 	</div>
