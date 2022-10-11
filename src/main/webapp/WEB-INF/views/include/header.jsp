@@ -158,10 +158,13 @@
 							href="${path}/shop/product/list.do">상품목록</a></li>
 							<li class="nav-item px-2"><a class="nav-link fw-medium"
 							href="${path}/admin/list.do">주문관리</a></li>
-							<li class="nav-item px-2"><a class="nav-link fw-medium"
-							href="${path}/inquery/list.do">1:1문의</a></li>
-							<li class="nav-item px-2"><a class="nav-link fw-medium"
-							href="${path}/faq/list.do">FAQ</a></li>
+							<li class ="nav-item dropdown px-2">
+							<a class="nav-link fw-medium dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Q&A</a>
+							<ul class="dropdown-menu" aria-labelledby="navbarDarkDropdownMenuLink">
+								<a class="dropdown-item" href="${path}/inquery/list.do">1:1 문의</a>
+								<a class="dropdown-item" href="${path}/faq/list.do">FAQ</a>
+							</ul>
+						</li>
 					</ul>
 					<form class="d-flex">
 					</form>
