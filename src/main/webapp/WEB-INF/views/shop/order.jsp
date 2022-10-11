@@ -126,10 +126,29 @@ function pay() {
 		 	</tr>	
 		</table>
 	
+	
 	<!-- class=row -->
 	<br>
 	<div class="row"  id="payment">
 		<div style="text-align: center;">
+		<h3 class="page-header">결제수단 확인</h3>
+		<div style="text-align: center;">
+			<input type="radio" name="cal_info" value="transfer"><label
+				style="margin-right: 50px;">&nbsp;계좌이체</label> <input type="radio"
+				name="cal_info" value="no_bankingBook"><label
+				style="margin-right: 50px;">&nbsp;무통장 입금</label> <input type="radio"
+				name="cal_info" value="tel_billing"><label
+				style="margin-right: 50px;">&nbsp;핸드폰 결제</label> <input type="radio"
+				name="cal_info" value="card"><label>&nbsp;카드 결제</label>
+		</div>
+		<hr>
+		<div class="row" style="text-align: center; margin: 50px 0;">
+			<label>상품가격 : ${map.sumMoney}원</label> <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> 
+			<label>배송비 : ${map.fee}원</label> <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+			<label style="font-size: 1.5em;">총 결제금액 :  ${map.sum}원<input type="hidden" id="amount"
+				name="totalAmount">
+			</label>
+		</div>
 			<button class="btn btn-default cal-btn" type="button"  onclick="pay()">결제하기</button>
 			<button class="btn btn-default back_btn">돌아가기</button>
 		</div>

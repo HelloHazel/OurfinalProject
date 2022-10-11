@@ -66,6 +66,7 @@ public class ShippingController {
 		String userid = (String)session.getAttribute("userid");
 		dto.setUserid(userid);
 		shippingService.insert(dto);
+		 cartService.deleteAll(userid);
 		return "main";
 	}
 	
