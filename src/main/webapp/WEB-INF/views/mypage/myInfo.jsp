@@ -285,61 +285,96 @@
 			</main>
 		</div>
 		<div class="col-9 text-bg-light">
-			<%-- <form name="form1" method="post">
-				<table border="1" style="width: 100%">
-				 <tr>
-				  <td>아이디</td>
-				  <td><input name="userid" value="${dto.userid}" readonly> </td>
-				 </tr>
-				 <tr>
-				  <td>비밀번호</td>
-				  <td><input type="password" name="passwd"> </td>
-				 </tr>
-				 <tr>
-				  <td>이름</td>
-				  <td><input name="name" value="${dto.name}"> </td>
-				 </tr>
-				  <tr>
-				  <td>전화번호</td>
-				  <td><input name="phone" value="${dto.phone}"> </td>
-				 </tr>
-				 <tr>
-				  <td>이메일</td>
-				  <td><input name="email" value="${dto.email}"> </td>
-				 </tr>
-				 <tr>
-				  <td>우편번호</td>
-				  <td> <input name="zipcode" id="zipcode" value="${dto.zipcode}" readonly>
-				  <input type="text" onclick="daumZipCode()" value="우편번호 찾기">
-				  </td>
-				 </tr>
-				 <tr>
-				  <td>도로명주소</td>
-				  <td><input name="address1" id="address1" value="${dto.address1}">   </td>
-				 </tr>
-				 <tr>
-				  <td>상세주소</td>
-				  <td><input name="address2" id="address2" value="${dto.address2}"> </td>
-				 </tr>
-				 <tr>
-				  <td>회원가입일자</td>
-				  <td>
-				   <c:if test="${join_date != null }">
-				    <fmt:formatDate value="${join_date}" 
-				    pattern="yyyy-MM-dd HH:mm:ss"/>
-				   </c:if>
-				  </td>
-				 </tr>
-				 <tr>
-				  <td colspan="2" align="center">
-				   <input type="button" value="수정" id="btnUpdate">
-				   <input type="button" value="삭제" id="btnDelete">
-				   <div style="color: red;">${message}</div>
-				  </td>
-				 </tr>
-				</table>
-			</form> --%>
-			<div class="p-5">
+			<div class="orderInfo">
+			<div class="Info" >
+				<h3 class="page-header">나의 정보</h3>
+				<br>
+			</div>
+				<div class="form-horizontal">
+				<form class="user" name="form1" method="post">
+					<div class="form-group row">
+						<div class="col-sm-2">
+							<label for="inputReceiver" class="control-label" id="label">아이디</label>
+						</div>
+						<div class="col-sm-7">
+							<input class="form-control" id="userid" name="userid"
+								value="${dto.userid}"><br>
+						</div>
+					</div>
+					<div class="form-group row">
+						<div class="col-sm-2">
+							<label for="inputTel" class="control-label" id="label">비밀번호</label>
+						</div>
+						<div class="col-sm-7">
+							<input type="password" class="form-control" id="passwd" name="passwd"><br>
+						</div>
+					</div>
+					<div class="form-group row">
+						<div class="col-sm-2">
+							<label for="inputMessage" class="control-label" id="label" >이름</label>
+						</div>
+						<div class="col-sm-7">
+							<input type="text" class="form-control" id="name"  name="name" value="${dto.name}"><br>
+						</div>
+					</div>
+					<div class="form-group row">
+						<div class="col-sm-2">
+							<label for="inputMessage" class="control-label" id="label" >전화번호</label>
+						</div>
+						<div class="col-sm-7">
+							<input type="text" class="form-control" id="phone"  name="phone" value="${dto.phone}"><br>
+						</div>
+					</div>
+					<div class="form-group row">
+						<div class="col-sm-2">
+							<label for="inputMessage" class="control-label" id="label" >이메일</label>
+						</div>
+						<div class="col-sm-7">
+							<input type="text" class="form-control" id="email"  name="email" value="${dto.email}"><br>
+						</div>
+					</div>
+					<div>
+						<div class="form-group row">
+							<div class="col-sm-2">
+								<label for="inputZipcode" class="control-label" id="label">우편번호</label>
+							</div>
+							<div class="col-sm-7">
+								<input type="text" class="form-control" id="zipcode"
+									name="zipcode" value="${dto.zipcode}" readonly>&nbsp;
+							</div>
+							<div class="col-sm-3">
+								<input type="button" class="btn btn-outline-warning btn-sm"
+									 onclick="daumZipCode()" value="우편번호 찾기">
+							</div>
+						</div>
+						<div class="form-group row">
+						<div class="col-sm-2">
+							<label for="inputAddress1" class="control-label" id="label">주소</label>
+						</div>
+						<div class="col-sm-7">
+							<input class="form-control" type="text" id="address1" name="address1" value="${dto.address1}"> <br>
+						</div>
+						</div>
+						<div class="form-group row">
+						<div class="col-sm-2">
+							<label for="inputAddress2" class="control-label" id="label">상세주소</label>
+						</div>
+						<div class="col-sm-7">
+							<input class="form-control" type="text" id="address2" name="address2" value="${dto.address2}" placeholder="상세주소"> <br>
+						</div>
+						</div>
+					</div>
+					<div>
+						<button class="btn btn-warning btn-user btn-block" type="button" id="btnUpdate">
+	                                   수정
+	                    </button>
+	                    <button class="btn btn-warning btn-user btn-block" type="button" id="btnDelete">
+	                                   삭제
+	                    </button>
+		
+					</div>
+				
+			<%-- <div class="p-5">
 			         <div class="text-center">
                                 <h1 class="h4 text-gray-900 mb-4">나의 정보 확인</h1>
                             </div>
@@ -398,12 +433,13 @@
                                    삭제
                                 </button>
                             </form>
-                         
+                          --%>
                             
-			
+			 </form>
 			</div>
 		</div>
 	</div>		
+ </div>
 </div>
 </section>
 		
