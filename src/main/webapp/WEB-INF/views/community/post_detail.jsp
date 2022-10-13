@@ -145,7 +145,7 @@
 							<p class="card-text" id="contentText">${dto.comm_content}</p>
 								<div class="d-flex justify-content-between align-items-center">
 									<div class="btn-group">
-										<c:if test="${sessionScope.userid == dto.writer}">
+										<c:if test="${sessionScope.userid == dto.writer || sessionScope.userid == 'admin' }">
 											<button type="button" class="btn btn-sm btn-outline-secondary"
 												onclick="location.href='${path}/community/list.do'">View</button>
 											<button type="button"

@@ -56,8 +56,7 @@ public class FaqDAOImpl implements FaqDAO {
 
 	@Override
 	public void delete(int faq_no) {
-		// TODO Auto-generated method stub
-
+		sqlSession.delete("faq.delete", faq_no);
 	}
 
 }

@@ -47,7 +47,7 @@ public class FaqController {
 		map.put("list", list);
 		map.put("count", count);//레코드의 갯수
 		map.put("pager", pager); //페이지네이션을 위한 변수
-		mav.setViewName("faq/faq_list");//포워딩 뷰
+		mav.setViewName("faq/faq_detail");//포워딩 뷰
 		mav.addObject("map", map);
 		return mav;
 		}
@@ -67,6 +67,13 @@ public class FaqController {
 	@RequestMapping("write.do")
 	public String write() {
 		return "faq/faq_write";
+	}
+	
+	@RequestMapping("delete.do")
+	public String delete(@RequestParam int faq_no) throws Exception {
+		System.out.println("faq_no : " + faq_no);
+		faqService.delete(faq_no);
+		return "redirect:/faq/list.do";
 	}
 	
 }

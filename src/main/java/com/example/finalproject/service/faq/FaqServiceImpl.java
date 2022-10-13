@@ -51,8 +51,7 @@ public class FaqServiceImpl implements FaqService {
 
 	@Override
 	public void delete(int faq_no) {
-		// TODO Auto-generated method stub
-
+		faqDao.delete(faq_no);
 	}
 
 }
