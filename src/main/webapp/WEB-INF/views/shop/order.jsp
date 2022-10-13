@@ -34,12 +34,41 @@ body {
 </style>
 <script type="text/javascript">
 function pay() {
+	var receiver = $("#receiver").val();
+	var address1 = $("#address1").val();
+	var address2 = $("#address2").val();
+	var phone = $("#phone").val();
+	
+	if(receiver == ""){
+		alert("수령인을 입력하세요.");
+		$("#receiver").focus(); //입력 포커스 이동
+		return; //함수 종료
+	}
+	if(address1 == ""){
+		alert("주소를 입력하세요.");
+		$("#address1").focus(); //입력 포커스 이동
+		return; //함수 종료
+	}
+	if(address2 == ""){
+		alert("상세주소를 입력하세요.");
+		$("#address2").focus(); //입력 포커스 이동
+		return; //함수 종료
+	}
+	if(phone == ""){
+		alert("전화번호를 입력하세요.");
+		$("#phone").focus(); //입력 포커스 이동
+		return; //함수 종료
+	}
 	alert("주문이 완료되었습니다");
 	var form = document.form1;
 	form.action = "${path}/shipping/insert.do";
 	form.submit();
 }
 </script>
+ <!-- jQuery -->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js" ></script>
+  <!-- iamport.payment.js -->
+  <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.1.8js"></script>
 </head>
 <body>
 	<div class="orderInfo">
@@ -53,7 +82,7 @@ function pay() {
 				<div class="form-horizontal">
 					<div class="form-group row">
 						<div class="col-sm-1">
-							<label for="inputReceiver" class="control-label" id="label">받는사람</label>
+							<label for="inputReceiver" class="control-label" id="label">수령인</label>
 						</div>
 						<div class="col-sm-8">
 							<input class="form-control" id="receiver" name="receiver"

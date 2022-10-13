@@ -16,7 +16,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	<insert id="insertOrder">
 	insert into shipping(order_id, userid, price, amount, receiver, address1, address2, phone, alert)
-	values (order_id_seq.nextval, #{userid}, #{price}, #{amount}, #{receiver}, #{address1}, #{address2}, #{phone}, #{alert})
+	values (#{order_id}, #{userid}, #{price}, #{amount}, #{receiver}, #{address1}, #{address2}, #{phone}, #{alert})
 	</insert>
 	
 </mapper>
