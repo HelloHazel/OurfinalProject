@@ -3,7 +3,7 @@ package com.example.finalproject.model.shipping.dto;
 import java.util.Date;
 
 public class ShippingDTO {
-	private int order_id;
+	private String order_id;
 	private String userid;
 	private int price;
 	private int amount;
@@ -15,10 +15,10 @@ public class ShippingDTO {
 	private String alert;
 	private String order_status;
 
-	public int getOrder_id() {
+	public String getOrder_id() {
 		return order_id;
 	}
-	public void setOrder_id(int order_id) {
+	public void setOrder_id(String order_id) {
 		this.order_id = order_id;
 	}
 	public String getUserid() {
@@ -81,6 +81,7 @@ public class ShippingDTO {
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
+	
 	@Override
 	public String toString() {
 		return "ShippingDTO [order_id=" + order_id + ", userid=" + userid + ", price=" + price + ", amount=" + amount

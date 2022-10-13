@@ -7,6 +7,8 @@ import javax.inject.Inject;
 import org.springframework.stereotype.Service;
 
 import com.example.finalproject.model.shipping.dao.ShippingDAO;
+import com.example.finalproject.model.shipping.dto.OrderListDTO;
+import com.example.finalproject.model.shipping.dto.Order_detailDTO;
 import com.example.finalproject.model.shipping.dto.ShippingDTO;
 import com.example.finalproject.model.shop.dto.CartDTO;
 
@@ -28,6 +30,16 @@ public class ShippingServiceImpl implements ShippingService {
 	@Override
 	public void insert(ShippingDTO dto) {
 		shippingDao.insert(dto);
+	}
+	
+	@Override
+	public void orderInfo_Details(Order_detailDTO orderDetail){
+		shippingDao.orderInfo_Details(orderDetail);
+	}
+	
+	@Override
+	public List<OrderListDTO> orderView(String userId){
+		return shippingDao.orderView(userId);
 	}
 
 }

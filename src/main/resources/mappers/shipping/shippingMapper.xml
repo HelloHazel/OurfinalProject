@@ -16,7 +16,30 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	<insert id="insertOrder">
 	insert into shipping(order_id, userid, price, amount, receiver, address1, address2, phone, alert)
-	values (order_id_seq.nextval, #{userid}, #{price}, #{amount}, #{receiver}, #{address1}, #{address2}, #{phone}, #{alert})
+	values (#{order_id}, #{userid}, #{price}, #{amount}, #{receiver}, #{address1}, #{address2}, #{phone}, #{alert})
 	</insert>
+	
+	<insert id="orderInfo_Details">
+		insert into order_detail(od_no,order_id,product_id,od_count)
+		select order_detail_seq.nextval, #{ORDER_ID}, product_id,amount
+		from cart
+	</insert>
+	
+	<select id="orderView" resultType="com.example.finalproject.model.shipping.dto.OrderListDTO">
+		<![CDATA[
+		select
+        	o.order_id,o.userid, o.price,o.amount,o.pay_date,o.receiver,o.address1,o.address2,o.phone,o.alert,o.order_status
+        	,d.od_no,d.product_id,d.od_count
+        	,p.product_name,p.product_url
+		from shipping o
+        	inner join order_detail d
+            	on o.order_id=d.order_id
+        	inner join product p
+            	on d.product_id=p.product_id
+    	where o.userid=#{userId}
+		 ]]>
+	</select>
+	
+	
 	
 </mapper>
