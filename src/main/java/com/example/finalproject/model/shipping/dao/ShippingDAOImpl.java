@@ -7,6 +7,7 @@ import javax.inject.Inject;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
+import com.example.finalproject.model.shipping.dto.Order_detailDTO;
 import com.example.finalproject.model.shipping.dto.ShippingDTO;
 import com.example.finalproject.model.shop.dto.CartDTO;
 
@@ -30,6 +31,11 @@ public class ShippingDAOImpl implements ShippingDAO {
 	@Override
 	public void insert(ShippingDTO dto) {
 		sqlSession.insert("shipping.insertOrder",dto);
+	}
+	
+	@Override
+	public void orderInfo_Details(Order_detailDTO orderDetail) {
+		sqlSession.insert("shipping.orderInfo_Details",orderDetail);
 	}
 
 }

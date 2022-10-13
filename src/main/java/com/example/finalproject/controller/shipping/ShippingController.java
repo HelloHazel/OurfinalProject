@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.example.finalproject.model.member.dto.MemberDTO;
+import com.example.finalproject.model.shipping.dto.Order_detailDTO;
 import com.example.finalproject.model.shipping.dto.ShippingDTO;
 import com.example.finalproject.model.shop.dto.CartDTO;
 import com.example.finalproject.service.member.MemberService;
@@ -66,7 +67,7 @@ public class ShippingController {
 	}
 	
 	@RequestMapping("insert.do")
-	public String insert(HttpSession session, @ModelAttribute ShippingDTO dto) {
+	public String insert(HttpSession session, @ModelAttribute ShippingDTO dto, Order_detailDTO orderDetail) {
 		String userid = (String)session.getAttribute("userid");
 		 Calendar cal = Calendar.getInstance();
 		 int year = cal.get(Calendar.YEAR);
@@ -82,6 +83,10 @@ public class ShippingController {
 		dto.setOrder_id(order_id);
 		dto.setUserid(userid);
 		shippingService.insert(dto);
+		
+		orderDetail.setORDER_ID(order_id);
+		shippingService.orderInfo_Details(orderDetail);
+		
 		 cartService.deleteAll(userid);
 		return "main";
 	}

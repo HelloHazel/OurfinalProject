@@ -19,4 +19,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	values (#{order_id}, #{userid}, #{price}, #{amount}, #{receiver}, #{address1}, #{address2}, #{phone}, #{alert})
 	</insert>
 	
+	<insert id="orderInfo_Details">
+		insert into order_detail(od_no,order_id,product_id,od_count)
+		select order_detail_seq.nextval, #{ORDER_ID}, product_id,amount
+		from cart
+	</insert>
+	
 </mapper>
