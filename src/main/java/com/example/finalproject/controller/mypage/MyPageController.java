@@ -17,6 +17,8 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.example.finalproject.model.community.dto.CommunityDTO;
 import com.example.finalproject.model.inquery.dto.InqueryDTO;
+import com.example.finalproject.model.member.dto.MemberDTO;
+import com.example.finalproject.model.shipping.dto.OrderListDTO;
 import com.example.finalproject.model.shipping.dto.ShippingDTO;
 import com.example.finalproject.model.shop.dto.ReviewDTO;
 import com.example.finalproject.service.community.CommunityService;
@@ -104,18 +106,25 @@ public class MyPageController {
 				if(userid !=null){//로그인한 경우
 					ModelAndView mav=new ModelAndView();
 					
+					
 					String userId=(String)session.getAttribute("userid");
-
-					List<ShippingDTO> list=shippingService.myShippingList(userId);
 					
-					Map<String, Object> map=new HashMap<>();
-					map.put("list", list);
-					
+					List<OrderListDTO> list=shippingService.orderView(userId);
 					System.out.println(list);
-					mav.setViewName("mypage/myPageMain"); //포워딩 뷰
-					mav.addObject("map", map);
+					System.out.println(list);
+					System.out.println(list);
+					System.out.println(list);
+					System.out.println(list);
+					Map<String, Object> map=new HashMap<>();
+					
+					  map.put("list",list); map.put("count",list.size());
+					  
+					  mav.addObject("map",map);
+					 
+					mav.setViewName("mypage/myPageMain");
+					
 					return mav;
-				
+					
 				}else { //로그인하지 않은 경우
 					ModelAndView mav=new ModelAndView();
 					mav.setViewName("member/login");

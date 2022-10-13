@@ -291,7 +291,7 @@
 				<br>
 			</div>
 				<div class="form-horizontal">
-				<form class="user" name="form1" method="post">
+				 <form class="user" name="form1" method="post">
 					<div class="form-group row">
 						<div class="col-sm-2">
 							<label for="inputReceiver" class="control-label" id="label">아이디</label>
@@ -372,69 +372,7 @@
 	                                   삭제
 	                    </button>
 		
-					</div>
-				
-			<%-- <div class="p-5">
-			         <div class="text-center">
-                                <h1 class="h4 text-gray-900 mb-4">나의 정보 확인</h1>
-                            </div>
-                            <form class="user" name="form1" method="post">
-                            <div>아이디:</div> 
-                                 <div class="form-group">
-                                    <div class="col-sm-8 mb-3 mb-sm-0">
-                                         <input class="form-control form-control-user" id="userid" name="userid"
-                                            value="${dto.userid}" readonly>  
-                                    </div>
-                            <div>비밀번호:</div> 
-							<div class="form-group row">
-                                    <input type="password" class="form-control form-control-user" name="passwd"
-                                            id="passwd">
-                            </div>
-                            <div>이름:</div> 
-                            <div class="form-group row">
-                                        <input class="form-control form-control-user" id="name" name="name"
-                                             value="${dto.name}">
-							</div>
-							<div>전화번호:</div> 
-						    <div class="form-group row">
-                                   <input class="form-control form-control-user" id="phone" name="phone"
-                                       value="${dto.phone}">  
-                            </div>
-                            </div>
-                            <div>이메일:</div> 
-                                 <div class="form-group">
-                                    <input class="form-control form-control-user" id="email" name="email"
-                                        value="${dto.email}">
-                            </div>
-                            <div>우편번호:</div>  
-                            <div class="form-group row">
-	                            <div class="col-sm-8 mb-3 mb-sm-0">
-	                                    <input type="text" class="form-control form-control-user" id="zipcode" name="zipcode" readonly
-	                                        value="${dto.zipcode}" readonly>
-	                            </div>
-	                            <div class="col-sm-4">
-	                                    <input type="button"  class="btn btn-warning btn-user btn-block" onclick="daumZipCode()" value="우편번호 찾기">
-	                            </div>
-                             </div>
-                             <div>주소:</div> 
-                             <div class="form-group">
-                                        <input type="text" class="form-control form-control-user"
-                                            id="address1" name="address1" value="${dto.address1}">
-                                    </div>
-                             <div>상세주소:</div> 
-                                    <div class="form-group">
-                                        <input type="text" class="form-control form-control-user"
-                                            id="address2" name="address2"  value="${dto.address2}">
-                                    </div>
-                                <button class="btn btn-warning btn-user btn-block" type="button" id="btnUpdate">
-                                   수정
-                                </button>
-                                 <button class="btn btn-warning btn-user btn-block" type="button" id="btnDelete">
-                                   삭제
-                                </button>
-                            </form>
-                          --%>
-                            
+					</div>                          
 			 </form>
 			</div>
 		</div>

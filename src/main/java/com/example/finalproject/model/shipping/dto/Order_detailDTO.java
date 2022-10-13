@@ -2,7 +2,7 @@ package com.example.finalproject.model.shipping.dto;
 
 public class Order_detailDTO {
 	private int OD_NO;
-	private int ORDER_ID;
+	private String ORDER_ID;
 	private int PRODUCT_ID;
 	private int OD_COUNT;
 	private int OD_PRICE;
@@ -12,10 +12,10 @@ public class Order_detailDTO {
 	public void setOD_NO(int oD_NO) {
 		OD_NO = oD_NO;
 	}
-	public int getORDER_ID() {
+	public String getORDER_ID() {
 		return ORDER_ID;
 	}
-	public void setORDER_ID(int oRDER_ID) {
+	public void setORDER_ID(String oRDER_ID) {
 		ORDER_ID = oRDER_ID;
 	}
 	public int getPRODUCT_ID() {
