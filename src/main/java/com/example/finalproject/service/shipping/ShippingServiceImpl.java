@@ -33,8 +33,8 @@ public class ShippingServiceImpl implements ShippingService {
 	}
 	
 	@Override
-	public void orderInfo_Details(Order_detailDTO orderDetail){
-		shippingDao.orderInfo_Details(orderDetail);
+	public void orderInfo_Details(String order_id){
+		shippingDao.orderInfo_Details(order_id);
 	}
 	
 	@Override

@@ -262,10 +262,10 @@
 							   			${row.product_name}
 							   		</a>
 							   </p>
-							   <p>${row.price}원X${row.amount}개</p>
+							   <p>${row.price}원X${row.od_count}개</p>
 							   <c:set var="price" value="${row.price}"></c:set>
-							   <c:set var="amount" value="${row.amount}"></c:set>
-							   <c:set var="sum" value="${price*amount}"></c:set>
+							   <c:set var="od_count" value="${row.od_count}"></c:set>
+							   <c:set var="sum" value="${price*od_count}"></c:set>
 							   
 						   </div>
 						   <c:set var="sum1" value="${sum1+sum}"></c:set>
@@ -284,7 +284,9 @@
 			   	<div>배송요청사항:${row.alert}</div>
 		   	</c:if>
 		   	</c:forEach>
-		   	
+		   	<c:if test="${sum1<30000}">
+		   		<c:set var="sum1" value="${sum1+2500}"></c:set>
+		   	</c:if>
 		   	<div>총금액:<c:out value="${sum1}"></c:out>원</div>
 		   	
 		   	

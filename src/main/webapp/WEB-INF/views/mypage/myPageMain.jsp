@@ -258,7 +258,7 @@
 							   			${row.product_name}
 							   		</a>
 							   </p>
-							   <p>${row.price}원X${row.amount}개</p>
+							   <p>${row.price}원X${row.od_count}개</p>
 						   </div>
 					    </c:if>
 	   			   </c:forEach>
