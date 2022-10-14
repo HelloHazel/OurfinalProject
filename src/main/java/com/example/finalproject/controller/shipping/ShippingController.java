@@ -37,7 +37,7 @@ public class ShippingController {
 	MemberService memberService;
 	
 	@RequestMapping("orderList.do")
-	public ModelAndView list(HttpSession session, MemberDTO dto, ModelAndView mav) {
+	public ModelAndView list(HttpSession session, MemberDTO dto, ShippingDTO dto2, ModelAndView mav) {
 		
 		Map<String, Object> map = new HashMap<>();
 		Map<String, Object> map2 = new HashMap<>();
@@ -51,6 +51,18 @@ public class ShippingController {
 			//배송비 계산
 			int fee = sumMoney >= 30000 ? 0 : 2500; //합계 3만원 이상이면 배송비 0원,미만이면 2500원		
 			
+			Calendar cal = Calendar.getInstance();
+			 int year = cal.get(Calendar.YEAR);
+			 String ym = year + new DecimalFormat("00").format(cal.get(Calendar.MONTH) + 1);
+			 String ymd = ym +  new DecimalFormat("00").format(cal.get(Calendar.DATE));
+			 String subNum = "";
+			 
+			 for(int i = 1; i <= 6; i ++) {
+			  subNum += (int)(Math.random() * 10);
+			 }
+			 
+			 String order_id = ymd + "_" + subNum;
+			dto2.setOrder_id(order_id);
 			map.put("sumMoney", sumMoney); //장바구니 금액 합계
 			map.put("fee", fee); //배송비
 			map.put("sum", sumMoney + fee); //총 합계 금액
@@ -61,7 +73,7 @@ public class ShippingController {
 			mav.setViewName("shop/order");
 			mav.addObject("map", map);
 			mav.addObject("map2",map2);
-			
+			mav.addObject("order_id", order_id);
 			
 			return mav;
 		} else { //로그인하지 않은 경우
@@ -72,17 +84,7 @@ public class ShippingController {
 	@RequestMapping("insert.do")
 	public String insert(HttpSession session, @ModelAttribute ShippingDTO dto, Order_detailDTO orderDetail) {
 		String userid = (String)session.getAttribute("userid");
-		 Calendar cal = Calendar.getInstance();
-		 int year = cal.get(Calendar.YEAR);
-		 String ym = year + new DecimalFormat("00").format(cal.get(Calendar.MONTH) + 1);
-		 String ymd = ym +  new DecimalFormat("00").format(cal.get(Calendar.DATE));
-		 String subNum = "";
-		 
-		 for(int i = 1; i <= 6; i ++) {
-		  subNum += (int)(Math.random() * 10);
-		 }
-		 
-		 String order_id = ymd + "_" + subNum;
+		 String order_id = dto.getOrder_id();
 		dto.setOrder_id(order_id);
 		dto.setUserid(userid);
 		shippingService.insert(dto);
