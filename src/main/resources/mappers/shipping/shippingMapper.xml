@@ -28,9 +28,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="orderView" resultType="com.example.finalproject.model.shipping.dto.OrderListDTO">
 		<![CDATA[
 		select
-        	o.order_id,o.userid, o.price,o.amount,o.pay_date,o.receiver,o.address1,o.address2,o.phone,o.alert,o.order_status
+        	o.order_id,o.userid,o.amount,o.pay_date,o.receiver,o.address1,o.address2,o.phone,o.alert,o.order_status
         	,d.od_no,d.product_id,d.od_count
-        	,p.product_name,p.product_url
+        	,p.product_name,p.product_url,p.price
 		from shipping o
         	inner join order_detail d
             	on o.order_id=d.order_id

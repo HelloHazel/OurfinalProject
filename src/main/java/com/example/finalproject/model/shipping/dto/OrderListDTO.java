@@ -4,8 +4,7 @@ import java.util.Date;
 
 public class OrderListDTO {
 	String order_id;
-	String userid;
-	int price;	
+	String userid;	
 	int amount;
 	
 	Date pay_date;	
@@ -22,7 +21,9 @@ public class OrderListDTO {
 	
 	String product_name;
 	String product_url;
+	int price;
 	
+
 	public String getOrder_id() {
 		return order_id;
 	}
@@ -121,19 +122,13 @@ public class OrderListDTO {
 	}
 	@Override
 	public String toString() {
-		return "OrderListDTO [order_id=" + order_id + ", userid=" + userid + ", price=" + price + ", amount=" + amount
-				+ ", pay_date=" + pay_date + ", receiver=" + receiver + ", address1=" + address1 + ", address2="
-				+ address2 + ", phone=" + phone + ", alert=" + alert + ", order_status=" + order_status + ", od_no="
-				+ od_no + ", product_id=" + product_id + ", od_count=" + od_count + ", product_name=" + product_name
-				+ ", product_url=" + product_url + ", getOrder_id()=" + getOrder_id() + ", getUserid()=" + getUserid()
-				+ ", getPrice()=" + getPrice() + ", getAmount()=" + getAmount() + ", getPay_date()=" + getPay_date()
-				+ ", getReceiver()=" + getReceiver() + ", getAddress1()=" + getAddress1() + ", getAddress2()="
-				+ getAddress2() + ", getPhone()=" + getPhone() + ", getAlert()=" + getAlert() + ", getOrder_status()="
-				+ getOrder_status() + ", getOd_no()=" + getOd_no() + ", getProduct_id()=" + getProduct_id()
-				+ ", getOd_count()=" + getOd_count() + ", getProduct_name()=" + getProduct_name()
-				+ ", getProduct_url()=" + getProduct_url() + ", getClass()=" + getClass() + ", hashCode()=" + hashCode()
-				+ ", toString()=" + super.toString() + "]";
+		return "OrderListDTO [order_id=" + order_id + ", userid=" + userid + ", amount=" + amount + ", pay_date="
+				+ pay_date + ", receiver=" + receiver + ", address1=" + address1 + ", address2=" + address2 + ", phone="
+				+ phone + ", alert=" + alert + ", order_status=" + order_status + ", od_no=" + od_no + ", product_id="
+				+ product_id + ", od_count=" + od_count + ", product_name=" + product_name + ", product_url="
+				+ product_url + ", price=" + price + "]";
 	}
+	
 	
 	
 }

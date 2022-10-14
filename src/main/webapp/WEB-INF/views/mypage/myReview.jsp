@@ -175,9 +175,9 @@
 		<div class="col-3">
 <main class="d-flex flex-nowrap">
   <div class="d-flex flex-column flex-shrink-0 p-3 text-bg-light" style="width: 280px;">
-    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
-      <span class="fs-4">마이 페이지</span>
-    </a>
+    
+      <span class="fs-4"><a href="${pageContext.request.contextPath}/mypage/mypagemain.do" class="nav-link active" aria-current="page">마이 페이지</a></span>
+    
     <hr>
     <ul class="nav nav-pills flex-column mb-auto">
       <li>

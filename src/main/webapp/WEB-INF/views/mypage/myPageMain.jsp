@@ -175,9 +175,9 @@
 		<div class="col-3">
 <main class="d-flex flex-nowrap">
   <div class="d-flex flex-column flex-shrink-0 p-3 text-bg-light" style="width: 280px;">
-    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
-      <span class="fs-4">마이 페이지</span>
-    </a>
+    
+      <span class="fs-4"><a href="${pageContext.request.contextPath}/mypage/mypagemain.do" class="nav-link active" aria-current="page">마이 페이지</a></span>
+    
     <hr>
     <ul class="nav nav-pills flex-column mb-auto">
       <li class="nav-item">
@@ -235,28 +235,39 @@
 &nbsp;
 
 
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">주문번호</th>
-      <th scope="col">상품명</th>
-      <th scope="col">가격</th>
-      <th scope="col">수량</th>
-      <th scope="col">주문일자</th>
-    </tr>
-  </thead>
-  <tbody>
-  <c:forEach var="row" items="${map.list}">
-  <tr>
-   <td>${row.order_id}</td>
-   <td><a href="${path}/shop/product/detail/${row.product_id}">${row.product_name}</a></td>
-   <td>${row.price}</td>
-   <td>${row.amount}</td>
-   <td><fmt:formatDate value="${row.pay_date}" pattern="yyyy-MM-dd HH:mm:ss" /></td>
-  </tr>
+<ul class="orderList">
+  <c:forEach items="${map1.list1}" var="row1">
+  <li style="border:10px">
+  	<div>
+  
+	   	   <div style="border:10px">
+	   		 주문번호:<a href="${pageContext.request.contextPath}/mypage/orderDetail/${row1.order_id}">${row1.order_id}</a>
+	   	   </div><br>
+	   	   	
+		   <div style="border:10px">
+				   <c:forEach items="${map.list}" var="row">
+		   	   			<c:if test="${row1.order_id==row.order_id}">
+			   	   			<div style="height:200px">
+							   <p style="float:left;">
+							   		<a href="${path}/shop/product/detail/${row.product_id}">
+							   			<img src="${path}/resources/images/${row.product_url}" width="125px" height="150px">
+							   		</a>
+							   </p>
+							   <p>
+							   		<a href="${path}/shop/product/detail/${row.product_id}">
+							   			${row.product_name}
+							   		</a>
+							   </p>
+							   <p>${row.price}원X${row.amount}개</p>
+						   </div>
+					    </c:if>
+	   			   </c:forEach>
+		   </div>
+		   <hr>
+	  </div>
+  </li>
   </c:forEach>
-  </tbody> 
-</table> 
+ </ul>
 
 			
 		</div>
