@@ -45,13 +45,22 @@ public class FaqServiceImpl implements FaqService {
 
 	@Override
 	public void update(FaqDTO dto) {
-		// TODO Auto-generated method stub
-
+		faqDao.update(dto);
 	}
 
 	@Override
 	public void delete(int faq_no) {
 		faqDao.delete(faq_no);
+	}
+
+	@Override
+	public FaqDTO detailFaq(int faq_no) {
+		return faqDao.detailFaq(faq_no);
+	}
+
+	@Override
+	public FaqDTO read(int faq_no) {
+		return faqDao.read(faq_no);
 	}
 
 }

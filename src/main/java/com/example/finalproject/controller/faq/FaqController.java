@@ -10,6 +10,7 @@ import javax.servlet.http.HttpSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
@@ -47,7 +48,7 @@ public class FaqController {
 		map.put("list", list);
 		map.put("count", count);//레코드의 갯수
 		map.put("pager", pager); //페이지네이션을 위한 변수
-		mav.setViewName("faq/faq_detail");//포워딩 뷰
+		mav.setViewName("faq/faq_list");//포워딩 뷰
 		mav.addObject("map", map);
 		return mav;
 		}
@@ -69,11 +70,42 @@ public class FaqController {
 		return "faq/faq_write";
 	}
 	
+	@RequestMapping("view.do")
+	public ModelAndView view(int faq_no) throws Exception {
+		ModelAndView mav=new ModelAndView();
+		mav.setViewName("faq/faq_detail");
+		mav.addObject("dto", faqService.read(faq_no));
+		return mav;
+	}
+	
+	@RequestMapping("detail.do")
+	public ModelAndView detail(int faq_no) throws Exception {
+		ModelAndView mav=new ModelAndView();
+		mav.setViewName("faq/faq_detail");
+		return mav.addObject("dto", faqService.detailFaq(faq_no));
+	}
+	
 	@RequestMapping("delete.do")
 	public String delete(@RequestParam int faq_no) throws Exception {
 		System.out.println("faq_no : " + faq_no);
 		faqService.delete(faq_no);
 		return "redirect:/faq/list.do";
 	}
+	
+
+	
+	 @RequestMapping("edit/{faq_no}") 
+	 public ModelAndView edit(@PathVariable("faq_no") int faq_no, ModelAndView mav) {
+	 mav.setViewName("faq/faq_edit"); 
+	 mav.addObject("dto", faqService.detailFaq(faq_no)); 
+	 return mav; 
+	}
+	 
+	@RequestMapping("update.do")
+	public String update(FaqDTO dto) throws Exception {
+		faqService.update(dto);
+		return "redirect:/faq/list.do";
+	}
+	 
 	
 }

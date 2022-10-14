@@ -19,5 +19,7 @@ public interface FaqDAO {
 	public void update(FaqDTO dto); 
 	//faq 삭제
 	public void delete(int faq_no);
+	public FaqDTO detailFaq(int faq_no);
+	public FaqDTO read(int faq_no);
 
 }

@@ -50,13 +50,22 @@ public class FaqDAOImpl implements FaqDAO {
 
 	@Override
 	public void update(FaqDTO dto) {
-		// TODO Auto-generated method stub
-
+		sqlSession.update("faq.update", dto);
 	}
 
 	@Override
 	public void delete(int faq_no) {
 		sqlSession.delete("faq.delete", faq_no);
+	}
+
+	@Override
+	public FaqDTO detailFaq(int faq_no) {
+		return sqlSession.selectOne("faq.detail_faq", faq_no);
+	}
+
+	@Override
+	public FaqDTO read(int faq_no) {
+		return sqlSession.selectOne("faq.read", faq_no);
 	}
 
 }

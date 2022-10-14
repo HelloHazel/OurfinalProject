@@ -19,6 +19,26 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		where faq_no=#{faq_no}
 	</delete>
 	
+	<!-- faq 목록 -->
+	<select id="detail_faq" resultType="com.example.finalproject.model.faq.dto.FaqDTO">
+		select * from faq
+		where faq_no=#{faq_no}
+	</select>
+	
+	<select id="read" resultType="com.example.finalproject.model.faq.dto.FaqDTO">
+		select * from faq
+		where faq_no=#{faq_no}
+	</select>
+	
+	<!-- faq 수정 -->
+	<update id="update">
+		update faq 
+		set 
+		faq_title=#{faq_title} 
+		, faq_content=#{faq_content} 
+		 where faq_no=#{faq_no}
+	</update>
+	
 	
 </mapper>
 
