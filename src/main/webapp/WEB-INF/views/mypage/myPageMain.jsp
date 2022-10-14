@@ -235,7 +235,7 @@
 &nbsp;
 
 
-<table class="table">
+<%-- <table class="table">
   <thead>
     <tr>
       <th scope="col">주문번호</th>
@@ -256,7 +256,41 @@
   </tr>
   </c:forEach>
   </tbody> 
-</table> 
+</table>  --%>
+
+<ul class="orderList">
+  <c:forEach items="${map1.list1}" var="row1">
+  <li style="border:10px">
+  	<div>
+  
+	   	   <div style="border:10px">
+	   		 주문번호:${row1.order_id}
+	   	   </div><br>
+	   	   	
+		   <div style="border:10px">
+				   <c:forEach items="${map.list}" var="row">
+		   	   			<c:if test="${row1.order_id==row.order_id}">
+			   	   			<div style="height:200px">
+							   <p style="float:left;">
+							   		<a href="${path}/shop/product/detail/${row.product_id}">
+							   			<img src="${path}/resources/images/${row.product_url}" width="125px" height="150px">
+							   		</a>
+							   </p>
+							   <p>
+							   		<a href="${path}/shop/product/detail/${row.product_id}">
+							   			${row.product_name}
+							   		</a>
+							   </p>
+							   <p>${row.price}원X${row.amount}개</p>
+						   </div>
+					    </c:if>
+	   			   </c:forEach>
+		   </div>
+		   <hr>
+	  </div>
+  </li>
+  </c:forEach>
+ </ul>
 
 			
 		</div>

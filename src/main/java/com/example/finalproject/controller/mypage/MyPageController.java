@@ -110,17 +110,17 @@ public class MyPageController {
 					String userId=(String)session.getAttribute("userid");
 					
 					List<OrderListDTO> list=shippingService.orderView(userId);
-					System.out.println(list);
-					System.out.println(list);
-					System.out.println(list);
-					System.out.println(list);
-					System.out.println(list);
-					Map<String, Object> map=new HashMap<>();
+					List<ShippingDTO> list1=shippingService.myShippingList(userId);
 					
-					  map.put("list",list); map.put("count",list.size());
+					Map<String, Object> map=new HashMap<>();
+					Map<String, Object> map1=new HashMap<>();
+					
+					  map.put("list",list);
+					  map1.put("list1",list1);
 					  
 					  mav.addObject("map",map);
-					 
+					  mav.addObject("map1",map1);
+					  
 					mav.setViewName("mypage/myPageMain");
 					
 					return mav;
