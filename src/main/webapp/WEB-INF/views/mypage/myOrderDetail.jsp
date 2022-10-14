@@ -245,6 +245,10 @@
 	   	   </div><br>
 	   	   	
 		   <div style="border:10px">
+		   		   <c:set var="price" value="0"></c:set>
+		   		   <c:set var="amount" value="0"></c:set>
+		   		   <c:set var="sum" value="0"></c:set>
+		   		   <c:set var="sum1" value="0"></c:set>
 				   <c:forEach items="${map.list}" var="row">
 		   	   			<c:if test="${order_id==row.order_id}">
 			   	   			<div style="height:200px">
@@ -259,8 +263,14 @@
 							   		</a>
 							   </p>
 							   <p>${row.price}원X${row.amount}개</p>
+							   <c:set var="price" value="${row.price}"></c:set>
+							   <c:set var="amount" value="${row.amount}"></c:set>
+							   <c:set var="sum" value="${price*amount}"></c:set>
+							   
 						   </div>
+						   <c:set var="sum1" value="${sum1+sum}"></c:set>
 					    </c:if>
+					    
 	   			   </c:forEach>
 		   </div>
 		   <hr>
@@ -275,9 +285,9 @@
 		   	</c:if>
 		   	</c:forEach>
 		   	
-		   	<div>총금액:</div>
+		   	<div>총금액:<c:out value="${sum1}"></c:out>원</div>
 		   	
-		   
+		   	
 		   </div>
 		  
 	  </div>
