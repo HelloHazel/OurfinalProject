@@ -11,6 +11,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
@@ -50,6 +51,8 @@ public class MyPageController {
     
     @Inject
    	ReviewService reviewService;
+
+	
 	
 
 	
@@ -146,6 +149,32 @@ public class MyPageController {
 					
 					mav.setViewName("mypage/myReview"); //포워딩 뷰
 					mav.addObject("map", map);
+					return mav;
+			}
+			
+			@RequestMapping("orderDetail/{order_id}")
+			public ModelAndView myOrderDetail(@PathVariable String order_id, HttpSession session,  ModelAndView mav) {
+				
+				String userid=(String)session.getAttribute("userid");
+				
+					String userId=(String)session.getAttribute("userid");
+					
+					List<OrderListDTO> list=shippingService.orderView(userId);
+					List<ShippingDTO> list1=shippingService.myShippingList(userId);
+					
+					
+					Map<String, Object> map=new HashMap<>();
+					Map<String, Object> map1=new HashMap<>();
+					  
+					  map.put( "order_id", order_id);
+					  map.put("list",list);
+					  map1.put("list1",list1);
+			
+					  mav.addObject("map",map);
+					  mav.addObject("map1",map1);
+	
+					mav.setViewName("mypage/myOrderDetail");
+					
 					return mav;
 			}
 }
