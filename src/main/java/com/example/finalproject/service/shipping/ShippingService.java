@@ -12,6 +12,6 @@ public interface ShippingService {
 	public List<ShippingDTO> myShippingList(String userId);
 	public List<CartDTO> listOrder(String userid);//리스트
 	public void insert(ShippingDTO dto); //주문 저장
-	public void orderInfo_Details(String order_id);
+	public void orderInfo_Details(Order_detailDTO orderDetail);
 	public List<OrderListDTO> orderView(String userId);
 }

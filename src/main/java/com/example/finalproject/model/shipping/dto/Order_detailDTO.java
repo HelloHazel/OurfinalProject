@@ -6,6 +6,14 @@ public class Order_detailDTO {
 	private int PRODUCT_ID;
 	private int OD_COUNT;
 	private int OD_PRICE;
+	private String userid;
+	
+	public String getUserid() {
+		return userid;
+	}
+	public void setUserid(String userid) {
+		this.userid = userid;
+	}
 	public int getOD_NO() {
 		return OD_NO;
 	}
@@ -39,7 +47,7 @@ public class Order_detailDTO {
 	@Override
 	public String toString() {
 		return "Order_detailDTO [OD_NO=" + OD_NO + ", ORDER_ID=" + ORDER_ID + ", PRODUCT_ID=" + PRODUCT_ID
-				+ ", OD_COUNT=" + OD_COUNT + ", OD_PRICE=" + OD_PRICE + "]";
+				+ ", OD_COUNT=" + OD_COUNT + ", OD_PRICE=" + OD_PRICE + ", userid=" + userid + "]";
 	}
 	
 	

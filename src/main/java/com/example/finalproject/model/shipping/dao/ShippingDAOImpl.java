@@ -35,8 +35,8 @@ public class ShippingDAOImpl implements ShippingDAO {
 	}
 	
 	@Override
-	public void orderInfo_Details(String order_id) {
-		sqlSession.insert("shipping.orderInfo_Details",order_id);
+	public void orderInfo_Details(Order_detailDTO orderDetail) {
+		sqlSession.insert("shipping.orderInfo_Details",orderDetail);
 	}
 	
 	@Override

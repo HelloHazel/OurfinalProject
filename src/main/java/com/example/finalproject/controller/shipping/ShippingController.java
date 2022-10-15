@@ -89,7 +89,9 @@ public class ShippingController {
 		dto.setUserid(userid);
 		shippingService.insert(dto);
 		
-		shippingService.orderInfo_Details(order_id);
+		orderDetail.setORDER_ID(order_id);
+		orderDetail.setUserid(userid);
+		shippingService.orderInfo_Details(orderDetail);
 		
 		 cartService.deleteAll(userid);
 		return "main";
