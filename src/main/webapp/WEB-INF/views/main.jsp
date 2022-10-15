@@ -1,6 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@page import="java.sql.DriverManager" %>
+<%@page import="java.sql.ResultSet" %>
+<%@page import="java.sql.Statement" %>
+<%@page import="java.sql.Connection" %>   
+<%@page import="java.sql.PreparedStatement" %> 
+<%@page import= "java.util.ArrayList" %>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -90,7 +96,7 @@ if (request.getProtocol().equals("HTTP/1.1")) {
 	<section class="py-0">
 
 		<div class="container">
-			<div class="row h-100">
+			<div class="row h-90">
 				<div class="col-lg-7 mx-auto text-center mt-7 mb-5">
 					<h5 class="fw-bold fs-3 fs-lg-5 lh-sm">Best Deals</h5>
 				</div>
@@ -242,7 +248,7 @@ if (request.getProtocol().equals("HTTP/1.1")) {
 
 							<div class="row">
 								<button class="carousel-control-prev" type="button"
-									data-bs-target="" data-bs-slide="prev">
+									data-bs-target="#carouselBestDeals" data-bs-slide="prev">
 									<span class="carousel-control-prev-icon" aria-hidden="true"></span><span
 										class="visually-hidden">Previous</span>
 								</button>
@@ -255,7 +261,7 @@ if (request.getProtocol().equals("HTTP/1.1")) {
 						</div>
 					</div>
 				</div>
-				<div class="col-12 d-flex justify-content-center mt-5">
+				<div class="col-12 d-flex justify-content-center ">
 					<a class="btn btn-lg btn-dark" href="${path}/shop/product/list.do">View
 						All </a>
 				</div>
@@ -271,9 +277,9 @@ if (request.getProtocol().equals("HTTP/1.1")) {
 	<!-- <베스트셀러> close ============================-->
 	<!-- ============================================-->
 
-	<section class="mt-10">
+	<section>
 		<div class="container">
-			<div class="row h-100 mt-8">
+			<div class="row h-90 mt-8">
 				<div class="col-lg-7 mx-auto text-center mb-6 ">
 					<h5 class="fw-bold fs-3 fs-lg-5 lh-sm mb-3">Best Sellers</h5>
 				</div>
@@ -434,7 +440,7 @@ if (request.getProtocol().equals("HTTP/1.1")) {
 						</div>
 					</div>
 				</div>
-				<div class="col-12 d-flex justify-content-center mt-5">
+				<div class="col-12 d-flex justify-content-center ">
 					<a class="btn btn-lg btn-dark" href="${path}/shop/product/list.do">View
 						All </a>
 				</div>
@@ -449,7 +455,7 @@ if (request.getProtocol().equals("HTTP/1.1")) {
 	<!-- <애견 신상품 코너>  ============================-->
 	<!-- ============================================-->
 
-	<section class="py-5 mt-10">
+	<section class="py-5 mt-0">
 		<div class="container">
 			<div class="row h-100">
 				<div class="col-lg-7 mx-auto text-center mb-6">
@@ -542,137 +548,114 @@ if (request.getProtocol().equals("HTTP/1.1")) {
 	<!-- <애견 신상품 코너> close ============================-->
 	<!-- ============================================-->
 	
-<hr>
-<hr>
-<hr>
 	<!-- ============================================-->
 	<!-- <section> 커뮤니티 ============================-->
 	<section class="py-0 pb-8">
-		<div class="col-lg-7 mx-auto text-center mt-7 mb-5">
+		<div class="col-lg-7 mx-auto text-center mt-5 mb-5">
 			<h5 class="fw-bold fs-3 fs-lg-5 lh-sm">커뮤니티</h5>
 		</div>
-		<div class="container-fluid container-lg">
-			<div class="row h-100 g-2 justify-content-center">
+		<div class="album py-5 bg-light">
+		<%
+		
+		class Comm{
+			int commNum;
+			String commTitle;
+			String commContent;
+			String commRegdate;
+			String commUrl;
+			int commView;
+			String commWriter;
+			int commCount;
+		}
+		
+		ArrayList<Comm> list = new ArrayList<Comm>();
+		Connection conn = null;
+		Statement stmt = null;
+		ResultSet rs = null;
+		String uid = "final";
+		String pwd = "1234";
+		String url = "jdbc:oracle:thin:@175.202.196.211:1521:XE";
+		String sql = "select * from community where rownum <= 3 order by comm_no desc";
+		
+		%>
+		
+		<%
+		try {
+		// 데이터베이스를 접속하기 위한 드라이버 SW 로드
+		Class.forName("oracle.jdbc.driver.OracleDriver");
+		// 데이터베이스에 연결하는 작업 수행
+		conn = DriverManager.getConnection(url, uid, pwd);
+		// 쿼리를 생성gkf 객체 생성
+		stmt = conn.createStatement();
+		// 쿼리 생성
+		rs = stmt.executeQuery(sql);
 
-				<div class="col-sm-9 col-md-4 mb-3 mb-md-0 h-100">
-
-					<div class="card card-span text-white h-100">
-						<img class="img-card h-100"
-							src="assets/img/gallery/shoes-blog-1.png" alt="..." />
-						<div class="card-body px-xl-5 px-md-3 pt-0 pb-7">
-							<div
-								class="d-flex justify-content-between align-items-center bg-100 mt-n5 me-auto">
-								<img src="assets/img/gallery/author-1.png" width="60" alt="..." />
-								<div class="d-flex flex-1 justify-content-around">
-									<span class="text-900 text-center"><i data-feather="eye">
-									</i><span class="text-900 ms-2">35</span></span><span
-										class="text-900 text-center"><i data-feather="heart">
-									</i><span class="text-900 ms-2">23</span></span><span
-										class="text-900 text-center"><i
-										data-feather="corner-up-right"> </i><span
-										class="text-900 ms-2">14</span></span>
-								</div>
-							</div>
-							<h6 class="text-900 mt-3">
-								Kelly Hudson . <span class="fw-normal">Fashion actiKelly
-									Hudson . </span>
-							</h6>
-							<h3 class="fw-bold text-1000 mt-5 text-truncate">How
-								important are shoes in your style?</h3>
-							<p class="text-900 mt-3">Is it possible to assess a person
-								just on the basis of their footwear? Obviously, nobody should
-								criticize, but certainly, shoes say a lot about someone. It
-								matters for the outsiders that we meet every day...</p>
-							<a class="btn btn-lg text-900 fs-1 px-0 hvr-icon-forward"
-								href="#!" role="button">Read more <svg
-									class="bi bi-arrow-right-short hover-icon"
-									xmlns="http://www.w3.org/2000/svg" width="30" height="30"
-									fill="currentColor" viewBox="0 0 16 16">
-                      <path fill-rule="evenodd"
-										d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"> </path>
-                    </svg></a>
-						</div>
-					</div>
-				</div>
-				<div class="col-sm-9 col-md-4 mb-3 mb-md-0 h-100">
-					<div class="card card-span text-white h-100">
-						<img class="img-card h-100"
-							src="assets/img/gallery/fashion-blog-2.png" alt="..." />
-						<div class="card-body px-xl-5 px-md-3 pt-0 pb-7">
-							<div
-								class="d-flex justify-content-between align-items-center bg-100 mt-n5 me-auto">
-								<img src="assets/img/gallery/author-2.png" width="60" alt="..." />
-								<div class="d-flex flex-1 justify-content-around">
-									<span class="text-900 text-center"><i data-feather="eye">
-									</i><span class="text-900 ms-2">35</span></span><span
-										class="text-900 text-center"><i data-feather="heart">
-									</i><span class="text-900 ms-2">23</span></span><span
-										class="text-900 text-center"><i
-										data-feather="corner-up-right"> </i><span
-										class="text-900 ms-2">14</span></span>
-								</div>
-							</div>
-							<h6 class="text-900 mt-3">
-								Rotondwa Johnny . <span class="fw-normal">Fashion
-									activist </span>
-							</h6>
-							<h3 class="fw-bold text-1000 mt-5 text-truncate">Fashion
-								trend forecast for Summer 2021</h3>
-							<p class="text-900 mt-3">While the fashion industry has had a
-								calm year, this season has seen some beautiful pieces. Over the
-								previous several weeks, commanding coats, and elegant face masks
-								have ruled Fashion Weeks...</p>
-							<a class="btn btn-lg text-900 fs-1 px-0 hvr-icon-forward"
-								href="#!" role="button">Read more <svg
-									class="bi bi-arrow-right-short hover-icon"
-									xmlns="http://www.w3.org/2000/svg" width="30" height="30"
-									fill="currentColor" viewBox="0 0 16 16">
-                      <path fill-rule="evenodd"
-										d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"> </path>
-                    </svg></a>
-						</div>
-					</div>
-				</div>
-				<div class="col-sm-9 col-md-4 mb-3 mb-md-0 h-100">
-					<div class="card card-span text-white h-100">
-						<img class="img-card h-100"
-							src="assets/img/gallery/spring-dress-blog-3.png" alt="..." />
-						<div class="card-body px-xl-5 px-md-3 pt-0 pb-7">
-							<div
-								class="d-flex justify-content-between align-items-center bg-100 mt-n5 me-auto">
-								<img src="assets/img/gallery/author-3.png" width="60" alt="..." />
-								<div class="d-flex flex-1 justify-content-around">
-									<span class="text-900 text-center"><i data-feather="eye">
-									</i><span class="text-900 ms-2">35</span></span><span
-										class="text-900 text-center"><i data-feather="heart">
-									</i><span class="text-900 ms-2">23</span></span><span
-										class="text-900 text-center"><i
-										data-feather="corner-up-right"> </i><span
-										class="text-900 ms-2">14</span></span>
-								</div>
-							</div>
-							<h6 class="text-900 mt-3">
-								Martin . <span class="fw-normal">Fashion activist </span>
-							</h6>
-							<h3 class="fw-bold text-1000 mt-5 text-truncate">Spring
-								exclusive collection for Men &amp; Women</h3>
-							<p class="text-900 mt-3">Explore the first real-time
-								photographic fashion magazine NOWFASHION to broadcast exclusive
-								live fashion shows. Some of the most beautiful spring collection
-								i want to share. See the....</p>
-							<a class="btn btn-lg text-900 fs-1 px-0 hvr-icon-forward"
-								href="#!" role="button">Read more <svg
-									class="bi bi-arrow-right-short hover-icon"
-									xmlns="http://www.w3.org/2000/svg" width="30" height="30"
-									fill="currentColor" viewBox="0 0 16 16">
-                      <path fill-rule="evenodd"
-										d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"> </path>
-                    </svg></a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+		// 쿼리 수행 결과의 데이터를 읽어온다.
+		while (rs.next()) {
+			/*System.out.println(rs.getInt("COMM_NO"));
+			System.out.println(rs.getString("COMM_TITLE"));
+			System.out.println(rs.getString("COMM_CONTENT"));
+			System.out.println(rs.getString("COMM_REGDATE"));
+			System.out.println(rs.getString("COMM_URL"));
+			System.out.println(rs.getInt("COMM_VIEWCNT"));
+			System.out.println(rs.getString("WRITER"));
+			System.out.println(rs.getInt("CNT"));
+			System.out.println();*/
+			
+			Comm comm = new Comm();
+			comm.commNum = rs.getInt("COMM_NO");
+			comm.commTitle = rs.getString("COMM_TITLE");
+			comm.commContent = rs.getString("COMM_CONTENT");
+			comm.commRegdate = rs.getString("COMM_REGDATE");
+			comm.commUrl = rs.getString("COMM_URL");
+			comm.commView = rs.getInt("COMM_VIEWCNT");
+			comm.commWriter = rs.getString("WRITER");
+			comm.commCount = rs.getInt("CNT");
+			list.add(comm);
+		}
+	} catch (Exception e) {
+		e.printStackTrace();
+	} finally {
+		try {
+			if (rs != null) {
+		rs.close();
+			}
+			if (stmt != null) {
+		stmt.close();
+			}
+			if (conn != null) {
+		conn.close();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+		
+	%>
+    <div class="container">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+       <% for(Comm item : list) {%>
+        <div class="col">
+          <div class="card shadow-sm">
+            <a href="${path}/community/view.do?comm_no=<%=item.commNum%>"><img  class="bd-placeholder-img card-img-top" src="${path}/resources/images/community/<%= item.commUrl %>" width="100%" height="225"></a>
+            <div class="card-body">
+              <p class="card-text" id="writerText"><a href="${path}/community/view.do?comm_no=<%=item.commNum%>"><%=item.commWriter%></a></p>
+              <p class="card-text" id="titleText"><a href="${path}/community/view.do?comm_no=<%=item.commNum%>"><%=item.commTitle%></a></p>
+              
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary" onclick="location.href='${path}/community/view.do?comm_no=<%=item.commNum%>'">👀 <%=item.commView%></button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary" onclick="location.href='${path}/community/view.do?comm_no=<%=item.commNum%>'">💬</button>
+                </div>
+                <small class="text-muted"><%=item.commRegdate%></small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <% } %>
+      </div>
+    </div>     
+  </div>
 		<!-- end of .container-->
 
 	</section>
