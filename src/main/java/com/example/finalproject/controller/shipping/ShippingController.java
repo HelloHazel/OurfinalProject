@@ -10,15 +10,13 @@ import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.example.finalproject.model.member.dto.MemberDTO;
-import com.example.finalproject.model.shipping.dto.OrderListDTO;
 import com.example.finalproject.model.shipping.dto.Order_detailDTO;
+import com.example.finalproject.model.shipping.dto.PaymentDTO;
 import com.example.finalproject.model.shipping.dto.ShippingDTO;
 import com.example.finalproject.model.shop.dto.CartDTO;
 import com.example.finalproject.service.member.MemberService;
@@ -82,7 +80,7 @@ public class ShippingController {
 	}
 	
 	@RequestMapping("insert.do")
-	public String insert(HttpSession session, @ModelAttribute ShippingDTO dto, Order_detailDTO orderDetail) {
+	public String insert(HttpSession session, @ModelAttribute ShippingDTO dto, Order_detailDTO orderDetail, PaymentDTO pay) {
 		String userid = (String)session.getAttribute("userid");
 		 String order_id = dto.getOrder_id();
 		dto.setOrder_id(order_id);
@@ -92,7 +90,7 @@ public class ShippingController {
 		orderDetail.setORDER_ID(order_id);
 		orderDetail.setUserid(userid);
 		shippingService.orderInfo_Details(orderDetail);
-		
+		shippingService.pay(pay);
 		 cartService.deleteAll(userid);
 		return "main";
 	}

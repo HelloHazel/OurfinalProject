@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <%@ include file="../include/header.jsp"%>
-<title>Top</title>
+<title>주문</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <!-- iamport.payment.js -->
@@ -153,6 +153,7 @@ function paymentCard(data) {
 }
 
 function paymentComplete(data) {
+	alert("결제가 완료되었습니다.");
 	const formData = {
       		receiver : $("#receiver").val(),
   			price : $("#price").val(),
@@ -258,14 +259,12 @@ function paymentComplete(data) {
 				<th>단가</th>
 				<th>수량</th>
 				<th>금액</th>
-				<th>&nbsp;</th>
 			</tr>
 		</thead>
 		<c:forEach var="row" items="${map.list}">
 		 	<tr>
 		 		<td>${row.product_name}<input type="hidden" name="product_name" id="product_name" value="${row.product_name}"></td>
-		 		<td><fmt:formatNumber value="${row.price}"
-					pattern="#,###원"/></td>
+		 		<td><fmt:formatNumber value="${row.price}" pattern="#,###원"/></td>
 		 		<td>${row.amount}<input type="hidden" name="cart_no" value="${row.cart_no}"></td>
 		 		<td><fmt:formatNumber value="${row.money}"  pattern="#,###원"/> </td>
 		 		</tr>
@@ -284,16 +283,13 @@ function paymentComplete(data) {
 	<br>
 	<div class="row"  id="payment">
 		<div style="text-align: center;">
-	
-		<div class="row" style="text-align: center; margin: 50px 0;">
-			<label>상품가격 : ${map.sumMoney}원</label> <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> 
-			<label>배송비 : ${map.fee}원</label> <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
-			<label style="font-size: 1.5em;">총 결제금액 :  ${map.sum}원<input type="hidden" id="amount"
-				name="totalAmount">
-			</label>
+		<div class="row" style="text-align: center; margin-bottom: 20px;">
+			<label>주문 금액 합계 :<fmt:formatNumber value="${map.sumMoney}"  pattern="#,###원"/></label> <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> 
+			<label>배송비 : <fmt:formatNumber value="${map.fee}"  pattern="#,###원"/></label> <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+			<label style="font-size: 1.5em;">총 결제금액 :  <fmt:formatNumber value="${map.sum}"  pattern="#,###원"/><input type="hidden" id="amount" name="totalAmount"></label>
 		</div>
-			<button class="btn btn-default cal-btn"  type="button"  onclick="pay()">결제하기</button>
-			<button class="btn btn-default back_btn">돌아가기</button>
+			<button class="btn btn-warning btn-user btn-block"  type="button"  onclick="pay()">결제하기</button>
+			<a class="btn btn-warning btn-user btn-block"  href="javascript:history.back(-1)">돌아가기</a>
 		</div>
 	</div>
 	</form>

@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import com.example.finalproject.model.shipping.dao.ShippingDAO;
 import com.example.finalproject.model.shipping.dto.OrderListDTO;
 import com.example.finalproject.model.shipping.dto.Order_detailDTO;
+import com.example.finalproject.model.shipping.dto.PaymentDTO;
 import com.example.finalproject.model.shipping.dto.ShippingDTO;
 import com.example.finalproject.model.shop.dto.CartDTO;
 
@@ -40,6 +41,11 @@ public class ShippingServiceImpl implements ShippingService {
 	@Override
 	public List<OrderListDTO> orderView(String userId){
 		return shippingDao.orderView(userId);
+	}
+
+	@Override
+	public void pay(PaymentDTO dto) {
+		shippingDao.pay(dto);
 	}
 
 }
