@@ -4,6 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
 <title>Insert title here</title>
 <%@ include file="../include/header.jsp"%>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -56,60 +57,50 @@
 
 </style>
 
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
-	$(function() { //자동으로 실행되는 코드
-		//댓글 목록 출력
-		listComment();
-		
-		//댓글 쓰기
-		$("#btnComment").click(function() {
-			var cmt_content = $("#cmt_content").val(); //댓글 내용
-			var comm_no = "${dto.comm_no}"; //게시물 번호
-			var param = {
-				"cmt_content" : cmt_content,
-				"comm_no" : comm_no
-			};
+$(function(){ //자동으로 실행되는 코드
+	//댓글 목록 출력
+	listReply();
+	//listReply2();
+	
+	//댓글 쓰기
+	$("#btnComment").click(function(){
+		var cmt_content=$("#cmt_content").val(); //댓글 내용
+		var comm_no="${dto.comm_no}"; //게시물 번호
+		var param={ "cmt_content": cmt_content, "comm_no": comm_no};
+		//var param="replytext="+replytext+"&bno="+bno;
+		$.ajax({
+			type: "post",
+			url: "${path}/commCmt/insert.do",
+			data: param,
+			success: function(){
+				alert("댓글이 등록되었습니다.");
+				listReply();
+				//listReply2(); //댓글 목록 출력
+			},
+			error: function(xhr, status, error){
+			    console.log(status, error);
+			}
 			
-			//listComment();
-			//var param="cmt_content="+cmt_content+"&comm_no="+comm_no;
-			$.ajax({
-				type : "post",
-				url : "${path}/commCmt/insert.do",
-				data : param,
-				success : function() {
-					alert("댓글이 등록되었습니다.");
-					listComment();
-				}
-			});
 		});
 	});
+});
 
-	//댓글 목록 출력 함수
-	function listComment() {
-		$.ajax({
-			type : "get",
-			url : "${path}/commCmt/list.do?comm_no=${dto.comm_no}",
-			success : function(result) {
-				//result : responseText 응답텍스트(html)
-				$("#listComment").html(result);
-			}
-		});
-	}
+//댓글 목록 출력 함수
+function listReply(){
+	$.ajax({
+		type: "get",
+		url: "${path}/commCmt/list.do?comm_no=${dto.comm_no}",
+		success: function(result){
+			//result : responseText 응답텍스트(html)
+			$("#listComment").html(result);
+		}
+	});
+}
 
-	//타임스탬프값(숫자형)을 문자열 형식으로 변환
-	function changeDate(date) {
-		date = new Date(parseInt(date));
-		year = date.getFullYear();
-		month = date.getMonth();
-		day = date.getDate();
-		hour = date.getHours();
-		minute = date.getMinutes();
-		second = date.getSeconds();
-		strDate = year + "-" + month + "-" + day + " " + hour + ":" + minute
-				+ ":" + second;
-		return strDate;
-	}
+
+
 </script>
 
 

@@ -58,6 +58,9 @@
 		<mapping path="/mypage/**"/>
 		<mapping path="/community/write.do"/>
 		<mapping path="/community/insert.do"/>
+		<mapping path="/community/edit/**"/>
+		<mapping path="/faq/write.do"/>
+		<mapping path="/faq/view.do/**"/>
 		<mapping path="/shipping/**"/>
 		<mapping path="/review/insert.do"/>
 		<mapping path="/review/delete.do"/>
