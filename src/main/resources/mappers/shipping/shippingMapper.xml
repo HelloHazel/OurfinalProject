@@ -49,8 +49,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</insert>
 	
 	<select id="orderList" resultType="com.example.finalproject.model.shipping.dto.OrderListDTO">
-		<![CDATA[
-		select * from shipping
-		 ]]>
+		select *
+		from shipping
+		order by order_id desc
 	</select>
 </mapper>

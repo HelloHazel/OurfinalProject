@@ -32,8 +32,6 @@ public class AdminController {
 		ShippingService shippingService;
 		@Inject
 		MemberService memberService;
-		@Inject
-		CartService cartService;
 		
 		@RequestMapping("write.do")
 		public String write() {
@@ -54,10 +52,11 @@ public class AdminController {
 		    	return "admin/memberList";
 		    }
 		 
-		 @RequestMapping("orderList.do")
-		 public String orderList(Model model) {
+
+			 @RequestMapping("orderList.do") 
+			 public String orderList(Model model) {
 			 List<OrderListDTO> list=shippingService.orderList();
-			 model.addAttribute("list", list);
-			 return "admin/orderList";
-		 }
+			 model.addAttribute("list", list); return "admin/orderList"; 
+			 }
+			
 }

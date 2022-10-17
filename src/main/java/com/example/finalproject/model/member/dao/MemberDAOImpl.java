@@ -99,7 +99,5 @@ public class MemberDAOImpl implements MemberDAO {
 	public List<MemberDTO> addressInfo(String userid) {
 		return sqlSession.selectList("member.addressInfo", userid);
 	}
-	
-	
 
 }
