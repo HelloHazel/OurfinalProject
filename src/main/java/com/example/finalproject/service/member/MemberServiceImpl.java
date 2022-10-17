@@ -45,8 +45,7 @@ public class MemberServiceImpl implements MemberService {
 
 	@Override
 	public List<MemberDTO> list() {
-		// TODO Auto-generated method stub
-		return null;
+		return memberDao.list();
 	}
 
 	@Override

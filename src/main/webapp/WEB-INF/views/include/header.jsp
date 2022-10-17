@@ -126,7 +126,7 @@
 						<li class="nav-item px-2"><a class="nav-link fw-medium"
 							href="${path}/community/list.do">커뮤니티</a></li>
 						<li class="nav-item px-2"><a class="nav-link fw-medium"
-							href="${path}/admin/list.do">회원관리</a></li>
+							href="${path}/member/list.do">회원관리</a></li>
 							<li class="nav-item px-2"><a class="nav-link fw-medium"
 							href="${path}/admin/write.do">상품등록</a></li>
 							<li class="nav-item px-2"><a class="nav-link fw-medium"

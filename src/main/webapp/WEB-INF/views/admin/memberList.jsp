@@ -11,13 +11,13 @@
 <%@ include file="../include/menu.jsp" %>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-  <h2>Bordered Table</h2>
+<h2 style="text-align: center;">MemberList</h2>
+	&nbsp;
   <div class="container mt-3">
   <table class="table table-bordered">
     <thead>
       <tr>
         <th>ID</th>
-        <th>PW</th>
         <th>NAME</th>
         <th>PHONE</th>
         <th>EMAIL</th>
@@ -29,7 +29,6 @@
     <tbody>
       <tr>
        <td>${row.userid}</td>
-       <td>${row.passwd}</td>
        <td>${row.name}</td>
        <td>${row.phone}</td>
        <td>${row.email}</td>

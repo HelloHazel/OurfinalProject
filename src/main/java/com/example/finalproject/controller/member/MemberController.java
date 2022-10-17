@@ -252,6 +252,13 @@ public class MemberController {
 		        session.setAttribute("name", name);
 		        System.out.println(id+name);
 		        return "main";
-			}
+	    }
+	}
+	    
+	    @RequestMapping("list.do")
+	    public String memberList(Model model) {
+	    	List<MemberDTO> list=memberService.list();
+	    	model.addAttribute("list", list);
+	    	return "admin/memberList";
 	    }
 }
