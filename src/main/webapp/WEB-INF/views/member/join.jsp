@@ -118,9 +118,7 @@ function join() {
 	var emailCheck = $("#emailCheck").val();
 	
 	var exp1 = /^[A-Za-z0-9]{4,10}$/; //아이디 영문자, 숫자 포함 4~10자리
-	var exp2 = /(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*\d){6,12}/;
-	var exp3 = /^[가-힣]+$/;//한글만 입력하는 정규식
-	var exp4 = /01[016789]-[^0][0-9]{2,3}-[0-9]{3,4}/;//휴대폰 번호 정규식
+	var exp2 = /(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*\d){6,12}/; //비밀번호 영문자, 특수문자 포함 6~12자리
 	var exp5 = /^([0-9a-zA-Z_\.-]+)@([0-9a-zA-Z_-]+)(\.[0-9a-zA-Z_-]+){1,2}$/; //이메일 정규식
 	
 	if (userid == "") {
@@ -138,10 +136,6 @@ function join() {
 	}
 	if (name == "") {
 		alert("이름을 입력하세요.");
-		$("#name").focus();
-		return;
-	}else if(!exp3.test(name)){
-		alert("이름은 한글만 입력가능합니다.");
 		$("#name").focus();
 		return;
 	}
@@ -175,32 +169,7 @@ function join() {
 	if(emailCheck == "N"){
 		alert("이메일 중복 체크를 하세요.");
 		return;
-	}
-	if (phone == "") {
-		alert("전화번호를 입력하세요.");
-		$("#phone").focus();
-		return;
-	}else if(!exp4.test(phone)){
-		alert("휴대폰 번호를 다시 확인해주세요!");
-		$("#phone").focus();
-		return;
-	}
-	if (zipcode == "") {
-		alert("우편번호를 입력하세요.");
-		$("#zipcode").focus();
-		return;
-	}
-	if (address1 == "") {
-		alert("주소를 입력하세요.");
-		$("#address1").focus();
-		return;
-	}
-	if (address2 == "") {
-		alert("상세주소를 입력하세요.");
-		$("#address2").focus();
-		return;
-	}
-		
+	}		
 	form.action = "${path}/member/write.do";
 	form.submit();
 }
@@ -257,7 +226,7 @@ function join() {
                                 </div>
                                  <div class="form-group">
                                     <input type="tel" class="form-control form-control-user" id="phone" name="phone"
-                                        placeholder="전화번호">
+                                        placeholder="전화번호는 - 포함해서 입력해주세요">
                                 </div>
                                 <div class="form-group row">
                                 <div class="col-sm-8 mb-3 mb-sm-0">

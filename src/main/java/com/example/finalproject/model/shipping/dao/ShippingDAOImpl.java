@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 
 import com.example.finalproject.model.shipping.dto.OrderListDTO;
 import com.example.finalproject.model.shipping.dto.Order_detailDTO;
+import com.example.finalproject.model.shipping.dto.PaymentDTO;
 import com.example.finalproject.model.shipping.dto.ShippingDTO;
 import com.example.finalproject.model.shop.dto.CartDTO;
 
@@ -35,13 +36,23 @@ public class ShippingDAOImpl implements ShippingDAO {
 	}
 	
 	@Override
-	public void orderInfo_Details(String order_id) {
-		sqlSession.insert("shipping.orderInfo_Details",order_id);
+	public void orderInfo_Details(Order_detailDTO orderDetail) {
+		sqlSession.insert("shipping.orderInfo_Details",orderDetail);
 	}
 	
 	@Override
 	public List<OrderListDTO> orderView(String userId){
 		return sqlSession.selectList("shipping.orderView",userId);
+	}
+
+	@Override
+	public void pay(PaymentDTO dto) {
+		sqlSession.insert("shipping.pay",dto);
+	}
+	
+	@Override
+	public List<OrderListDTO>orderList() {
+		return sqlSession.selectList("shipping.orderList");
 	}
 
 }

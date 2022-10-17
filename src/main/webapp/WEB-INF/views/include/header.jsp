@@ -126,13 +126,13 @@
 						<li class="nav-item px-2"><a class="nav-link fw-medium"
 							href="${path}/community/list.do">커뮤니티</a></li>
 						<li class="nav-item px-2"><a class="nav-link fw-medium"
-							href="${path}/admin/list.do">회원관리</a></li>
+							href="${path}/admin/memberList.do">회원관리</a></li>
 							<li class="nav-item px-2"><a class="nav-link fw-medium"
 							href="${path}/admin/write.do">상품등록</a></li>
 							<li class="nav-item px-2"><a class="nav-link fw-medium"
 							href="${path}/shop/product/list.do">상품목록</a></li>
 							<li class="nav-item px-2"><a class="nav-link fw-medium"
-							href="${path}/admin/list.do">주문관리</a></li>
+							href="${path}/admin/orderList.do">주문관리</a></li>
 							<li class ="nav-item dropdown px-2">
 							<a class="nav-link fw-medium dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Q&A</a>
 							<ul class="dropdown-menu" aria-labelledby="navbarDarkDropdownMenuLink">

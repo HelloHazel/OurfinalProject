@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <%@ include file="../include/header.jsp"%>
-<title>Top</title>
+<title>주문</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <!-- iamport.payment.js -->
@@ -93,7 +93,7 @@ function pay() {
 			name : $("#product_name").val(),
 			amount : $("#price").val(),
 			phone : phone,
-			totalPrice : $("#sum").val(),
+			totalPrice : $("#price").val(),
 			address : address1 + address2,
 			email : $("#email").val(),
 			receiver : $("#receiver").val(),
@@ -122,9 +122,6 @@ function pay() {
 		return; //함수 종료
 	}
 	paymentCard(data);
-	var form = document.form1;
-	form.action = "${path}/shipping/insert.do";
-	form.submit();
 }
 
 //카드 결제
@@ -149,13 +146,32 @@ function paymentCard(data) {
 	        data.impUid = rsp.imp_uid;
 	        data.merchant_uid = rsp.merchant_uid;
 	        paymentComplete(data);
-	        alert("결제 성공하였습니다");
 		} else {
 			 alert("결제에 실패하였습니다. 에러 내용: " +  rsp.error_msg);
 		}
 	});
 }
 
+function paymentComplete(data) {
+	alert("결제가 완료되었습니다.");
+	const formData = {
+      		receiver : $("#receiver").val(),
+  			price : $("#price").val(),
+  			phone : $("#phone").val(),
+  			amount : $("#amount").val(),
+  			address1 : $("#address1").val(),
+  			address2 : $("#address2").val(),
+  			order_id : $("#order_id").val(),
+  			alert : $("#alert").val()
+      		};
+	$.ajax({
+		url : '${path}/shipping/insert.do',
+		method : 'POST',
+		data: formData
+	}).done(function() {
+		location.href='${path}/';
+	})
+}
 </script>
 </head>
 <body>
@@ -243,22 +259,21 @@ function paymentCard(data) {
 				<th>단가</th>
 				<th>수량</th>
 				<th>금액</th>
-				<th>&nbsp;</th>
 			</tr>
 		</thead>
-		 <c:forEach var="row" items="${map.list}">
+		<c:forEach var="row" items="${map.list}">
 		 	<tr>
 		 		<td>${row.product_name}<input type="hidden" name="product_name" id="product_name" value="${row.product_name}"></td>
-		 		<td>${row.price}원<input type="hidden" name="price" id="price" value="${row.price}"> </td>
+		 		<td><fmt:formatNumber value="${row.price}" pattern="#,###원"/></td>
 		 		<td>${row.amount}<input type="hidden" name="cart_no" value="${row.cart_no}"></td>
-		 		<td>${row.money}원</td>
+		 		<td><fmt:formatNumber value="${row.money}"  pattern="#,###원"/> </td>
 		 		</tr>
 		 		</c:forEach>
 		 	<tr>
-		 		<td colspan="5" align="right" style="font-weight:bold;">
-		 			주문 금액 합계 : ${map.sumMoney}원<br>
-		 			배송료 : ${map.fee}원<br>
-		 			총합계 : ${map.sum}원 <input type="hidden" name="sum" id="sum" value="${map.sum}">
+		 		<td colspan="4" align="right" style="font-weight:bold;">
+		 			주문 금액 합계 : <fmt:formatNumber value="${map.sumMoney}"  pattern="#,###원"/><br>
+		 			배송료 : <fmt:formatNumber value="${map.fee}"  pattern="#,###원"/><br>
+		 			총합계 :<fmt:formatNumber value="${map.sum}"  pattern="#,###원"/><input type="hidden" name="price" id="price" value="${map.sum}">
 		 		</td>
 		 	</tr>	
 		</table>
@@ -268,26 +283,13 @@ function paymentCard(data) {
 	<br>
 	<div class="row"  id="payment">
 		<div style="text-align: center;">
-		<h3 class="page-header">결제수단 확인</h3>
-		<div style="text-align: center;">
-			<input type="radio" name="cal_info" value="transfer"><label
-				style="margin-right: 50px;">&nbsp;계좌이체</label> <input type="radio"
-				name="cal_info" value="no_bankingBook"><label
-				style="margin-right: 50px;">&nbsp;무통장 입금</label> <input type="radio"
-				name="cal_info" value="tel_billing"><label
-				style="margin-right: 50px;">&nbsp;핸드폰 결제</label> <input type="radio"
-				name="cal_info" value="card"><label>&nbsp;카드 결제</label>
+		<div class="row" style="text-align: center; margin-bottom: 20px;">
+			<label>주문 금액 합계 :<fmt:formatNumber value="${map.sumMoney}"  pattern="#,###원"/></label> <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> 
+			<label>배송비 : <fmt:formatNumber value="${map.fee}"  pattern="#,###원"/></label> <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+			<label style="font-size: 1.5em;">총 결제금액 :  <fmt:formatNumber value="${map.sum}"  pattern="#,###원"/><input type="hidden" id="amount" name="totalAmount"></label>
 		</div>
-		<hr>
-		<div class="row" style="text-align: center; margin: 50px 0;">
-			<label>상품가격 : ${map.sumMoney}원</label> <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> 
-			<label>배송비 : ${map.fee}원</label> <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
-			<label style="font-size: 1.5em;">총 결제금액 :  ${map.sum}원<input type="hidden" id="amount"
-				name="totalAmount">
-			</label>
-		</div>
-			<button class="btn btn-default cal-btn" type="button"  onclick="pay()">결제하기</button>
-			<button class="btn btn-default back_btn">돌아가기</button>
+			<button class="btn btn-warning btn-user btn-block"  type="button"  onclick="pay()">결제하기</button>
+			<a class="btn btn-warning btn-user btn-block"  href="javascript:history.back(-1)">돌아가기</a>
 		</div>
 	</div>
 	</form>

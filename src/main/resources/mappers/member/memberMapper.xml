@@ -71,5 +71,13 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	from member
 	where userid=#{userid}
 	</select>
+	
+	<select id="list" resultType="com.example.finalproject.model.member.dto.MemberDTO">
+	select
+	userid, passwd, name, phone, email, zipcode, address1, join_date
+	from member
+	order by userid
+	</select>
+
 </mapper>
 

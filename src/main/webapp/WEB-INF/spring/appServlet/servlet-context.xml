@@ -54,7 +54,25 @@
 	<!-- 인터셉터 호출을 위한 url mapping처리 -->
 	<interceptors>
 		<interceptor>
-		<mapping path="/shop/cart/list.do"/>
+		<mapping path="/shop/cart/**"/>
+		<mapping path="/mypage/**"/>
+		<mapping path="/community/write.do"/>
+		<mapping path="/community/insert.do"/>
+		<mapping path="/community/edit/**"/>
+		<mapping path="/faq/write.do"/>
+		<mapping path="/faq/view.do/**"/>
+		<mapping path="/shipping/**"/>
+		<mapping path="/review/insert.do"/>
+		<mapping path="/review/delete.do"/>
+		<mapping path="/notice/write.do"/>
+		<mapping path="/notice/update.do"/>
+		<mapping path="/notice/delete.do"/>
+		<mapping path="/inquery/question.do"/>
+		<mapping path="/inquery/view.do"/>
+		<mapping path="/inquery/answer.do"/>
+		<mapping path="/inquery/update.do"/>
+		<mapping path="/inquery/delete.do"/>
+		<mapping path="/admin/**"/>
 		<beans:ref bean="loginInterceptor"/>
 		</interceptor>
 	</interceptors>

@@ -31,8 +31,7 @@ public class MemberDAOImpl implements MemberDAO {
 
 	@Override
 	public List<MemberDTO> list() {
-		// TODO Auto-generated method stub
-		return null;
+		return sqlSession.selectList("member.list");
 	}
 
 	@Override
@@ -100,7 +99,5 @@ public class MemberDAOImpl implements MemberDAO {
 	public List<MemberDTO> addressInfo(String userid) {
 		return sqlSession.selectList("member.addressInfo", userid);
 	}
-	
-	
 
 }

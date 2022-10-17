@@ -20,9 +20,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</insert>
 	
 	<insert id="orderInfo_Details">
+		<![CDATA[ 
 		insert into order_detail(od_no,order_id,product_id,od_count)
-		select order_detail_seq.nextval, #{order_id}, product_id, amount
+		select order_detail_seq.nextval, #{ORDER_ID}, product_id, amount
 		from cart
+		where userid=#{userid}
+		]]>
 	</insert>
 	
 	<select id="orderView" resultType="com.example.finalproject.model.shipping.dto.OrderListDTO">
@@ -40,6 +43,14 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		 ]]>
 	</select>
 	
+	<insert id="pay">
+	insert into payment(pay_no, order_id)
+	values (pay_no_seq.nextval, #{order_id})
+	</insert>
 	
-	
+	<select id="orderList" resultType="com.example.finalproject.model.shipping.dto.OrderListDTO">
+		select *
+		from shipping
+		order by order_id desc
+	</select>
 </mapper>

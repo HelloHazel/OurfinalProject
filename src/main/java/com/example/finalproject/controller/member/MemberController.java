@@ -252,6 +252,6 @@ public class MemberController {
 		        session.setAttribute("name", name);
 		        System.out.println(id+name);
 		        return "main";
-			}
 	    }
+	}
 }
