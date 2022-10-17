@@ -67,6 +67,12 @@
 		<mapping path="/notice/write.do"/>
 		<mapping path="/notice/update.do"/>
 		<mapping path="/notice/delete.do"/>
+		<mapping path="/inquery/question.do"/>
+		<mapping path="/inquery/view.do"/>
+		<mapping path="/inquery/answer.do"/>
+		<mapping path="/inquery/update.do"/>
+		<mapping path="/inquery/delete.do"/>
+		<mapping path="/admin/**"/>
 		<beans:ref bean="loginInterceptor"/>
 		</interceptor>
 	</interceptors>

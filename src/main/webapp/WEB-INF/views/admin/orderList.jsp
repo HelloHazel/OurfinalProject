@@ -21,10 +21,7 @@
   <thead>
     <tr>
       <th scope="col">userid</th>
-      <th scope="col">image</th>
       <th scope="col">order-id</th>
-	  <th scope="col">price</th>
-	  <th scope="col">수량</th>
 	  <th scope="col">요청사항</th>
 	  <th scope="col">배송상태</th>
     </tr>
@@ -33,10 +30,7 @@
 <c:forEach items="${list }" var="row">
     <tr class="dataRow">
     <td>${row.userid}</td>
-	<td><img src="${path}/resources/images/${dto.product_url}" width="125px" height="150px"></td>
      <td>${row.order_id}</td>
-	<td><fmt:formatNumber value="${row.price}" pattern="#,###원"/></td>
-	<td>${row.amount}개</td>
 	<td>${row.alert}</td>
 	<td>${row.order_status}</td>
     </tr>
