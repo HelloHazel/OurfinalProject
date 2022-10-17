@@ -125,7 +125,4 @@ public class MemberServiceImpl implements MemberService {
 	public List<MemberDTO> addressInfo(String userid) {
 		return memberDao.addressInfo(userid);
 	}
-
-	
-
 }

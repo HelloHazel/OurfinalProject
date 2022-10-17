@@ -15,4 +15,5 @@ public interface ShippingDAO {
 	public void orderInfo_Details(Order_detailDTO orderDetail);
 	public List<OrderListDTO> orderView(String userId);
 	public void pay(PaymentDTO dto);
+	public List<OrderListDTO>orderList();
 }

@@ -49,5 +49,10 @@ public class ShippingDAOImpl implements ShippingDAO {
 	public void pay(PaymentDTO dto) {
 		sqlSession.insert("shipping.pay",dto);
 	}
+	
+	@Override
+	public List<OrderListDTO>orderList() {
+		return sqlSession.selectList("shipping.orderList");
+	}
 
 }
