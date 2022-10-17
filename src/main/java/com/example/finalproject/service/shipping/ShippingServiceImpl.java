@@ -47,5 +47,10 @@ public class ShippingServiceImpl implements ShippingService {
 	public void pay(PaymentDTO dto) {
 		shippingDao.pay(dto);
 	}
+	
+	@Override
+	public List<OrderListDTO>orderList() {
+		return shippingDao.orderList();
+	}
 
 }

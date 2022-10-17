@@ -48,4 +48,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	values (pay_no_seq.nextval, #{order_id})
 	</insert>
 	
+	<select id="orderList" resultType="com.example.finalproject.model.shipping.dto.OrderListDTO">
+		<![CDATA[
+		select * from shipping
+		 ]]>
+	</select>
 </mapper>
