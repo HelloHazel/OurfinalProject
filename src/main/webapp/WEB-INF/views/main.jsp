@@ -550,7 +550,7 @@ if (request.getProtocol().equals("HTTP/1.1")) {
 	
 	<!-- ============================================-->
 	<!-- <section> 커뮤니티 ============================-->
-	<section class="py-0 pb-0">
+	<section class="py-5 mt-0">
 		<div class="col-lg-7 mx-auto text-center mt-5 mb-5">
 			<h5 class="fw-bold fs-3 fs-lg-5 lh-sm">커뮤니티</h5>
 		</div>
