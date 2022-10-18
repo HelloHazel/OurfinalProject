@@ -15,6 +15,10 @@
 		.navbar{
 			background: #FFE08C !important; 
 		}
+		
+		.member {
+			padding-top: 25px;
+		}
 	</style>
 </head>
 <body>
@@ -101,10 +105,8 @@
 							<c:when
 								test="${sessionScope.userid == null}">
 								<!-- 로그인하지 않은 상태 -->
-								<a class="btn btn-lg btn-success btn-block mt-3"
-									href="${pageContext.request.contextPath}/member/login.do">로그인</a>
-								<a class="btn btn-lg btn-secondary btn-block mt-3"
-									href="${pageContext.request.contextPath}/member/join.do">회원가입</a>
+								<a class="member" href="${pageContext.request.contextPath}/member/login.do">로그인&nbsp;|&nbsp;</a>
+								<a class="member" href="${pageContext.request.contextPath}/member/join.do"> 회원가입</a>
 							</c:when>
 							<c:otherwise>
 								<!-- 로그인한 상태 -->
@@ -149,10 +151,8 @@
 							<c:when
 								test="${sessionScope.userid == null}">
 								<!-- 로그인하지 않은 상태 -->
-								<a class="btn btn-lg btn-success btn-block mt-3"
-									href="${pageContext.request.contextPath}/member/login.do">로그인</a>
-								<a class="btn btn-lg btn-secondary btn-block mt-3"
-									href="${pageContext.request.contextPath}/member/join.do">회원가입</a>
+								<a class="member" href="${pageContext.request.contextPath}/member/login.do">로그인&nbsp;|&nbsp;</a> 
+								<a class="member" href="${pageContext.request.contextPath}/member/join.do"> 회원가입</a>
 							</c:when>
 							<c:otherwise>
 								<!-- 로그인한 상태 -->
