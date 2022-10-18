@@ -25,7 +25,7 @@ if (request.getProtocol().equals("HTTP/1.1")) {
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <c:set var="path" value="${pageContext.request.contextPath}" />
 <link rel="stylesheet" type="text/css"
-	href="${pageContext.request.contextPath}/resources/assets/css/theme.css">
+	href="${pageContext.request.contextPath}/resources/assets/css/theme.css?v1">
 </head>
 <body>
 	<section
@@ -468,7 +468,7 @@ if (request.getProtocol().equals("HTTP/1.1")) {
 							<div class="carousel-item active" data-bs-interval="10000">
 								<div class="row h-100 align-items-center g-2">
 									<div class="col-sm-6 col-md-3 mb-3 mb-md-0 h-100">
-										<div class="card card-span h-100 text-white">
+										<div class="card card-span h-90 text-white">
 											<img class="card-img h-100"
 												src="${path}/resources/images/17.jpg"
 												alt="..." />
@@ -482,7 +482,7 @@ if (request.getProtocol().equals("HTTP/1.1")) {
 										</div>
 									</div>
 									<div class="col-sm-6 col-md-3 mb-3 mb-md-0 h-100">
-										<div class="card card-span h-100 text-white">
+										<div class="card card-span h-90 text-white">
 											<img class="card-img h-100"
 												src="${path}/resources/images/18.jpg"
 												alt="..." />
@@ -496,7 +496,7 @@ if (request.getProtocol().equals("HTTP/1.1")) {
 										</div>
 									</div>
 									<div class="col-sm-6 col-md-3 mb-3 mb-md-0 h-100">
-										<div class="card card-span h-100 text-white">
+										<div class="card card-span h-90 text-white">
 											<img class="card-img h-100"
 												src="${path}/resources/images/19.jpg"
 												alt="..." />
@@ -510,7 +510,7 @@ if (request.getProtocol().equals("HTTP/1.1")) {
 										</div> 
 									</div>
 									<div class="col-sm-6 col-md-3 mb-3 mb-md-0 h-100">
-										<div class="card card-span h-100 text-white">
+										<div class="card card-span h-90 text-white">
 											<img class="card-img h-100"
 												src="${path}/resources/images/20.jpg"
 												alt="..." />
