@@ -507,7 +507,7 @@ if (request.getProtocol().equals("HTTP/1.1")) {
 												<h4 class="text-light">편안한 점프수트 강아지 파자마</h4>
 											</div>
 											<a class="stretched-link" href="${path}/shop/product/detail/19"></a>
-										</div>
+										</div> 
 									</div>
 									<div class="col-sm-6 col-md-3 mb-3 mb-md-0 h-100">
 										<div class="card card-span h-100 text-white">
