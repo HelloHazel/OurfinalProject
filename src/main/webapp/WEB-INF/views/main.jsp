@@ -654,8 +654,15 @@ if (request.getProtocol().equals("HTTP/1.1")) {
         </div>
         <% } %>
       </div>
+      
+      
     </div>     
+    
   </div>
+  				<div class="col-12 d-flex justify-content-center ">
+					<a class="btn btn-lg btn-dark" href="${path}/community/list.do">View
+						All </a>
+				</div>
 		<!-- end of .container-->
 
 	</section>
