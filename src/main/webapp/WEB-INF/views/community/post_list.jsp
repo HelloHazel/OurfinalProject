@@ -61,8 +61,8 @@
       	color: white;
       	transform: translate(0, -50%);
       }
-    
-          
+      
+                
       
     </style>
     
@@ -123,7 +123,7 @@
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
                   <button type="button" class="btn btn-sm btn-outline-secondary" onclick="location.href='${path}/community/view.do?comm_no=${row.comm_no}'">👀 ${row.comm_viewcnt}</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary" onclick="location.href='${path}/community/view.do?comm_no=${row.comm_no}'">💬</button>
+                  
                 </div>
                 <small class="text-muted">${row.comm_regdate}</small>
               </div>
@@ -181,8 +181,8 @@
     <p class="float-end mb-1">
       <a href="#">Back to top</a>
     </p>
-    <p class="mb-1">Album example is &copy; Bootstrap, but please download and customize it for yourself!</p>
-    <p class="mb-0">New to Bootstrap? <a href="/">Visit the homepage</a> or read our <a href="../getting-started/introduction/">getting started guide</a>.</p>
+    <p class="mb-1">Copyright 2022. OdokOdok All rights reserved.</p>
+    <p class="mb-0"><a href="${path}/">Visit the main</a> or read our <a href="${path}/notice/list.do">getting started guide</a>.</p>
   </div>
 </footer>
 
