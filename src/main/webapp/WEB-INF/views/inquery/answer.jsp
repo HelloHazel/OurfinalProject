@@ -6,6 +6,7 @@
 <meta charset="UTF-8">
 <title>답변하기</title>
 <%@ include file="../include/header.jsp" %>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
 <%@ include file="../include/menu.jsp" %>
