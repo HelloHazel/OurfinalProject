@@ -457,7 +457,7 @@ if (request.getProtocol().equals("HTTP/1.1")) {
 
 	<section class="py-5 mt-0">
 		<div class="container">
-			<div class="row h-100">
+			<div class="row h-90">
 				<div class="col-lg-7 mx-auto text-center mb-6">
 					<h5 class="fs-3 fs-lg-5 lh-sm mb-3">신상품</h5>
 				</div>
@@ -468,7 +468,7 @@ if (request.getProtocol().equals("HTTP/1.1")) {
 							<div class="carousel-item active" data-bs-interval="10000">
 								<div class="row h-100 align-items-center g-2">
 									<div class="col-sm-6 col-md-3 mb-3 mb-md-0 h-100">
-										<div class="card card-span h-90 text-white">
+										<div class="card card-span h-100 text-white">
 											<img class="card-img h-100"
 												src="${path}/resources/images/17.jpg"
 												alt="..." />
@@ -482,7 +482,7 @@ if (request.getProtocol().equals("HTTP/1.1")) {
 										</div>
 									</div>
 									<div class="col-sm-6 col-md-3 mb-3 mb-md-0 h-100">
-										<div class="card card-span h-90 text-white">
+										<div class="card card-span h-100 text-white">
 											<img class="card-img h-100"
 												src="${path}/resources/images/18.jpg"
 												alt="..." />
@@ -496,7 +496,7 @@ if (request.getProtocol().equals("HTTP/1.1")) {
 										</div>
 									</div>
 									<div class="col-sm-6 col-md-3 mb-3 mb-md-0 h-100">
-										<div class="card card-span h-90 text-white">
+										<div class="card card-span h-100 text-white">
 											<img class="card-img h-100"
 												src="${path}/resources/images/19.jpg"
 												alt="..." />
@@ -510,7 +510,7 @@ if (request.getProtocol().equals("HTTP/1.1")) {
 										</div> 
 									</div>
 									<div class="col-sm-6 col-md-3 mb-3 mb-md-0 h-100">
-										<div class="card card-span h-90 text-white">
+										<div class="card card-span h-100 text-white">
 											<img class="card-img h-100"
 												src="${path}/resources/images/20.jpg"
 												alt="..." />
@@ -654,8 +654,15 @@ if (request.getProtocol().equals("HTTP/1.1")) {
         </div>
         <% } %>
       </div>
+      
+      
     </div>     
+    
   </div>
+  				<div class="col-12 d-flex justify-content-center ">
+					<a class="btn btn-lg btn-dark" href="${path}/community/list.do">View
+						All </a>
+				</div>
 		<!-- end of .container-->
 
 	</section>
