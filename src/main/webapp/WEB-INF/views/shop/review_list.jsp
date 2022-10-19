@@ -28,7 +28,7 @@ $(function(){
 			( <fmt:formatDate value="${row.review_date}"
 				 pattern="yyyy-MM-dd a HH:mm:ss" /> )<br>
 				  ${row.review_content} <br>
-        <button type="button" class="btn btn-outline-warning btn-sm" id="btnDeleteReview">삭제</button>	  
+        <!-- <button type="button" class="btn btn-outline-warning btn-sm" id="btnDeleteReview">삭제</button>-->  
 				  <br>
 			${str}
 		</td>
