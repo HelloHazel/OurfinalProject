@@ -172,7 +172,7 @@
 				    <hr>
 				    <div class="dropdown">
 				      <a href="#" class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-				        <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
+				       <!--  <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2"> -->
 				        <strong>회원정보</strong>
 				      </a>
 				      <ul class="dropdown-menu dropdown-menu text-small shadow">
@@ -233,7 +233,7 @@
 						   	받는 사람 정보
 						   	<c:forEach items="${map1.list1}" var="row">
 						   	<c:if test="${order_id==row.order_id}">
-							   	<div>받는 사람: ${row.userid}</div>
+							   	<div>받는 사람: ${row.receiver}</div>
 							   	<div>연락처:${row.phone}</div>
 							   	<div>받는주소:${row.address1},${row.address2}</div>
 							   	<div>배송요청사항:${row.alert}</div>

@@ -169,8 +169,7 @@
 				    <hr>
 				    <div class="dropdown">
 				      <a href="#" class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-				        <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
-				        <strong>회원정보</strong>
+<!-- 				        <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">-->				        <strong>회원정보</strong>
 				      </a>
 				      <ul class="dropdown-menu dropdown-menu text-small shadow">
 				        <li><a class="dropdown-item" href="${pageContext.request.contextPath}/mypage/myinfo.do?userid=${sessionScope.userid}">회원정보 확인/수정</a></li>
