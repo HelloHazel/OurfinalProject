@@ -233,7 +233,7 @@
 						   	받는 사람 정보
 						   	<c:forEach items="${map1.list1}" var="row">
 						   	<c:if test="${order_id==row.order_id}">
-							   	<div>받는 사람: ${row.userid}</div>
+							   	<div>받는 사람: ${row.receiver}</div>
 							   	<div>연락처:${row.phone}</div>
 							   	<div>받는주소:${row.address1},${row.address2}</div>
 							   	<div>배송요청사항:${row.alert}</div>
