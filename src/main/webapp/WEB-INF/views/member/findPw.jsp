@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>아이디 찾기</title>
+<title>	비밀번호 찾기</title>
 <%@ include file="../include/header.jsp" %>
 <style type="text/css">
 body {

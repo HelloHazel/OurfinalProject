@@ -119,7 +119,8 @@ function join() {
 	
 	var exp1 = /^[A-Za-z0-9]{4,10}$/; //아이디 영문자, 숫자 포함 4~10자리
 	var exp2 = /(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*\d){6,12}/; //비밀번호 영문자, 특수문자 포함 6~12자리
-	var exp5 = /^([0-9a-zA-Z_\.-]+)@([0-9a-zA-Z_-]+)(\.[0-9a-zA-Z_-]+){1,2}$/; //이메일 정규식
+	var exp3 = /^[가-힣]+$/; //한글 유효성검사
+	var exp4 = /^([0-9a-zA-Z_\.-]+)@([0-9a-zA-Z_-]+)(\.[0-9a-zA-Z_-]+){1,2}$/; //이메일 정규식
 	
 	if (userid == "") {
 		alert("아이디를 입력하세요.");
@@ -136,6 +137,10 @@ function join() {
 	}
 	if (name == "") {
 		alert("이름을 입력하세요.");
+		$("#name").focus();
+		return;
+	}else if(!exp3.test(name)){
+		alert("이름은 한글로 입력해주세요");
 		$("#name").focus();
 		return;
 	}
@@ -161,7 +166,7 @@ function join() {
 		alert("이메일을 입력하세요.");
 		$("#email").focus();
 		return;
-	}else if(!exp5.test(email)){
+	}else if(!exp4.test(email)){
 		alert("이메일을 제대로 입력해주세요");
 		$("#email").focus();
 		return;
