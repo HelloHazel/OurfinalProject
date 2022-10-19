@@ -27,7 +27,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
    select *
    from review
    where userid = #{userId}
-   order by review_no
+   order by review_no desc
    ]]> 
 </select>	
 
