@@ -566,7 +566,7 @@ if (request.getProtocol().equals("HTTP/1.1")) {
 			String commUrl;
 			int commView;
 			String commWriter;
-			int commCount;
+			//int commCount;
 		}
 		
 		ArrayList<Comm> list = new ArrayList<Comm>();
@@ -611,7 +611,7 @@ if (request.getProtocol().equals("HTTP/1.1")) {
 			comm.commUrl = rs.getString("COMM_URL");
 			comm.commView = rs.getInt("COMM_VIEWCNT");
 			comm.commWriter = rs.getString("WRITER");
-			comm.commCount = rs.getInt("CNT");
+			//comm.commCount = rs.getInt("CNT");
 			list.add(comm);
 		}
 	} catch (Exception e) {
