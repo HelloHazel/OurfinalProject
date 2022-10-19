@@ -122,6 +122,15 @@ function join() {
 	var exp3 = /^[가-힣]+$/; //한글 유효성검사
 	var exp4 = /^([0-9a-zA-Z_\.-]+)@([0-9a-zA-Z_-]+)(\.[0-9a-zA-Z_-]+){1,2}$/; //이메일 정규식
 	
+	if (name == "") {
+		alert("이름을 입력하세요.");
+		$("#name").focus();
+		return;
+	}else if(!exp3.test(name)){
+		alert("이름은 한글로 입력해주세요");
+		$("#name").focus();
+		return;
+	}
 	if (userid == "") {
 		alert("아이디를 입력하세요.");
 		$("#userid").focus(); //입력 포커스 이동
@@ -133,15 +142,6 @@ function join() {
 	}
 	if(idCheck == "N"){
 		alert("아이디 중복 체크를 하세요.");
-		return;
-	}
-	if (name == "") {
-		alert("이름을 입력하세요.");
-		$("#name").focus();
-		return;
-	}else if(!exp3.test(name)){
-		alert("이름은 한글로 입력해주세요");
-		$("#name").focus();
 		return;
 	}
 	if (passwd == "") {
