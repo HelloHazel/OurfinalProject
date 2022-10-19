@@ -186,10 +186,11 @@ if (request.getProtocol().equals("HTTP/1.1")) {
 												alt="..." />
 											<div class="card-img-overlay ps-0"></div>
 											<div class="card-body ps-0 bg-200">
-												<h5 class="fw-bold text-1000 text-truncate">상품1</h5>
+												<h5 class="fw-bold text-1000 text-truncate">(50 x 36 x 6.5인치) 대형견 침대</h5>
 												<div class="fw-bold">
-													<span class="text-600 me-2 text-decoration-line-through">$200</span><span
-														class="text-primary">$175</span>
+													<span class="text-600 me-2 text-decoration-line-through">80,000원</span><span
+														class="text-primary">75,060원
+														</span>
 												</div>
 											</div>
 											<a class="stretched-link" href="${path}/shop/product/detail/9"></a>
@@ -202,10 +203,10 @@ if (request.getProtocol().equals("HTTP/1.1")) {
 												alt="..." />
 											<div class="card-img-overlay ps-0"></div>
 											<div class="card-body ps-0 bg-200">
-												<h5 class="fw-bold text-1000 text-truncate">상품2</h5>
+												<h5 class="fw-bold text-1000 text-truncate">스테인리스 애견 사료 그릇</h5>
 												<div class="fw-bold">
-													<span class="text-600 me-2 text-decoration-line-through">$200</span><span
-														class="text-primary">$175</span>
+													<span class="text-600 me-2 text-decoration-line-through">30,000원</span><span
+														class="text-primary">20,700원</span>
 												</div>
 											</div>
 											<a class="stretched-link" href="${path}/shop/product/detail/10"></a>
@@ -218,10 +219,10 @@ if (request.getProtocol().equals("HTTP/1.1")) {
 												alt="..." />
 											<div class="card-img-overlay ps-0"></div>
 											<div class="card-body ps-0 bg-200">
-												<h5 class="fw-bold text-1000 text-truncate">상품3</h5>
+												<h5 class="fw-bold text-1000 text-truncate">장난감 번들 팩</h5>
 												<div class="fw-bold">
-													<span class="text-600 me-2 text-decoration-line-through">$200</span><span
-														class="text-primary">$175</span>
+													<span class="text-600 me-2 text-decoration-line-through">25,000원</span><span
+														class="text-primary">18,240원</span>
 												</div>
 											</div>
 											<a class="stretched-link" href="${path}/shop/product/detail/11"></a>
@@ -234,10 +235,10 @@ if (request.getProtocol().equals("HTTP/1.1")) {
 												alt="..." />
 											<div class="card-img-overlay ps-0"></div>
 											<div class="card-body ps-0 bg-200">
-												<h5 class="fw-bold text-1000 text-truncate">상품4</h5>
+												<h5 class="fw-bold text-1000 text-truncate">반려동물용 캐리어 백팩</h5>
 												<div class="fw-bold">
-													<span class="text-600 me-2 text-decoration-line-through">$200</span><span
-														class="text-primary">$175</span>
+													<span class="text-600 me-2 text-decoration-line-through">100,000원</span><span
+														class="text-primary">91,260원</span>
 												</div>
 											</div>
 											<a class="stretched-link" href="${path}/shop/product/detail/12"></a>
