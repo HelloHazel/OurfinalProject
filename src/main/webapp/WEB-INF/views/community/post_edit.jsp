@@ -57,11 +57,7 @@ function post_update(){
 		$("#comm_title").focus();//입력포커스 이동
 		return;//리턴값없이 함수 종료
 	}
-	if(comm_content==""){
-		alert("내용을 입력하세요");
-		$("#comm_content").focus();//입력포커스 이동
-		return;//리턴값없이 함수 종료
-	}
+	
 	document.form1.action="${path}/community/update.do";
 	document.form1.submit();
 }
@@ -112,7 +108,7 @@ function post_delete() {
 					</div>
 					
 					<div>
-						<img src="${path}/images/community/${dto.comm_url}" width="300px" height="300px"> <br>
+						<img src="${path}/resources/images/community/${dto.comm_url}" width="300px" height="300px"> <br>
 						<input type="file" name="file1" id="file1">			
 					</div>
 					

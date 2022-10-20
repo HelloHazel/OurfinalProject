@@ -44,10 +44,10 @@ public class CommCmtController {
 	}
 	
 	@RequestMapping("delete.do")
-	public String delete(int cmt_no, int comm_no) throws Exception {
+	public String delete(@RequestParam int cmt_no) throws Exception {
 		System.out.println("cmt_no : " + cmt_no);
 		commCmtService.delete(cmt_no);
-		return "";
+		return "redirect:/community/list.do";
 	}
 	
 

@@ -12,7 +12,7 @@
 
 //댓글 삭제
 function comment_delete() { 
-	if(confirm("삭제하시겠습니까?")){
+	if(confirm("댓글을 삭제하시겠습니까?")){
 	 	document.form1.action="${path}/commCmt/delete.do";
 		document.form1.submit();
 		window.location.reload();
@@ -51,8 +51,8 @@ function comment_delete() {
 				${row.name}
 				( <fmt:formatDate value="${row.cmt_regdate}" pattern="yyyy-MM-dd a HH:mm:ss" /> ) 
 					<c:if test="${sessionScope.userid == row.commenter}">
+					 	
 					 	<input type="hidden" name="cmt_no" value="${row.cmt_no}">
-					 	<input type="hidden" name="comm_no" value="${row.comm_no}">
 					 	<button type="button" class="btn btn-outline-warning btn-sm" onclick="comment_delete()">삭제</button>
 					</c:if>
 				 	<br>
