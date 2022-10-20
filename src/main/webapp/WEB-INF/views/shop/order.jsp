@@ -182,6 +182,7 @@ function paymentComplete(data) {
 				<h3 class="page-header">배송지 정보</h3>
 				<input type="hidden" value="${order_id}" id="order_id" name="order_id">
 				<p style="color: red;">주문자 정보와 배송지가 다른 경우 직접 입력해주세요.</p>
+				<p>수령인, 우편번호, 주소, 상세주소, 전화번호는 필수 입력사항입니다.</p>
 			</div>
 			<c:forEach var="row" items="${map2.info}">
 				<div class="form-horizontal">
@@ -236,7 +237,7 @@ function paymentComplete(data) {
 							<label for="inputEmail" class="control-label" id="label">이메일</label>
 						</div>
 						<div class="col-sm-8">
-							<input type="email" class="form-control" id="email" name="email" value="${row.email}"><br>
+							<input type="email" class="form-control" id="email" name="email" value="${row.email}" placeholder="이메일을 기입해주세요 (선택)"><br>
 						</div>
 					</div>
 				</div>
