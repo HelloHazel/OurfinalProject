@@ -14,7 +14,6 @@ import org.springframework.web.servlet.ModelAndView;
 import com.example.finalproject.model.community.dto.CommCmtDTO;
 import com.example.finalproject.service.community.CommCmtService;
 
-@ResponseBody
 @Controller
 @RequestMapping("commCmt/*")//공통 url
 public class CommCmtController {
@@ -22,12 +21,14 @@ public class CommCmtController {
 	@Inject
 	CommCmtService commCmtService;
 	
+	@ResponseBody
 	@RequestMapping("insert.do")
 	public void insert(CommCmtDTO dto, HttpSession session) {
 		String userid=(String) session.getAttribute("userid");
 		dto.setCommenter(userid);
 		commCmtService.create(dto);
 	}
+	
 	
 	@RequestMapping("list.do")
 	public ModelAndView list(int comm_no, ModelAndView mav) {
@@ -43,11 +44,10 @@ public class CommCmtController {
 	}
 	
 	@RequestMapping("delete.do")
-	public String delete(@RequestParam int cmt_no) throws Exception {
+	public String delete(int cmt_no, int comm_no) throws Exception {
 		System.out.println("cmt_no : " + cmt_no);
 		commCmtService.delete(cmt_no);
-		return "redirect:/community/list.do";
-				
+		return "";
 	}
 	
 

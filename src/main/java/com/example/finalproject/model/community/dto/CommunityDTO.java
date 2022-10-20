@@ -13,7 +13,6 @@ public class CommunityDTO {
 	private String comm_url;
 	private int comm_viewcnt; //조회수
 	private String name; //작성자 이름
-	private int cnt; //댓글 갯수
 	private String writer; 
 	private MultipartFile file1; //첨부파일(db에는 없다)
 	
@@ -60,13 +59,7 @@ public class CommunityDTO {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public int getCnt() {
-		return cnt;
-	}
-	public void setCnt(int cnt) {
-		this.cnt = cnt;
-	}
-	
+		
 	public MultipartFile getFile1() {
 		return file1;
 	}
@@ -83,7 +76,7 @@ public class CommunityDTO {
 	@Override
 	public String toString() {
 		return "CommunityDTO [comm_no=" + comm_no + ", comm_title=" + comm_title + ", comm_content=" + comm_content + ", comm_regdate=" + comm_regdate + ", comm_url=" + comm_url + ", comm_viewcnt="
-				+ comm_viewcnt + ", name=" + name + ", cnt=" + cnt + ", writer=" + writer + ", file1=" + file1 + "]";
+				+ comm_viewcnt + ", name=" + name + ", writer=" + writer + ", file1=" + file1 + "]";
 	}
 	
 	

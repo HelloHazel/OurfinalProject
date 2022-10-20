@@ -44,18 +44,23 @@
 						 .catch( error => {
 						     console.error( error );
 					 } );
+					
+					CKEDITOR.editorConfig = function( config ) {
+						config.removeButtons = 'Link';
+						}
 				</script>
 		</div>
 		<c:if test="${sessionScope.userid == 'admin' }">
 		<br>
 			<div style="text-align: center;">
 				<input type="submit" class="btn btn-outline-warning btn-sm" value="등록">
-				<input type="reset" class="btn btn-outline-warning btn-sm" value="새로입력">
 				<input type="button" class="btn btn-outline-warning btn-sm" value="목록" onclick="location.href='${path}/faq/list.do'">
 			</div>
 		</c:if>
 	</form>
 </div>
+
+
 
 
 </body>

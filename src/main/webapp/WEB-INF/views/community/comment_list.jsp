@@ -15,6 +15,7 @@ function comment_delete() {
 	if(confirm("삭제하시겠습니까?")){
 	 	document.form1.action="${path}/commCmt/delete.do";
 		document.form1.submit();
+		window.location.reload();
 	} 
 }
 
